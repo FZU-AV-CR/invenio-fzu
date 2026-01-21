@@ -1,0 +1,62 @@
+# Definition of metadata for particles. Please do not add ccmm model here,
+# add the ccmm_preset instead.
+Metadata:
+  properties:
+    experiment:
+      type: keyword
+      label:
+        en: Experiment
+      # in orig data it is an array, should it be?
+      enum:
+        - DELPHI
+
+    file_types:
+      type: array
+      label:
+        en: File Types
+      items:
+        type: keyword
+
+    collision_information:
+      type: object
+      label:
+        en: Collision Information
+      properties:
+        energy:
+          type: keyword
+          label:
+            en: Center-of-Mass Energy
+        energy_min:
+          type: int
+          label:
+            en: Lowest Center-of-Mass Energy
+        energy_max:
+          type: int
+          label:
+            en: Highest Center-of-Mass Energy
+        type:
+          # might be a dictionary, if needed
+          type: keyword
+          label:
+            en: Collision Type
+          enum:
+            - e+e-
+    
+    category:
+      type: vocabulary
+      vocabulary-type: particle_category
+      label:
+        en: Category
+
+    number_of_events:
+      type: int
+      label:
+        en: Number of Events
+
+    dataset_type:
+      type: keyword
+      label:
+        en: Dataset Type
+      enum:
+        - simulated
+        - collision

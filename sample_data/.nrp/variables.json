@@ -1,0 +1,8 @@
+{
+  "variables": {
+    "deplhi_001_draft": [
+      "https://127.0.0.1:5000/api/particles/40v80-y8052/draft"
+    ]
+  },
+  "_config_file_path": "/Users/m/w/nrp-14/physica/sample_data/.nrp/variables.json"
+}

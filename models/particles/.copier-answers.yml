@@ -1,0 +1,8 @@
+# Changes here will be overwritten by Copier
+_commit: 47fe7e1
+_src_path: https://github.com/oarepo/nrp-model-copier
+base_model: rdm_complete
+model_description: 'Particles detector experiments
+
+    '
+model_human_name: Particles

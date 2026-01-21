@@ -1,0 +1,3 @@
+particle_category:
+  pid-type: vpcat
+  data-file: vocabularies/particle_category.yaml

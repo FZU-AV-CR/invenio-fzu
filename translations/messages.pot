@@ -1,0 +1,142 @@
+# Translations template for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-01-21 20:13+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: /Users/m/w/nrp-14/physica/common/workflows/default.py:360
+msgid "state:draft"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/common/workflows/default.py:361
+msgid "state:published"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/common/workflows/default.py:362
+msgid "state:submitted"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/common/workflows/default.py:363
+msgid "state:retracting"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/common/workflows/default.py:364
+msgid "state:deleted"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/models/detectors/model.py:44
+#: /Users/m/w/nrp-14/physica/models/particles/model.py:43
+msgid "Datacite export"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/templates/footer.html:24
+msgid "Contact"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/templates/manage_menu.html:11
+msgid "Record management"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/templates/semantic-ui/invenio_app_rdm/intro_section.html:5
+msgid "You've successfully installed Invenio RDM!"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/templates/semantic-ui/invenio_app_rdm/intro_section.html:7
+msgid "What is ahead?"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/templates/semantic-ui/invenio_app_rdm/intro_section.html:17
+msgid "Configure"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/templates/semantic-ui/invenio_app_rdm/intro_section.html:20
+msgid ""
+"Configure the datamodel, resource types, permissions and much more to "
+"make it suit your needs! For more information on how to do it visit the"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/templates/semantic-ui/invenio_app_rdm/intro_section.html:22
+msgid "configuration section in the docs"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/templates/semantic-ui/invenio_app_rdm/intro_section.html:34
+msgid "Customize"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/templates/semantic-ui/invenio_app_rdm/intro_section.html:37
+msgid ""
+"Customize the layout and adapt the styling to match your institution's. "
+"See how to do so"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/templates/semantic-ui/invenio_app_rdm/intro_section.html:39
+msgid "here"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/templates/semantic-ui/invenio_app_rdm/intro_section.html:50
+msgid "Use it!"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/templates/semantic-ui/invenio_app_rdm/intro_section.html:52
+msgid "Use and explore your InvenioRDM instance."
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/templates/semantic-ui/invenio_app_rdm/intro_section.html:54
+msgid "Use"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/templates/semantic-ui/invenio_app_rdm/intro_section.html:68
+msgid "Docs"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/templates/semantic-ui/invenio_app_rdm/intro_section.html:77
+msgid "Code"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/templates/semantic-ui/invenio_app_rdm/intro_section.html:84
+msgid "To disable this section, add"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/templates/semantic-ui/invenio_app_rdm/intro_section.html:86
+msgid "to your invenio.cfg file."
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/ui/detectors/__init__.py:94
+msgid "New Detectors"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/ui/detectors/templates/semantic-ui/detectors/Search.jinja:3
+#: /Users/m/w/nrp-14/physica/ui/particles/templates/semantic-ui/particles/Search.jinja:3
+msgid "Search results"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/ui/detectors/templates/semantic-ui/detectors/Search.jinja:3
+msgid "detectors"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/ui/detectors/templates/semantic-ui/detectors/record_detail/main.html:62
+#: /Users/m/w/nrp-14/physica/ui/particles/templates/semantic-ui/particles/record_detail/main.html:80
+msgid "Record title"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/ui/particles/__init__.py:94
+msgid "New Particles"
+msgstr ""
+
+#: /Users/m/w/nrp-14/physica/ui/particles/templates/semantic-ui/particles/Search.jinja:3
+msgid "particles"
+msgstr ""
+

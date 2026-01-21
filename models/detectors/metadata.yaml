@@ -1,0 +1,4 @@
+# Definition of metadata for detectors. Please do not add ccmm model here,
+# add the ccmm_preset instead.
+Metadata:
+  properties: {}

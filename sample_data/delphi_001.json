@@ -1,0 +1,65 @@
+{
+    "metadata": {
+        "resource_type": {
+            "id": "dataset"
+        },
+        "creators": [
+            {
+                "person_or_org": {
+                    "name": "DELPHI Collaboration",
+                    "type": "organizational"
+                }
+            }
+        ],
+        "file_types": [
+            "xsdst",
+            "pdf"
+        ],
+        "title": "DELPHI simulation data xs_pyth6156hpphmmr_e205.0_m95_snt99_1l_a1",
+        "publication_date": "2024",
+        "publisher": "CERN Open Data Portal",
+        "description": "Extended Short DST simulation 99_a1 done at ecms=205.0 , Santander",
+        "subjects": [
+            {
+                "subject": "Higgs physics"
+            },
+            {
+                "subject": "Electron–positron collisions"
+            }
+        ],
+        "rights": [
+            {
+                "id": "cc0-1.0"
+            }
+        ],
+        "identifiers": [
+            {
+                "identifier": "10.7483/OPENDATA.DELPHI.FWT8.6Q41",
+                "scheme": "doi"
+            }
+        ],
+        "dates": [
+            {
+                "date": "1999",
+                "type": {
+                    "id": "created"
+                }
+            }
+        ],
+        "experiment": "DELPHI",
+        "collision_information": {
+            "type": "e+e-",
+            "energy": "181-210 GeV",
+            "energy_min": 181,
+            "energy_max": 210
+        },
+        "category": {
+            "id": "higgs"
+        },
+        "dataset_type": "simulated",
+        "number_of_events": 10000
+    },
+    "files": {
+        "enabled": true
+    }
+}

@@ -1,0 +1,56 @@
+[project]
+name = "physica"
+version = "1.0.0"
+description = "Physica.science is an open repository of physics data spanning all scales, from particle physics to crystallography. It provides structured, reusable datasets to support reproducible and cross-disciplinary research."
+packages = []
+authors = []
+dependencies = [
+    "json5",
+    "oarepo[s3,rdm]>=14.0.0,<15.0.0",
+    "oarepo-runtime>=2.0.0dev0,<3.0.0",
+    "oarepo-ui>=6.0.0dev0,<7.0.0",
+    "oarepo-model>=0.1.0dev0,<1.0.0",
+    "oarepo-rdm>=1.0.0dev0,<2.0.0",
+    "oarepo-theme>=1.0.0dev3,<2.0.0",
+    "oarepo-dashboard>=2.0.0dev1,<3.0.0",
+    "oarepo-vocabularies>=3.0.0dev0,<4.0.0",
+    "python-dotenv",
+    "marshmallow-i18n-messages",
+    "oarepo-glitchtip==1.*",
+]
+requires-python = ">=3.13,<3.15"
+
+[project.entry-points."invenio_assets.webpack"]
+i18n = "i18n.webpack:theme"
+components = "ui.components.webpack:theme"
+ui_particles = "ui.particles.webpack:theme"
+ui_detectors = "ui.detectors.webpack:theme"
+
+[project.entry-points."invenio_i18n.translations"]
+translations = "i18n"
+
+[project.entry-points."invenio_db.alembic"]
+repository = "common:alembic"
+
+[project.entry-points."invenio_base.blueprints"]
+ui_particles = "ui.particles:create_blueprint"
+ui_detectors = "ui.detectors:create_blueprint"
+
+[project.entry-points."invenio_base.finalize_app"]
+ui_particles = "ui.particles:finalize_app"
+ui_detectors = "ui.detectors:finalize_app"
+
+[tool.uv.build-backend]
+module-root = ""
+module-name = [
+    "common",
+    "i18n",
+    "ui",
+    "models",
+]
+
+[build-system]
+requires = [
+    "uv_build>=0.8.7,<0.9.0",
+]
+build-backend = "uv_build"
