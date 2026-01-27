@@ -56,13 +56,6 @@ class DetectorsUIResourceConfig(RecordsUIResourceConfig):
 
     application_id = "detectors"
 
-    templates = {
-        "record_detail": "detectors.RecordDetail",
-        "search": "detectors.Search",
-        "deposit_edit": "detectors.Deposit",
-        "deposit_create": "detectors.Deposit",
-    }
-
 
 class DetectorsUIResource(RecordsUIResource):
     pass

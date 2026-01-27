@@ -56,13 +56,6 @@ class ParticlesUIResourceConfig(RecordsUIResourceConfig):
 
     application_id = "particles"
 
-    templates = {
-        "record_detail": "particles.RecordDetail",
-        "search": "particles.Search",
-        "deposit_edit": "particles.Deposit",
-        "deposit_create": "particles.Deposit",
-    }
-
 
 class ParticlesUIResource(RecordsUIResource):
     pass
