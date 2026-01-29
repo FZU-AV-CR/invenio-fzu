@@ -20,7 +20,7 @@ file_metadata=$(cat <<EOF
 }
 EOF
 )
-uvx nrp-cmd upload file @deplhi_001_draft --key 01 ./delphi_001.xsdst "$file_metadata" --log-request
+sa "$file_metadata" --log-request
 # uvx nrp-cmd upload file @deplhi_001_draft --key 02 ./delphi_001.xsdst "$file_metadata" --log-request
 # uvx nrp-cmd upload file @deplhi_001_draft --key 03 ./delphi_001.xsdst "$file_metadata" --log-request
 # uvx nrp-cmd upload file @deplhi_001_draft --key 04 ./delphi_001.xsdst "$file_metadata" --log-request
