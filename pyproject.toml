@@ -17,8 +17,9 @@ dependencies = [
     "python-dotenv",
     "marshmallow-i18n-messages",
     "oarepo-glitchtip==1.*",
+    "oarepo-oidc-einfra>=2.0.0dev0,<3.0.0",
 ]
-requires-python = ">=3.13,<3.15"
+requires-python = ">=3.14,<3.15"
 
 [project.entry-points."invenio_assets.webpack"]
 i18n = "i18n.webpack:theme"
