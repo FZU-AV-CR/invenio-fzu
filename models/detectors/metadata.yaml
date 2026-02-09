@@ -12,6 +12,13 @@ Metadata:
         - SiPM (Fermilab silicon photomultiplier)
         - ATLAS ITk (silicon module sensor)
 
+    file_types:
+      type: array
+      label:
+        en: File Types
+      items:
+        type: keyword
+
     box:
       type: keyword
       label:
