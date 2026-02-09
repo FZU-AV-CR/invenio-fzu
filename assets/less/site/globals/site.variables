@@ -9,8 +9,8 @@
 @livelyGreen: #008691;
 @pink: #ff5b7f;
 
-@primaryColor: @livelyGreen;
-@secondaryColor: @pink;
+@primaryColor: rgb(0,44,113);
+@secondaryColour: rgb(0,114,206);
 @darkGrey: #707075;
 @lightGrey: #e4e4e3;
 @black: #040305;
@@ -51,7 +51,7 @@
 @footerTextLightColor: #ffffff;
 @footerTextDarkColor: #ffffff;
 
-@navbar_background_image: linear-gradient(165deg, #008691, #008691, #00848e, #007e88, #00737d, #006971, #00636b, #006169, #006169);
+@navbar_background_image: linear-gradient(165deg, #002c71, #00357d, #003e88, #004694, #004fa0, #0058ab, #0061b7, #0069c2, #0072ce);
 @navbar_background_color: @brandColor;
 
 @coverPageBackgroundColor: @livelyGreen;

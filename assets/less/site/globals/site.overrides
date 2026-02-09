@@ -381,3 +381,7 @@ dl.details-list {
     width: auto !important;
   }
 }
+
+.funding-logo {
+    width: 30%;
+}
