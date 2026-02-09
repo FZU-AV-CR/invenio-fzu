@@ -387,4 +387,4 @@ pnpm-lock.yaml
 celerybeat-schedule-shm
 celerybeat-schedule-wal
 .invenio.private
-.nrp
+**/.nrp

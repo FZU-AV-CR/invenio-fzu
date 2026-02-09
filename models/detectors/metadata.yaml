@@ -1,4 +1,126 @@
-# Definition of metadata for detectors. Please do not add ccmm model here,
-# add the ccmm_preset instead.
+# Definition of metadata for detector box datasets
 Metadata:
-  properties: {}
+  properties:
+
+    # -------- Core box metadata --------
+    experiment:
+      type: keyword
+      label:
+        en: Experiment
+        cs: Experiment
+      enum:
+        - SiPM (Fermilab silicon photomultiplier)
+        - ATLAS ITk (silicon module sensor)
+
+    file_types:
+      type: array
+      label:
+        en: File Types
+      items:
+        type: keyword
+
+    box:
+      type: keyword
+      label:
+        en: Box
+        cs: Krabice
+      pattern: '^Prg([1-9]|[1-3][0-9])$'
+      description: >
+        Box identifier, format 'PrgXX', where XX is between 1 and 39.
+
+    sipm_manufacturer:
+      type: keyword
+      label:
+        en: Manufacturer
+        cs: Výrobce
+      enum:
+        - Hamamatsu Photonics
+        - FBK (Fondazione Bruno Kessler)
+
+    # -------- Trays --------
+    trays:
+      type: array
+      label:
+        en: Tray
+        cs: Tray
+      items:
+        type: keyword
+        pattern: '^Tray\d{6}$'
+      description: >
+        List of tray IDs included in this box (e.g. Tray030026).
+
+    tray_numbers:
+      type: array
+      label:
+        en: Tray numbers (search)
+        cs: Čísla tray (vyhledávání)
+      items:
+        type: keyword
+        pattern: '^Tray\d{6}$'
+      description: >
+        Search-friendly tray identifiers derived from tray IDs.
+        For Tray030026 this field contains ["Tray000030", "Tray000026"].
+
+    # -------- QR codes --------
+    qr_list:
+      type: array
+      label:
+        en: QR (strip ID)
+        cs: QR (strip ID)
+      items:
+        type: keyword
+        pattern: '^\d{10}$'
+      description: >
+        List of all QR codes contained in this box.
+
+    # -------- Measurement & hardware presence --------
+    measurement_types:
+      type: array
+      label:
+        en: Measurement type
+        cs: Typ měření
+      items:
+        type: keyword
+        enum:
+          - DCR
+          - RoomT forward
+          - RoomT reverse
+          - LN2 1st cycle forward
+          - LN2 1st cycle reverse
+          - LN2 3rd cycle forward
+          - LN2 3rd cycle reverse
+          - LN2 3rd cycle extended
+
+    ardu_units:
+      type: array
+      label:
+        en: ARDU
+        cs: ARDU
+      items:
+        type: keyword
+        enum:
+          - ARDU 0
+          - ARDU 1
+          - ARDU 2
+          - ARDU 3
+
+    # -------- Requestor --------
+    requestor:
+      type: keyword
+      label:
+        en: Requestor
+        cs: Zadavatel
+      pattern: '^(Italy I\d{2}|Spain S\d{2})$'
+      description: >
+        Original requestor string (country + code).
+
+    requestor_search:
+      type: array
+      label:
+        en: Requestor search variants
+        cs: Varianty pro vyhledávání
+      items:
+        type: keyword
+      description: >
+        Search-friendly variants: country, country + code,
+        code without leading zero.
