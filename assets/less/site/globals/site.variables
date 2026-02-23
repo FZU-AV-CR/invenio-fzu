@@ -45,11 +45,11 @@
 @embargoed-components-background-color: #fbf8ee;
 @embargoed-components-border-color: #c9ba9b;
 
-@footerLightColor: @primaryColor;
-@footerDarkColor: @primaryDarkenColor;
-@subFooterColor: @footerDarkColor;
-@footerTextLightColor: #ffffff;
-@footerTextDarkColor: #ffffff;
+@footerLightColor: @white;
+@footerDarkColor: @secondaryColour;
+@subFooterColor: @primaryColor;
+@footerTextLightColor: @black;
+@footerTextDarkColor: @black;
 
 @navbar_background_image: linear-gradient(165deg, #002c71, #00357d, #003e88, #004694, #004fa0, #0058ab, #0061b7, #0069c2, #0072ce);
 @navbar_background_color: @brandColor;

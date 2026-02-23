@@ -385,3 +385,7 @@ dl.details-list {
 .funding-logo {
     width: 30%;
 }
+
+.fzu-funding-logo {
+    scale: 85%;
+}
