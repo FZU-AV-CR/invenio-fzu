@@ -20,9 +20,29 @@ You can override any of these blocks to customize the footer.
 
 
 {%- block footer_top_left %}
+<div class="ui container funding-section centered rel-mt-2">
+  <div class="funding-logos flex justify-center align-items-center rel-mb-2">
+    <img
+      class="ui image funding-logo"
+      src="{{ url_for('static', filename='images/eu_msmt_eng.png') }}"
+      alt="EU MŠMT"
+    />
+    <img
+      class="ui image funding-logo fzu-funding-logo"
+      src="{{ url_for('static', filename='images/fzu-logo-en.svg') }}"
+      alt="FZU"
+    />
+    <img
+      class="ui image funding-logo"
+      src="{{ url_for('static', filename='images/eosc_en.svg') }}"
+      alt="EOSC"
+    />
+  </div>
+</div>
+
 <p class="margin-small">
   <span class="ui small inverted header">{{_("Contact")}}:&nbsp;</span>
   <i class="envelope icon"></i>
-  <a href="mailto:support@repo.com">support@repo.com</a>
+  <a href="mailto:vachao@fzu.cz">vachao@fzu.cz</a>
 </p>
 {%- endblock footer_top_left -%}

@@ -381,3 +381,11 @@ dl.details-list {
     width: auto !important;
   }
 }
+
+.funding-logo {
+    width: 30%;
+}
+
+.fzu-funding-logo {
+    scale: 85%;
+}

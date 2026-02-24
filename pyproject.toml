@@ -1,7 +1,7 @@
 [project]
 name = "physica"
 version = "1.0.0"
-description = "Physica.science is an open repository of physics data spanning all scales, from particle physics to crystallography. It provides structured, reusable datasets to support reproducible and cross-disciplinary research."
+description = "Physics Repository is an open repository of physics data spanning all scales, from particle physics to crystallography. It provides structured, reusable datasets to support reproducible and cross-disciplinary research."
 packages = []
 authors = []
 dependencies = [
