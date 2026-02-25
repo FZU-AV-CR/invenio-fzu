@@ -18,6 +18,7 @@ dependencies = [
     "marshmallow-i18n-messages",
     "oarepo-glitchtip==1.*",
     "oarepo-oidc-einfra>=2.0.0dev0,<3.0.0",
+    "oarepo-communities>=6.0.0dev0,<7.0.0",
 ]
 requires-python = ">=3.14,<3.15"
 
