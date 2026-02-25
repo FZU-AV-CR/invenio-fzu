@@ -10,6 +10,11 @@ Metadata:
       enum:
         - DELPHI
 
+    recid:
+      type: int
+      label:
+        en: Record ID
+
     file_types:
       type: array
       label:
