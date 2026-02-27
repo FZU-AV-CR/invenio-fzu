@@ -58,6 +58,44 @@ Note: Context variables available:
 - is_preview/is_draft: Record state
 #}
 
+{%- block record_content %}
+  {{super()}}
+  <table class="ui definition table">
+    <tr>
+      <td>{{m.label(m.experiment)}}</td>
+      <td>{{ui_value(m.experiment)}}</td>
+    </tr>
+    <tr>
+      <td>{{m.label(m.box)}}</td>
+      <td>{{ui_value(m.box)}}</td>
+    </tr>
+    <tr>
+      <td>{{m.label(m.sipm_manufacturer)}}</td>
+      <td>{{ui_value(m.sipm_manufacturer)}}</td>
+    </tr>
+    <tr>
+      <td>{{m.label(m.trays)}}</td>
+      <td>{{ui_value(m.trays)}}</td>
+    </tr>
+    <tr>
+      <td>{{m.label(m.qr_list)}}</td>
+      <td>{{ui_value(m.qr_list)}}</td>
+    </tr>
+    <tr>
+      <td>{{m.label(m.measurement_types)}}</td>
+      <td>{{ui_value(m.measurement_types)}}</td>
+    </tr>
+    <tr>
+      <td>{{m.label(m.ardu_units)}}</td>
+      <td>{{ui_value(m.ardu_units)}}</td>
+    </tr>
+    <tr>
+      <td>{{m.label(m.requestor)}}</td>
+      <td>{{ui_value(m.requestor)}}</td>
+    </tr>
+  </table>
+{%- endblock record_content %}
+
 {%- block record_title -%}
 <section id="record-title-section" aria-label="{{ _('Record title') }}">
   <h1 id="record-title" class="wrap-overflowing-text">
