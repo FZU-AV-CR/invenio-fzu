@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "resource_type": {
+      "id": "dataset"
+    },
+    "creators": [
+      {
+        "person_or_org": {
+          "type": "personal",
+          "name": "Smolík, Jan",
+          "given_name": "Jan",
+          "family_name": "Smolík",
+          "identifiers": [
+            {
+              "scheme": "orcid",
+              "identifier": "0000-0002-6216-0881"
+            }
+          ]
+        }
+      },
+      {
+        "person_or_org": {
+          "name": "FZU - Division of Elementary Particle Physics",
+          "type": "organizational"
+        }
+      }
+    ],
+    "file_types": ["csv", "txt", "pdf"],
+    "title": "SiPM Testing (Prg3, Hamamatsu, Spain S06) 1",
+    "publication_date": "2026-01-01",
+    "publisher": "FZU Institute of Physics",
+    "description": "This dataset contains experimental data from silicon photomultiplier (SiPM) detector testing performed in the context of the Deep Underground Neutrino Experiment (DUNE). The measurements were carried out to characterize the performance of photodetectors intended for use in DUNE detector systems. The dataset includes results from controlled laboratory tests and is intended to support detector development, validation, and future reuse.",
+    "subjects": [
+      { "subject": "Silicon Photomultiplier" },
+      { "subject": "Photon detector" },
+      { "subject": "Particle physics" },
+      { "subject": "Deep Underground Neutrino Experiment (DUNE)" },
+      { "subject": "Breakdown voltage" },
+      { "subject": "Dark count rate (DCR)" },
+      { "subject": "Physics" },
+      { "subject": "Fermilab" }
+    ],
+    "rights": [
+      {
+        "id": "cc-by-4.0"
+      }
+    ],
+    "identifiers": [
+      {
+        "identifier": "10.7483/FZU.SIPM.FWT8.8Q52",
+        "scheme": "doi"
+      }
+    ],
+    "dates": [
+      {
+        "date": "2023",
+        "type": {
+          "id": "created"
+        }
+      }
+    ],
+    "experiment": "SiPM (Fermilab silicon photomultiplier)",
+    "sipm_manufacturer": "Hamamatsu Photonics",
+    "requestor": "Spain S06",
+    "box": "Prg3"
+  },
+  "files": {
+    "enabled": true
+  }
+}

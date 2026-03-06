@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "resource_type": {
+      "id": "dataset"
+    },
+    "creators": [
+      {
+        "person_or_org": {
+          "type": "personal",
+          "name": "Karpov, Sergey",
+          "given_name": "Sergey",
+          "family_name": "Karpov",
+          "identifiers": [
+            {
+              "scheme": "orcid",
+              "identifier": "0000-0003-0035-651X"
+            }
+          ]
+        }
+      },
+      {
+        "person_or_org": {
+          "name": "FZU - Department of Astroparticle Physics",
+          "type": "organizational"
+        }
+      }
+    ],
+    "title": "Fram sample 001",
+    "publication_date": "2024"
+  }
+}

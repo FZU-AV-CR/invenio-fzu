@@ -1,0 +1,140 @@
+{
+  "metadata": {
+    "resource_type": {
+      "id": "dataset"
+    },
+    "creators": [
+      {
+        "person_or_org": {
+          "type": "personal",
+          "name": "Smolík, Jan",
+          "given_name": "Jan",
+          "family_name": "Smolík",
+          "identifiers": [
+            {
+              "scheme": "orcid",
+              "identifier": "0000-0002-6216-0881"
+            }
+          ]
+        }
+      },
+      {
+        "person_or_org": {
+          "name": "FZU - Division of Elementary Particle Physics",
+          "type": "organizational"
+        }
+      }
+    ],
+    "file_types": ["csv", "txt", "pdf"],
+    "title": "SiPM Testing (Prg3, Hamamatsu, Spain S06) 3",
+    "publication_date": "2026-01-01",
+    "publisher": "FZU Institute of Physics",
+    "description": "This dataset contains experimental data from silicon photomultiplier (SiPM) detector testing performed in the context of the Deep Underground Neutrino Experiment (DUNE). The measurements were carried out to characterize the performance of photodetectors intended for use in DUNE detector systems. The dataset includes results from controlled laboratory tests and is intended to support detector development, validation, and future reuse.",
+    "subjects": [
+      { "subject": "Silicon photomultiplier" },
+      { "subject": "Photon detector" },
+      { "subject": "Particle physics" },
+      { "subject": "Deep Underground Neutrino Experiment (DUNE)" },
+      { "subject": "Breakdown voltage" },
+      { "subject": "Dark count rate (DCR)" },
+      { "subject": "Physics" },
+      { "subject": "Fermilab" }
+    ],
+    "rights": [
+      { "id": "cc-by-4.0" }
+    ],
+    "dates": [
+      {
+        "date": "2023",
+        "type": { "id": "created" }
+      }
+    ],
+    "experiment": "SiPM (Fermilab silicon photomultiplier)",
+    "sipm_manufacturer": "Hamamatsu Photonics",
+    "requestor": "Spain S06",
+    "requestor_search": [
+      "Spain",
+      "Spain S06",
+      "S06",
+      "S6"
+    ],
+    "box": "Prg3",
+
+    "trays": [
+      "Tray000001", "Tray000004", "Tray000007", "Tray000010", "Tray000013",
+      "Tray000016", "Tray000019", "Tray000022", "Tray003006", "Tray015018",
+      "Tray000002", "Tray000005", "Tray000008", "Tray000011", "Tray000014",
+      "Tray000017", "Tray000020", "Tray000023", "Tray009012", "Tray021024"
+    ],
+
+    "tray_numbers": [
+      "Tray000001",
+      "Tray000004",
+      "Tray000007",
+      "Tray000010",
+      "Tray000013",
+      "Tray000016",
+      "Tray000019",
+      "Tray000022",
+      "Tray000003",
+      "Tray000006",
+      "Tray000015",
+      "Tray000018",
+      "Tray000002",
+      "Tray000005",
+      "Tray000008",
+      "Tray000011",
+      "Tray000014",
+      "Tray000017",
+      "Tray000020",
+      "Tray000023",
+      "Tray000009",
+      "Tray000012",
+      "Tray000021",
+      "Tray000024"
+    ],
+
+    "qr_list": [
+      "0000005943",
+      "0000009193",
+      "0000009199",
+      "0000009200",
+      "0000009202",
+      "0000009203",
+      "0000009205",
+      "0000009206",
+      "0000009207",
+      "0000009209",
+      "0000009210",
+      "0000009212",
+      "0000009216",
+      "0000009217",
+      "0000009219",
+      "0000009224",
+      "0000009231",
+      "0000009235",
+      "0000009236",
+      "0000009237"
+    ],
+
+    "measurement_types": [
+      "DCR",
+      "RoomT forward",
+      "RoomT reverse",
+      "LN2 1st cycle forward",
+      "LN2 1st cycle reverse",
+      "LN2 3rd cycle forward",
+      "LN2 3rd cycle reverse",
+      "LN2 3rd cycle extended"
+    ],
+    "ardu_units": [
+      "ARDU 0",
+      "ARDU 1",
+      "ARDU 2",
+      "ARDU 3"
+    ]
+  },
+  "files": {
+    "enabled": true
+  }
+}
