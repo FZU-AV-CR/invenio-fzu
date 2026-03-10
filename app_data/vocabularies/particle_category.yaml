@@ -1,3 +1,27 @@
 - id: higgs
   title:
     en: Higgs
+
+- id: technicolor
+  title:
+    en: TechniColor
+
+- id: susy
+  title:
+    en: Susy
+
+- id: special samples
+  title:
+    en: Special Samples
+
+- id: eegg
+  title:
+    en: EEGG
+
+- id: 4 fermion
+  title:
+    en: 4 Fermion
+
+- id: 2 fermion
+  title:
+    en: 2 Fermion
