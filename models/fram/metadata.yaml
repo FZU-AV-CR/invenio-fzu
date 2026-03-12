@@ -1,0 +1,311 @@
+Metadata:
+  properties:
+     
+    # Identification
+    fram_internal_id:
+      type: int
+      label:
+        en: Internal FRAM id
+        cs: Interní FRAM id
+      description: >
+        Internal database identifier from FRAM system.
+      example: 2998431
+    
+     
+    target_id:
+      type: array
+      label:
+        en: Target identifier
+        cs: Identifikátor cíle
+      items:
+        type: keyword
+      pattern: '^[0-9]{5}$'
+      description: >
+        Zero-padded integer identifier, exactly 5 digits wide (range 00000-99999).
+      example: "02001"
+
+
+      
+    target_name:
+      type: fulltext
+      label:
+        en: Target name
+        cs: Název cíle
+      adescription: >
+        Human-readable target designation (e.g., "VAOD_color", "Crab Nebula").
+      example: "VAOD_color"
+    
+
+     
+    frame_sequence:
+      type: int
+      label:
+        en: Frame sequence number
+        cs: Sekvenční číslo snímku
+      description: >
+        Sequential frame number within the observation series.
+      example: 995
+
+       
+    observation_type:
+      type: keyword
+      label:
+        en: Observation type
+        cs: Typ pozorování
+      enum:
+        - object
+        - bias
+        - dark
+        - flat
+        - focus
+        - pointing
+        - test
+      
+    # Temporal
+
+     
+    observation_datetime:
+      type: datetime
+      label:
+        en: Observation time
+        cs: Čas pozorování
+      description: >
+        UTC date and time of observation start (ISO 8601 format).
+      example: "2017-04-06T22:26:22Z"
+
+
+         
+    observation_night:
+      type: int
+      label:
+        en: Observation night
+        cs: Pozorovací noc
+      description: >
+        Local date of the observation night in YYYYMMDD format.
+      pattern: '^[0-9]{8}$'
+      example: 20170406
+
+       
+    exposure_time:
+      type: float
+      label:
+        en: Exposure time
+        cs: Doba expozice
+      description: >
+        Exposure duration in seconds.
+      example: 30.0
+
+      
+    # Coordinates
+    center:
+      type: array
+      label:
+        en: Center coordinates
+        cs: Souřadnice středu
+      items:
+        type: float
+      description: >
+        Celestial coordinates [RA, Dec] in degrees.
+
+        
+    center_name:
+      type: fulltext
+      label:
+        en: Object name
+        cs: Název objektu
+      description: >
+        Common name of the observed object (e.g., "M31", "Vega").
+
+           
+    radius:
+      type: float
+      label:
+        en: Radius
+        cs: Poloměr
+      description: >
+        Angular radius of the field of view or search region.
+
+         
+    units:
+      type: keyword
+      label:
+        en: Angular units
+        cs: Úhlové jednotky
+      description: >
+        Units for the radius and coordinate values.
+      enum:
+        - Degrees
+        - Arcmin
+        - Arcsec
+        
+
+       
+    horizontal_coordinates:
+      type: array
+      label:
+        en: Horizontal coordinates
+        cs: Horizontální souřadnice
+      items:
+        type: float
+      description: >
+        Local horizontal coordinates [Altitude, Azimuth] in degrees at observation time.
+      example: [15.133, 90.392]
+
+
+       
+    # Instrument configuration
+    site:
+      type: keyword
+      label:
+        en: Observatory site
+        cs: Observatoř
+      enum:
+        - auger
+        - auger2
+        - cta-n
+        - cta-s0
+        - cta-s1
+
+               
+    ccd:
+      type: keyword
+      label:
+        en: CCD type
+        cs: Typ CCD
+      enum:
+        - C0
+        - NF3
+        - NF4
+        - WF0
+        - WF1
+        - WF4
+        - WF5
+        - WF6
+        - WF7
+        - WF8
+
+
+               
+    camera_serial:
+      type: keyword
+      label:
+        en: Camera serial number
+        cs: Sériové číslo kamery
+      enum:
+        - "2328"
+        - "2596"
+        - "3072"
+        - "6029"
+        - "6069"
+        - "6132"
+        - "6149"
+        - "6204"
+        - "6205"
+        - "40032"
+        - "40033"
+        - "80011"
+        - "80059"
+
+
+               
+    filter:
+      type: keyword
+      label:
+        en: Optical filters
+        cs: Optické filtry
+        enum:
+          - B
+          - D
+          - DF
+          - I
+          - N
+          - R
+          - U
+          - UNK
+          - unknown
+          - V
+          - z
+
+
+                 
+    binning:
+      type: array
+      label:
+        en: Binning
+        cs: Binning
+      description: >
+        Pixel binning configuration (horizontal x vertical).
+      items:
+        type: keyword
+      pattern: '^[0-9]+x[0-9]+$'
+      example: "1x1"
+
+
+                 
+    detector_size:
+      type: object
+      label:
+        en: Detector size
+        cs: Rozlišení detektoru
+      properties:
+        width:
+          type: int
+          label:
+            en: Width
+            cs: Šířka
+        height:
+          type: int
+          label:
+            en: Height
+            cs: Výška
+      description: >
+        Detector dimensions in unbinned pixels.
+      example: {"width": 4096, "height": 4096}
+
+
+             
+    # Calibration
+    calibration_frames:
+      type: object
+      label:
+        en: Calibration frames
+        cs: Kalibrační snímky
+      properties:
+        master_dark:
+          type: fulltext
+          label:
+            en: Master dark
+            cs: Master dark
+          description: >
+            Path or reference to master dark frame used for calibration.
+        master_flat:
+          type: fulltext
+          label:
+            en: Master flat
+            cs: Master flat
+          description: >
+            Path or reference to master flat field used for calibration.
+
+
+            
+    # File information
+    filepath:
+      type: fulltext
+      label:
+        en: File location
+        cs: Umístění souboru
+      description: >
+        Original file path or storage location.
+      example: "/mnt/data2/cta-s0/2017/20170406/02001/WF0/20170406222622-995-RA.fits"
+
+
+                  
+    file_types:
+      type: array
+      label:
+        en: File types
+        cs: Typy souborů
+      items:
+        type: keyword
+      description: >
+        File format or processing type (e.g., 'fits', 'raw', 'calibrated').

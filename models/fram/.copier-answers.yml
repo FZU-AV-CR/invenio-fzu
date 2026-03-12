@@ -1,0 +1,6 @@
+# Changes here will be overwritten by Copier
+_commit: 4b4c2d9
+_src_path: https://github.com/oarepo/nrp-model-copier
+base_model: rdm_complete
+model_description: A generic dataset model for fram observation data.
+model_human_name: Fram
