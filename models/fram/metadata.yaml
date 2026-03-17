@@ -1,11 +1,169 @@
-# Definition of metadata for fram. Please do not add ccmm model here,
-# add the ccmm_preset instead.
 Metadata:
   properties:
-    title:
-      type: fulltext+keyword
-    languages:
+     
+    # Identification
+
+    target_id:
+      type: int
+      label:
+        en: Target identifier
+        cs: Identifikátor cíle
+      description: >
+        Integer identifier of the target.
+      example: "1"
+
+
+    target_name:
+      type: keyword
+      label:
+        en: Target name
+        cs: Název cíle
+      adescription: >
+        Human-readable target designation (e.g., "VAOD_color", "Crab Nebula").
+      example: "VAOD_color"
+    
+      
+    observation_type:
+      type: keyword
+      label:
+        en: Observation type
+        cs: Typ pozorování
+      example: "flat"
+      
+
+
+    # Temporal
+     
+    observation_time:
+      type: datetime
+      label:
+        en: Observation time
+        cs: Čas pozorování
+      description: >
+        UTC date and time of observation start (ISO 8601 format).
+      example: "2017-04-06T22:26:22Z"
+
+    
+    observation_night:
+      type: keyword
+      label:
+        en: Observation night
+        cs: Pozorovací noc
+      description: >
+        Local date of the observation night in YYYYMMDD format.
+      pattern: '^[0-9]{8}$'
+      example: 20170406
+
+       
+    exposure_time:
+      type: float
+      label:
+        en: Exposure time
+        cs: Doba expozice
+      description: >
+        Exposure duration in seconds.
+      example: 30.0
+
+
+      
+    # Coordinates
+
+     # CH ra, dec - two floats, spherical index   
+    center:
       type: array
+      label:
+        en: Center coordinates
+        cs: Souřadnice středu
       items:
-        type: vocabulary
-        vocabulary-type: languages
+        type: float
+      description: >
+        Celestial coordinates [RA, Dec] in degrees.
+
+           
+    radius:
+      type: float
+      label:
+        en: Radius
+        cs: Poloměr
+      description: >
+        Angular radius of the field of view or search region.
+
+    
+       
+    # Instrument configuration
+    
+    site:
+      type: keyword
+      label:
+        en: Observatory site
+        cs: Observatoř
+      example: "auger2"
+   
+    ccd:
+      type: keyword
+      label:
+        en: CCD type
+        cs: Typ CCD
+      example: "NF3"
+
+               
+    camera_serial:
+      type: keyword
+      label:
+        en: Camera serial number
+        cs: Sériové číslo kamery
+      example: "2328"
+
+         
+    filter:
+      type: keyword
+      label:
+        en: Optical filters
+        cs: Optické filtry
+      example: "DF"
+
+             
+    binning:
+      type: array
+      label:
+        en: Binning
+        cs: Binning
+      description: >
+        Pixel binning configuration (horizontal x vertical).
+      items:
+        type: keyword
+      pattern: '^[0-9]+x[0-9]+$'
+      example: "1x1"
+
+                 
+    detector_size:
+      type: object
+      label:
+        en: Detector size
+        cs: Rozlišení detektoru
+      properties:
+        width:
+          type: int
+          label:
+            en: Width
+            cs: Šířka
+        height:
+          type: int
+          label:
+            en: Height
+            cs: Výška
+      description: >
+        Detector dimensions in unbinned pixels.
+      example: {"width": 4096, "height": 4096}
+
+                  
+    file_types:
+      type: array
+      label:
+        en: File types
+        cs: Typy souborů
+      items:
+        type: keyword
+      description: >
+        File format or processing type (typically 'fits').
+
