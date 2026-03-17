@@ -32,11 +32,11 @@ Metadata:
           label:
             en: Center-of-Mass Energy
         energy_min:
-          type: int
+          type: float
           label:
             en: Lowest Center-of-Mass Energy
         energy_max:
-          type: int
+          type: float
           label:
             en: Highest Center-of-Mass Energy
         type:
