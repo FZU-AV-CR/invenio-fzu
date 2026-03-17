@@ -1,5 +1,6 @@
 """
 A generic dataset model for fram observation data.
+
 """
 from __future__ import annotations
 
@@ -27,7 +28,7 @@ class FramPermissionPolicyMixin(ModelMixin):
 fram_model = model(
     "fram",
     version="1.0.0",
-    description="A generic dataset model for fram observation data.",
+    description="A generic dataset model for fram observation data.\n",
     presets=[
 
         rdm_complete_preset

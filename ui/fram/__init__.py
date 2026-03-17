@@ -18,6 +18,10 @@ from invenio_i18n import lazy_gettext as _
 from oarepo_ui.overrides import UIComponent
 from oarepo_ui.overrides.components import UIComponentImportMode
 from oarepo_ui.proxies import current_oarepo_ui
+from oarepo_rdm.ui.components import (
+    CommunitiesMembershipsComponent,
+    RDMVocabularyOptionsComponent,
+)
 
 class FramUIResourceConfig(RecordsUIResourceConfig):
     template_folder = "templates"
@@ -43,14 +47,17 @@ class FramUIResourceConfig(RecordsUIResourceConfig):
         FilesLockedComponent,
         FilesQuotaAndTransferComponent,
     ]
-    
+
     try:
-        from oarepo_vocabularies.ui.resources.components import (
-            DepositVocabularyOptionsComponent,
+        from oarepo_rdm.ui.components import (
+            CommunitiesMembershipsComponent,
+            RDMVocabularyOptionsComponent
         )
-        components.append(DepositVocabularyOptionsComponent)
+        components.append(RDMVocabularyOptionsComponent)
+        components.append(CommunitiesMembershipsComponent)
     except ImportError:
         pass
+    
 
     application_id = "fram"
 
@@ -80,7 +87,7 @@ def init_menu(app):
     with app.app_context():
         current_menu.submenu("plus.create_fram").register(
             f"{ui_resource_config.blueprint_name}.deposit_create",
-            _("New Fram"),
+            _("New fram"),
             order=1,
             visible_when=can_view_deposit_page,
         )

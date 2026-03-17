@@ -1,3 +1,4 @@
+
 from flask_resources import BaseListSchema, MarshmallowSerializer
 from flask_resources.serializers import BaseSerializerSchema, JSONSerializer
 
@@ -16,4 +17,5 @@ class DataCiteJSONSerializer(MarshmallowSerializer):
             schema_kwargs={},
             **options,
         )
+
 
