@@ -3,6 +3,7 @@
         "resource_type": {
             "id": "dataset"
         },
+        "recid": 83236,
         "creators": [
             {
                 "person_or_org": {
@@ -47,7 +48,6 @@
             }
         ],
         "experiment": "DELPHI",
-        "recid": 83236,
         "collision_information": {
             "type": "e+e-",
             "energy": "181-210 GeV",
