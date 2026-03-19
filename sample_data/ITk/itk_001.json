@@ -66,9 +66,9 @@
   "experiment": "ATLAS ITk (silicon module sensor)",
   "manufacturer": "Hamamatsu Photonics",
   "batch": "VPA56980",
-  "Wafer": "2730",
+  "wafer": "2730",
   "component_list": "20USES40002730",
-  "Run_numbers": [1,2,3,4,5],
+  "run_numbers": [1,2,3,4,5],
   "measurement_types": [
     "ATLAS18SS",
     "ATLAS18SS_1"
