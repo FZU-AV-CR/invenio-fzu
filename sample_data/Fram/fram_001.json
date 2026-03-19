@@ -26,6 +26,39 @@
       }
     ],
     "title": "Fram sample 001",
-    "publication_date": "2024"
+    "publication_date": "2026-01-01",
+    "publisher": "FZU CAS Institute of Physics",
+    "description": "This dataset contains observation data in the fits format. The observation comes from robotic telescope (Phototometric Robotic Atmospheric Monitor - FRAM).",
+    "subjects": [
+      { "subject": "Fram" },
+      { "subject": "Telescope" },
+      { "subject": "Astrophysics" },
+      { "subject": "Auger" },
+      { "subject": "CTA" },
+      { "subject": "Photometric robotic atmosperic monitor" },
+      { "subject": "Physics" },
+      { "subject": "Paranal" },
+      { "subject": "Roque de los Muchachos" }
+    ],
+    "rights": [
+      { "id": "cc-by-4.0" }
+    ],
+    "experiment": "Fram",
+    
+    "target_id" : "1",
+    "target_name" : "VAOD_color",
+    "observation_type" : "flat",
+    "observation_time" : "2017-04-06T22:26:22Z",
+    "observation_night" : "20170406",
+    "exposure_time" : "30.0",
+    "center" : "3.5",
+    "radius" : "12.6",
+    "site" : "auger2",
+    "ccd" : "NF3",
+    "camera_serial": "2328",
+    "filter" : "DF",
+    "binning" : "1x1",
+    "detector_size" : {"width": 4096, "height": 4096},
+    "file_types" : "fits"
   }
 }
