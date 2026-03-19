@@ -3774,7 +3774,7 @@ wheels = [
 
 [[package]]
 name = "oarepo-ui"
-version = "6.0.0.dev33"
+version = "7.0.0.dev9"
 source = { registry = "https://gitlab.cesnet.cz/api/v4/projects/1408/packages/pypi/simple" }
 dependencies = [
     { name = "deepmerge" },
@@ -3786,9 +3786,9 @@ dependencies = [
     { name = "oarepo-theme" },
     { name = "python-dotenv" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/ae/90/9c1e49474da1d88fa1892c97fecc1e3bfe4108105d9665cafbcb9f611825/oarepo_ui-6.0.0.dev33.tar.gz", hash = "sha256:94c418db6a90db6f34ffb728a502e0f57d22132e7bd386cf03103478ca2cbe5d", size = 194590, upload-time = "2026-01-27T08:11:05.251Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a2/e2/9b2ba29cef6fc54aa6874e2a8b889f1f92f592921057264ac47727c0d364/oarepo_ui-7.0.0.dev9.tar.gz", hash = "sha256:249b934b666828abb9801e0856aee955ca1128c0dfc3c2283cab9a26dfb23d2d", size = 208597, upload-time = "2026-03-16T12:39:05.778Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ca/84/6717f26bde17f3d2b5c119871e27a284940c1fbdc3f6c184e5f6baacf2a0/oarepo_ui-6.0.0.dev33-py3-none-any.whl", hash = "sha256:4e9475c322185b5096f69f98098c41ec81c09ca361cd4a5cbe0e23a39347cee1", size = 323488, upload-time = "2026-01-27T08:11:02.879Z" },
+    { url = "https://files.pythonhosted.org/packages/52/21/7181beedf96d2b238c268d7fbff9831b0439b3dcdf23bf4d159c8c020914/oarepo_ui-7.0.0.dev9-py3-none-any.whl", hash = "sha256:bf8f2aaf8941e4a4eb434c8c40914e53292ef45bf0b234c8f6078037f7f420e2", size = 336796, upload-time = "2026-03-16T12:39:04.303Z" },
 ]
 
 [[package]]
@@ -4101,7 +4101,7 @@ requires-dist = [
     { name = "oarepo-rdm", specifier = ">=1.0.0.dev0,<2.0.0" },
     { name = "oarepo-runtime", specifier = ">=2.0.0.dev0,<3.0.0" },
     { name = "oarepo-theme", specifier = ">=1.0.0.dev3,<2.0.0" },
-    { name = "oarepo-ui", specifier = ">=6.0.0.dev0,<7.0.0" },
+    { name = "oarepo-ui", specifier = ">=7.0.0.dev0,<8.0.0" },
     { name = "oarepo-vocabularies", specifier = ">=3.0.0.dev0,<4.0.0" },
     { name = "python-dotenv" },
 ]
