@@ -388,3 +388,4 @@ celerybeat-schedule-shm
 celerybeat-schedule-wal
 .invenio.private
 **/.nrp
+*:Zone.Identifier

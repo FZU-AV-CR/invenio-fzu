@@ -23,15 +23,15 @@ from oarepo_rdm.ui.components import (
     RDMVocabularyOptionsComponent,
 )
 
-class FramUIResourceConfig(RecordsUIResourceConfig):
+class AtlasItkUIResourceConfig(RecordsUIResourceConfig):
     template_folder = "templates"
-    url_prefix = "/fram"
-    blueprint_name = "fram_ui"
-    model_name = "fram"
+    url_prefix = "/atlas_itk"
+    blueprint_name = "atlas_itk_ui"
+    model_name = "atlas_itk"
 
     search_component = UIComponent(
-        "FramResultsListItem",
-        "@js/fram/search/ResultsListItem",
+        "Atlas_itkResultsListItem",
+        "@js/atlas_itk/search/ResultsListItem",
         UIComponentImportMode.DEFAULT
     )
 
@@ -59,15 +59,15 @@ class FramUIResourceConfig(RecordsUIResourceConfig):
         pass
     
 
-    application_id = "fram"
+    application_id = "atlas_itk"
 
 
-class FramUIResource(RecordsUIResource):
+class AtlasItkUIResource(RecordsUIResource):
     pass
 
 def ui_overrides(app):
     """Register UI overrides."""
-    ui_resource_config = FramUIResourceConfig()
+    ui_resource_config = AtlasItkUIResourceConfig()
 
     if (
         current_oarepo_ui is not None
@@ -82,12 +82,12 @@ def ui_overrides(app):
 
 def init_menu(app):
     """Initialize menu before first request."""
-    ui_resource_config = FramUIResourceConfig()
+    ui_resource_config = AtlasItkUIResourceConfig()
 
     with app.app_context():
-        current_menu.submenu("plus.create_fram").register(
+        current_menu.submenu("plus.create_atlas_itk").register(
             f"{ui_resource_config.blueprint_name}.deposit_create",
-            _("New fram"),
+            _("New atlas-itk"),
             order=1,
             visible_when=can_view_deposit_page,
         )
@@ -99,7 +99,7 @@ def finalize_app(app):
 
 def create_blueprint(app):
     """Register blueprint for this resource."""
-    blueprint = FramUIResource(FramUIResourceConfig()).as_blueprint()
+    blueprint = AtlasItkUIResource(AtlasItkUIResourceConfig()).as_blueprint()
     return blueprint
 
 # TODO: register init_menu to finalize_app similarly blueprints & webpack is registered

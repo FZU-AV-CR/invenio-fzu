@@ -1,0 +1,22 @@
+VPA56032_W05408_7_A2_CCPL_C_001.dat
+Type: ATLAS18SS
+Batch: VPA56032
+Wafer: 05408
+ComponentType: SENSOR_TESTCHIP_MD8
+Label: A2
+SerialNumber: 20USBSS0705408
+Date: 17 Oct 2025
+Time: 10:36
+Institute: FZU
+Operator: Jirina Kroll
+Test type: CCPL_C
+Instrument: HP4284A
+Frequency: 100.0 kHz 
+Amplitude: 0.5 V 
+Circuit: CPRP
+Run Number: 001
+Temperature: -20.2 C 
+Humidity: 6.5 % 
+Comments: g+n (Protons) Prague 660 kGy + Ljubljana 1.6e15 neq/cm2. VPA56032-W05408 on PCB41, cold as irrad, HP4284A, MD8_CV 1 kHz + 1.0 V + CPRP
+Cmeas[F] Resistance[Ohm]
+7.302819565217394e-11 564519.0

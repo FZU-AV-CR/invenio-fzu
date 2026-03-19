@@ -28,6 +28,7 @@ components = "ui.components.webpack:theme"
 ui_particles = "ui.particles.webpack:theme"
 ui_detectors = "ui.detectors.webpack:theme"
 ui_fram = "ui.fram.webpack:theme"
+ui_atlas_itk = "ui.atlas_itk.webpack:theme"
 
 [project.entry-points."invenio_i18n.translations"]
 translations = "i18n"
@@ -39,11 +40,13 @@ repository = "common:alembic"
 ui_particles = "ui.particles:create_blueprint"
 ui_detectors = "ui.detectors:create_blueprint"
 ui_fram = "ui.fram:create_blueprint"
+ui_atlas_itk = "ui.atlas_itk:create_blueprint"
 
 [project.entry-points."invenio_base.finalize_app"]
 ui_particles = "ui.particles:finalize_app"
 ui_detectors = "ui.detectors:finalize_app"
 ui_fram = "ui.fram:finalize_app"
+ui_atlas_itk = "ui.atlas_itk:finalize_app"
 
 [tool.uv.build-backend]
 module-root = ""
@@ -51,7 +54,7 @@ module-name = [
     "common",
     "i18n",
     "ui",
-    "models",
+    "models"
 ]
 
 [build-system]

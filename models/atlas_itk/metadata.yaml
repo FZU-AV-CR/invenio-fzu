@@ -1,0 +1,81 @@
+# Definition of metadata for atlas_itk. Please do not add ccmm model here,
+# add the ccmm_preset instead.
+Metadata:
+  properties:
+
+    manufacturer:
+      type: keyword
+      label:
+        en: Manufacturer
+        cs: Výrobce
+      description: >
+        For Atlas ITk there is only one manufacturer Hamamatsu Photonics.
+      enum:
+        - Hamamatsu Photonics
+
+    batch:
+      type: keyword
+      label:
+        en: Batch
+        cs: Batch
+      description: >
+        Batch identifier.
+      example: "VPA56980"
+
+    component_list:
+      type: array
+      label:
+        en: Components
+        cs: Komponenty
+      items:
+        type: keyword
+      description: >
+        List of all components contained in this batch.
+      example: "20USES40002730"
+
+    Wafer:
+      type: array
+      label:
+        en: Wafer
+        cs: Wafer
+      items:
+        type: keyword
+      description: >
+        Wafer identifier.
+      example: "2730"
+
+    experiment:
+      type: keyword
+      label:
+        en: Experiment
+        cs: Experiment
+      enum:
+        - ATLAS ITk (silicon module sensor)
+
+    measurement_types:
+      type: array
+      label:
+        en: Measurement type
+        cs: Typ měření
+      items:
+        type: keyword
+
+    Run_numbers:
+      type: array
+      label:
+        en: ARDU
+        cs: ARDU
+      items:
+        type: keyword
+        enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 9
+          - 10
+

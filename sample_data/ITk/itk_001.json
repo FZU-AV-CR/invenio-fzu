@@ -1,0 +1,78 @@
+{
+  "metadata": {
+    "resource_type": {
+      "id": "dataset"
+    },
+    "creators": [
+      {
+        "person_or_org": {
+          "type": "personal",
+          "name": "Federovicova, Pavla",
+          "given_name": "Pavla",
+          "family_name": "Federovicova",
+          "identifiers": [
+            {
+              "scheme": "orcid",
+              "identifier": "0000-0002-8240-904X"
+            }
+          ]
+        }
+      },
+      {
+        "person_or_org": {
+          "name": "FZU CAS - Department of Detector Development and Data Processing",
+          "type": "organizational"
+        }
+      }
+    ],
+    "title": "VPA56032_W05408_7_A2_CCPL_C_001",
+    "publication_date": "2025-10-17",
+    "file_types": "dat",
+    "publisher": "FZU Institute of Physics of the CAS",
+    "description": "This dataset contains experimental data from silicon module sensor testing performed in the context of CERN Atlas ITk.",
+    "subjects": [
+      {
+        "subject": "Silicon module sensor"
+      },
+      {
+        "subject": "Photon detector"
+      },
+      {
+        "subject": "Particle physics"
+      },
+      {
+        "subject": "CERN"
+      },
+      {
+        "subject": "Physics"
+      },
+      {
+        "subject": "Atlas ITk"
+      }
+    ],
+    "rights": [
+      {
+        "id": "cc-by-4.0"
+      }
+    ],
+    "dates": [
+      {
+        "date": "2024-01-30",
+        "type": {
+          "id": "created"
+        }
+      }
+    ],
+  "experiment": "ATLAS ITk (silicon module sensor)",
+  "manufacturer": "Hamamatsu Photonics",
+  "batch": "VPA56980",
+  "wafer": "2730",
+  "component_list": "20USES40002730",
+  "run_numbers": [1,2,3,4,5],
+  "measurement_types": [
+    "ATLAS18SS",
+    "ATLAS18SS_1"
+  ]
+
+  }
+}

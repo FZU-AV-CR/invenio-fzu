@@ -2,7 +2,5 @@
 _commit: 54b85b0
 _src_path: https://github.com/oarepo/nrp-model-copier
 base_model: rdm_complete
-model_description: 'A generic dataset model for fram observation data.
-
-    '
-model_human_name: fram
+model_description: A generic dataset model for Atlas ITk data.
+model_human_name: atlas-itk

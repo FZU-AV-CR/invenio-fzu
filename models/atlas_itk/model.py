@@ -1,6 +1,5 @@
 """
-A generic dataset model for fram observation data.
-
+A generic dataset model for Atlas ITk data.
 """
 from __future__ import annotations
 
@@ -17,18 +16,18 @@ from oarepo_rdm.model.presets import rdm_complete_preset
 
 from .serializers import DataCiteJSONSerializer
 
-class FramPermissionPolicyMixin(ModelMixin):
-    """Custom permission policy for fram."""
+class AtlasItkPermissionPolicyMixin(ModelMixin):
+    """Custom permission policy for atlas_itk."""
 
     can_view_deposit_page = [AuthenticatedUser()]
 
 
 # TODO: Consider letting users add an image/icon for the model,
 # so that the deposit model selection page is more visually appealing.
-fram_model = model(
-    "fram",
+atlas_itk_model = model(
+    "atlas_itk",
     version="1.0.0",
-    description="A generic dataset model for fram observation data.\n",
+    description="A generic dataset model for Atlas ITk data.",
     presets=[
 
         rdm_complete_preset
@@ -46,7 +45,7 @@ fram_model = model(
         # specify the keyword "Invenio repository development" inside the subject or
         # mail body of the request.
         # TODO: remove this customization if you use oarepo-communities for RDM 14
-        PrependMixin("PermissionPolicy", FramPermissionPolicyMixin), 
+        PrependMixin("PermissionPolicy", AtlasItkPermissionPolicyMixin), 
 
         # export for datacite
         AddMetadataExport(
@@ -57,6 +56,6 @@ fram_model = model(
         ),
     ],
     configuration={
-        "ui_blueprint_name": "fram_ui"
+        "ui_blueprint_name": "atlas_itk_ui"
     }
 )
