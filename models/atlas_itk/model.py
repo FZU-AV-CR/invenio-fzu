@@ -1,12 +1,17 @@
 """
 A generic dataset model for Atlas ITk data.
 """
+
 from __future__ import annotations
 
 from invenio_i18n import lazy_gettext as _
 from invenio_records_permissions.generators import AuthenticatedUser
 from oarepo_model.api import model
-from oarepo_model.customizations import PrependMixin, AddMetadataExport
+from oarepo_model.customizations import (
+    PrependMixin,
+    AddMetadataExport,
+    SetDefaultSearchFields,
+)
 from oarepo_model.model import ModelMixin
 from oarepo_model.presets.drafts import drafts_preset
 from oarepo_model.presets.records_resources import records_resources_preset
@@ -15,6 +20,7 @@ from oarepo_model.datatypes.registry import from_yaml
 from oarepo_rdm.model.presets import rdm_complete_preset
 
 from .serializers import DataCiteJSONSerializer
+
 
 class AtlasItkPermissionPolicyMixin(ModelMixin):
     """Custom permission policy for atlas_itk."""
@@ -28,34 +34,34 @@ atlas_itk_model = model(
     "atlas_itk",
     version="1.0.0",
     description="A generic dataset model for Atlas ITk data.",
-    presets=[
-
-        rdm_complete_preset
-
-    ],
-    types=[
-        from_yaml("metadata.yaml", __file__)
-    ],
+    presets=[rdm_complete_preset],
+    types=[from_yaml("metadata.yaml", __file__)],
     metadata_type="Metadata",
     customizations=[
-        # Add your customizations here, such as custom exports and class mixins. 
+        # Add your customizations here, such as custom exports and class mixins.
         # The list of available extensions is at https://github.com/oarepo/oarepo-model.
         # If you do not find a customization that suits your needs or need a
         # help with using customizations, please contact us at support@cesnet.cz and
         # specify the keyword "Invenio repository development" inside the subject or
         # mail body of the request.
         # TODO: remove this customization if you use oarepo-communities for RDM 14
-        PrependMixin("PermissionPolicy", AtlasItkPermissionPolicyMixin), 
-
+        PrependMixin("PermissionPolicy", AtlasItkPermissionPolicyMixin),
         # export for datacite
         AddMetadataExport(
             code="datacite",
             name=_("Datacite export"),
             mimetype="application/vnd.datacite.datacite+json",
-            serializer=DataCiteJSONSerializer()
+            serializer=DataCiteJSONSerializer(),
+        ),
+        # Limit searchable fields to prevent maxClauseCount error
+        SetDefaultSearchFields(
+            "metadata.title",
+            "metadata.description",
+            "metadata.subjects.subject",
+            "metadata.creators.person_or_org.name",
+            "metadata.contributors.person_or_org.name",
+            "metadata.batch",
         ),
     ],
-    configuration={
-        "ui_blueprint_name": "atlas_itk_ui"
-    }
+    configuration={"ui_blueprint_name": "atlas_itk_ui"},
 )

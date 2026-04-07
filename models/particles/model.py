@@ -8,7 +8,11 @@ from __future__ import annotations
 from invenio_i18n import lazy_gettext as _
 from invenio_records_permissions.generators import AuthenticatedUser
 from oarepo_model.api import model
-from oarepo_model.customizations import AddMetadataExport, PrependMixin
+from oarepo_model.customizations import (
+    AddMetadataExport,
+    PrependMixin,
+    SetDefaultSearchFields,
+)
 from oarepo_model.datatypes.registry import from_yaml
 from oarepo_model.model import ModelMixin
 from oarepo_rdm.model.presets import rdm_complete_preset
@@ -43,6 +47,15 @@ particles_model = model(
             name=_("Datacite export"),
             mimetype="application/vnd.datacite.datacite+json",
             serializer=DataCiteJSONSerializer(),
+        ),
+        # Limit searchable fields to prevent maxClauseCount error
+        SetDefaultSearchFields(
+            "metadata.title",
+            "metadata.description",
+            "metadata.subjects.subject",
+            "metadata.creators.person_or_org.name",
+            "metadata.contributors.person_or_org.name",
+            "metadata.experiment",
         ),
     ],
     configuration={"ui_blueprint_name": "particles_ui"},
