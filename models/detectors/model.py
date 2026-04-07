@@ -65,6 +65,7 @@ detectors_model = model(
             "metadata.ardu_units",
             "metadata.requestor_search",
             "metadata.manufacturer",
+            "metadata.file_types",
 
         ),
     ],

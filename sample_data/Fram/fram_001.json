@@ -20,14 +20,14 @@
       },
       {
         "person_or_org": {
-          "name": "FZU - Department of Astroparticle Physics",
+          "name": "FZU CAS - Department of Astroparticle Physics",
           "type": "organizational"
         }
       }
     ],
     "title": " /mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits",
     "publication_date": "2026-03-19",
-    "publisher": "FZU CAS Institute of Physics",
+    "publisher": "FZU Institute of Physics of the CAS",
     "description": "This dataset contains observation data in the fits format. The observation comes from robotic telescope (Phototometric Robotic Atmospheric Monitor - FRAM).",
     "subjects": [
       { "subject": "Fram" },
