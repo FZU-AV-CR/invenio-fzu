@@ -33,7 +33,7 @@ Metadata:
         List of all components contained in this batch.
       example: "20USES40002730"
 
-    Wafer:
+    wafer:
       type: array
       label:
         en: Wafer
@@ -50,7 +50,7 @@ Metadata:
         en: Experiment
         cs: Experiment
       enum:
-        - ATLAS ITk (silicon module sensor)
+        - ATLAS ITk
 
     measurement_types:
       type: array
@@ -60,7 +60,7 @@ Metadata:
       items:
         type: keyword
 
-    Run_numbers:
+    run_numbers:
       type: array
       label:
         en: ARDU

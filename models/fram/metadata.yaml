@@ -167,3 +167,11 @@ Metadata:
       description: >
         File format or processing type (typically 'fits').
 
+    experiment:
+      type: keyword
+      label:
+        en: Experiment
+        cs: Experiment
+      enum:
+        - FRAM
+

@@ -49,8 +49,8 @@
         "type": { "id": "created" }
       }
     ],
-    "experiment": "SiPM (Fermilab silicon photomultiplier)",
-    "sipm_manufacturer": "Hamamatsu Photonics",
+    "experiment": "FERMILAB SiPM",
+    "manufacturer": "Hamamatsu Photonics",
     "requestor": "Spain S06",
     "requestor_search": [
       "Spain",
