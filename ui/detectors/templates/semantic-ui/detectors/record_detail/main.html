@@ -74,6 +74,10 @@ Note: Context variables available:
       <td>{{ui_value(m.manufacturer)}}</td>
     </tr>
     <tr>
+      <td>{{m.label(m.requestor)}}</td>
+      <td>{{ui_value(m.requestor)}}</td>
+    </tr>
+    <tr>
       <td>{{m.label(m.trays)}}</td>
       <td>{{ui_value(m.trays)}}</td>
     </tr>
@@ -88,10 +92,6 @@ Note: Context variables available:
     <tr>
       <td>{{m.label(m.ardu_units)}}</td>
       <td>{{ui_value(m.ardu_units)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.requestor)}}</td>
-      <td>{{ui_value(m.requestor)}}</td>
     </tr>
   </table>
 {%- endblock record_content %}

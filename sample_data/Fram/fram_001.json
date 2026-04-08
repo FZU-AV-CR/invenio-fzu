@@ -27,7 +27,7 @@
     ],
     "title": " /mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits",
     "publication_date": "2026-03-19",
-    "publisher": "FZU Institute of Physics of the CAS",
+    "publisher": "FZU Institute of Physics of the Czech Academy of Sciences",
     "description": "This dataset contains observation data in the fits format. The observation comes from robotic telescope (Phototometric Robotic Atmospheric Monitor - FRAM).",
     "subjects": [
       { "subject": "Fram" },
@@ -43,7 +43,7 @@
     "rights": [
       { "id": "cc-by-4.0" }
     ],
-    "experiment": "Fram",
+    "experiment": "FRAM",
     "target_id" : "1546651",
     "target_name" : "2001 / VAOD_color",
     "observation_type" : "object",

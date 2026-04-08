@@ -66,9 +66,9 @@
   "experiment": "ATLAS ITk",
   "manufacturer": "Hamamatsu Photonics",
   "batch": "VPA56980",
-  "wafer": "2730",
-  "component_list": "20USES40002730",
-  "run_numbers": [1,2,3,4,5],
+  "wafer": ["2730"],
+  "component_list": ["20USES40002730","20USES40002722"],
+  "run_numbers": ["1","2","3","4","5"],
   "measurement_types": [
     "ATLAS18SS",
     "ATLAS18SS_1"
