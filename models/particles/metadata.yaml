@@ -6,6 +6,7 @@ Metadata:
       type: keyword
       label:
         en: Experiment
+        cs: Experiment
       # in orig data it is an array, should it be?
       enum:
         - DELPHI

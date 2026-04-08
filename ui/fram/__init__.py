@@ -84,13 +84,15 @@ def init_menu(app):
     """Initialize menu before first request."""
     ui_resource_config = FramUIResourceConfig()
 
-    with app.app_context():
-        current_menu.submenu("plus.create_fram").register(
-            f"{ui_resource_config.blueprint_name}.deposit_create",
-            _("New fram"),
-            order=1,
-            visible_when=can_view_deposit_page,
-        )
+## !! commented to temporarily disable
+
+    # with app.app_context():
+    #     current_menu.submenu("plus.create_fram").register(
+    #         f"{ui_resource_config.blueprint_name}.deposit_create",
+    #         _("New FRAM"),
+    #         order=1,
+    #         visible_when=can_view_deposit_page,
+    #     )
 
 def finalize_app(app):
     """Finalize app"""

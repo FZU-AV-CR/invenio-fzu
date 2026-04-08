@@ -61,7 +61,26 @@ fram_model = model(
             "metadata.subjects.subject",
             "metadata.creators.person_or_org.name",
             "metadata.contributors.person_or_org.name",
+            "metadata.experiment",
+
+            "metadata.target_id",
             "metadata.target_name",
+            "metadata.observation_type",
+            "metadata.observation_time",
+            "metadata.observation_night",
+            "metadata.exposure_time",
+
+            "metadata.center",
+            "metadata.radius",
+            "metadata.site",
+            "metadata.ccd",
+            "metadata.camera_serial",
+            "metadata.filter",
+
+            "metadata.binning",
+            "metadata.detector_size",
+            "metadata.file_types",
+            
         ),
     ],
     configuration={"ui_blueprint_name": "fram_ui"},

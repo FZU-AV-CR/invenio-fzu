@@ -10,7 +10,7 @@ Metadata:
         cs: Identifikátor cíle
       description: >
         Integer identifier of the target.
-      example: "1"
+      example: "241"
 
 
     target_name:
@@ -70,12 +70,21 @@ Metadata:
 
      # CH ra, dec - two floats, spherical index   
     center:
-      type: array
+      type: object
       label:
         en: Center coordinates
         cs: Souřadnice středu
-      items:
-        type: float
+      properties:
+        ra:
+          type: float
+          label:
+            en: Ra
+            cs: Ra
+        dec:
+          type: float
+          label:
+            en: Dec
+            cs: Dec
       description: >
         Celestial coordinates [RA, Dec] in degrees.
 
@@ -84,11 +93,39 @@ Metadata:
       type: float
       label:
         en: Radius
-        cs: Poloměr
+        cs: Rektascenze
       description: >
         Angular radius of the field of view or search region.
+      example: 267.49140094924627
 
-    
+    declination:
+      type: float
+      label:
+        en: Declination
+        cs: Deklinace
+      description: >
+        Declination in degrees.
+      example: -18.87911384043446
+
+    altitude_azimuth:
+      type: object
+      label:
+        en: Alt-Az
+        cs: Alt-Az
+      properties:
+        width:
+          type: float
+          label:
+            en: Altitude
+            cs: Výška
+        height:
+          type: float
+          label:
+            en: Azimuth
+            cs: Azimut
+      description: >
+        Detector dimensions in unbinned pixels.
+      example: {"Altitude": 45.3680630043068, "Azimuth": 89.3656649605622 }
        
     # Instrument configuration
     
@@ -167,3 +204,23 @@ Metadata:
       description: >
         File format or processing type (typically 'fits').
 
+    filepath:
+      type: keyword
+      label:
+        en: Filepath
+        cs: Cílová složka
+      example: "/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits"
+
+    footprint:
+      type: keyword
+      label:
+        en: Footprint
+        cs: Paměťová stopa
+
+    experiment:
+      type: keyword
+      label:
+        en: Experiment
+        cs: Experiment
+      enum:
+        - FRAM

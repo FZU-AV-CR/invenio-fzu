@@ -28,7 +28,7 @@
     "title": "VPA56032_W05408_7_A2_CCPL_C_001",
     "publication_date": "2025-10-17",
     "file_types": "dat",
-    "publisher": "FZU Institute of Physics of the CAS",
+    "publisher": "FZU Institute of Physics of the Czech Academy of Sciences",
     "description": "This dataset contains experimental data from silicon module sensor testing performed in the context of CERN Atlas ITk.",
     "subjects": [
       {
@@ -63,12 +63,12 @@
         }
       }
     ],
-  "experiment": "ATLAS ITk (silicon module sensor)",
+  "experiment": "ATLAS ITk",
   "manufacturer": "Hamamatsu Photonics",
   "batch": "VPA56980",
-  "wafer": "2730",
-  "component_list": "20USES40002730",
-  "run_numbers": [1,2,3,4,5],
+  "wafer": ["2730"],
+  "component_list": ["20USES40002730","20USES40002722"],
+  "run_numbers": ["1","2","3","4","5"],
   "measurement_types": [
     "ATLAS18SS",
     "ATLAS18SS_1"

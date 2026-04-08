@@ -9,8 +9,7 @@ Metadata:
         en: Experiment
         cs: Experiment
       enum:
-        - SiPM (Fermilab silicon photomultiplier)
-        - ATLAS ITk (silicon module sensor)
+        - FERMILAB SiPM
 
     file_types:
       type: array
@@ -28,7 +27,7 @@ Metadata:
       description: >
         Box identifier, format 'PrgXX', where XX is between 1 and 39.
 
-    sipm_manufacturer:
+    manufacturer:
       type: keyword
       label:
         en: Manufacturer
