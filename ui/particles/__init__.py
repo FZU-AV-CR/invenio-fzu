@@ -81,13 +81,15 @@ def init_menu(app):
     """Initialize menu before first request."""
     ui_resource_config = ParticlesUIResourceConfig()
 
-    with app.app_context():
-        current_menu.submenu("plus.create_particles").register(
-            f"{ui_resource_config.blueprint_name}.deposit_create",
-            _("New Particles"),
-            order=1,
-            visible_when=can_view_deposit_page,
-        )
+## !! commented to temporarily disable
+
+    # with app.app_context():
+    #     current_menu.submenu("plus.create_particles").register(
+    #         f"{ui_resource_config.blueprint_name}.deposit_create",
+    #         _("New DELPHI"),
+    #         order=1,
+    #         visible_when=can_view_deposit_page,
+    #     )
 
 
 def finalize_app(app):
