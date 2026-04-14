@@ -63,8 +63,8 @@ Metadata:
     run_numbers:
       type: array
       label:
-        en: ARDU
-        cs: ARDU
+        en: Run number
+        cs: Číslo měření
       items:
         type: keyword
         enum:
