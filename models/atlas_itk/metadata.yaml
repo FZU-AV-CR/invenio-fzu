@@ -88,7 +88,7 @@ Metadata:
       items:
         type: keyword
       description: >
-        Componenent type field is applicable for QA.
+        In QA the field is called ComponentType, in QC the field is called Type.
       example: "SENSOR_TESTCHIP_MD8"
 
     files:
