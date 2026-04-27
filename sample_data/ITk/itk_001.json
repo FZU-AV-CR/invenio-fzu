@@ -7,9 +7,9 @@
       {
         "person_or_org": {
           "type": "personal",
-          "name": "Federicova, Pavla",
+          "name": "Federičová, Pavla",
           "given_name": "Pavla",
-          "family_name": "Federicova",
+          "family_name": "Federičová",
           "identifiers": [
             {
               "scheme": "orcid",
@@ -32,7 +32,7 @@
     "description": "This dataset contains experimental data from silicon sensor module tests performed as part of the CERN ATLAS ITk project.",
     "subjects": [
       {
-        "subject": "Silicon module sensor"
+        "subject": "Silicon sensor"
       },
       {
         "subject": "Particle physics"
@@ -47,7 +47,7 @@
         "subject": "Detector"
       },
       {
-        "subject": "Atlas ITk"
+        "subject": "ATLAS ITk"
       }
     ],
     "rights": [

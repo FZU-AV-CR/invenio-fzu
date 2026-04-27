@@ -98,15 +98,6 @@ Metadata:
         Angular radius of the field of view or search region.
       example: 267.49140094924627
 
-    declination:
-      type: float
-      label:
-        en: Declination
-        cs: Deklinace
-      description: >
-        Declination in degrees.
-      example: -18.87911384043446
-
     altitude_azimuth:
       type: object
       label:
@@ -124,7 +115,7 @@ Metadata:
             en: Azimuth
             cs: Azimut
       description: >
-        Detector dimensions in unbinned pixels.
+        Horizontal coordinates [Alt, Az] in degrees.
       example: {"Altitude": 45.3680630043068, "Azimuth": 89.3656649605622 }
        
     # Instrument configuration
