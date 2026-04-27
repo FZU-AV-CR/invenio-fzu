@@ -7,9 +7,9 @@
       {
         "person_or_org": {
           "type": "personal",
-          "name": "Federovicova, Pavla",
+          "name": "Federičová, Pavla",
           "given_name": "Pavla",
-          "family_name": "Federovicova",
+          "family_name": "Federičová",
           "identifiers": [
             {
               "scheme": "orcid",
@@ -20,22 +20,19 @@
       },
       {
         "person_or_org": {
-          "name": "FZU CAS - Department of Detector Development and Data Processing",
+          "name": "FZU Institute of Physics of the Czech Academy of Sciences",
           "type": "organizational"
         }
       }
     ],
-    "title": "VPA56032_W05408_7_A2_CCPL_C_001",
-    "publication_date": "2025-10-17",
+    "title": "ATLAS ITk_VPA56032",
+    "publication_date": "2026-04-23",
     "file_types": "dat",
     "publisher": "FZU Institute of Physics of the Czech Academy of Sciences",
-    "description": "This dataset contains experimental data from silicon module sensor testing performed in the context of CERN Atlas ITk.",
+    "description": "This dataset contains experimental data from silicon sensor module tests performed as part of the CERN ATLAS ITk project.",
     "subjects": [
       {
-        "subject": "Silicon module sensor"
-      },
-      {
-        "subject": "Photon detector"
+        "subject": "Silicon sensor"
       },
       {
         "subject": "Particle physics"
@@ -46,8 +43,11 @@
       {
         "subject": "Physics"
       },
+      { 
+        "subject": "Detector"
+      },
       {
-        "subject": "Atlas ITk"
+        "subject": "ATLAS ITk"
       }
     ],
     "rights": [
@@ -65,14 +65,16 @@
     ],
   "experiment": "ATLAS ITk",
   "manufacturer": "Hamamatsu Photonics",
-  "batch": "VPA56980",
-  "wafer": ["2730"],
-  "component_list": ["20USES40002730","20USES40002722"],
+  "batch": "VPA56032",
+  "wafer": ["05408"],
+  "components": ["20USBSS0705408","20USES40002722"],
   "run_numbers": ["1","2","3","4","5"],
-  "measurement_types": [
-    "ATLAS18SS",
-    "ATLAS18SS_1"
-  ]
+  "test_types": [
+    "CCPL_C",
+    "ATLAS18_CURRENT_STABILITY_V1 "
+  ],
+  "component_types": ["SENSOR_TESTCHIP_MD8"],
+  "files":["VPA56032_W05408_7_A2_CCPL_C_001.dat"]
 
   }
 }
