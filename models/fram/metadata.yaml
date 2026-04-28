@@ -48,7 +48,7 @@ Metadata:
       type: keyword
       label:
         en: Observation night
-        cs: Pozorovací noc
+        cs: Noc pozorování
       description: >
         Local date of the observation night in YYYYMMDD format.
       pattern: '^[0-9]{8}$'
@@ -115,7 +115,7 @@ Metadata:
       type: keyword
       label:
         en: Observatory site
-        cs: Observatoř
+        cs: Místo pozorování
       example: "auger2"
    
     ccd:
