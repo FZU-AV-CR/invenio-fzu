@@ -78,31 +78,22 @@ Metadata:
         ra:
           type: float
           label:
-            en: Ra
-            cs: Ra
+            en: Radius
+            cs: Rektascenze
         dec:
           type: float
           label:
-            en: Dec
-            cs: Dec
+            en: Declination
+            cs: Deklinace
       description: >
         Celestial coordinates [RA, Dec] in degrees.
 
            
-    radius:
-      type: float
-      label:
-        en: Radius
-        cs: Rektascenze
-      description: >
-        Angular radius of the field of view or search region.
-      example: 267.49140094924627
-
     altitude_azimuth:
       type: object
       label:
-        en: Alt-Az
-        cs: Alt-Az
+        en: Altitude-Azimuth
+        cs: Výška-Azimut
       properties:
         width:
           type: float
@@ -182,7 +173,7 @@ Metadata:
             cs: Výška
       description: >
         Detector dimensions in unbinned pixels.
-      example: {"width": 4096, "height": 4096}
+      example: {"Width": 4096, "Height": 4096}
 
                   
     file_types:
