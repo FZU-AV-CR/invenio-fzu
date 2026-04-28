@@ -75,12 +75,12 @@ Metadata:
         en: Center coordinates
         cs: Souřadnice středu
       properties:
-        ra:
+        Radius:
           type: float
           label:
             en: Radius
             cs: Rektascenze
-        dec:
+        Declination:
           type: float
           label:
             en: Declination
@@ -95,12 +95,12 @@ Metadata:
         en: Altitude-Azimuth
         cs: Výška-Azimut
       properties:
-        width:
+        Altitude:
           type: float
           label:
             en: Altitude
             cs: Výška
-        height:
+        Azimuth:
           type: float
           label:
             en: Azimuth

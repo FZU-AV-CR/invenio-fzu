@@ -83,11 +83,11 @@ Note: Context variables available:
     </tr>
     <tr>
       <td>{{m.label(m.altitude_azimuth)}}</td>
-      <td>{{ui_value(m.altitude_azimuth.altitude)}}/{{ui_value(m.altitude_azimuth.azimuth)}}</td>
+      <td>{{ui_value(m.altitude_azimuth.Altitude)}} / {{ui_value(m.altitude_azimuth.Azimuth)}}</td>
     </tr>
     <tr>
       <td>{{m.label(m.center)}}</td>
-      <td>{{ui_value(m.center.ra)}}/{{ui_value(m.center.dec)}}</td>
+      <td>{{ui_value(m.center.Radius)}} / {{ui_value(m.center.Declination)}}</td>
     </tr>
   </table>
 {%- endblock record_content %}
