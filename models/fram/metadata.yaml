@@ -75,19 +75,27 @@ Metadata:
         en: Center coordinates
         cs: Souřadnice středu
       properties:
-        Radius:
+        RA:
           type: float
           label:
-            en: Radius
-            cs: Rektascenze
-        Declination:
+            en: RA
+            cs: RA
+        Dec:
           type: float
           label:
-            en: Declination
-            cs: Deklinace
+            en: Dec
+            cs: Dec
       description: >
         Celestial coordinates [RA, Dec] in degrees.
 
+    radius:
+      type: float
+      label:
+        en: Radius
+        cs: Rektascenze
+      description: >
+        Angular radius of the field of view or search region.
+      example: 267.49140094924627
            
     altitude_azimuth:
       type: object
