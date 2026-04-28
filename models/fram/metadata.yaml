@@ -184,7 +184,7 @@ Metadata:
       items:
         type: keyword
       description: >
-        File format or processing type (typically 'fits').
+        File type, typically 'fits'.
 
     filepath:
       type: keyword
@@ -197,7 +197,7 @@ Metadata:
       type: keyword
       label:
         en: Footprint
-        cs: Paměťová stopa
+        cs: Pokrytí oblohy
 
     experiment:
       type: keyword
