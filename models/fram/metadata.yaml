@@ -161,12 +161,12 @@ Metadata:
         en: Detector size
         cs: Rozlišení detektoru
       properties:
-        width:
+        Width:
           type: int
           label:
             en: Width
             cs: Šířka
-        height:
+        Height:
           type: int
           label:
             en: Height
