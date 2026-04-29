@@ -30,7 +30,7 @@
     "publisher": "FZU Institute of Physics of the Czech Academy of Sciences",
     "description": "This dataset contains observation data in the fits format. The observation comes from robotic telescope (Phototometric Robotic Atmospheric Monitor - FRAM).",
     "subjects": [
-      { "subject": "Fram" },
+      { "subject": "FRAM" },
       { "subject": "Telescope" },
       { "subject": "Astrophysics" },
       { "subject": "Auger" },
@@ -51,7 +51,7 @@
     "observation_night" : "20170813",
     "exposure_time" : "30.0",
     "center" : {"ra": 267.49140094924627, "dec": -18.87911384043446},
-    "radius" : "267.49140094924627",
+    "radius" : 20.3,
     "site" : "cta-s0",
     "ccd" : "WF0 / 6069",
     "camera_serial": "2328",
@@ -59,8 +59,7 @@
     "binning" : "1x1",
     "detector_size" : {"width": 4096, "height": 4096},
     "file_types" : "fits",
-    "declination" : "-18.87911384043446",
-    "altitude_azimuth" : {"Altitude": 45.3680630043068, "Azimuth": 89.3656649605622},
+    "altitude_azimuth" : {"altitude": 45.3680630043068, "azimuth": 89.3656649605622},
     "filepath" : "/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits"
     }
 }

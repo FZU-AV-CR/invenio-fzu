@@ -3657,14 +3657,14 @@ wheels = [
 
 [[package]]
 name = "oarepo-glitchtip"
-version = "1.1.1"
+version = "1.1.2"
 source = { registry = "https://gitlab.cesnet.cz/api/v4/projects/1408/packages/pypi/simple" }
 dependencies = [
     { name = "sentry-sdk", extra = ["flask"] },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f4/90/787bde2bf25ca5858c02c005ca02fd9afdb81e24bf7c82bb5b397f7240f0/oarepo_glitchtip-1.1.1.tar.gz", hash = "sha256:e0bbc52368c6f470e799287142cd224b60818d872b940f80a1b305e84d23e88c", size = 4003, upload-time = "2026-01-13T09:44:06.216Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/b3/6e/eab2484557f022af489bf07f3f3830bffe5de0216d1885c92bcd184962d6/oarepo_glitchtip-1.1.2.tar.gz", hash = "sha256:397b7cade948b52779448688a26cd63efd55a375b209195689107ca219b1b37d", size = 3652, upload-time = "2026-04-27T09:38:48.452Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/77/2e/4408908927b24cbcb8b16dcbbf7619041dca19507eadf6682306b830da45/oarepo_glitchtip-1.1.1-py3-none-any.whl", hash = "sha256:d80def7596ebc64c27d874025f57a1f27c339acee44647a35f2d4cc8edf117cd", size = 5083, upload-time = "2026-01-13T09:44:05.103Z" },
+    { url = "https://files.pythonhosted.org/packages/29/a4/fe876ec929442a464542d23d722711ca0e328e9056508690bc45d6d297e5/oarepo_glitchtip-1.1.2-py3-none-any.whl", hash = "sha256:fe414c96088feb838a6ad2c5b39b65b6111c0f8c7502cc894e4a1623f5bd0f5f", size = 4931, upload-time = "2026-04-27T09:38:47.346Z" },
 ]
 
 [[package]]
@@ -4901,16 +4901,15 @@ wheels = [
 
 [[package]]
 name = "sentry-sdk"
-version = "3.0.0a7"
+version = "2.58.0"
 source = { registry = "https://gitlab.cesnet.cz/api/v4/projects/1408/packages/pypi/simple" }
 dependencies = [
     { name = "certifi" },
-    { name = "opentelemetry-sdk" },
     { name = "urllib3" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/66/a5/747ab268f2cf3f4cb50af521e1a85a959411f74cf4a2ecf47782e1981cee/sentry_sdk-3.0.0a7.tar.gz", hash = "sha256:439a858d409b84407560df6b7ebb760acd9ad3d14e05cd919ae36b204e411cb2", size = 329999, upload-time = "2025-10-20T13:50:38.131Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/26/b3/fb8291170d0e844173164709fc0fa0c221ed75a5da740c8746f2a83b4eb1/sentry_sdk-2.58.0.tar.gz", hash = "sha256:c1144d947352d54e5b7daa63596d9f848adf684989c06c4f5a659f0c85a18f6f", size = 438764, upload-time = "2026-04-13T17:23:26.265Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ce/5e/23837eadf18ad4f9d5894c1210e6c2591136fd36cff338bedc90a1222bf2/sentry_sdk-3.0.0a7-py2.py3-none-any.whl", hash = "sha256:ada791a77c2d489e07b04c068e0fcacd6bbcfe1cb40b5f303207738baf38e868", size = 353618, upload-time = "2025-10-20T13:50:36.158Z" },
+    { url = "https://files.pythonhosted.org/packages/fa/eb/d875669993b762556ae8b2efd86219943b4c0864d22204d622a9aee3052b/sentry_sdk-2.58.0-py2.py3-none-any.whl", hash = "sha256:688d1c704ddecf382ea3326f21a67453d4caa95592d722b7c780a36a9d23109e", size = 460919, upload-time = "2026-04-13T17:23:24.675Z" },
 ]
 
 [package.optional-dependencies]
