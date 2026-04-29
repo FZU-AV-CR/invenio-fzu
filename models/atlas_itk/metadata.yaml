@@ -101,3 +101,11 @@ Metadata:
       description: >
         List of all files associated with this batch.
       example: "PA56509-W01435_Stability_001.dat"
+
+    file_types:
+      type: array
+      label:
+        en: File types
+        cs: Typy souborů
+      items:
+        type: keyword
