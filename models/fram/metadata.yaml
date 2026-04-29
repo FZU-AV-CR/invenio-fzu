@@ -92,7 +92,7 @@ Metadata:
       type: float
       label:
         en: Radius
-        cs: Rektascenze
+        cs: Poloměr
       description: >
         Angular radius of the field of view or search region.
       example: 267.49140094924627
