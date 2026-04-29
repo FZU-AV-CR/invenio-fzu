@@ -145,7 +145,7 @@ Metadata:
 
              
     binning:
-      type: string
+      type: keyword
       label:
         en: Binning
         cs: Binning
