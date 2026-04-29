@@ -50,16 +50,16 @@
     "observation_time" : "2017-04-06T22:26:22Z",
     "observation_night" : "20170813",
     "exposure_time" : "30.0",
-    "center" : {"RA": 267.49140094924627, "Dec": -18.87911384043446},
-    "radius" : 267.49140094924627,
+    "center" : {"ra": 267.49140094924627, "dec": -18.87911384043446},
+    "radius" : 20.3,
     "site" : "cta-s0",
     "ccd" : "WF0 / 6069",
     "camera_serial": "2328",
     "filter" : "B",
     "binning" : "1x1",
-    "detector_size" : {"Width": 4096, "Height": 4096},
+    "detector_size" : {"width": 4096, "height": 4096},
     "file_types" : "fits",
-    "altitude_azimuth" : {"Altitude": 45.3680630043068, "Azimuth": 89.3656649605622},
+    "altitude_azimuth" : {"altitude": 45.3680630043068, "azimuth": 89.3656649605622},
     "filepath" : "/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits"
     }
 }

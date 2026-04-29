@@ -10,16 +10,14 @@ Metadata:
         cs: Identifikátor cíle
       description: >
         Integer identifier of the target.
-      example: "241"
+      example: 241
 
 
     target_name:
       type: keyword
       label:
         en: Target name
-        cs: Název cíle
-      adescription: >
-        Human-readable target designation (e.g., "VAOD_color", "Crab Nebula").
+        cs: Název objektu
       example: "VAOD_color"
     
       
@@ -40,7 +38,7 @@ Metadata:
         en: Observation time
         cs: Čas pozorování
       description: >
-        UTC date and time of observation start (ISO 8601 format).
+        UTC date and time of observation (ISO 8601 format).
       example: "2017-04-06T22:26:22Z"
 
     
@@ -68,19 +66,18 @@ Metadata:
       
     # Coordinates
 
-     # CH ra, dec - two floats, spherical index   
     center:
       type: object
       label:
         en: Center coordinates
         cs: Souřadnice středu
       properties:
-        RA:
+        ra:
           type: float
           label:
             en: RA
             cs: RA
-        Dec:
+        dec:
           type: float
           label:
             en: Dec
@@ -93,29 +90,26 @@ Metadata:
       label:
         en: Radius
         cs: Poloměr
-      description: >
-        Angular radius of the field of view or search region.
-      example: 267.49140094924627
-           
+
     altitude_azimuth:
       type: object
       label:
         en: Altitude-Azimuth
         cs: Výška-Azimut
       properties:
-        Altitude:
+        altitude:
           type: float
           label:
             en: Altitude
-            cs: Výška
-        Azimuth:
+            cs: Altituda
+        azimuth:
           type: float
           label:
             en: Azimuth
             cs: Azimut
       description: >
         Horizontal coordinates [Alt, Az] in degrees.
-      example: {"Altitude": 45.3680630043068, "Azimuth": 89.3656649605622 }
+      example: {"altitude": 45.3680630043068, "azimuth": 89.3656649605622 }
        
     # Instrument configuration
     
@@ -151,14 +145,12 @@ Metadata:
 
              
     binning:
-      type: array
+      type: string
       label:
         en: Binning
         cs: Binning
       description: >
         Pixel binning configuration (horizontal x vertical).
-      items:
-        type: keyword
       pattern: '^[0-9]+x[0-9]+$'
       example: "1x1"
 
@@ -167,21 +159,21 @@ Metadata:
       type: object
       label:
         en: Detector size
-        cs: Rozlišení detektoru
+        cs: Rozměry detektoru
       properties:
-        Width:
+        width:
           type: int
           label:
             en: Width
             cs: Šířka
-        Height:
+        height:
           type: int
           label:
             en: Height
             cs: Výška
       description: >
         Detector dimensions in unbinned pixels.
-      example: {"Width": 4096, "Height": 4096}
+      example: {"width": 4096, "height": 4096}
 
                   
     file_types:
@@ -191,14 +183,13 @@ Metadata:
         cs: Typy souborů
       items:
         type: keyword
-      description: >
-        File type, typically 'fits'.
+
 
     filepath:
       type: keyword
       label:
         en: Filepath
-        cs: Cílová složka
+        cs: Cesta k souboru
       example: "/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits"
 
     footprint:
