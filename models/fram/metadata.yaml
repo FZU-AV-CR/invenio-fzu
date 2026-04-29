@@ -95,7 +95,7 @@ Metadata:
       type: object
       label:
         en: Altitude-Azimuth
-        cs: Výška-Azimut
+        cs: Altituda-Azimut
       properties:
         altitude:
           type: float
@@ -139,8 +139,8 @@ Metadata:
     filter:
       type: keyword
       label:
-        en: Optical filters
-        cs: Optické filtry
+        en: Optical filter
+        cs: Optický filtr
       example: "DF"
 
              
