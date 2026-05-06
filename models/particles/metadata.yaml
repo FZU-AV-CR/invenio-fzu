@@ -66,3 +66,5 @@ Metadata:
       enum:
         - simulated
         - collision
+        - logbook
+        - manual
