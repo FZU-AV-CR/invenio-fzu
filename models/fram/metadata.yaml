@@ -202,7 +202,7 @@ Metadata:
         en: Filename
         cs: Název souboru
       example: "/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits"
-
+ 
     footprint:
       type: keyword
       label:
