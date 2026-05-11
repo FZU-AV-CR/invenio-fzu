@@ -72,20 +72,28 @@ Note: Context variables available:
 
   <table class="ui definition table">
     {{ safe_row(m.label(m.experiment), m.experiment) }}
-    {{ safe_row(m.label(m.title), m.title) }}
+    {{ safe_row(m.label(m.filepath), m.filepath) }}
     {{ safe_row(m.label(m.site), m.site) }}
     {{ safe_row(m.label(m.target_id), m.target_id) }}
     {{ safe_row(m.label(m.observation_time), m.observation_time) }}
     {{ safe_row(m.label(m.observation_night), m.observation_night) }}
-    {{ safe_row(m.label(m.observation_site), m.observation_site) }}
     {{ safe_row(m.label(m.ccd), m.ccd) }}
     {{ safe_row(m.label(m.observation_type), m.observation_type) }}
     {{ safe_row(m.label(m.binning), m.binning) }}
     {{ safe_row(m.label(m.exposure_time), m.exposure_time) }}
     {{ safe_row(m.label(m.filter), m.filter) }}
     {{ safe_row(m.label(m.target_name), m.target_name) }}
+    {{ safe_row(m.label(m.footprint), m.footprint) }}
+    {{ safe_row(m.label(m.radius), m.radius) }}
+    {{ safe_row(m.label(m.file_types), m.file_types) }}
 
-    {{ safe_row(m.label(m.detector_size), m.detector_size) }}
+
+    {% if m.detector_size._api_data is not none and m.detector_size._api_data != "" %}
+    <tr>
+      <td>{{ m.label(m.detector_size) }}</td>
+      <td>{{ ui_value(m.detector_size.width) }} / {{ ui_value(m.detector_size.height) }}</td>
+    </tr>
+    {% endif %}
 
     {% if m.altitude_azimuth._api_data is not none and m.altitude_azimuth._api_data != "" %}
     <tr>
@@ -100,9 +108,10 @@ Note: Context variables available:
       <td>{{ ui_value(m.center.ra) }} / {{ ui_value(m.center.dec) }}</td>
     </tr>
     {% endif %}
-  </table>
 
-    {{ safe_row(m.label(m.detector_file_types), m.detector_file_types) }}
+
+
+  </table>
 
 {%- endblock record_content %}
 

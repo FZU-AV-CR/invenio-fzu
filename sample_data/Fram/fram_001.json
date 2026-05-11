@@ -25,7 +25,7 @@
         }
       }
     ],
-    "title": " FRAM_/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits",
+    "title": " FRAM2_/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits",
     "publication_date": "2026-03-19",
     "publisher": "FZU Institute of Physics of the Czech Academy of Sciences",
     "description": "This dataset contains observation data in the fits format. The observation comes from robotic telescope (Phototometric Robotic Atmospheric Monitor - FRAM).",
@@ -58,7 +58,8 @@
     "filter" : "B",
     "binning" : "1x1",
     "detector_size" : {"width": 4096, "height": 4096},
-    "file_types" : "fits",
+    "footprint": "13.5, -19.0 13.5, -18.8 13.7, -18.8 13.7, -19.0",
+    "file_types" : ["fits"],
     "altitude_azimuth" : {"altitude": 45.3680630043068, "azimuth": 89.3656649605622},
     "filepath" : "/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits"
     }
