@@ -10,7 +10,7 @@ cd $(dirname "$0")
 REPOSITORY=physica-local
 
 # create a draft record
-uvx nrp-cmd create record --repository $REPOSITORY --model particles ./delphi_001.json --set deplhi_001_draft
+uvx nrp-cmd create record --repository $REPOSITORY --model particles ./delphi_001.json --set delphi_001_draft
 
 # upload a file to the draft record
 file_metadata=$(cat <<EOF
@@ -20,14 +20,14 @@ file_metadata=$(cat <<EOF
 }
 EOF
 )
-uvx nrp-cmd upload file @deplhi_001_draft --key 01 ./delphi_001.xsdst "$file_metadata" --log-request
-# uvx nrp-cmd upload file @deplhi_001_draft --key 02 ./delphi_001.xsdst "$file_metadata" --log-request
-# uvx nrp-cmd upload file @deplhi_001_draft --key 03 ./delphi_001.xsdst "$file_metadata" --log-request
-# uvx nrp-cmd upload file @deplhi_001_draft --key 04 ./delphi_001.xsdst "$file_metadata" --log-request
-# uvx nrp-cmd upload file @deplhi_001_draft --key 05 ./delphi_001.xsdst "$file_metadata" --log-request
-# uvx nrp-cmd upload file @deplhi_001_draft --key 06 ./delphi_001.xsdst "$file_metadata" --log-request
-# uvx nrp-cmd upload file @deplhi_001_draft --key 07 ./delphi_001.xsdst "$file_metadata" --log-request
-# uvx nrp-cmd upload file @deplhi_001_draft --key 08 ./delphi_001.xsdst "$file_metadata" --log-request
+uvx nrp-cmd upload file @delphi_001_draft --key 01 ./delphi_001.xsdst "$file_metadata" --log-request
+# uvx nrp-cmd upload file @delphi_001_draft --key 02 ./delphi_001.xsdst "$file_metadata" --log-request
+# uvx nrp-cmd upload file @delphi_001_draft --key 03 ./delphi_001.xsdst "$file_metadata" --log-request
+# uvx nrp-cmd upload file @delphi_001_draft --key 04 ./delphi_001.xsdst "$file_metadata" --log-request
+# uvx nrp-cmd upload file @delphi_001_draft --key 05 ./delphi_001.xsdst "$file_metadata" --log-request
+# uvx nrp-cmd upload file @delphi_001_draft --key 06 ./delphi_001.xsdst "$file_metadata" --log-request
+# uvx nrp-cmd upload file @delphi_001_draft --key 07 ./delphi_001.xsdst "$file_metadata" --log-request
+# uvx nrp-cmd upload file @delphi_001_draft --key 08 ./delphi_001.xsdst "$file_metadata" --log-request
 
 # publish the record
-uvx nrp-cmd publish record @deplhi_001_draft
+uvx nrp-cmd publish record @delphi_001_draft    
