@@ -25,7 +25,7 @@
         }
       }
     ],
-    "title": " /mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits",
+    "title": " FRAM_/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits",
     "publication_date": "2026-03-19",
     "publisher": "FZU Institute of Physics of the Czech Academy of Sciences",
     "description": "This dataset contains observation data in the fits format. The observation comes from robotic telescope (Phototometric Robotic Atmospheric Monitor - FRAM).",
@@ -44,7 +44,7 @@
       { "id": "cc-by-4.0" }
     ],
     "experiment": "FRAM",
-    "target_id" : "1546651",
+    "target_id" :  	1546651,
     "target_name" : "2001 / VAOD_color",
     "observation_type" : "object",
     "observation_time" : "2017-04-06T22:26:22Z",

@@ -60,65 +60,52 @@ Note: Context variables available:
 
 {%- block record_content %}
   {{super()}}
+  
+  {% macro safe_row(label, value) %}
+    {% if "EmptyFieldDataSentinel" not in value._api_data | string %}
+    <tr>
+      <td>{{ label }}</td>
+      <td>{{ ui_value(value) }}</td>
+    </tr>
+    {% endif %}
+  {% endmacro %}
+
   <table class="ui definition table">
+    {{ safe_row(m.label(m.experiment), m.experiment) }}
+    {{ safe_row(m.label(m.title), m.title) }}
+    {{ safe_row(m.label(m.site), m.site) }}
+    {{ safe_row(m.label(m.target_id), m.target_id) }}
+    {{ safe_row(m.label(m.observation_time), m.observation_time) }}
+    {{ safe_row(m.label(m.observation_night), m.observation_night) }}
+    {{ safe_row(m.label(m.observation_site), m.observation_site) }}
+    {{ safe_row(m.label(m.ccd), m.ccd) }}
+    {{ safe_row(m.label(m.observation_type), m.observation_type) }}
+    {{ safe_row(m.label(m.binning), m.binning) }}
+    {{ safe_row(m.label(m.exposure_time), m.exposure_time) }}
+    {{ safe_row(m.label(m.filter), m.filter) }}
+    {{ safe_row(m.label(m.target_name), m.target_name) }}
+
+    {{ safe_row(m.label(m.detector_size), m.detector_size) }}
+
+    {% if m.altitude_azimuth._api_data is not none and m.altitude_azimuth._api_data != "" %}
     <tr>
-      <td>{{m.label(m.experiment)}}</td>
-      <td>{{ui_value(m.experiment)}}</td>
+      <td>{{ m.label(m.altitude_azimuth) }}</td>
+      <td>{{ ui_value(m.altitude_azimuth.altitude) }} / {{ ui_value(m.altitude_azimuth.azimuth) }}</td>
     </tr>
+    {% endif %}
+
+    {% if m.center._api_data is not none and m.center._api_data != "" %}
     <tr>
-      <td>{{m.label(m.target_id)}}</td>
-      <td>{{ui_value(m.target_id)}}</td>
+      <td>{{ m.label(m.center) }}</td>
+      <td>{{ ui_value(m.center.ra) }} / {{ ui_value(m.center.dec) }}</td>
     </tr>
-    <tr>
-      <td>{{m.label(m.observation_night)}}</td>
-      <td>{{ui_value(m.observation_night)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.observation_time)}}</td>
-      <td>{{ui_value(m.observation_time)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.target_name)}}</td>
-      <td>{{ui_value(m.target_name)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.altitude_azimuth)}}</td>
-      <td>{{ui_value(m.altitude_azimuth.altitude)}} / {{ui_value(m.altitude_azimuth.azimuth)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.center)}}</td>
-      <td>{{ui_value(m.center.ra)}} / {{ui_value(m.center.dec)}}</td>
-    
-      <tr>
-      <td>{{m.label(m.experiment)}}</td>
-      <td>{{ui_value(m.experiment)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.site)}}</td>
-      <td>{{ui_value(m.site)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.observation_night)}}</td>
-      <td>{{ui_value(m.observation_night)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.observation_time)}}</td>
-      <td>{{ui_value(m.observation_time)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.target_name)}}</td>
-      <td>{{ui_value(m.target_name)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.altitude_azimuth)}}</td>
-      <td>{{ui_value(m.altitude_azimuth.altitude)}} / {{ui_value(m.altitude_azimuth.azimuth)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.center)}}</td>
-      <td>{{ui_value(m.center.ra)}} / {{ui_value(m.center.dec)}}</td>
-    </tr>
+    {% endif %}
   </table>
+
+    {{ safe_row(m.label(m.detector_file_types), m.detector_file_types) }}
+
 {%- endblock record_content %}
+
 
 {%- block record_title -%}
 <section id="record-title-section" aria-label="{{ _('Record title') }}">
