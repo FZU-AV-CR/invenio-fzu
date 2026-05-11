@@ -1,7 +1,7 @@
 {
   "metadata": {
     "resource_type": {
-      "id": "dataset"
+      "id": "c_ddb1"
     },
     "creators": [
       {
@@ -40,31 +40,40 @@
       { "subject": "Physics" },
       { "subject": "Fermilab" }
     ],
-    "rights": [
-      { "id": "cc-by-4.0" }
-    ],
+    "rights": [{ "id": "4-BY" }],
     "dates": [
       {
         "date": "2023",
-        "type": { "id": "created" }
+        "type": { "id": "Created" }
       }
     ],
     "experiment": "FERMILAB SiPM",
     "manufacturer": "Hamamatsu Photonics",
     "requestor": "Spain S06",
-    "requestor_search": [
-      "Spain",
-      "Spain S06",
-      "S06",
-      "S6"
-    ],
+    "requestor_search": ["Spain", "Spain S06", "S06", "S6"],
     "box": "Prg3",
 
     "trays": [
-      "Tray000001", "Tray000004", "Tray000007", "Tray000010", "Tray000013",
-      "Tray000016", "Tray000019", "Tray000022", "Tray003006", "Tray015018",
-      "Tray000002", "Tray000005", "Tray000008", "Tray000011", "Tray000014",
-      "Tray000017", "Tray000020", "Tray000023", "Tray009012", "Tray021024"
+      "Tray000001",
+      "Tray000004",
+      "Tray000007",
+      "Tray000010",
+      "Tray000013",
+      "Tray000016",
+      "Tray000019",
+      "Tray000022",
+      "Tray003006",
+      "Tray015018",
+      "Tray000002",
+      "Tray000005",
+      "Tray000008",
+      "Tray000011",
+      "Tray000014",
+      "Tray000017",
+      "Tray000020",
+      "Tray000023",
+      "Tray009012",
+      "Tray021024"
     ],
 
     "tray_numbers": [
@@ -127,12 +136,7 @@
       "LN2 3rd cycle reverse",
       "LN2 3rd cycle extended"
     ],
-    "ardu_units": [
-      "ARDU 0",
-      "ARDU 1",
-      "ARDU 2",
-      "ARDU 3"
-    ]
+    "ardu_units": ["ARDU 0", "ARDU 1", "ARDU 2", "ARDU 3"]
   },
   "files": {
     "enabled": true
