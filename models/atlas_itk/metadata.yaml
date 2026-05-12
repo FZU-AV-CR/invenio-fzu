@@ -22,17 +22,6 @@ Metadata:
         Batch identifier.
       example: "VPA56980"
 
-    component_list:
-      type: array
-      label:
-        en: Components
-        cs: Komponenty
-      items:
-        type: keyword
-      description: >
-        List of all components contained in this batch.
-      example: "20USES40002730"
-
     wafer:
       type: array
       label:
@@ -44,6 +33,18 @@ Metadata:
         Wafer identifier.
       example: "2730"
 
+    components:
+      type: array
+      label:
+        en: Component
+        cs: Komponenta
+      items:
+        type: keyword
+      description: >
+        List of all components contained in this batch. In QA files the field name is SerialNumber.
+      example: "20USES40002730"
+
+
     experiment:
       type: keyword
       label:
@@ -52,19 +53,19 @@ Metadata:
       enum:
         - ATLAS ITk
 
-    measurement_types:
+    test_types:
       type: array
       label:
-        en: Measurement type
-        cs: Typ měření
+        en: Test type
+        cs: Typ testu
       items:
         type: keyword
 
     run_numbers:
       type: array
       label:
-        en: ARDU
-        cs: ARDU
+        en: Run number
+        cs: Číslo měření
       items:
         type: keyword
         enum:
@@ -79,3 +80,32 @@ Metadata:
           - "9"
           - "10"
 
+    component_types:
+      type: array
+      label:
+        en: Component type
+        cs: Typ komponenty
+      items:
+        type: keyword
+      description: >
+        In QA the field is called ComponentType, in QC the field is called Type.
+      example: "SENSOR_TESTCHIP_MD8"
+
+    files:
+      type: array
+      label:
+        en: Files
+        cs: Soubory
+      items:
+        type: keyword
+      description: >
+        List of all files associated with this batch.
+      example: "PA56509-W01435_Stability_001.dat"
+
+    file_types:
+      type: array
+      label:
+        en: File types
+        cs: Typy souborů
+      items:
+        type: keyword

@@ -19,7 +19,8 @@ Metadata:
     file_types:
       type: array
       label:
-        en: File Types
+        en: File types
+        cs: Typy souborů
       items:
         type: keyword
 
