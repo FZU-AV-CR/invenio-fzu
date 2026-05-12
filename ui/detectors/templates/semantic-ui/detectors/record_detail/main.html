@@ -60,39 +60,30 @@ Note: Context variables available:
 
 {%- block record_content %}
   {{super()}}
+
+  {% macro safe_row(label, value) %}
+    {% if "EmptyFieldDataSentinel" not in value._api_data | string %}
+    <tr>
+      <td>{{ label }}</td>
+      <td>{{ ui_value(value) }}</td>
+    </tr>
+    {% endif %}
+  {% endmacro %}
+
+
   <table class="ui definition table">
-    <tr>
-      <td>{{m.label(m.experiment)}}</td>
-      <td>{{ui_value(m.experiment)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.box)}}</td>
-      <td>{{ui_value(m.box)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.manufacturer)}}</td>
-      <td>{{ui_value(m.manufacturer)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.requestor)}}</td>
-      <td>{{ui_value(m.requestor)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.trays)}}</td>
-      <td>{{ui_value(m.trays)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.qr_list)}}</td>
-      <td>{{ui_value(m.qr_list)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.measurement_types)}}</td>
-      <td>{{ui_value(m.measurement_types)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.ardu_units)}}</td>
-      <td>{{ui_value(m.ardu_units)}}</td>
-    </tr>
+
+    {{ safe_row(m.label(m.experiment), m.experiment) }}
+    {{ safe_row(m.label(m.box), m.box) }}
+    {{ safe_row(m.label(m.manufacturer), m.manufacturer) }}
+    {{ safe_row(m.label(m.requestor), m.requestor) }}
+    {{ safe_row(m.label(m.trays), m.trays) }}
+    {{ safe_row(m.label(m.qr_list), m.qr_list) }}
+    {{ safe_row(m.label(m.measurement_types), m.measurement_types) }}
+    {{ safe_row(m.label(m.ardu_units), m.ardu_units) }}
+    {{ safe_row(m.label(m.file_types), m.file_types) }}
+
+
   </table>
 {%- endblock record_content %}
 
