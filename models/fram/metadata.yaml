@@ -6,18 +6,18 @@ Metadata:
     target_id:
       type: int
       label:
-        en: Target identifier
-        cs: Identifikátor cíle
+        en: Identifier
+        cs: Identifikátor
       description: >
-        Integer identifier of the target.
+        Integer identifier.
       example: 241
 
 
     target_name:
       type: keyword
       label:
-        en: Target name
-        cs: Název objektu
+        en: Target
+        cs: Objekt
       example: "VAOD_color"
     
       
@@ -50,14 +50,14 @@ Metadata:
       description: >
         Local date of the observation night in YYYYMMDD format.
       pattern: '^[0-9]{8}$'
-      example: 20170406
+      example: "20170406"
 
        
     exposure_time:
       type: float
       label:
-        en: Exposure time
-        cs: Doba expozice
+        en: Exposure
+        cs: Expozice
       description: >
         Exposure duration in seconds.
       example: 30.0
@@ -139,8 +139,8 @@ Metadata:
     filter:
       type: keyword
       label:
-        en: Optical filter
-        cs: Optický filtr
+        en: Filter
+        cs: Filtr
       example: "DF"
 
              
@@ -158,22 +158,33 @@ Metadata:
     detector_size:
       type: object
       label:
-        en: Detector size
-        cs: Rozměry detektoru
+        en: Size
+        cs: Rozměry
       properties:
         width:
           type: int
           label:
-            en: Width
-            cs: Šířka
+            en: Width (physical)
+            cs: Šířka (fyzická)
         height:
           type: int
           label:
-            en: Height
-            cs: Výška
+            en: Height (physical)
+            cs: Výška (fyzická)
+        usable_width:
+          type: int
+          label:
+            en: Width (usable)
+            cs: Šířka (použitelná)
+        usable_height:
+          type: int
+          label:
+            en: Height (usable)
+            cs: Výška (použitelná)
       description: >
-        Detector dimensions in unbinned pixels.
-      example: {"width": 4096, "height": 4096}
+        Dimensions in unbinned pixels. Physical size refers to the full chip,
+        usable size to the effective imaging area.
+      example: {"width": 4144, "height": 4127, "usable_width": 4096, "usable_height": 4096}
 
                   
     file_types:
@@ -185,13 +196,13 @@ Metadata:
         type: keyword
 
 
-    filepath:
+    filename:
       type: keyword
       label:
-        en: Filepath
-        cs: Cesta k souboru
+        en: Filename
+        cs: Název souboru
       example: "/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits"
-
+ 
     footprint:
       type: keyword
       label:

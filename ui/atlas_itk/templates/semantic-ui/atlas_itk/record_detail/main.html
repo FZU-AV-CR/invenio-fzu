@@ -60,35 +60,28 @@ Note: Context variables available:
 
 {%- block record_content %}
   {{super()}}
+
+  {% macro safe_row(label, value) %}
+    {% if "EmptyFieldDataSentinel" not in value._api_data | string %}
+    <tr>
+      <td>{{ label }}</td>
+      <td>{{ ui_value(value) }}</td>
+    </tr>
+    {% endif %}
+  {% endmacro %}
+
   <table class="ui definition table">
-    <tr>
-      <td>{{m.label(m.experiment)}}</td>
-      <td>{{ui_value(m.experiment)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.batch)}}</td>
-      <td>{{ui_value(m.batch)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.wafer)}}</td>
-      <td>{{ui_value(m.wafer)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.components)}}</td>
-      <td>{{ui_value(m.components)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.test_types)}}</td>
-      <td>{{ui_value(m.test_types)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.run_numbers)}}</td>
-      <td>{{ui_value(m.run_numbers)}}</td>
-    </tr>
-    <tr>
-      <td>{{m.label(m.files)}}</td>
-      <td>{{ui_value(m.files)}}</td>
-    </tr>
+
+    {{ safe_row(m.label(m.experiment), m.experiment) }}
+    {{ safe_row(m.label(m.batch), m.batch) }}
+    {{ safe_row(m.label(m.wafer), m.wafer) }}
+    {{ safe_row(m.label(m.components), m.components) }}
+    {{ safe_row(m.label(m.component_types), m.component_types) }}
+    {{ safe_row(m.label(m.test_types), m.test_types) }}
+    {{ safe_row(m.label(m.run_numbers), m.run_numbers) }}
+    {{ safe_row(m.label(m.files), m.files) }}
+    {{ safe_row(m.label(m.file_types), m.file_types) }}
+
   </table>
 {%- endblock record_content %}
 
