@@ -5,35 +5,32 @@
 {%- block record_content %}
   {{super()}}
 
-  {% macro safe_row(label, value) %}
-    {% if "EmptyFieldDataSentinel" not in value._api_data | string %}
-    <tr>
-      <td>{{ label }}</td>
-      <td>{{ ui_value(value) }}</td>
-    </tr>
-    {% endif %}
-  {% endmacro %}
-
-  <table class="ui definition table">
-    {{ safe_row(m.label(m.experiment), m.experiment) }}
-
-    {% if m.collision_information._api_data is not none and m.collision_information._api_data != "" %}
-    <tr>
-      <td>{{ m.label(m.collision_information) }}</td>
-      <td>
-        type <strong>{{ ui_value(m.collision_information.type) }}</strong>,
-        energy <strong>{{ ui_value(m.collision_information.energy_min) }}&ndash;{{ ui_value(m.collision_information.energy_max) }} GeV</strong>
-      </td>
-    </tr>
-    {% endif %}
-
-    {% if m.category._api_data is not none and m.category._api_data != "" %}
-    <tr>
-      <td>{{ m.label(m.category) }}</td>
-      <td>{{ ui_value(m.category.title.en) }}</td>
-      {# TODO: nahradit VocabularyItem komponentou #}
-    </tr>
-    {% endif %}
+ {% macro safe_row(label, value) %}
+  {% if "EmptyFieldDataSentinel" not in value._api_data | string %}
+  <tr>
+    <td>{{ label }}</td>
+    <td>{{ ui_value(value) }}</td>
+  </tr>
+  {% endif %}
+{% endmacro %}
+<table class="ui definition table">
+  {{ safe_row(m.label(m.experiment), m.experiment) }}
+  {% if "EmptyFieldDataSentinel" not in m.collision_information._api_data | string %}
+  <tr>
+    <td>{{ m.label(m.collision_information) }}</td>
+    <td>
+      type <strong>{{ ui_value(m.collision_information.type) }}</strong>,
+      energy <strong>{{ ui_value(m.collision_information.energy_min) }}&ndash;{{ ui_value(m.collision_information.energy_max) }} GeV</strong>
+    </td>
+  </tr>
+  {% endif %}
+  {% if "EmptyFieldDataSentinel" not in m.category._api_data | string %}
+  <tr>
+    <td>{{ m.label(m.category) }}</td>
+    <td>{{ ui_value(m.category.title.en) }}</td>
+    {# TODO: nahradit VocabularyItem komponentou #}
+  </tr>
+  {% endif %}
 
     {{ safe_row(m.label(m.dataset_type), m.dataset_type) }}
     {{ safe_row(m.label(m.number_of_events), m.number_of_events) }}
