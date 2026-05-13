@@ -17,7 +17,7 @@
   <table class="ui definition table">
     {{ safe_row(m.label(m.experiment), m.experiment) }}
 
-    {% if m.collision_information._api_data is not none and m.collision_information._api_data != "" %}
+    {% if m.collision_information %}
     <tr>
       <td>{{ m.label(m.collision_information) }}</td>
       <td>
@@ -27,7 +27,7 @@
     </tr>
     {% endif %}
 
-    {% if m.category._api_data is not none and m.category._api_data != "" %}
+    {% if m.category %}
     <tr>
       <td>{{ m.label(m.category) }}</td>
       <td>{{ ui_value(m.category.title.en) }}</td>

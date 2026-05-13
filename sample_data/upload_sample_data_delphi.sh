@@ -7,6 +7,9 @@ set -euo pipefail
 cd $(dirname "$0")
 
 # run: uvx nrp-cmd add repository  --no-verify-tls  https://127.0.0.1:5000/ physica-local
+# run: uvx nrp-cmd remove repository physica-local
+# ./run.sh upgrade && echo "yes" | ./run.sh reset && ./run.sh run
+# http://127.0.0.1:9001/login - aa-physica-aa - default
 REPOSITORY=physica-local
 
 # create a draft record
