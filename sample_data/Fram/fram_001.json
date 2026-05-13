@@ -1,7 +1,7 @@
 {
   "metadata": {
     "resource_type": {
-      "id": "c_ddb1"
+      "id": "dataset"
     },
     "creators": [
       {
@@ -40,27 +40,26 @@
       { "subject": "Paranal" },
       { "subject": "Roque de los Muchachos" }
     ],
-    "rights": [{ "id": "4-BY" }],
+    "rights": [
+      { "id": "cc-by-4.0" }
+    ],
     "experiment": "FRAM",
-    "target_id": "1546651",
-    "target_name": "2001 / VAOD_color",
-    "observation_type": "object",
-    "observation_time": "2017-04-06T22:26:22Z",
-    "observation_night": "20170813",
-    "exposure_time": "30.0",
-    "center": { "ra": 267.49140094924627, "dec": -18.87911384043446 },
-    "radius": 20.3,
-    "site": "cta-s0",
-    "ccd": "WF0 / 6069",
+    "target_id" : "1546651",
+    "target_name" : "2001 / VAOD_color",
+    "observation_type" : "object",
+    "observation_time" : "2017-04-06T22:26:22Z",
+    "observation_night" : "20170813",
+    "exposure_time" : "30.0",
+    "center" : {"ra": 267.49140094924627, "dec": -18.87911384043446},
+    "radius" : 20.3,
+    "site" : "cta-s0",
+    "ccd" : "WF0 / 6069",
     "camera_serial": "2328",
-    "filter": "B",
-    "binning": "1x1",
-    "detector_size": { "width": 4096, "height": 4096 },
-    "file_types": "fits",
-    "altitude_azimuth": {
-      "altitude": 45.3680630043068,
-      "azimuth": 89.3656649605622
-    },
-    "filepath": "/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits"
-  }
+    "filter" : "B",
+    "binning" : "1x1",
+    "detector_size" : {"width": 4096, "height": 4096},
+    "file_types" : "fits",
+    "altitude_azimuth" : {"altitude": 45.3680630043068, "azimuth": 89.3656649605622},
+    "filepath" : "/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits"
+    }
 }

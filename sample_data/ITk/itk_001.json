@@ -1,7 +1,7 @@
 {
   "metadata": {
     "resource_type": {
-      "id": "c_ddb1"
+      "id": "dataset"
     },
     "creators": [
       {
@@ -43,7 +43,7 @@
       {
         "subject": "Physics"
       },
-      {
+      { 
         "subject": "Detector"
       },
       {
@@ -52,25 +52,29 @@
     ],
     "rights": [
       {
-        "id": "4-BY"
+        "id": "cc-by-4.0"
       }
     ],
     "dates": [
       {
         "date": "2024-01-30",
         "type": {
-          "id": "Created"
+          "id": "created"
         }
       }
     ],
-    "experiment": "ATLAS ITk",
-    "manufacturer": "Hamamatsu Photonics",
-    "batch": "VPA56032",
-    "wafer": ["05408"],
-    "components": ["20USBSS0705408", "20USES40002722"],
-    "run_numbers": ["1", "2", "3", "4", "5"],
-    "test_types": ["CCPL_C", "ATLAS18_CURRENT_STABILITY_V1 "],
-    "component_types": ["SENSOR_TESTCHIP_MD8"],
-    "files": ["VPA56032_W05408_7_A2_CCPL_C_001.dat"]
+  "experiment": "ATLAS ITk",
+  "manufacturer": "Hamamatsu Photonics",
+  "batch": "VPA56032",
+  "wafer": ["05408"],
+  "components": ["20USBSS0705408","20USES40002722"],
+  "run_numbers": ["1","2","3","4","5"],
+  "test_types": [
+    "CCPL_C",
+    "ATLAS18_CURRENT_STABILITY_V1 "
+  ],
+  "component_types": ["SENSOR_TESTCHIP_MD8"],
+  "files":["VPA56032_W05408_7_A2_CCPL_C_001.dat"]
+
   }
 }
