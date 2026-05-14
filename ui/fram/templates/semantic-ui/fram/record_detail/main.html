@@ -89,21 +89,21 @@ Note: Context variables available:
     {{ safe_row(m.label(m.file_types), m.file_types) }}
 
 
-    {% if m.detector_size._api_data is not none and m.detector_size._api_data != "" %}
+    {% if "EmptyFieldDataSentinel" not in m.detector_size._api_data | string %}
     <tr>
       <td>{{ m.label(m.detector_size) }}</td>
       <td>{{ ui_value(m.detector_size.width) }} / {{ ui_value(m.detector_size.height) }}</td>
     </tr>
     {% endif %}
 
-    {% if m.altitude_azimuth._api_data is not none and m.altitude_azimuth._api_data != "" %}
+    {% if "EmptyFieldDataSentinel" not in m.altitude_azimuth._api_data | string %}
     <tr>
       <td>{{ m.label(m.altitude_azimuth) }}</td>
       <td>{{ ui_value(m.altitude_azimuth.altitude) }} / {{ ui_value(m.altitude_azimuth.azimuth) }}</td>
     </tr>
     {% endif %}
 
-    {% if m.center._api_data is not none and m.center._api_data != "" %}
+    {% if "EmptyFieldDataSentinel" not in m.center._api_data | string %}
     <tr>
       <td>{{ m.label(m.center) }}</td>
       <td>{{ ui_value(m.center.ra) }} / {{ ui_value(m.center.dec) }}</td>
