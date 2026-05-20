@@ -16,7 +16,13 @@
     "title": "DELPHI simulation data xs_pyth6156hpphmmr_e205.0_m95_snt99_1l_a1",
     "publication_date": "2024",
     "publisher": "CERN Open Data Portal",
-    "description": "Extended Short DST simulation 99_a1 done at ecms=205.0 , Santander",
+    "additional_descriptions": [
+      {
+        "lang": { "id": "ENG" },
+        "type": { "id": "abstract" },
+        "description": "Extended Short DST simulation 99_a1 done at ecms=205.0 , Santander"
+      }
+    ],
     "subjects": [
       {
         "subject": "Higgs physics"
