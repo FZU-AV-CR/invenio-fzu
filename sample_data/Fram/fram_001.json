@@ -61,6 +61,6 @@
     "footprint": "13.5, -19.0 13.5, -18.8 13.7, -18.8 13.7, -19.0",
     "file_types" : ["fits"],
     "altitude_azimuth" : {"altitude": 45.3680630043068, "azimuth": 89.3656649605622},
-    "filepath" : "/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits"
+    "filename" : "/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fit"
     }
 }

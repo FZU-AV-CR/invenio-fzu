@@ -51,7 +51,7 @@ Metadata:
         en: Experiment
         cs: Experiment
       enum:
-        - ATLAS ITk
+        - ATLAS-ITk
 
     test_types:
       type: array
