@@ -5,20 +5,8 @@ description = "Physics Repository is an open repository of physics data spanning
 packages = []
 authors = []
 dependencies = [
-    "json5",
-    "oarepo[s3,rdm]>=14.0.0,<14.1.9",
-    "oarepo-runtime>=2.0.0dev0,<3.0.0",
-    "oarepo-ui>=7.0.0dev0,<8.0.0",
-    "oarepo-model>=0.1.0dev0,<1.0.0",
-    "oarepo-rdm>=1.0.0dev0,<2.0.0",
-    "oarepo-theme>=1.0.0dev3,<2.0.0",
-    "oarepo-dashboard>=2.0.0dev1,<3.0.0",
-    "oarepo-vocabularies>=3.0.0dev0,<4.0.0",
-    "python-dotenv",
-    "marshmallow-i18n-messages",
-    "oarepo-glitchtip==1.*",
-    "oarepo-oidc-einfra>=2.0.0dev0,<3.0.0",
-    "oarepo-communities>=6.0.0dev0,<7.0.0",
+    "oarepo[s3,rdm]>=14.2.1b10.dev6,<15.0.0",
+    "oarepo-app[production,ccmm]==4.0.0",
 ]
 requires-python = ">=3.14,<3.15"
 
