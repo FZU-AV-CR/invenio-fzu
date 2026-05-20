@@ -389,5 +389,3 @@ celerybeat-schedule-wal
 .invenio.private
 **/.nrp
 *:Zone.Identifier
-
-.nrp/variables.json
