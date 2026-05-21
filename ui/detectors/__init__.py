@@ -1,3 +1,5 @@
+from ccmm_invenio.ui.config import CCMMRecordsUIResourceConfig
+from ccmm_invenio.ui.resource import CCMMRecordsUIResource
 from flask_menu import current_menu
 from invenio_i18n import lazy_gettext as _
 from oarepo_ui.overrides import UIComponent
@@ -20,7 +22,7 @@ from oarepo_ui.resources.records.resource import RecordsUIResource
 from oarepo_ui.utils import can_view_deposit_page
 
 
-class DetectorsUIResourceConfig(RecordsUIResourceConfig):
+class DetectorsUIResourceConfig(CCMMRecordsUIResourceConfig):
     template_folder = "templates"
     url_prefix = "/detectors"
     blueprint_name = "detectors_ui"
@@ -32,32 +34,10 @@ class DetectorsUIResourceConfig(RecordsUIResourceConfig):
         UIComponentImportMode.DEFAULT,
     )
 
-    components = [
-        AllowedHtmlTagsComponent,
-        BabelComponent,
-        PermissionsComponent,
-        FilesComponent,
-        # AllowedCommunitiesComponent,
-        CustomFieldsComponent,
-        RecordRestrictionComponent,
-        EmptyRecordAccessComponent,
-        FilesLockedComponent,
-        FilesQuotaAndTransferComponent,
-    ]
-
-    try:
-        from oarepo_vocabularies.ui.resources.components import (
-            DepositVocabularyOptionsComponent,
-        )
-
-        components.append(DepositVocabularyOptionsComponent)
-    except ImportError:
-        pass
-
     application_id = "detectors"
 
 
-class DetectorsUIResource(RecordsUIResource):
+class DetectorsUIResource(CCMMRecordsUIResource):
     pass
 
 
@@ -81,15 +61,13 @@ def init_menu(app):
     """Initialize menu before first request."""
     ui_resource_config = DetectorsUIResourceConfig()
 
-## !! commented to temporarily disable
-
-    # with app.app_context():
-    #     current_menu.submenu("plus.create_detectors").register(
-    #         f"{ui_resource_config.blueprint_name}.deposit_create",
-    #         _("New SiPM"),
-    #         order=1,
-    #         visible_when=can_view_deposit_page,
-    #     )
+    with app.app_context():
+        current_menu.submenu("plus.create_detectors").register(
+            f"{ui_resource_config.blueprint_name}.deposit_create",
+            _("New SiPM"),
+            order=1,
+            visible_when=can_view_deposit_page,
+        )
 
 
 def finalize_app(app):
@@ -102,6 +80,3 @@ def create_blueprint(app):
     """Register blueprint for this resource."""
     blueprint = DetectorsUIResource(DetectorsUIResourceConfig()).as_blueprint()
     return blueprint
-
-
-# TODO: register init_menu to finalize_app similarly blueprints & webpack is registered

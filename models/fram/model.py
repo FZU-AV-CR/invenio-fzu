@@ -5,20 +5,17 @@ A generic dataset model for fram observation data.
 
 from __future__ import annotations
 
+from ccmm_invenio.models import ccmm_production_preset_1_1_0
 from invenio_i18n import lazy_gettext as _
 from invenio_records_permissions.generators import AuthenticatedUser
 from oarepo_model.api import model
 from oarepo_model.customizations import (
-    PrependMixin,
     AddMetadataExport,
+    PrependMixin,
     SetDefaultSearchFields,
 )
-from oarepo_model.model import ModelMixin
-from oarepo_model.presets.drafts import drafts_preset
-from oarepo_model.presets.records_resources import records_resources_preset
-from oarepo_model.presets.ui_links import ui_links_preset
 from oarepo_model.datatypes.registry import from_yaml
-from oarepo_rdm.model.presets import rdm_complete_preset
+from oarepo_model.model import ModelMixin
 
 from .serializers import DataCiteJSONSerializer
 
@@ -35,7 +32,7 @@ fram_model = model(
     "fram",
     version="1.0.0",
     description="A generic dataset model for fram observation data.\n",
-    presets=[rdm_complete_preset],
+    presets=[ccmm_production_preset_1_1_0],
     types=[from_yaml("metadata.yaml", __file__)],
     metadata_type="Metadata",
     customizations=[
@@ -62,25 +59,21 @@ fram_model = model(
             "metadata.creators.person_or_org.name",
             "metadata.contributors.person_or_org.name",
             "metadata.experiment",
-
             "metadata.target_id",
             "metadata.target_name",
             "metadata.observation_type",
             "metadata.observation_time",
             "metadata.observation_night",
             "metadata.exposure_time",
-
             "metadata.center",
             "metadata.radius",
             "metadata.site",
             "metadata.ccd",
             "metadata.camera_serial",
             "metadata.filter",
-
             "metadata.binning",
             "metadata.detector_size",
             "metadata.file_types",
-            
         ),
     ],
     configuration={"ui_blueprint_name": "fram_ui"},

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "resource_type": {
-      "id": "dataset"
+      "id": "c_ddb1"
     },
     "creators": [
       {
@@ -43,7 +43,7 @@
       {
         "subject": "Physics"
       },
-      { 
+      {
         "subject": "Detector"
       },
       {
@@ -52,14 +52,14 @@
     ],
     "rights": [
       {
-        "id": "cc-by-4.0"
+        "id": "4-BY"
       }
     ],
     "dates": [
       {
         "date": "2024-01-30",
         "type": {
-          "id": "created"
+          "id": "Created"
         }
       }
     ],

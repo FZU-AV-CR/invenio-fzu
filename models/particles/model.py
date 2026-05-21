@@ -5,6 +5,7 @@ Particles detector experiments
 
 from __future__ import annotations
 
+from ccmm_invenio.models import ccmm_production_preset_1_1_0
 from invenio_i18n import lazy_gettext as _
 from invenio_records_permissions.generators import AuthenticatedUser
 from oarepo_model.api import model
@@ -15,7 +16,6 @@ from oarepo_model.customizations import (
 )
 from oarepo_model.datatypes.registry import from_yaml
 from oarepo_model.model import ModelMixin
-from oarepo_rdm.model.presets import rdm_complete_preset
 
 from .serializers import DataCiteJSONSerializer
 
@@ -29,7 +29,7 @@ class ParticlesPermissionPolicyMixin(ModelMixin):
 particles_model = model(
     "particles",
     version="1.0.0",
-    presets=[rdm_complete_preset],
+    presets=[ccmm_production_preset_1_1_0],
     types=[from_yaml("metadata.yaml", __file__)],
     metadata_type="Metadata",
     customizations=[
