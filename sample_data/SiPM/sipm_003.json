@@ -47,7 +47,7 @@
         "type": { "id": "Created" }
       }
     ],
-    "experiment": "FERMILAB SiPM",
+    "experiment": "FERMILAB-SiPM",
     "manufacturer": "Hamamatsu Photonics",
     "requestor": "Spain S06",
     "requestor_search": ["Spain", "Spain S06", "S06", "S6"],

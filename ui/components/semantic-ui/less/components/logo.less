@@ -1,0 +1,22 @@
+#frontpage-search-bar {
+  position: relative;
+  overflow: hidden;
+}
+
+#frontpage-search-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("physics_overlay_v2.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Obsah search baru musí být nad overlayem */
+#frontpage-search-bar .ui.container {
+  position: relative;
+  z-index: 1;
+}
