@@ -2,11 +2,12 @@
   <style>
     text {
       font-family: "Open Sans", sans-serif;
-      font-size: 50px;
+      font-size: 40px;
       fill: #0072CE;
     }
   </style>
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
-    Physics Repository
+  <text x="50%" text-anchor="middle">
+    <tspan x="50%" dy="45">Welcome to the</tspan>
+    <tspan x="50%" dy="55">Physics repository!</tspan>
   </text>
 </svg>
