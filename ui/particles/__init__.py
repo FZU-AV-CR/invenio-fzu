@@ -1,3 +1,5 @@
+from ccmm_invenio.ui.config import CCMMRecordsUIResourceConfig
+from ccmm_invenio.ui.resource import CCMMRecordsUIResource
 from flask_menu import current_menu
 from invenio_i18n import lazy_gettext as _
 from oarepo_ui.overrides import UIComponent
@@ -20,7 +22,7 @@ from oarepo_ui.resources.records.resource import RecordsUIResource
 from oarepo_ui.utils import can_view_deposit_page
 
 
-class ParticlesUIResourceConfig(RecordsUIResourceConfig):
+class ParticlesUIResourceConfig(CCMMRecordsUIResourceConfig):
     template_folder = "templates"
     url_prefix = "/particles"
     blueprint_name = "particles_ui"
@@ -32,32 +34,10 @@ class ParticlesUIResourceConfig(RecordsUIResourceConfig):
         UIComponentImportMode.DEFAULT,
     )
 
-    components = [
-        AllowedHtmlTagsComponent,
-        BabelComponent,
-        PermissionsComponent,
-        FilesComponent,
-        # AllowedCommunitiesComponent,
-        CustomFieldsComponent,
-        RecordRestrictionComponent,
-        EmptyRecordAccessComponent,
-        FilesLockedComponent,
-        FilesQuotaAndTransferComponent,
-    ]
-
-    try:
-        from oarepo_vocabularies.ui.resources.components import (
-            DepositVocabularyOptionsComponent,
-        )
-
-        components.append(DepositVocabularyOptionsComponent)
-    except ImportError:
-        pass
-
     application_id = "particles"
 
 
-class ParticlesUIResource(RecordsUIResource):
+class ParticlesUIResource(CCMMRecordsUIResource):
     pass
 
 
@@ -81,15 +61,13 @@ def init_menu(app):
     """Initialize menu before first request."""
     ui_resource_config = ParticlesUIResourceConfig()
 
-## !! commented to temporarily disable
-
-    # with app.app_context():
-    #     current_menu.submenu("plus.create_particles").register(
-    #         f"{ui_resource_config.blueprint_name}.deposit_create",
-    #         _("New DELPHI"),
-    #         order=1,
-    #         visible_when=can_view_deposit_page,
-    #     )
+    with app.app_context():
+        current_menu.submenu("plus.create_particles").register(
+            f"{ui_resource_config.blueprint_name}.deposit_create",
+            _("New DELPHI"),
+            order=1,
+            visible_when=can_view_deposit_page,
+        )
 
 
 def finalize_app(app):
@@ -102,6 +80,3 @@ def create_blueprint(app):
     """Register blueprint for this resource."""
     blueprint = ParticlesUIResource(ParticlesUIResourceConfig()).as_blueprint()
     return blueprint
-
-
-# TODO: register init_menu to finalize_app similarly blueprints & webpack is registered

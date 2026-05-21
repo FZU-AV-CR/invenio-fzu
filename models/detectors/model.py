@@ -5,6 +5,7 @@ Fermilab silicon photomultiplier datasets
 
 from __future__ import annotations
 
+from ccmm_invenio.models import ccmm_production_preset_1_1_0
 from invenio_i18n import lazy_gettext as _
 from invenio_rdm_records.resources.serializers.ui.schema import UIRecordSchema
 from invenio_records_permissions.generators import AuthenticatedUser
@@ -16,7 +17,6 @@ from oarepo_model.customizations import (
 )
 from oarepo_model.datatypes.registry import from_yaml
 from oarepo_model.model import ModelMixin
-from oarepo_rdm.model.presets import rdm_complete_preset
 
 from .serializers import DataCiteJSONSerializer
 
@@ -30,7 +30,7 @@ class DetectorsPermissionPolicyMixin(ModelMixin):
 detectors_model = model(
     "detectors",
     version="1.0.0",
-    presets=[rdm_complete_preset],
+    presets=[ccmm_production_preset_1_1_0],
     types=[from_yaml("metadata.yaml", __file__)],
     metadata_type="Metadata",
     customizations=[
@@ -66,7 +66,6 @@ detectors_model = model(
             "metadata.requestor_search",
             "metadata.manufacturer",
             "metadata.file_types",
-
         ),
     ],
     configuration={"ui_blueprint_name": "detectors_ui"},
