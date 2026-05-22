@@ -1,3 +1,5 @@
+#Metadata model, Fermilab SiPM
+
 # Definition of metadata for detector box datasets
 Metadata:
   properties:

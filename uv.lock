@@ -3569,7 +3569,7 @@ development = [
 
 [[package]]
 name = "oarepo-communities"
-version = "8.1.2"
+version = "8.1.3"
 source = { registry = "https://gitlab.cesnet.cz/api/v4/projects/1408/packages/pypi/simple" }
 dependencies = [
     { name = "invenio-app-rdm" },
@@ -3580,9 +3580,9 @@ dependencies = [
     { name = "oarepo-runtime" },
     { name = "oarepo-workflows" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/6a/c5/6dab24432aec8a2ef3da7fdce33c27f3790a2491d696438f64faf7520ba9/oarepo_communities-8.1.2.tar.gz", hash = "sha256:283499ee7153dd66f81410e2a1365b3e8b1965a15cdab4f4e670e9ac764fdc5c", size = 51080, upload-time = "2026-05-20T08:25:41.592Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/74/65/6d94146cec1bc56ad7259651daf221feb24954fec37938a102a092fbb7af/oarepo_communities-8.1.3.tar.gz", hash = "sha256:dc2761d42b159eefbda3cc7274c421baecb7d36bfd14c7d0d9126ef0d2c32398", size = 51097, upload-time = "2026-05-21T09:46:43.091Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ac/5e/b944a80976ddb383e4ff23e98aaa63bdf39eb3259f16ff817de28ae17274/oarepo_communities-8.1.2-py3-none-any.whl", hash = "sha256:a207fbce9fb6b41e42110fb6173e79423bb1828f0708f3482ba800606738578c", size = 94707, upload-time = "2026-05-20T08:25:40.226Z" },
+    { url = "https://files.pythonhosted.org/packages/03/14/aae729cbd72a670f01292771a48e57469585997e410c1d9b2be9bb21d47e/oarepo_communities-8.1.3-py3-none-any.whl", hash = "sha256:5904c6697a295ea8652307c5959c022a379bae61faab0dde6014078bc4379b36", size = 94735, upload-time = "2026-05-21T09:46:41.755Z" },
 ]
 
 [[package]]

@@ -29,7 +29,6 @@
     "title": "SiPM_ Prg3, Hamamatsu, Spain S06 3",
     "publication_date": "2026-01-01",
     "publisher": "FZU Institute of Physics of the Czech Academy of Sciences",
-    "description": "This dataset contains experimental data from silicon photomultiplier (SiPM) detector testing performed in the context of the Deep Underground Neutrino Experiment (DUNE). The measurements were carried out to characterize the performance of photodetectors intended for use in DUNE detector systems. The dataset includes results from controlled laboratory tests and is intended to support detector development, validation, and future reuse.",
     "subjects": [
       { "subject": "Silicon photomultiplier" },
       { "subject": "Photon detector" },
@@ -39,6 +38,13 @@
       { "subject": "Dark count rate (DCR)" },
       { "subject": "Physics" },
       { "subject": "Fermilab" }
+    ],
+    "additional_descriptions": [
+      {
+        "lang": { "id": "ENG" },
+        "type": { "id": "abstract" },
+        "description": "This dataset contains experimental data from silicon photomultiplier (SiPM) detector testing performed in the context of the Deep Underground Neutrino Experiment (DUNE). The measurements were carried out to characterize the performance of photodetectors intended for use in DUNE detector systems. The dataset includes results from controlled laboratory tests and is intended to support detector development, validation, and future reuse."
+      }
     ],
     "rights": [{ "id": "4-BY" }],
     "dates": [
