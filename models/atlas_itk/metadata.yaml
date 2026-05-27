@@ -1,3 +1,5 @@
+#Metadata model, ATLAS ITk
+
 # Definition of metadata for atlas_itk. Please do not add ccmm model here,
 # add the ccmm_preset instead.
 Metadata:

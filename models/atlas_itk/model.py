@@ -66,6 +66,7 @@ atlas_itk_model = model(
             "metadata.manufacturer",
             "metadata.files",
             "metadata.component_types",
+            "metadata.file_types",
         ),
     ],
     configuration={"ui_blueprint_name": "atlas_itk_ui"},

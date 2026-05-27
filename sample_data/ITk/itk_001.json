@@ -29,7 +29,13 @@
     "publication_date": "2026-04-23",
     "file_types": ["dat"],
     "publisher": "FZU Instsitute of Physics of the Czech Academy of Science",
-    "description": "This dataset contains experimental data from silicon sensor module tests performed as part of the CERN ATLAS ITk project.",
+    "additional_descriptions": [
+      {
+        "lang": { "id": "ENG" },
+        "type": { "id": "abstract" },
+        "description": "This dataset contains experimental data from silicon sensor module tests performed as part of the CERN ATLAS ITk project."
+      }
+    ],
     "subjects": [
       {
         "subject": "Silicon sensor"
