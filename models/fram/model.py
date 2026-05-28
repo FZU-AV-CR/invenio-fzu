@@ -65,11 +65,9 @@ fram_model = model(
             "metadata.observation_time",
             "metadata.observation_night",
             "metadata.exposure_time",
-            "metadata.center",
             "metadata.center.ra",
             "metadata.center.dec",
             "metadata.radius",
-            "metadata.altitude_azimuth",
             "metadata.altitude_azimuth.altitude",
             "metadata.altitude_azimuth.azimuth",
             "metadata.site",
@@ -77,7 +75,6 @@ fram_model = model(
             "metadata.camera_serial",
             "metadata.filter",
             "metadata.binning",
-            "metadata.detector_size",
             "metadata.detector_size.height",
             "metadata.detector_size.width",
             "metadata.detector_size.usable_height",
@@ -85,7 +82,6 @@ fram_model = model(
             "metadata.file_types",
             "metadata.filename",
             "metadata.file_footprint",
-            "metadata.file_types",
 
 
         ),

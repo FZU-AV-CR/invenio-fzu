@@ -141,3 +141,65 @@ msgstr ""
 msgid "particles"
 msgstr ""
 
+
+## About page
+
+msgid "about_back_home"
+msgstr "Back to Home"
+
+msgid "about_title"
+msgstr "About the Physics Repository"
+
+msgid "about_intro"
+msgstr "The Physics Repository is a research data repository designed for storing, managing, and sharing data from physics experiments. The platform is publicly accessible and enables researchers, institutions, and the general public to search and browse datasets."
+
+msgid "about_uploads"
+msgstr "Data uploads are carried out in cooperation with repository administrators, who ensure the quality and consistency of all records."
+
+msgid "about_management_title"
+msgstr "Management and Operations"
+
+msgid "about_management"
+msgstr "The repository is managed by the Institute of Physics of the Czech Academy of Sciences (FZU) and technically operated by CESNET within the national research and education infrastructure. The infrastructure is funded by the European Union as part of the Open Science project."
+
+msgid "about_communities_title"
+msgstr "Communities and Access Rights"
+
+msgid "about_communities"
+msgstr "Data are organized into thematic communities corresponding to individual research groups or experiments. Each community manages its own collection of records and controls access rights for its members. Some data (typically metadata) are publicly available without registration, while full datasets may require membership in the respective community."
+
+msgid "about_technical_title"
+msgstr "Technical Platform"
+
+msgid "about_technical"
+msgstr "The repository is built on the open-source InvenioRDM platform, which follows the FAIR principles (Findable, Accessible, Interoperable, Reusable) and supports the assignment of persistent identifiers (such as DOIs) to individual datasets."
+
+msgid "about_contact_title"
+msgstr "Contact"
+
+msgid "about_contact"
+msgstr "For access to a specific community or for any other enquiries, please contact:"
+
+
+## Landing page
+
+msgid "intro_title"
+msgstr "Welcome to the Physics Repository"
+
+msgid "intro_warning"
+msgstr "Notice: This repository is currently a work in progress. Some features may not yet be fully available."
+
+msgid "intro_description"
+msgstr "The Physics Repository is a publicly accessible platform for sharing, searching, and reusing research data from physics experiments. It serves researchers, students, and collaborating institutions."
+
+msgid "intro_management"
+msgstr "It is managed by the Institute of Physics of the Czech Academy of Sciences (FZU) and technically operated by CESNET."
+
+msgid "intro_communities"
+msgstr "Data are organized into thematic communities corresponding to individual research groups or experiments. Access is managed by community administrators — some data are openly available, while others require membership."
+
+msgid "intro_more_info"
+msgstr "For more information about management, operations, the technical platform, and how to request access, see the"
+
+msgid "intro_about_link"
+msgstr "About page"

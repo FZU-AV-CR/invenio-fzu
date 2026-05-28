@@ -1,23 +1,18 @@
 <section class="rel-pt-3 rel-pb-3">
   <div class="ui centered container">
+    <h1 class="ui header">{{ _("intro_title") }}</h1>
     <div class="ui compact message warning rel-mt-2">
       <p>
-        <strong>⚠️ Notice:</strong>
-        This repository is currently a work in progress. Some features may not yet be fully available.
+        <strong>⚠️</strong> {{ _("intro_warning") }}
       </p>
     </div>
     <div class="rel-mt-2" style="max-width: 1250px; margin: 0 auto;">
+      <p>{{ _("intro_description") }}</p>
+      <p>{{ _("intro_management") }}</p>
+      <p>{{ _("intro_communities") }}</p>
       <p>
-        The Physics Repository is a publicly accessible platform for sharing, searching, and reusing research data from physics experiments. It serves researchers, students, and collaborating institutions.
-      </p>
-      <p>
-        It is managed by the Institute of Physics of the Czech Academy of Sciences (FZU) and technically operated by CESNET.
-      </p>
-      <p>
-        Data are organized into thematic communities corresponding to individual research groups or experiments. Access is managed by community administrators — some data are openly available, while others require membership.
-      </p>
-      <p>
-        For more information about management, operations, the technical platform, and how to request access, see the About page.
+        {{ _("intro_more_info") }}
+        <a href="/about">{{ _("intro_about_link") }}</a>.
       </p>
     </div>
   </div>
