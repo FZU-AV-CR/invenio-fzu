@@ -141,3 +141,68 @@ msgstr ""
 msgid "particles"
 msgstr ""
 
+
+## About page
+
+msgid "about_back_home"
+msgstr "Zpět na hlavní stránku"
+
+msgid "about_title"
+msgstr "O repozitáři Fyzika"
+
+msgid "about_intro"
+msgstr "Repozitář Fyzika je datový repozitář pro ukládání, správu a sdílení výzkumných dat z fyzikálních experimentů. Platforma je veřejně přístupná a umožňuje výzkumníkům, institucím i veřejnosti vyhledávat a prohlížet uložená data."
+
+msgid "about_uploads"
+msgstr "Nahrávání dat probíhá ve spolupráci se správci repozitáře, kteří dohlížejí na kvalitu a konzistenci datových záznamů."
+
+msgid "about_management_title"
+msgstr "Správa a provoz"
+
+msgid "about_management"
+msgstr "Repozitář spravuje Fyzikální ústav AV ČR (FZÚ) a technicky jej provozuje sdružení CESNET v rámci národní výzkumné a vzdělávací infrastruktury. Ta je financována z prostředků Evropské unie v rámci projektu Open Science."
+
+msgid "about_communities_title"
+msgstr "Komunity a přístupová práva"
+
+msgid "about_communities"
+msgstr "Data jsou organizována do tematických komunit odpovídajících jednotlivým výzkumným skupinám nebo experimentům. Každá komunita spravuje vlastní sbírku záznamů a přiděluje přístupová práva svým členům. Některá data (typicky metadata) jsou veřejně dostupná bez registrace, zatímco plné datasety mohou vyžadovat členství v příslušné komunitě."
+
+msgid "about_technical_title"
+msgstr "Technická platforma"
+
+msgid "about_technical"
+msgstr "Repozitář je postaven na open-source platformě InvenioRDM, která splňuje principy FAIR (Findable, Accessible, Interoperable, Reusable) a podporuje přiřazování perzistentních identifikátorů (například DOI) jednotlivým datasetům."
+
+msgid "about_contact_title"
+msgstr "Kontakt"
+
+msgid "about_contact"
+msgstr "Pro přístup ke konkrétní komunitě nebo v případě dalších dotazů se obraťte na:"
+
+msgid "About"
+msgstr "O repozitáři"
+
+
+## Landing page
+
+msgid "intro_title"
+msgstr "Vítejte v Repozitáři Fyzika"
+
+msgid "intro_warning"
+msgstr "Upozornění: Repozitář je ve fázi aktivního vývoje. Některé funkce nemusí být dosud plně dostupné."
+
+msgid "intro_description"
+msgstr "Repozitář Fyzika je veřejně přístupná platforma pro sdílení, vyhledávání a opětovné využití výzkumných dat z fyzikálních experimentů. Slouží výzkumníkům, studentům i spolupracujícím institucím."
+
+msgid "intro_management"
+msgstr "Repozitář spravuje Fyzikální ústav AV ČR (FZÚ) a technicky jej provozuje CESNET."
+
+msgid "intro_communities"
+msgstr "Data jsou organizována do tematických komunit odpovídajících jednotlivým výzkumným skupinám nebo experimentům. Přístup k datům je řízen správci komunit — některá data jsou volně dostupná, jiná vyžadují členství."
+
+msgid "intro_more_info"
+msgstr "Další informace o správě, provozu, technické platformě a o tom, jak požádat o přístup, najdete v sekci"
+
+msgid "intro_about_link"
+msgstr "O repozitáři"
