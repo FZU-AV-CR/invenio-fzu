@@ -10,6 +10,7 @@ from invenio_i18n import lazy_gettext as _
 from invenio_records_permissions.generators import AuthenticatedUser
 from oarepo_model.api import model
 from oarepo_model.customizations import (
+    AddFacetGroup,
     AddMetadataExport,
     PrependMixin,
     SetDefaultSearchFields,
@@ -61,6 +62,16 @@ particles_model = model(
             "metadata.number_of_events",
             "metadata.recid",
             "metadata.collision_information",
+        ),
+        AddFacetGroup(
+            name="default",
+            facets=[
+                "metadata.experiment.id",
+                "metadata.category.id",
+                "metadata.dataset_type",
+                "metadata.collision_information.type",
+                "metadata.file_types",
+            ],
         ),
     ],
     configuration={"ui_blueprint_name": "particles_ui"},

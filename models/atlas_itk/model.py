@@ -9,6 +9,7 @@ from invenio_i18n import lazy_gettext as _
 from invenio_records_permissions.generators import AuthenticatedUser
 from oarepo_model.api import model
 from oarepo_model.customizations import (
+    AddFacetGroup,
     AddMetadataExport,
     PrependMixin,
     SetDefaultSearchFields,
@@ -67,6 +68,19 @@ atlas_itk_model = model(
             "metadata.files",
             "metadata.component_types",
             "metadata.file_types",
+        ),
+        AddFacetGroup(
+            name="default",
+            facets=[
+                "metadata.experiment.id",
+                "metadata.manufacturer",
+                "metadata.batch",
+                "metadata.wafer",
+                "metadata.components",
+                "metadata.component_types",
+                "metadata.files",
+                "metadata.file_types",
+            ],
         ),
     ],
     configuration={"ui_blueprint_name": "atlas_itk_ui"},
