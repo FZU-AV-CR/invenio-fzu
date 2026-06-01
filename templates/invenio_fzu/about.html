@@ -1,0 +1,30 @@
+{% extends "oarepo_ui/base_page.html" %}
+
+{%- block head_title %}{{ _("about_title") }}{%- endblock head_title %}
+
+{%- block page_body %}
+<div class="ui container rel-mt-4 rel-mb-4">
+
+  <a href="/" class="ui button rel-mb-2">
+  {{ _("about_back_home") }}
+  </a>
+
+  <h1>{{ _("about_title") }}</h1>
+
+  <p>{{ _("about_intro") }}</p>
+  <p>{{ _("about_uploads") }}</p>
+
+  <h2>{{ _("about_management_title") }}</h2>
+  <p>{{ _("about_management") }}</p>
+
+  <h2>{{ _("about_communities_title") }}</h2>
+  <p>{{ _("about_communities") }}</p>
+
+  <h2>{{ _("about_technical_title") }}</h2>
+  <p>{{ _("about_technical") }}</p>
+
+  <h2>{{ _("about_contact_title") }}</h2>
+  <p>{{ _("about_contact") }} <a href="mailto:physics-support@e-infra.cz">physics-support@e-infra.cz</a></p>
+
+</div>
+{%- endblock page_body %}
