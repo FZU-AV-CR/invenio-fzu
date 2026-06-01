@@ -5,6 +5,13 @@
 Metadata:
   properties:
 
+    experiment:
+      type: vocabulary
+      vocabulary-type: experiments
+      label:
+        en: Experiment
+        cs: Experiment
+
     manufacturer:
       type: keyword
       label:
@@ -45,15 +52,6 @@ Metadata:
       description: >
         List of all components contained in this batch. In QA files the field name is SerialNumber.
       example: "20USES40002730"
-
-
-    experiment:
-      type: keyword
-      label:
-        en: Experiment
-        cs: Experiment
-      enum:
-        - ATLAS-ITk
 
     test_types:
       type: array

@@ -6,12 +6,11 @@ Metadata:
 
     # -------- Core box metadata --------
     experiment:
-      type: keyword
+      type: vocabulary
+      vocabulary-type: experiments
       label:
         en: Experiment
         cs: Experiment
-      enum:
-        - FERMILAB SiPM
 
     file_types:
       type: array

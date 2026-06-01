@@ -69,7 +69,9 @@
         }
       }
     ],
-  "experiment": "ATLAS-ITk",
+    "experiment": {
+      "id": "ATLAS-ITk"
+    },
   "manufacturer": "Hamamatsu Photonics",
   "batch": "VPA56032",
   "wafer": ["05408"],

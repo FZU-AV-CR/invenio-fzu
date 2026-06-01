@@ -47,7 +47,9 @@
       { "subject": "Roque de los Muchachos" }
     ],
     "rights": [{ "id": "4-BY" }],
-    "experiment": "FRAM",
+    "experiment": {
+      "id": "FRAM"
+    },
     "target_id": "1546651",
     "target_name": "2001 / VAOD_color",
     "observation_type": "object",
