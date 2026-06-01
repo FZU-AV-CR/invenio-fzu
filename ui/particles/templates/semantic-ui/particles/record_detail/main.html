@@ -14,7 +14,7 @@
   {% endif %}
 {% endmacro %}
 <table class="ui definition table">
-  {{ safe_row(m.label(m.experiment), m.experiment) }}
+  {{ safe_row(m.label(m.experiment), m.experiment.title.en) }}
   {% if "EmptyFieldDataSentinel" not in m.collision_information._api_data | string %}
   <tr>
     <td>{{ m.label(m.collision_information) }}</td>

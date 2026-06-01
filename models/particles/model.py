@@ -55,7 +55,7 @@ particles_model = model(
             "metadata.subjects.subject",
             "metadata.creators.person_or_org.name",
             "metadata.contributors.person_or_org.name",
-            "metadata.experiment",
+            "metadata.experiment.id",
             "metadata.category",
             "metadata.dataset_type",
             "metadata.number_of_events",
