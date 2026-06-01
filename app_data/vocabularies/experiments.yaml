@@ -1,0 +1,49 @@
+- id: DELPHI
+  title:
+    en: DELPHI
+    cs: DELPHI
+
+- id: FRAM
+  title:
+    en: FRAM
+    cs: FRAM
+
+- id: ATLAS-ITk
+  title:
+    en: ATLAS-ITk
+    cs: ATLAS-ITk
+
+- id: FERMILAB-SiPM
+  title:
+    en: FERMILAB-SiPM
+    cs: FERMILAB-SiPM
+
+- id: MICROSCOPES
+  title:
+    en: MICROSCOPES
+    cs: MIKROSKOPY
+
+- id: ONDREJOV
+  title:
+    en: ONDREJOV
+    cs: ONDREJOV
+
+- id: AUGER
+  title:
+    en: AUGER
+    cs: AUGER
+
+- id: XX
+  title:
+    en: XX
+    cs: XX
+
+- id: YY
+  title:
+    en: YY
+    cs: YY
+
+- id: GENERAL
+  title:
+    en: GENERAL
+    cs: GENERAL

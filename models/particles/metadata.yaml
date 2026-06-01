@@ -2,14 +2,13 @@
 # add the ccmm_preset instead.
 Metadata:
   properties:
+
     experiment:
-      type: keyword
+      type: vocabulary
+      vocabulary-type: experiments
       label:
         en: Experiment
         cs: Experiment
-      # in orig data it is an array, should it be?
-      enum:
-        - DELPHI
 
     recid:
       type: int

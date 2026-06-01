@@ -57,7 +57,7 @@ detectors_model = model(
             "metadata.subjects.subject",
             "metadata.creators.person_or_org.name",
             "metadata.contributors.person_or_org.name",
-            "metadata.experiment",
+            "metadata.experiment.id",
             "metadata.box",
             "metadata.trays",
             "metadata.tray_numbers",
