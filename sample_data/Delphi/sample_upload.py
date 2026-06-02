@@ -285,7 +285,7 @@ def fill_cern_metadata(source) -> dict:
 
 async def create_local_client():
     config = Config()
-    token="gJpV5jWJ83kfE4K1caOVO8eT1kHd3XgNMsDwSZRdKuWpkEY8xNrB8VgWlTNc"
+    token = ""
     # securely enter the token
     if token == "":
         token = getpass.getpass("Enter API token for repository: ").strip()
