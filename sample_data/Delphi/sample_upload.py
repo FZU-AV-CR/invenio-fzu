@@ -194,7 +194,7 @@ def fill_cern_metadata(source) -> dict:
     license_info = src.get("license", {})
     if isinstance(license_info, dict):
         attr = str(license_info.get("attribution", "")).lower()
-        if "CC0-1.0" in attr:
+        if "cc0-1.0" in attr:
             tgt["rights"] = [{"id": "CC0-1.0"}]
 
     # Identifiers (append DOI/OAI if present)
@@ -285,7 +285,8 @@ def fill_cern_metadata(source) -> dict:
 
 async def create_local_client():
     config = Config()
-    token = ""
+    token = ""
+
     # securely enter the token
     if token == "":
         token = getpass.getpass("Enter API token for repository: ").strip()
