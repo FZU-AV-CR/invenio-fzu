@@ -1,3 +1,7 @@
 particle_category:
   pid-type: vpcat
   data-file: vocabularies/particle_category.yaml
+
+experiments:
+  pid-type: vexp
+  data-file: vocabularies/experiments.yaml

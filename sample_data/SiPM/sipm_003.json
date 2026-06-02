@@ -20,13 +20,13 @@
       },
       {
         "person_or_org": {
-          "name": "FZU CAS - Department of Detector Development and Data Processing",
+          "name": "FZU Institute of Physics of the Czech Academy of Sciences",
           "type": "organizational"
         }
       }
     ],
     "file_types": ["csv", "txt", "pdf"],
-    "title": "SiPM_ Prg3, Hamamatsu, Spain S06 3",
+    "title": "FERMILAB-SiPM_ Prg3, Hamamatsu, Spain S06 3",
     "publication_date": "2026-01-01",
     "publisher": "FZU Institute of Physics of the Czech Academy of Sciences",
     "subjects": [
@@ -53,7 +53,9 @@
         "type": { "id": "Created" }
       }
     ],
-    "experiment": "FERMILAB-SiPM",
+    "experiment": {
+      "id": "FERMILAB-SiPM"
+    },
     "manufacturer": "Hamamatsu Photonics",
     "requestor": "Spain S06",
     "requestor_search": ["Spain", "Spain S06", "S06", "S6"],

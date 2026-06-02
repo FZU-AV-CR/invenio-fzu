@@ -2,7 +2,14 @@
 
 Metadata:
   properties:
-     
+
+    experiment:
+      type: vocabulary
+      vocabulary-type: experiments
+      label:
+        en: Experiment
+        cs: Experiment
+
     # Identification
 
     target_id:
@@ -210,11 +217,3 @@ Metadata:
       label:
         en: Footprint
         cs: Pokrytí oblohy
-
-    experiment:
-      type: keyword
-      label:
-        en: Experiment
-        cs: Experiment
-      enum:
-        - FRAM

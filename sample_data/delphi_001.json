@@ -50,7 +50,9 @@
         }
       }
     ],
-    "experiment": "DELPHI",
+    "experiment": {
+      "id": "DELPHI"
+    },
     "collision_information": {
       "type": "e+e-",
       "energy": "181-210 GeV",

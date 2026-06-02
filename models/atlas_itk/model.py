@@ -62,7 +62,7 @@ atlas_itk_model = model(
             "metadata.wafer",
             "metadata.test_types",
             "metadata.run_numbers",
-            "metadata.experiment",
+            "metadata.experiment.id",
             "metadata.manufacturer",
             "metadata.files",
             "metadata.component_types",

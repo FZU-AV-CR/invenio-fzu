@@ -71,7 +71,7 @@ Note: Context variables available:
   {% endmacro %}
 
   <table class="ui definition table">
-    {{ safe_row(m.label(m.experiment), m.experiment) }}
+    {{ safe_row(m.label(m.experiment), m.experiment.title.en) }}
     {{ safe_row(m.label(m.filepath), m.filepath) }}
     {{ safe_row(m.label(m.site), m.site) }}
     {{ safe_row(m.label(m.target_id), m.target_id) }}
