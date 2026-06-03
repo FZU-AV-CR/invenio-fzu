@@ -226,21 +226,21 @@ def fill_cern_metadata(source) -> dict:
     elif isinstance(secondary, list) and any(str(s).lower() == "logbook" for s in secondary):
         # TODO: fix values
         tgt["dataset_type"] = "logbook"
-        tgt["resource_type"] = {"id": "publication"}
+        tgt["resource_type"] = {"id": "H41Y-FW7B"}  # logbook
         tgt.pop("collision_information", None)  # logbooks don't have collision info
         tgt.pop("number_of_events", None)  # logbooks don't have experiment field
         metadata["metadata"] = tgt
         return metadata
     elif isinstance(secondary, list) and any(str(s).lower() == "manual" for s in secondary):
         tgt["dataset_type"] = "manual"
-        tgt["resource_type"] = {"id": "publication"}
+        tgt["resource_type"] = {"id": "c_71bd"} # manual
         tgt.pop("collision_information", None)  # logbooks don't have collision info
         tgt.pop("number_of_events", None)  # logbooks don't have experiment field
         metadata["metadata"] = tgt
         return metadata
     elif isinstance(secondary, list) and any(str(s).lower() == "report" for s in secondary):
         tgt["dataset_type"] = "report"
-        tgt["resource_type"] = {"id": "publication"}
+        tgt["resource_type"] = {"id": "c_93fc"} # report
         tgt.pop("collision_information", None)  # logbooks don't have collision info
         tgt.pop("number_of_events", None)  # logbooks don't have experiment field
         metadata["metadata"] = tgt
@@ -291,13 +291,15 @@ async def create_local_client():
     # securely enter the token
     if token == "":
         token = getpass.getpass("Enter API token for repository: ").strip()
-
-    config.add_repository(RepositoryConfig(
-        alias="physica-local",
-        url=URL("https://127.0.0.1:5000/"),
-        token=token,
-        verify_tls=False
-    ))
+    try:
+        config.add_repository(RepositoryConfig(
+            alias="physica-local",
+            url=URL("https://127.0.0.1:5000/"),
+            token=token,
+            verify_tls=False
+        ))
+    except Exception as exc:
+        raise SystemExit(f"Failed to configure repository client: {exc}")
     return await get_async_client("physica-local", config=config)
 
 
