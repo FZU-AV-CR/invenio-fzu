@@ -66,11 +66,8 @@ particles_model = model(
         AddFacetGroup(
             name="default",
             facets=[
-                "metadata.experiment.id",
-                "metadata.category.id",
-                "metadata.dataset_type",
-                "metadata.collision_information.type",
-                "metadata.file_types",
+                "metadata.title",
+
             ],
         ),
     ],

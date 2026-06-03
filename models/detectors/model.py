@@ -73,13 +73,8 @@ detectors_model = model(
         AddFacetGroup(
             name="default",
             facets=[
-                "metadata.experiment.id",
-                "metadata.manufacturer",
-                "metadata.requestor",
-                "metadata.box",
-                "metadata.qr_list",
-                "metadata.tray_numbers",
-                "metadata.file_types",
+                "metadata.title",
+                
             ],
         ),
     ],

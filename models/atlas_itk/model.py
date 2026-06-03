@@ -72,14 +72,8 @@ atlas_itk_model = model(
         AddFacetGroup(
             name="default",
             facets=[
-                "metadata.experiment.id",
-                "metadata.manufacturer",
-                "metadata.batch",
-                "metadata.wafer",
-                "metadata.components",
-                "metadata.component_types",
-                "metadata.files",
-                "metadata.file_types",
+                "metadata.title",
+
             ],
         ),
     ],
