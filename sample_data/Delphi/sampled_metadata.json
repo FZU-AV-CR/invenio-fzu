@@ -1,0 +1,5890 @@
+[
+  {
+    "abstract": {
+      "description": "RAW data of ALL events; 1990 data"
+    },
+    "accelerator": "CERN-LEP",
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1990"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "RAWD"
+      ],
+      "number_events": 228298,
+      "number_files": 171,
+      "size": 28669044301
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.4UXE.ZX4E",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:e042f10a",
+        "size": 175733760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.1.sl"
+      },
+      {
+        "checksum": "adler32:c72ed73a",
+        "size": 177838080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.2.sl"
+      },
+      {
+        "checksum": "adler32:e1c11efc",
+        "size": 170449920,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.3.sl"
+      },
+      {
+        "checksum": "adler32:734292f7",
+        "size": 173260800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.4.sl"
+      },
+      {
+        "checksum": "adler32:beb35f2f",
+        "size": 171432960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.5.sl"
+      },
+      {
+        "checksum": "adler32:dbd08c04",
+        "size": 175825920,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.6.sl"
+      },
+      {
+        "checksum": "adler32:0903048f",
+        "size": 161034240,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.7.sl"
+      },
+      {
+        "checksum": "adler32:e5573913",
+        "size": 177454080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.8.sl"
+      },
+      {
+        "checksum": "adler32:a56a4d27",
+        "size": 171048960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.9.sl"
+      },
+      {
+        "checksum": "adler32:b3ec32c3",
+        "size": 163046400,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.10.sl"
+      },
+      {
+        "checksum": "adler32:3a9bec25",
+        "size": 177699840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.11.sl"
+      },
+      {
+        "checksum": "adler32:1cfbb3ca",
+        "size": 170557440,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.12.sl"
+      },
+      {
+        "checksum": "adler32:d0192054",
+        "size": 179481600,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.13.sl"
+      },
+      {
+        "checksum": "adler32:12d60324",
+        "size": 168483840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.14.sl"
+      },
+      {
+        "checksum": "adler32:985eef91",
+        "size": 172523520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.15.sl"
+      },
+      {
+        "checksum": "adler32:50ae0401",
+        "size": 168637440,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.16.sl"
+      },
+      {
+        "checksum": "adler32:8baddb96",
+        "size": 166118400,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.17.sl"
+      },
+      {
+        "checksum": "adler32:c2e55713",
+        "size": 172354560,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.18.sl"
+      },
+      {
+        "checksum": "adler32:d44fb24b",
+        "size": 164029440,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.19.sl"
+      },
+      {
+        "checksum": "adler32:ddce0430",
+        "size": 166609920,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.20.sl"
+      },
+      {
+        "checksum": "adler32:92181ffa",
+        "size": 166702080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.21.sl"
+      },
+      {
+        "checksum": "adler32:198989f8",
+        "size": 174228480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.22.sl"
+      },
+      {
+        "checksum": "adler32:e1e2d1b9",
+        "size": 171509760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.23.sl"
+      },
+      {
+        "checksum": "adler32:d9aae392",
+        "size": 171970560,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.24.sl"
+      },
+      {
+        "checksum": "adler32:09706ff9",
+        "size": 172523520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.25.sl"
+      },
+      {
+        "checksum": "adler32:9f8ba81f",
+        "size": 170280960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.26.sl"
+      },
+      {
+        "checksum": "adler32:449172c6",
+        "size": 169128960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.27.sl"
+      },
+      {
+        "checksum": "adler32:14446913",
+        "size": 166917120,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.28.sl"
+      },
+      {
+        "checksum": "adler32:d5fe77a8",
+        "size": 173445120,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.29.sl"
+      },
+      {
+        "checksum": "adler32:2c7aeaef",
+        "size": 172846080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.30.sl"
+      },
+      {
+        "checksum": "adler32:3fad621e",
+        "size": 172231680,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.31.sl"
+      },
+      {
+        "checksum": "adler32:55b8aadb",
+        "size": 175411200,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.32.sl"
+      },
+      {
+        "checksum": "adler32:271db56a",
+        "size": 171786240,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.33.sl"
+      },
+      {
+        "checksum": "adler32:c138f936",
+        "size": 174458880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.34.sl"
+      },
+      {
+        "checksum": "adler32:fe54ecd8",
+        "size": 172999680,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.35.sl"
+      },
+      {
+        "checksum": "adler32:bdd5cda7",
+        "size": 175672320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.36.sl"
+      },
+      {
+        "checksum": "adler32:d91c4147",
+        "size": 176332800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.37.sl"
+      },
+      {
+        "checksum": "adler32:23896f51",
+        "size": 176286720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.38.sl"
+      },
+      {
+        "checksum": "adler32:ce8e0908",
+        "size": 171509760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.39.sl"
+      },
+      {
+        "checksum": "adler32:4d46021d",
+        "size": 160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.40.sl"
+      },
+      {
+        "checksum": "adler32:998707d3",
+        "size": 170234880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.41.sl"
+      },
+      {
+        "checksum": "adler32:e36ce72e",
+        "size": 173399040,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.42.sl"
+      },
+      {
+        "checksum": "adler32:7c45bbcb",
+        "size": 170956800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.43.sl"
+      },
+      {
+        "checksum": "adler32:5be03831",
+        "size": 173122560,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.44.sl"
+      },
+      {
+        "checksum": "adler32:393a3610",
+        "size": 173813760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.45.sl"
+      },
+      {
+        "checksum": "adler32:ec463e5a",
+        "size": 175856640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.46.sl"
+      },
+      {
+        "checksum": "adler32:dab304b0",
+        "size": 170987520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.47.sl"
+      },
+      {
+        "checksum": "adler32:96b114c0",
+        "size": 174305280,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.48.sl"
+      },
+      {
+        "checksum": "adler32:a17a77a5",
+        "size": 171878400,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.49.sl"
+      },
+      {
+        "checksum": "adler32:7a851a32",
+        "size": 171294720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0001/ED0001.50.sl"
+      },
+      {
+        "checksum": "adler32:898fbbbc",
+        "size": 176931840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.1.sl"
+      },
+      {
+        "checksum": "adler32:8127b456",
+        "size": 172523520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.2.sl"
+      },
+      {
+        "checksum": "adler32:a330bd60",
+        "size": 167639040,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.3.sl"
+      },
+      {
+        "checksum": "adler32:4a99baf4",
+        "size": 170327040,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.4.sl"
+      },
+      {
+        "checksum": "adler32:3ead88d7",
+        "size": 172492800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.5.sl"
+      },
+      {
+        "checksum": "adler32:23c064e9",
+        "size": 175288320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.6.sl"
+      },
+      {
+        "checksum": "adler32:d18cf06f",
+        "size": 176240640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.7.sl"
+      },
+      {
+        "checksum": "adler32:7e626963",
+        "size": 172170240,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.8.sl"
+      },
+      {
+        "checksum": "adler32:1daad68c",
+        "size": 170741760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.9.sl"
+      },
+      {
+        "checksum": "adler32:2a5001e4",
+        "size": 160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.10.sl"
+      },
+      {
+        "checksum": "adler32:d153b866",
+        "size": 166824960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.11.sl"
+      },
+      {
+        "checksum": "adler32:a32f2856",
+        "size": 163706880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.12.sl"
+      },
+      {
+        "checksum": "adler32:aa757aea",
+        "size": 172277760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.13.sl"
+      },
+      {
+        "checksum": "adler32:7eb3d4dc",
+        "size": 170465280,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.14.sl"
+      },
+      {
+        "checksum": "adler32:156f165b",
+        "size": 173368320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.15.sl"
+      },
+      {
+        "checksum": "adler32:b6d03e7c",
+        "size": 168576000,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.16.sl"
+      },
+      {
+        "checksum": "adler32:91d65a6e",
+        "size": 176394240,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.17.sl"
+      },
+      {
+        "checksum": "adler32:47da7251",
+        "size": 168760320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.18.sl"
+      },
+      {
+        "checksum": "adler32:2af5ddbf",
+        "size": 169927680,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.19.sl"
+      },
+      {
+        "checksum": "adler32:e999e427",
+        "size": 176624640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.20.sl"
+      },
+      {
+        "checksum": "adler32:f817f7f4",
+        "size": 169082880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.21.sl"
+      },
+      {
+        "checksum": "adler32:90acf6e4",
+        "size": 155105280,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.22.sl"
+      },
+      {
+        "checksum": "adler32:14737ed6",
+        "size": 3341,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.23.sl"
+      },
+      {
+        "checksum": "adler32:834245aa",
+        "size": 165504000,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.24.sl"
+      },
+      {
+        "checksum": "adler32:9471676b",
+        "size": 173276160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.25.sl"
+      },
+      {
+        "checksum": "adler32:8df61ff7",
+        "size": 170357760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.26.sl"
+      },
+      {
+        "checksum": "adler32:a39d1aa7",
+        "size": 170449920,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.27.sl"
+      },
+      {
+        "checksum": "adler32:c0e8bf02",
+        "size": 164505600,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.28.sl"
+      },
+      {
+        "checksum": "adler32:cf3b6738",
+        "size": 176455680,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.29.sl"
+      },
+      {
+        "checksum": "adler32:ed8edd5d",
+        "size": 168360960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.30.sl"
+      },
+      {
+        "checksum": "adler32:629ce3fb",
+        "size": 175380480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.31.sl"
+      },
+      {
+        "checksum": "adler32:a04ee2d8",
+        "size": 170480640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.32.sl"
+      },
+      {
+        "checksum": "adler32:bc840169",
+        "size": 172446720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.33.sl"
+      },
+      {
+        "checksum": "adler32:5f2f6a79",
+        "size": 164121600,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.34.sl"
+      },
+      {
+        "checksum": "adler32:4ab980dd",
+        "size": 171678720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.35.sl"
+      },
+      {
+        "checksum": "adler32:6f15636f",
+        "size": 168115200,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.36.sl"
+      },
+      {
+        "checksum": "adler32:0c35ba1a",
+        "size": 171878400,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.37.sl"
+      },
+      {
+        "checksum": "adler32:6e90849a",
+        "size": 163568640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.38.sl"
+      },
+      {
+        "checksum": "adler32:ea2452e4",
+        "size": 173260800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.39.sl"
+      },
+      {
+        "checksum": "adler32:aa2ce351",
+        "size": 163384320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.40.sl"
+      },
+      {
+        "checksum": "adler32:8def1755",
+        "size": 174597120,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.41.sl"
+      },
+      {
+        "checksum": "adler32:e1603de5",
+        "size": 178498560,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.42.sl"
+      },
+      {
+        "checksum": "adler32:5a8866f3",
+        "size": 173998080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.43.sl"
+      },
+      {
+        "checksum": "adler32:eae31db1",
+        "size": 160235520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.44.sl"
+      },
+      {
+        "checksum": "adler32:ab452619",
+        "size": 168821760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.45.sl"
+      },
+      {
+        "checksum": "adler32:b1a2043e",
+        "size": 172154880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.46.sl"
+      },
+      {
+        "checksum": "adler32:92dd865a",
+        "size": 173091840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.47.sl"
+      },
+      {
+        "checksum": "adler32:1697fb1e",
+        "size": 163415040,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.48.sl"
+      },
+      {
+        "checksum": "adler32:94cec329",
+        "size": 174213120,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.49.sl"
+      },
+      {
+        "checksum": "adler32:24d7e66e",
+        "size": 170741760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0002/ED0002.50.sl"
+      },
+      {
+        "checksum": "adler32:77e02d27",
+        "size": 178283520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.1.sl"
+      },
+      {
+        "checksum": "adler32:0ef97217",
+        "size": 177085440,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.2.sl"
+      },
+      {
+        "checksum": "adler32:4bd8b3e2",
+        "size": 173568000,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.3.sl"
+      },
+      {
+        "checksum": "adler32:8269ee38",
+        "size": 166932480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.4.sl"
+      },
+      {
+        "checksum": "adler32:6926b4bd",
+        "size": 174243840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.5.sl"
+      },
+      {
+        "checksum": "adler32:269b0be3",
+        "size": 174458880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.6.sl"
+      },
+      {
+        "checksum": "adler32:2b15099c",
+        "size": 170787840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.7.sl"
+      },
+      {
+        "checksum": "adler32:5294463e",
+        "size": 176532480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.8.sl"
+      },
+      {
+        "checksum": "adler32:90c03bbb",
+        "size": 174935040,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.9.sl"
+      },
+      {
+        "checksum": "adler32:e6c3f66e",
+        "size": 167700480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.10.sl"
+      },
+      {
+        "checksum": "adler32:eeff46c1",
+        "size": 171310080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.11.sl"
+      },
+      {
+        "checksum": "adler32:4727d23e",
+        "size": 172262400,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.12.sl"
+      },
+      {
+        "checksum": "adler32:9e98e781",
+        "size": 167454720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.13.sl"
+      },
+      {
+        "checksum": "adler32:3740dd0f",
+        "size": 169528320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.14.sl"
+      },
+      {
+        "checksum": "adler32:b2399f0e",
+        "size": 175303680,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.15.sl"
+      },
+      {
+        "checksum": "adler32:59df2c91",
+        "size": 168238080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.16.sl"
+      },
+      {
+        "checksum": "adler32:4c4b63f7",
+        "size": 173260800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.17.sl"
+      },
+      {
+        "checksum": "adler32:ade1c478",
+        "size": 172753920,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.18.sl"
+      },
+      {
+        "checksum": "adler32:7a6372dd",
+        "size": 167454720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.19.sl"
+      },
+      {
+        "checksum": "adler32:c10bf38f",
+        "size": 176624640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.20.sl"
+      },
+      {
+        "checksum": "adler32:275003a0",
+        "size": 173752320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.21.sl"
+      },
+      {
+        "checksum": "adler32:3ddd18e6",
+        "size": 170618880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.22.sl"
+      },
+      {
+        "checksum": "adler32:cb0ecf25",
+        "size": 174489600,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.23.sl"
+      },
+      {
+        "checksum": "adler32:65fc13d7",
+        "size": 175948800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.24.sl"
+      },
+      {
+        "checksum": "adler32:e5edd7c8",
+        "size": 177530880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.25.sl"
+      },
+      {
+        "checksum": "adler32:49acc774",
+        "size": 174028800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.26.sl"
+      },
+      {
+        "checksum": "adler32:a1e51e81",
+        "size": 168453120,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.27.sl"
+      },
+      {
+        "checksum": "adler32:ed70cecd",
+        "size": 164229120,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.28.sl"
+      },
+      {
+        "checksum": "adler32:9061eb55",
+        "size": 166932480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.29.sl"
+      },
+      {
+        "checksum": "adler32:f68ba983",
+        "size": 172661760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.30.sl"
+      },
+      {
+        "checksum": "adler32:989e22d5",
+        "size": 171156480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.31.sl"
+      },
+      {
+        "checksum": "adler32:8091c41c",
+        "size": 171770880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.32.sl"
+      },
+      {
+        "checksum": "adler32:28117721",
+        "size": 171279360,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.33.sl"
+      },
+      {
+        "checksum": "adler32:0c521687",
+        "size": 170757120,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.34.sl"
+      },
+      {
+        "checksum": "adler32:fa450c4c",
+        "size": 164152320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.35.sl"
+      },
+      {
+        "checksum": "adler32:75496371",
+        "size": 175979520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.36.sl"
+      },
+      {
+        "checksum": "adler32:f9018666",
+        "size": 169482240,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.37.sl"
+      },
+      {
+        "checksum": "adler32:a69a1aee",
+        "size": 173998080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.38.sl"
+      },
+      {
+        "checksum": "adler32:995a0abd",
+        "size": 168852480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.39.sl"
+      },
+      {
+        "checksum": "adler32:8f7baaf1",
+        "size": 176163840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.40.sl"
+      },
+      {
+        "checksum": "adler32:c07d4bcc",
+        "size": 171601920,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.41.sl"
+      },
+      {
+        "checksum": "adler32:a0d82cc1",
+        "size": 174474240,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.42.sl"
+      },
+      {
+        "checksum": "adler32:ba3e3a4b",
+        "size": 173137920,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.43.sl"
+      },
+      {
+        "checksum": "adler32:f8e2853b",
+        "size": 173245440,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.44.sl"
+      },
+      {
+        "checksum": "adler32:64c796f1",
+        "size": 171571200,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.45.sl"
+      },
+      {
+        "checksum": "adler32:c44ae7e9",
+        "size": 170480640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.46.sl"
+      },
+      {
+        "checksum": "adler32:6184aa5c",
+        "size": 177469440,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.47.sl"
+      },
+      {
+        "checksum": "adler32:3fe7d9e1",
+        "size": 175196160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.48.sl"
+      },
+      {
+        "checksum": "adler32:c8777868",
+        "size": 167424000,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.49.sl"
+      },
+      {
+        "checksum": "adler32:f1647f19",
+        "size": 174243840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0003/ED0003.50.sl"
+      },
+      {
+        "checksum": "adler32:d84f501b",
+        "size": 174090240,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.1.sl"
+      },
+      {
+        "checksum": "adler32:636a4554",
+        "size": 167546880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.2.sl"
+      },
+      {
+        "checksum": "adler32:cc3dc0e7",
+        "size": 174781440,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.3.sl"
+      },
+      {
+        "checksum": "adler32:9e0181b8",
+        "size": 177515520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.4.sl"
+      },
+      {
+        "checksum": "adler32:12f2de8b",
+        "size": 174366720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.5.sl"
+      },
+      {
+        "checksum": "adler32:b9027ab5",
+        "size": 175549440,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.6.sl"
+      },
+      {
+        "checksum": "adler32:205ade24",
+        "size": 172938240,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.7.sl"
+      },
+      {
+        "checksum": "adler32:1d6a034c",
+        "size": 173137920,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.8.sl"
+      },
+      {
+        "checksum": "adler32:77a68ab2",
+        "size": 168545280,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.9.sl"
+      },
+      {
+        "checksum": "adler32:f5ea71ff",
+        "size": 168360960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.10.sl"
+      },
+      {
+        "checksum": "adler32:3b51f025",
+        "size": 170664960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.11.sl"
+      },
+      {
+        "checksum": "adler32:132ed353",
+        "size": 173475840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.12.sl"
+      },
+      {
+        "checksum": "adler32:96391a28",
+        "size": 172661760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.13.sl"
+      },
+      {
+        "checksum": "adler32:816e33d4",
+        "size": 163230720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.14.sl"
+      },
+      {
+        "checksum": "adler32:6649a7f9",
+        "size": 169175040,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.15.sl"
+      },
+      {
+        "checksum": "adler32:e83ecd2e",
+        "size": 162201600,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.16.sl"
+      },
+      {
+        "checksum": "adler32:ab22ad2a",
+        "size": 167838720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.17.sl"
+      },
+      {
+        "checksum": "adler32:9b61f262",
+        "size": 175595520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.18.sl"
+      },
+      {
+        "checksum": "adler32:e0ad41fa",
+        "size": 173690880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.19.sl"
+      },
+      {
+        "checksum": "adler32:36870fa5",
+        "size": 172723200,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.20.sl"
+      },
+      {
+        "checksum": "adler32:2a9d443a",
+        "size": 26972160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/raw-data/y90/ED0004/ED0004.21.sl"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was recorded by the DELPHI detector in the year 1990."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "81000",
+    "title": "DELPHI collision data rawd90",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Collision"
+      ]
+    },
+    "usage": {
+      "description": "The RAW data is availabe for processing with the event server. The main purpose is to display an event with DELGRA.",
+      "links": [
+        {
+          "description": "The DELPHI Event Server",
+          "url": "/docs/delphi-guide-eventserver"
+        },
+        {
+          "description": "The DELPHI Event Display Manual",
+          "url": "/record/80503"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "ShortDST CCbar -> el + X          ; Sim of 91 ANA91F Fix 1 ; BASTA"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "2 Fermion"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1991"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "SHORT"
+      ],
+      "number_events": 50329,
+      "number_files": 9,
+      "size": 1220305920
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.50G9.FL34",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:e4ca9255",
+        "size": 129223680,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/misc/Y22669/Y22669.130.al"
+      },
+      {
+        "checksum": "adler32:d8900d2c",
+        "size": 129070080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/misc/Y22669/Y22669.131.al"
+      },
+      {
+        "checksum": "adler32:daa9b672",
+        "size": 129515520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/misc/Y22669/Y22669.132.al"
+      },
+      {
+        "checksum": "adler32:266be51b",
+        "size": 127948800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/misc/Y22669/Y22669.133.al"
+      },
+      {
+        "checksum": "adler32:8b30575a",
+        "size": 129192960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/misc/Y22669/Y22669.134.al"
+      },
+      {
+        "checksum": "adler32:b4b748ea",
+        "size": 129484800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/misc/Y22669/Y22669.135.al"
+      },
+      {
+        "checksum": "adler32:d99f8ad5",
+        "size": 187668480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/misc/Y22669/Y22669.136.al"
+      },
+      {
+        "checksum": "adler32:19995688",
+        "size": 129346560,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/misc/Y22669/Y22669.137.al"
+      },
+      {
+        "checksum": "adler32:4ec3f089",
+        "size": 128855040,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/misc/Y22669/Y22669.138.al"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1991. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v91f1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "81015",
+    "title": "DELPHI simulation data sh_ccel_b91_2_f1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the SHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"short DST\" manual",
+          "url": "/record/80506"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "LongDST gamma-gamma-->mu mu, no cuts;  ANA93C Fix 1 (gas)   ; SNAK"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "89-94 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1993"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "LONG"
+      ],
+      "number_events": 68189,
+      "number_files": 3,
+      "size": 535587840
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.D4QG.TP8U",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:df4cdfe9",
+        "size": 187023360,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/misc/Y22669/Y22669.149.al"
+      },
+      {
+        "checksum": "adler32:edb81266",
+        "size": 166179840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/misc/Y22669/Y22669.150.al"
+      },
+      {
+        "checksum": "adler32:c3e010ba",
+        "size": 182384640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/misc/Y22669/Y22669.151.al"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1993. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v93c1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "81140",
+    "title": "DELPHI simulation data lo_ggmu_s93_1g_c1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the LONG format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"full DST\" manuals",
+          "url": "/record/80504"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "ShortDST; TTQQ cross-section = 0.538 +- 0.004 pb Short DST simulation 94_c2 done at ecms=91.25 , RAL"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "2 Fermion"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "89-94 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1994"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "SHORT"
+      ],
+      "number_events": 2100,
+      "number_files": 1,
+      "size": 38046720
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.PIHU.C6ZI",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:f312bc3f",
+        "size": 38046720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/ral/excal/ttqq/v94c/091.2/TAP891628.sdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1994. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v94c2)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "81227",
+    "title": "DELPHI simulation data sh_ttqq_e091_r94_2l_c2",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the SHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"short DST\" manual",
+          "url": "/record/80506"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "Short DST simulation 95d2 done at ecms=91.25 , CERN"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "4 Fermion"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "89-94 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1995"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "SHORT"
+      ],
+      "number_events": 25000,
+      "number_files": 5,
+      "size": 133109760
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.5L2G.L84O",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:fddb689a",
+        "size": 26757120,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wphact23/v95d/91.25/wphact23_mmmm_91.25_80.4_1101.sdst"
+      },
+      {
+        "checksum": "adler32:9db54cb3",
+        "size": 26618880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wphact23/v95d/91.25/wphact23_mmmm_91.25_80.4_1102.sdst"
+      },
+      {
+        "checksum": "adler32:32183ad4",
+        "size": 26588160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wphact23/v95d/91.25/wphact23_mmmm_91.25_80.4_1103.sdst"
+      },
+      {
+        "checksum": "adler32:ee62ee50",
+        "size": 26618880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wphact23/v95d/91.25/wphact23_mmmm_91.25_80.4_1104.sdst"
+      },
+      {
+        "checksum": "adler32:4b3cfcde",
+        "size": 26526720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wphact23/v95d/91.25/wphact23_mmmm_91.25_80.4_1105.sdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1995. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v95d2)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "81567",
+    "title": "DELPHI simulation data sh_wphact23mmmm_e91.25_m80.4_c95_1l_d2",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the SHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"short DST\" manual",
+          "url": "/record/80506"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "LongDST e+ e- -> lvlv                          ANA96E Fix 1 ; RUTH"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "2 Fermion"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "161-174 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1996"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "LONG"
+      ],
+      "number_events": 9198,
+      "number_files": 8,
+      "size": 93143040
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.BXUV.CUYZ",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:4205b675",
+        "size": 18186240,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/collision-data/Y13714/Y13714.188.al"
+      },
+      {
+        "checksum": "adler32:f6591a23",
+        "size": 21442560,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/collision-data/Y13714/Y13714.189.al"
+      },
+      {
+        "checksum": "adler32:d4989f3a",
+        "size": 6144000,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/collision-data/Y13714/Y13714.204.al"
+      },
+      {
+        "checksum": "adler32:ca47885b",
+        "size": 9108480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/collision-data/Y13714/Y13714.209.al"
+      },
+      {
+        "checksum": "adler32:475814b2",
+        "size": 9139200,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/collision-data/Y13714/Y13714.228.al"
+      },
+      {
+        "checksum": "adler32:7e770a40",
+        "size": 9123840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/collision-data/Y13714/Y13714.233.al"
+      },
+      {
+        "checksum": "adler32:e0fc9ada",
+        "size": 10122240,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/collision-data/Y13714/Y13714.313.al"
+      },
+      {
+        "checksum": "adler32:25ea7725",
+        "size": 9876480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/collision-data/Y13714/Y13714.318.al"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1996. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v96e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "81732",
+    "title": "DELPHI simulation data lo_lvlv_e172_r96_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the LONG format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"full DST\" manuals",
+          "url": "/record/80504"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDST gamma gamma -> e+ e-  BDK, biased                   RAL; "
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "EEGG"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "130-140 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1997"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 4808,
+      "number_files": 1,
+      "size": 29429760
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.UWVJ.SR3M",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:31e00e77",
+        "size": 29429760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/collision-data/Y16358/Y16358.216.al"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1997. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v97f3)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "81915",
+    "title": "DELPHI simulation data xs_ggee_e136_r97_1l_f3",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "Extended Short DST simulation 98e1 done at ecms=188.6 , CERN"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Special Samples"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1998"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 97813,
+      "number_files": 50,
+      "size": 4257730560
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.65K6.1X59",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:ba75e69d",
+        "size": 87060480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1001.xsdst"
+      },
+      {
+        "checksum": "adler32:21e535a7",
+        "size": 86661120,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1002.xsdst"
+      },
+      {
+        "checksum": "adler32:f7f374b1",
+        "size": 86200320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1003.xsdst"
+      },
+      {
+        "checksum": "adler32:fb41cac4",
+        "size": 86476800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1004.xsdst"
+      },
+      {
+        "checksum": "adler32:94034ef8",
+        "size": 86937600,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1005.xsdst"
+      },
+      {
+        "checksum": "adler32:20136ef3",
+        "size": 87152640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1006.xsdst"
+      },
+      {
+        "checksum": "adler32:fba173ee",
+        "size": 87413760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1007.xsdst"
+      },
+      {
+        "checksum": "adler32:3e067eaa",
+        "size": 86845440,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1008.xsdst"
+      },
+      {
+        "checksum": "adler32:59f6ad94",
+        "size": 87429120,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1009.xsdst"
+      },
+      {
+        "checksum": "adler32:2c55ffe1",
+        "size": 86814720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1010.xsdst"
+      },
+      {
+        "checksum": "adler32:660bd631",
+        "size": 87152640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1011.xsdst"
+      },
+      {
+        "checksum": "adler32:a2489052",
+        "size": 85969920,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1012.xsdst"
+      },
+      {
+        "checksum": "adler32:c9eb771c",
+        "size": 86983680,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1013.xsdst"
+      },
+      {
+        "checksum": "adler32:53f96f65",
+        "size": 86876160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1014.xsdst"
+      },
+      {
+        "checksum": "adler32:7335905a",
+        "size": 87336960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1015.xsdst"
+      },
+      {
+        "checksum": "adler32:fdc4ee6e",
+        "size": 87183360,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1016.xsdst"
+      },
+      {
+        "checksum": "adler32:7fb3815e",
+        "size": 86661120,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1017.xsdst"
+      },
+      {
+        "checksum": "adler32:e05088c8",
+        "size": 491520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1018.xsdst"
+      },
+      {
+        "checksum": "adler32:1a1493f5",
+        "size": 87029760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1019.xsdst"
+      },
+      {
+        "checksum": "adler32:e6e1b21a",
+        "size": 86737920,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1020.xsdst"
+      },
+      {
+        "checksum": "adler32:fb9c0eb2",
+        "size": 87828480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1021.xsdst"
+      },
+      {
+        "checksum": "adler32:cabb6c25",
+        "size": 86737920,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1022.xsdst"
+      },
+      {
+        "checksum": "adler32:f5cbf563",
+        "size": 87828480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1023.xsdst"
+      },
+      {
+        "checksum": "adler32:e79830b6",
+        "size": 86476800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1024.xsdst"
+      },
+      {
+        "checksum": "adler32:1637b70f",
+        "size": 87321600,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1025.xsdst"
+      },
+      {
+        "checksum": "adler32:12ee6b51",
+        "size": 87398400,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1026.xsdst"
+      },
+      {
+        "checksum": "adler32:9d5870d5",
+        "size": 86906880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1027.xsdst"
+      },
+      {
+        "checksum": "adler32:1d08d77a",
+        "size": 87260160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1028.xsdst"
+      },
+      {
+        "checksum": "adler32:40e4f6ae",
+        "size": 87413760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1029.xsdst"
+      },
+      {
+        "checksum": "adler32:9557936b",
+        "size": 87367680,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1030.xsdst"
+      },
+      {
+        "checksum": "adler32:921ca319",
+        "size": 86584320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1031.xsdst"
+      },
+      {
+        "checksum": "adler32:ed411ebe",
+        "size": 87075840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1032.xsdst"
+      },
+      {
+        "checksum": "adler32:f5972089",
+        "size": 78612480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1033.xsdst"
+      },
+      {
+        "checksum": "adler32:e759cd05",
+        "size": 87306240,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1034.xsdst"
+      },
+      {
+        "checksum": "adler32:f1aae388",
+        "size": 87720960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1035.xsdst"
+      },
+      {
+        "checksum": "adler32:0a050020",
+        "size": 87552000,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1036.xsdst"
+      },
+      {
+        "checksum": "adler32:ed33fac5",
+        "size": 87582720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1037.xsdst"
+      },
+      {
+        "checksum": "adler32:1bad834c",
+        "size": 87398400,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1038.xsdst"
+      },
+      {
+        "checksum": "adler32:be6d349e",
+        "size": 86860800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1039.xsdst"
+      },
+      {
+        "checksum": "adler32:19af1e3d",
+        "size": 86307840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1040.xsdst"
+      },
+      {
+        "checksum": "adler32:8e71beb4",
+        "size": 87413760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1041.xsdst"
+      },
+      {
+        "checksum": "adler32:08e22ba4",
+        "size": 87336960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1042.xsdst"
+      },
+      {
+        "checksum": "adler32:b4521c11",
+        "size": 87137280,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1043.xsdst"
+      },
+      {
+        "checksum": "adler32:cebb31ee",
+        "size": 87644160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1044.xsdst"
+      },
+      {
+        "checksum": "adler32:20227068",
+        "size": 86799360,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1045.xsdst"
+      },
+      {
+        "checksum": "adler32:395447ab",
+        "size": 87582720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1046.xsdst"
+      },
+      {
+        "checksum": "adler32:91c9c61e",
+        "size": 86999040,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1047.xsdst"
+      },
+      {
+        "checksum": "adler32:8b70cd1e",
+        "size": 87260160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1048.xsdst"
+      },
+      {
+        "checksum": "adler32:99d2d356",
+        "size": 86799360,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1049.xsdst"
+      },
+      {
+        "checksum": "adler32:ddab1e51",
+        "size": 85800960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/wandy4mvud/v98e/188.6/wandy4mvud_e188.6_m80.4_1050.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1998. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v98e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "82477",
+    "title": "DELPHI simulation data xs_wandy4mvud_e188.6_m80.4_c98_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "Extended Short DST simulation 99_e1 done at ecms=191.6 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 165795840
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.QAWC.4MWF",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:1b01e788",
+        "size": 33192960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hcqq_191.6_87.5_10021.xsdst"
+      },
+      {
+        "checksum": "adler32:efbcc7ad",
+        "size": 33377280,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hcqq_191.6_87.5_10022.xsdst"
+      },
+      {
+        "checksum": "adler32:4c8fa8f9",
+        "size": 32824320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hcqq_191.6_87.5_10023.xsdst"
+      },
+      {
+        "checksum": "adler32:a06c12b5",
+        "size": 32716800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hcqq_191.6_87.5_10024.xsdst"
+      },
+      {
+        "checksum": "adler32:9178e765",
+        "size": 33684480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hcqq_191.6_87.5_10025.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "85519",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hcqq_e191.6_m87.5_k99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03  e+e- --> HZ (H ->  any  Z -> mu+mu-) Extended Short DST simulation 99_e1 done at ecms=191.6 , CERN"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 4998,
+      "number_files": 10,
+      "size": 268078080
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.AQGK.YGJS",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:2147895f",
+        "size": 26895360,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hzmu_191.6_100_40331.xsdst"
+      },
+      {
+        "checksum": "adler32:8ca7cb1b",
+        "size": 26311680,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hzmu_191.6_100_40332.xsdst"
+      },
+      {
+        "checksum": "adler32:e1161788",
+        "size": 27079680,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hzmu_191.6_100_40333.xsdst"
+      },
+      {
+        "checksum": "adler32:0b014886",
+        "size": 27095040,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hzmu_191.6_100_40334.xsdst"
+      },
+      {
+        "checksum": "adler32:91e99a62",
+        "size": 26680320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hzmu_191.6_100_40335.xsdst"
+      },
+      {
+        "checksum": "adler32:805c2c5b",
+        "size": 26941440,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hzmu_191.6_100_40336.xsdst"
+      },
+      {
+        "checksum": "adler32:dfdbbf95",
+        "size": 27156480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hzmu_191.6_100_40337.xsdst"
+      },
+      {
+        "checksum": "adler32:51ac40d8",
+        "size": 26941440,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hzmu_191.6_100_40338.xsdst"
+      },
+      {
+        "checksum": "adler32:c572ca53",
+        "size": 26234880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hzmu_191.6_100_40339.xsdst"
+      },
+      {
+        "checksum": "adler32:ffc7481e",
+        "size": 26741760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hzmu_191.6_100_40340.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "86327",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hzmu_e191.6_m100_c99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03  e+e- --> HZ (H ->  any Z -> nu nubar)(HZ+interference+fusion) Extended Short DST simulation 99_e1 done at ecms=199.5 , CERN"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 4999,
+      "number_files": 10,
+      "size": 229278720
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.A7Z7.XTW1",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:88943c1a",
+        "size": 23040000,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hznu_199.5_80_38111.xsdst"
+      },
+      {
+        "checksum": "adler32:9538d16a",
+        "size": 23116800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hznu_199.5_80_38112.xsdst"
+      },
+      {
+        "checksum": "adler32:6c6a53cb",
+        "size": 22609920,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hznu_199.5_80_38113.xsdst"
+      },
+      {
+        "checksum": "adler32:b50d1597",
+        "size": 22640640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hznu_199.5_80_38114.xsdst"
+      },
+      {
+        "checksum": "adler32:898f6be9",
+        "size": 22748160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hznu_199.5_80_38115.xsdst"
+      },
+      {
+        "checksum": "adler32:685288f4",
+        "size": 22763520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hznu_199.5_80_38116.xsdst"
+      },
+      {
+        "checksum": "adler32:9b825069",
+        "size": 23009280,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hznu_199.5_80_38117.xsdst"
+      },
+      {
+        "checksum": "adler32:6273e0b4",
+        "size": 23301120,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hznu_199.5_80_38118.xsdst"
+      },
+      {
+        "checksum": "adler32:56d4af28",
+        "size": 22963200,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hznu_199.5_80_38119.xsdst"
+      },
+      {
+        "checksum": "adler32:cff137db",
+        "size": 23086080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hznu_199.5_80_38120.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "87051",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hznu_e199.5_m80_c99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "ShortDST HZHA03 H->gluglu, Z->nunubar  Extended Short DST simulation 99_a1 done at ecms=206.7 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 122772480
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.ZE4W.DXUI",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:e0e96cdb",
+        "size": 24499200,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/206.7/hglglnn95.0_206.7_1.xsdst"
+      },
+      {
+        "checksum": "adler32:17061c12",
+        "size": 24714240,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/206.7/hglglnn95.0_206.7_2.xsdst"
+      },
+      {
+        "checksum": "adler32:fbc4dfc4",
+        "size": 24514560,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/206.7/hglglnn95.0_206.7_3.xsdst"
+      },
+      {
+        "checksum": "adler32:b49ee758",
+        "size": 24499200,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/206.7/hglglnn95.0_206.7_4.xsdst"
+      },
+      {
+        "checksum": "adler32:1a798d2b",
+        "size": 24545280,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/206.7/hglglnn95.0_206.7_5.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99a1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "84228",
+    "title": "DELPHI simulation data xs_hgnn_e206.7_m95.0_k99_1l_a1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "Extended Short DST simulation 99_e1 done at ecms=199.5 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 108226560
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.UXH6.9ZYR",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:84c0edc0",
+        "size": 21626880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hcmm_199.5_107.5_4626.xsdst"
+      },
+      {
+        "checksum": "adler32:f987a011",
+        "size": 21396480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hcmm_199.5_107.5_4627.xsdst"
+      },
+      {
+        "checksum": "adler32:b43b1ccc",
+        "size": 21934080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hcmm_199.5_107.5_4628.xsdst"
+      },
+      {
+        "checksum": "adler32:821deb34",
+        "size": 21473280,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hcmm_199.5_107.5_4629.xsdst"
+      },
+      {
+        "checksum": "adler32:ea49c609",
+        "size": 21795840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hcmm_199.5_107.5_4630.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "84352",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hcmm_e199.5_m107.5_k99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "Extended Short DST simulation 99_e1 done at ecms=201.6 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 108165120
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.MBRM.IXA2",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:af818d8a",
+        "size": 21457920,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/201.6/hzha03pyth6156_hcmm_201.6_102.5_4771.xsdst"
+      },
+      {
+        "checksum": "adler32:d7c393d6",
+        "size": 21381120,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/201.6/hzha03pyth6156_hcmm_201.6_102.5_4772.xsdst"
+      },
+      {
+        "checksum": "adler32:94ba11c7",
+        "size": 21780480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/201.6/hzha03pyth6156_hcmm_201.6_102.5_4773.xsdst"
+      },
+      {
+        "checksum": "adler32:b083fb4b",
+        "size": 21964800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/201.6/hzha03pyth6156_hcmm_201.6_102.5_4774.xsdst"
+      },
+      {
+        "checksum": "adler32:e35d53ce",
+        "size": 21580800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/201.6/hzha03pyth6156_hcmm_201.6_102.5_4775.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "84335",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hcmm_e201.6_m102.5_k99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "ShortDST HZHA03  e+e- --> hA -> tautaubbbar, tan beta = 2 Extended Short DST simulation 99_a1 196 , CERN"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 10,
+      "size": 82805760
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.P1JF.4PLP",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:9a484ff3",
+        "size": 8279040,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03/v99_4/196/ha02ttbb24_196_13411.xsdst"
+      },
+      {
+        "checksum": "adler32:96c1d333",
+        "size": 8110080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03/v99_4/196/ha02ttbb24_196_13412.xsdst"
+      },
+      {
+        "checksum": "adler32:869a2656",
+        "size": 8232960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03/v99_4/196/ha02ttbb24_196_13413.xsdst"
+      },
+      {
+        "checksum": "adler32:a2008765",
+        "size": 8217600,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03/v99_4/196/ha02ttbb24_196_13414.xsdst"
+      },
+      {
+        "checksum": "adler32:76cc7da2",
+        "size": 8325120,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03/v99_4/196/ha02ttbb24_196_13415.xsdst"
+      },
+      {
+        "checksum": "adler32:f3101d8d",
+        "size": 8494080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03/v99_4/196/ha02ttbb24_196_13416.xsdst"
+      },
+      {
+        "checksum": "adler32:a60253ac",
+        "size": 8417280,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03/v99_4/196/ha02ttbb24_196_13417.xsdst"
+      },
+      {
+        "checksum": "adler32:07dc43b7",
+        "size": 8371200,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03/v99_4/196/ha02ttbb24_196_13418.xsdst"
+      },
+      {
+        "checksum": "adler32:ad387c30",
+        "size": 8217600,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03/v99_4/196/ha02ttbb24_196_13419.xsdst"
+      },
+      {
+        "checksum": "adler32:84f2a76a",
+        "size": 8140800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03/v99_4/196/ha02ttbb24_196_13420.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99a1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "83749",
+    "title": "DELPHI simulation data xs_ha02ttbb_e196_m24_c99_1l_a1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "ShortDST HZHA03 H->gluglu, Z->mu+mu-  Extended Short DST simulation 99_a1 196 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 106275840
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.6R4Z.A2GW",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:2a2bbc26",
+        "size": 21396480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/196/hglglmm55.0_196._1.xsdst"
+      },
+      {
+        "checksum": "adler32:a4261821",
+        "size": 21227520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/196/hglglmm55.0_196._2.xsdst"
+      },
+      {
+        "checksum": "adler32:39d37861",
+        "size": 21181440,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/196/hglglmm55.0_196._3.xsdst"
+      },
+      {
+        "checksum": "adler32:6d56dceb",
+        "size": 21089280,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/196/hglglmm55.0_196._4.xsdst"
+      },
+      {
+        "checksum": "adler32:d0fcd084",
+        "size": 21381120,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/196/hglglmm55.0_196._5.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99a1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "87397",
+    "title": "DELPHI simulation data xs_hgmm_e196_m55.0_k99_1l_a1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "ShortDST HZHA03 H->gluglu, Z->mu+mu-  Extended Short DST simulation 99_a1 196 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 115568640
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.KJ98.1JHP",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:25c54d8f",
+        "size": 23101440,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/196/hglglmm70.0_196._1.xsdst"
+      },
+      {
+        "checksum": "adler32:7c213fed",
+        "size": 22947840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/196/hglglmm70.0_196._2.xsdst"
+      },
+      {
+        "checksum": "adler32:d331e2a3",
+        "size": 23208960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/196/hglglmm70.0_196._3.xsdst"
+      },
+      {
+        "checksum": "adler32:ece98e5b",
+        "size": 23070720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/196/hglglmm70.0_196._4.xsdst"
+      },
+      {
+        "checksum": "adler32:068cdbf7",
+        "size": 23239680,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/196/hglglmm70.0_196._5.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99a1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "87408",
+    "title": "DELPHI simulation data xs_hgmm_e196_m70.0_k99_1l_a1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "ShortDST HZHA03 H->gluglu, Z->tau+tau- Extended Short DST simulation 99_a1 done at ecms=206.7 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 121267200
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.M7LC.T17M",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:932d6d89",
+        "size": 23777280,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/206.7/hglgltt60.0_206.7_1.xsdst"
+      },
+      {
+        "checksum": "adler32:c4857771",
+        "size": 24053760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/206.7/hglgltt60.0_206.7_2.xsdst"
+      },
+      {
+        "checksum": "adler32:9d99811a",
+        "size": 24606720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/206.7/hglgltt60.0_206.7_3.xsdst"
+      },
+      {
+        "checksum": "adler32:6cc7536e",
+        "size": 24238080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/206.7/hglgltt60.0_206.7_4.xsdst"
+      },
+      {
+        "checksum": "adler32:dd7be4b0",
+        "size": 24591360,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/206.7/hglgltt60.0_206.7_5.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99a1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "86505",
+    "title": "DELPHI simulation data xs_hgtt_e206.7_m60.0_k99_1l_a1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "Extended Short DST simulation 99_e1 done at ecms=191.6 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 92390400
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.QMH5.48VA",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:305ce2ee",
+        "size": 18370560,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hcmm_191.6_67.5_4236.xsdst"
+      },
+      {
+        "checksum": "adler32:26ae918f",
+        "size": 18616320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hcmm_191.6_67.5_4237.xsdst"
+      },
+      {
+        "checksum": "adler32:e6290af9",
+        "size": 18263040,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hcmm_191.6_67.5_4238.xsdst"
+      },
+      {
+        "checksum": "adler32:d231bf60",
+        "size": 19000320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hcmm_191.6_67.5_4239.xsdst"
+      },
+      {
+        "checksum": "adler32:e9e4193e",
+        "size": 18140160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hcmm_191.6_67.5_4240.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "89453",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hcmm_e191.6_m67.5_k99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "Extended Short DST simulation 99_e1 done at ecms=191.6 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 93803520
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.8D6G.VST5",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:59bfac0c",
+        "size": 18647040,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hcmm_191.6_70.0_4241.xsdst"
+      },
+      {
+        "checksum": "adler32:70009dfc",
+        "size": 18693120,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hcmm_191.6_70.0_4242.xsdst"
+      },
+      {
+        "checksum": "adler32:7be09c5d",
+        "size": 18800640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hcmm_191.6_70.0_4243.xsdst"
+      },
+      {
+        "checksum": "adler32:4862bacd",
+        "size": 18739200,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hcmm_191.6_70.0_4244.xsdst"
+      },
+      {
+        "checksum": "adler32:ae67637e",
+        "size": 18923520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hcmm_191.6_70.0_4245.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "89437",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hcmm_e191.6_m70.0_k99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03 H->gluglu, Z->mu+mu-  Extended Short DST simulation 99_e1 done at ecms=201.6 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 120883200
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.AM9M.BH76",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:6873649a",
+        "size": 24207360,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/201.6/hzha03pyth6156_hgmm_201.6_80.0_3486.xsdst"
+      },
+      {
+        "checksum": "adler32:719596d5",
+        "size": 24130560,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/201.6/hzha03pyth6156_hgmm_201.6_80.0_3487.xsdst"
+      },
+      {
+        "checksum": "adler32:16c52cb8",
+        "size": 24238080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/201.6/hzha03pyth6156_hgmm_201.6_80.0_3488.xsdst"
+      },
+      {
+        "checksum": "adler32:0f1b3cb7",
+        "size": 23761920,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/201.6/hzha03pyth6156_hgmm_201.6_80.0_3489.xsdst"
+      },
+      {
+        "checksum": "adler32:7750bca1",
+        "size": 24545280,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/201.6/hzha03pyth6156_hgmm_201.6_80.0_3490.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "88025",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hgmm_e201.6_m80.0_k99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "ShortDST HZHA03 H->ssbar, Z->nunubar  Extended Short DST simulation 99_a1 200 , CERN"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 4,
+      "size": 44467200
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.TJ5U.70ZU",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:2a383e07",
+        "size": 10936320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99_4/200/hzha03pyth6156_hZ_vvss_200_12_1231.xsdst"
+      },
+      {
+        "checksum": "adler32:53992ad1",
+        "size": 11212800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99_4/200/hzha03pyth6156_hZ_vvss_200_12_1232.xsdst"
+      },
+      {
+        "checksum": "adler32:de9cce53",
+        "size": 11105280,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99_4/200/hzha03pyth6156_hZ_vvss_200_12_1233.xsdst"
+      },
+      {
+        "checksum": "adler32:e5050da7",
+        "size": 11212800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99_4/200/hzha03pyth6156_hZ_vvss_200_12_1234.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99a1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "88158",
+    "title": "DELPHI simulation data xs_hzha03p6156hsnn_e200_m12_c99_1l_a1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "Extended Short DST simulation 99_e1 done at ecms=195.5 , CERN"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2499,
+      "number_files": 5,
+      "size": 147778560
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.75SQ.UPBT",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:e39d6785",
+        "size": 29491200,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hattbb_195.5_50_90_35261.xsdst"
+      },
+      {
+        "checksum": "adler32:528d6e8e",
+        "size": 29521920,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hattbb_195.5_50_90_35262.xsdst"
+      },
+      {
+        "checksum": "adler32:5995e766",
+        "size": 29506560,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hattbb_195.5_50_90_35263.xsdst"
+      },
+      {
+        "checksum": "adler32:a81c0b8c",
+        "size": 29122560,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hattbb_195.5_50_90_35264.xsdst"
+      },
+      {
+        "checksum": "adler32:f950402a",
+        "size": 30136320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hattbb_195.5_50_90_35265.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "83345",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hattbb_e195.5_m50_m90_c99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "Extended Short DST simulation 99e  done at ecm=199.5 GeV , CERN"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 1997,
+      "number_files": 2,
+      "size": 166840320
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.6PVP.YZ39",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:49bb7488",
+        "size": 83082240,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hA4g_199.5_130_4_13041.xsdst"
+      },
+      {
+        "checksum": "adler32:8364a198",
+        "size": 83758080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hA4g_199.5_130_4_13042.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "88337",
+    "title": "DELPHI simulation data xs_hzha03pyth6156ha4g_e199.5_m130_m4_c99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03 H->ssbar, Z->qqbar  Extended Short DST simulation 99_e1 done at ecms=191.6 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 129792000
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.YQ2J.VE05",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:8971d8bb",
+        "size": 25973760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hsqq_191.6_112.5_9441.xsdst"
+      },
+      {
+        "checksum": "adler32:3e75f64a",
+        "size": 26588160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hsqq_191.6_112.5_9442.xsdst"
+      },
+      {
+        "checksum": "adler32:8d41876d",
+        "size": 25651200,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hsqq_191.6_112.5_9443.xsdst"
+      },
+      {
+        "checksum": "adler32:316f1d56",
+        "size": 25927680,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hsqq_191.6_112.5_9444.xsdst"
+      },
+      {
+        "checksum": "adler32:3ecdf7b5",
+        "size": 25651200,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hsqq_191.6_112.5_9445.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "85910",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hsqq_e191.6_m112.5_k99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "ShortDST HZHA03 H->ssbar, Z->mu+mu-  Extended Short DST simulation 99_a1 196 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 84280320
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.NFS2.2I1R",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:b721c99c",
+        "size": 16619520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/196/hssmm65.0_196._1.xsdst"
+      },
+      {
+        "checksum": "adler32:65bef9a9",
+        "size": 16696320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/196/hssmm65.0_196._2.xsdst"
+      },
+      {
+        "checksum": "adler32:70df1b4f",
+        "size": 17141760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/196/hssmm65.0_196._3.xsdst"
+      },
+      {
+        "checksum": "adler32:60165ac1",
+        "size": 16803840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/196/hssmm65.0_196._4.xsdst"
+      },
+      {
+        "checksum": "adler32:c3460d80",
+        "size": 17018880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/196/hssmm65.0_196._5.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99a1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "87700",
+    "title": "DELPHI simulation data xs_hsmm_e196_m65.0_k99_1l_a1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "ShortDST HZHA03 H->ssbar, Z->mu+mu-  Extended Short DST simulation 99_a1 205 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 79441920
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.M8M0.YZL8",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:bf802a1e",
+        "size": 15943680,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/205/hssmm50.0_205._1.xsdst"
+      },
+      {
+        "checksum": "adler32:8b2194a5",
+        "size": 15974400,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/205/hssmm50.0_205._2.xsdst"
+      },
+      {
+        "checksum": "adler32:e5e7feaa",
+        "size": 15651840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/205/hssmm50.0_205._3.xsdst"
+      },
+      {
+        "checksum": "adler32:835aeca6",
+        "size": 15974400,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/205/hssmm50.0_205._4.xsdst"
+      },
+      {
+        "checksum": "adler32:a555045a",
+        "size": 15897600,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/205/hssmm50.0_205._5.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99a1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "86770",
+    "title": "DELPHI simulation data xs_hsmm_e205_m50.0_k99_1l_a1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "ShortDST HZHA03 H->gluglu, Z->e+e-  Extended Short DST simulation 99_a1 205 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 1998,
+      "number_files": 5,
+      "size": 111421440
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.4OGX.Y0IP",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:2d164458",
+        "size": 22333440,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/205/hglglee55.0_205._1.xsdst"
+      },
+      {
+        "checksum": "adler32:377b019e",
+        "size": 22133760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/205/hglglee55.0_205._2.xsdst"
+      },
+      {
+        "checksum": "adler32:05569b1e",
+        "size": 22456320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/205/hglglee55.0_205._3.xsdst"
+      },
+      {
+        "checksum": "adler32:438aa701",
+        "size": 22425600,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/205/hglglee55.0_205._4.xsdst"
+      },
+      {
+        "checksum": "adler32:9079fa81",
+        "size": 22072320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03/v99_4/205/hglglee55.0_205._5.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99a1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "87935",
+    "title": "DELPHI simulation data xs_hgee_e205_m55.0_k99_1l_a1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03 H->gluglu, Z->qqbar  Extended Short DST simulation 99_e1 done at ecms=195.5 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 183598080
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.2VNX.EYVE",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:78c7ee44",
+        "size": 36956160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hgqq_195.5_57.5_9021.xsdst"
+      },
+      {
+        "checksum": "adler32:095d603c",
+        "size": 36587520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hgqq_195.5_57.5_9022.xsdst"
+      },
+      {
+        "checksum": "adler32:c28c2173",
+        "size": 37048320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hgqq_195.5_57.5_9023.xsdst"
+      },
+      {
+        "checksum": "adler32:0aa634e3",
+        "size": 36495360,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hgqq_195.5_57.5_9024.xsdst"
+      },
+      {
+        "checksum": "adler32:0298a0d1",
+        "size": 36510720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hgqq_195.5_57.5_9025.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "87662",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hgqq_e195.5_m57.5_k99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03 H->ssbar, Z->mu+mu-  Extended Short DST simulation 99_e1 done at ecms=199.5 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 82790400
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.WHQ4.Z9TP",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:bbe0d2c4",
+        "size": 16665600,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hsmm_199.5_62.5_3916.xsdst"
+      },
+      {
+        "checksum": "adler32:49c1776e",
+        "size": 16604160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hsmm_199.5_62.5_3917.xsdst"
+      },
+      {
+        "checksum": "adler32:4af43c33",
+        "size": 16558080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hsmm_199.5_62.5_3918.xsdst"
+      },
+      {
+        "checksum": "adler32:4d9d3bc6",
+        "size": 16558080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hsmm_199.5_62.5_3919.xsdst"
+      },
+      {
+        "checksum": "adler32:40a3dcf7",
+        "size": 16404480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hsmm_199.5_62.5_3920.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "88723",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hsmm_e199.5_m62.5_k99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "Extended Short DST simulation 99_a1 200 , Santander"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "TechniColor"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 1999,
+      "number_files": 5,
+      "size": 144353280
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.R0T2.L7SV",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:4f3ea1ff",
+        "size": 28876800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/sant/tc/v99_4/200/tc_200_wpit_m70_r201701.xsdst"
+      },
+      {
+        "checksum": "adler32:a5b59092",
+        "size": 27955200,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/sant/tc/v99_4/200/tc_200_wpit_m70_r201702.xsdst"
+      },
+      {
+        "checksum": "adler32:942ce1ed",
+        "size": 29291520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/sant/tc/v99_4/200/tc_200_wpit_m70_r201703.xsdst"
+      },
+      {
+        "checksum": "adler32:990a9bec",
+        "size": 29107200,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/sant/tc/v99_4/200/tc_200_wpit_m70_r201704.xsdst"
+      },
+      {
+        "checksum": "adler32:2ee42d6f",
+        "size": 29122560,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/sant/tc/v99_4/200/tc_200_wpit_m70_r201705.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99a1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "86651",
+    "title": "DELPHI simulation data xs_tcwppy_e200_m70_snt99_1l_a1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03 H->ssbar, Z->mu+mu-  Extended Short DST simulation 99_e1 done at ecms=201.6 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 96829440
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.2G8E.JP1X",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:89da86d2",
+        "size": 19630080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/201.6/hzha03pyth6156_hsmm_201.6_95.0_4136.xsdst"
+      },
+      {
+        "checksum": "adler32:3bc9e98b",
+        "size": 19445760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/201.6/hzha03pyth6156_hsmm_201.6_95.0_4137.xsdst"
+      },
+      {
+        "checksum": "adler32:14a93ae0",
+        "size": 19261440,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/201.6/hzha03pyth6156_hsmm_201.6_95.0_4138.xsdst"
+      },
+      {
+        "checksum": "adler32:a36cb62d",
+        "size": 19061760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/201.6/hzha03pyth6156_hsmm_201.6_95.0_4139.xsdst"
+      },
+      {
+        "checksum": "adler32:90ce6cd4",
+        "size": 19430400,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/201.6/hzha03pyth6156_hsmm_201.6_95.0_4140.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "85539",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hsmm_e201.6_m95.0_k99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03 H->ssbar, Z->nunubar  Extended Short DST simulation 99_e1 done at ecms=191.6 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 92820480
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.PP7B.5DJ7",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:abd81870",
+        "size": 18662400,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hsnn_191.6_110.0_6181.xsdst"
+      },
+      {
+        "checksum": "adler32:816f6b5b",
+        "size": 18554880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hsnn_191.6_110.0_6182.xsdst"
+      },
+      {
+        "checksum": "adler32:a902ccb3",
+        "size": 18800640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hsnn_191.6_110.0_6183.xsdst"
+      },
+      {
+        "checksum": "adler32:ebaf471d",
+        "size": 18078720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hsnn_191.6_110.0_6184.xsdst"
+      },
+      {
+        "checksum": "adler32:df0262f6",
+        "size": 18723840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hsnn_191.6_110.0_6185.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "85547",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hsnn_e191.6_m110.0_k99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03 H->ssbar, Z->nunubar  Extended Short DST simulation 99_e1 done at ecms=191.6 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 86415360
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.R8W1.8ZH2",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:10a2dc00",
+        "size": 17049600,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hsnn_191.6_92.5_6146.xsdst"
+      },
+      {
+        "checksum": "adler32:1ce89bde",
+        "size": 17141760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hsnn_191.6_92.5_6147.xsdst"
+      },
+      {
+        "checksum": "adler32:4e4ad802",
+        "size": 17525760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hsnn_191.6_92.5_6148.xsdst"
+      },
+      {
+        "checksum": "adler32:a55782d1",
+        "size": 17295360,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hsnn_191.6_92.5_6149.xsdst"
+      },
+      {
+        "checksum": "adler32:b4c6aba6",
+        "size": 17402880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/191.6/hzha03pyth6156_hsnn_191.6_92.5_6150.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "85621",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hsnn_e191.6_m92.5_k99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03 H->ssbar, Z->nunubar  Extended Short DST simulation 99_e1 done at ecms=195.5 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 66908160
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.13XO.J88K",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:4b2173b8",
+        "size": 13470720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hsnn_195.5_47.5_6211.xsdst"
+      },
+      {
+        "checksum": "adler32:102847b5",
+        "size": 13286400,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hsnn_195.5_47.5_6212.xsdst"
+      },
+      {
+        "checksum": "adler32:e510aaee",
+        "size": 13378560,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hsnn_195.5_47.5_6213.xsdst"
+      },
+      {
+        "checksum": "adler32:5c3c11c2",
+        "size": 13347840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hsnn_195.5_47.5_6214.xsdst"
+      },
+      {
+        "checksum": "adler32:4df6c691",
+        "size": 13424640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hsnn_195.5_47.5_6215.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "85654",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hsnn_e195.5_m47.5_k99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03 H->ssbar, Z->nunubar  Extended Short DST simulation 99_e1 done at ecms=195.5 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 73128960
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.KYHD.4F5P",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:cef547f4",
+        "size": 14807040,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hsnn_195.5_60.0_6236.xsdst"
+      },
+      {
+        "checksum": "adler32:0628a8b9",
+        "size": 14576640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hsnn_195.5_60.0_6237.xsdst"
+      },
+      {
+        "checksum": "adler32:d5fd2581",
+        "size": 14530560,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hsnn_195.5_60.0_6238.xsdst"
+      },
+      {
+        "checksum": "adler32:cae41307",
+        "size": 14760960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hsnn_195.5_60.0_6239.xsdst"
+      },
+      {
+        "checksum": "adler32:a90b9b48",
+        "size": 14453760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hsnn_195.5_60.0_6240.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "85671",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hsnn_e195.5_m60.0_k99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03 H->gluglu, Z->e+e-  Extended Short DST simulation 99_e1 done at ecms=195.5 , CERN"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 1997,
+      "number_files": 4,
+      "size": 104371200
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.TWQY.3RWN",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:71f1d783",
+        "size": 25835520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hgee_195.5_47.5_46759.xsdst"
+      },
+      {
+        "checksum": "adler32:0db142df",
+        "size": 26434560,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hgee_195.5_47.5_46760.xsdst"
+      },
+      {
+        "checksum": "adler32:265e8f0a",
+        "size": 25989120,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hgee_195.5_47.5_46761.xsdst"
+      },
+      {
+        "checksum": "adler32:925265af",
+        "size": 26112000,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/v99e/195.5/hzha03pyth6156_hgee_195.5_47.5_46762.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "83465",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hgee_e195.5_m47.5_c99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03 H->ssbar, Z->nunubar  Extended Short DST simulation 99_e1 done at ecms=199.5 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "1999"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 71086080
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.QCAY.K5EW",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:9dbcdcb2",
+        "size": 14346240,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hsnn_199.5_55.0_6381.xsdst"
+      },
+      {
+        "checksum": "adler32:08247e08",
+        "size": 14254080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hsnn_199.5_55.0_6382.xsdst"
+      },
+      {
+        "checksum": "adler32:cdb29afb",
+        "size": 14223360,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hsnn_199.5_55.0_6383.xsdst"
+      },
+      {
+        "checksum": "adler32:0bce6620",
+        "size": 14008320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hsnn_199.5_55.0_6384.xsdst"
+      },
+      {
+        "checksum": "adler32:03f3ade0",
+        "size": 14254080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/v99e/199.5/hzha03pyth6156_hsnn_199.5_55.0_6385.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 1999. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version v99e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "85744",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hsnn_e199.5_m55.0_k99_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03 H->ssbar, Z->mu+mu-  Extended Short DST simulation a0u1 done at ecms=206.5 , CERN"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "2000"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 4,
+      "size": 98304000
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.9FX9.BVOX",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:298c9ee1",
+        "size": 24622080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0u/206.5/hzha03pyth6156_hsmm_206.5_102.5_90251.xsdst"
+      },
+      {
+        "checksum": "adler32:5375efb7",
+        "size": 24668160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0u/206.5/hzha03pyth6156_hsmm_206.5_102.5_90252.xsdst"
+      },
+      {
+        "checksum": "adler32:5c352d70",
+        "size": 24683520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0u/206.5/hzha03pyth6156_hsmm_206.5_102.5_90253.xsdst"
+      },
+      {
+        "checksum": "adler32:c603e6b3",
+        "size": 24330240,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0u/206.5/hzha03pyth6156_hsmm_206.5_102.5_90254.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 2000. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version va0u1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "92628",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hsmm_e206.5_m102.5_ca0_1l_u1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "Full DST/Delana output simulation 00_s 207 , CERN"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Susy"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "2000"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "DSTO"
+      ],
+      "number_events": 16500,
+      "number_files": 33,
+      "size": 257771520
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.ARIF.NJ2E",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:d0d5bf7a",
+        "size": 8401920,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10278.fadana"
+      },
+      {
+        "checksum": "adler32:7a3dd481",
+        "size": 8463360,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10279.fadana"
+      },
+      {
+        "checksum": "adler32:fb503c41",
+        "size": 8248320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10280.fadana"
+      },
+      {
+        "checksum": "adler32:029fda88",
+        "size": 8232960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10281.fadana"
+      },
+      {
+        "checksum": "adler32:233e723a",
+        "size": 8232960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10282.fadana"
+      },
+      {
+        "checksum": "adler32:87ecc48e",
+        "size": 8171520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10283.fadana"
+      },
+      {
+        "checksum": "adler32:6f3cdcd0",
+        "size": 8140800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10284.fadana"
+      },
+      {
+        "checksum": "adler32:4b1f8b49",
+        "size": 8279040,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10285.fadana"
+      },
+      {
+        "checksum": "adler32:8c9a5a43",
+        "size": 8094720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10286.fadana"
+      },
+      {
+        "checksum": "adler32:69d9aac1",
+        "size": 7941120,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10287.fadana"
+      },
+      {
+        "checksum": "adler32:0466c489",
+        "size": 8202240,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10288.fadana"
+      },
+      {
+        "checksum": "adler32:52a3a7cc",
+        "size": 8017920,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10289.fadana"
+      },
+      {
+        "checksum": "adler32:862560df",
+        "size": 7848960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10290.fadana"
+      },
+      {
+        "checksum": "adler32:c8c76406",
+        "size": 7879680,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10291.fadana"
+      },
+      {
+        "checksum": "adler32:e32c2447",
+        "size": 7741440,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10292.fadana"
+      },
+      {
+        "checksum": "adler32:8d76e368",
+        "size": 7787520,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10293.fadana"
+      },
+      {
+        "checksum": "adler32:d5ddf435",
+        "size": 7587840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10294.fadana"
+      },
+      {
+        "checksum": "adler32:fbc5c11a",
+        "size": 7695360,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10295.fadana"
+      },
+      {
+        "checksum": "adler32:d32fd9a8",
+        "size": 7695360,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10296.fadana"
+      },
+      {
+        "checksum": "adler32:432d51c4",
+        "size": 7756800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10297.fadana"
+      },
+      {
+        "checksum": "adler32:23748708",
+        "size": 7603200,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10298.fadana"
+      },
+      {
+        "checksum": "adler32:f2afedd3",
+        "size": 7480320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10299.fadana"
+      },
+      {
+        "checksum": "adler32:c3886c55",
+        "size": 7572480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10300.fadana"
+      },
+      {
+        "checksum": "adler32:d978e6cd",
+        "size": 7526400,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10301.fadana"
+      },
+      {
+        "checksum": "adler32:3fe52b2e",
+        "size": 7587840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10302.fadana"
+      },
+      {
+        "checksum": "adler32:f0e914e3",
+        "size": 7388160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10303.fadana"
+      },
+      {
+        "checksum": "adler32:40934485",
+        "size": 7572480,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10304.fadana"
+      },
+      {
+        "checksum": "adler32:8434c3e6",
+        "size": 7480320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10305.fadana"
+      },
+      {
+        "checksum": "adler32:af7a06fd",
+        "size": 7495680,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10306.fadana"
+      },
+      {
+        "checksum": "adler32:dbc16f2a",
+        "size": 7418880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10307.fadana"
+      },
+      {
+        "checksum": "adler32:2cf98f62",
+        "size": 7388160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10308.fadana"
+      },
+      {
+        "checksum": "adler32:d8c694ec",
+        "size": 7449600,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10309.fadana"
+      },
+      {
+        "checksum": "adler32:be828f13",
+        "size": 7388160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/susygen212/v00_s/207/susygen212_chaneu_207_10310.fadana"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 2000. It was then reconstruced by the detector reconstuction program DELANA (Version va0s)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "90437",
+    "title": "DELPHI simulation data dsto_susygen212chaneu_e207_c00_1l_s",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "This data is in the TANAGRA format for debugging and display with DELGRA",
+      "links": [
+        {
+          "description": "The DELPHI Event Display Manual",
+          "url": "/record/80503"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "Extended Short DST simulation a0_e1 done at ecms=206.5 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "2000"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2000,
+      "number_files": 5,
+      "size": 102973440
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.04HF.14PI",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:17e85c38",
+        "size": 20766720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/206.5/hzha03pyth6156_hcmm_206.5_90.0_2886.xsdst"
+      },
+      {
+        "checksum": "adler32:00139ac7",
+        "size": 20720640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/206.5/hzha03pyth6156_hcmm_206.5_90.0_2887.xsdst"
+      },
+      {
+        "checksum": "adler32:376b5299",
+        "size": 20567040,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/206.5/hzha03pyth6156_hcmm_206.5_90.0_2888.xsdst"
+      },
+      {
+        "checksum": "adler32:ec8d06b4",
+        "size": 20474880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/206.5/hzha03pyth6156_hcmm_206.5_90.0_2889.xsdst"
+      },
+      {
+        "checksum": "adler32:174d26ec",
+        "size": 20444160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/206.5/hzha03pyth6156_hcmm_206.5_90.0_2890.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 2000. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version va0e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "93233",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hcmm_e206.5_m90.0_ka0_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03 H->gluglu, Z->e+e-  Extended Short DST simulation a0_e1 205 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "2000"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 3999,
+      "number_files": 10,
+      "size": 280734720
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.O1T2.3EQ2",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:c64a6836",
+        "size": 27632640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/205/hzha03pyth6156_hgee_205_107.5_1136.xsdst"
+      },
+      {
+        "checksum": "adler32:a70a72a2",
+        "size": 27893760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/205/hzha03pyth6156_hgee_205_107.5_1137.xsdst"
+      },
+      {
+        "checksum": "adler32:8c534e0d",
+        "size": 28032000,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/205/hzha03pyth6156_hgee_205_107.5_1138.xsdst"
+      },
+      {
+        "checksum": "adler32:f19dfef3",
+        "size": 28385280,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/205/hzha03pyth6156_hgee_205_107.5_1139.xsdst"
+      },
+      {
+        "checksum": "adler32:7f27b15b",
+        "size": 28584960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/205/hzha03pyth6156_hgee_205_107.5_1140.xsdst"
+      },
+      {
+        "checksum": "adler32:9b9a6a3d",
+        "size": 28001280,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/205/hzha03pyth6156_hgee_205_107.5_1156.xsdst"
+      },
+      {
+        "checksum": "adler32:a9076716",
+        "size": 28400640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/205/hzha03pyth6156_hgee_205_107.5_1157.xsdst"
+      },
+      {
+        "checksum": "adler32:26840e54",
+        "size": 28032000,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/205/hzha03pyth6156_hgee_205_107.5_1158.xsdst"
+      },
+      {
+        "checksum": "adler32:7e65bd61",
+        "size": 28032000,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/205/hzha03pyth6156_hgee_205_107.5_1159.xsdst"
+      },
+      {
+        "checksum": "adler32:3cb74779",
+        "size": 27740160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/205/hzha03pyth6156_hgee_205_107.5_1160.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 2000. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version va0e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "92719",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hgee_e205_m107.5_ka0_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "Extended Short DST simulation a0_u1 done at ecms=206.5 , RAL"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "2000"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 4526,
+      "number_files": 10,
+      "size": 204917760
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.UJ66.8RKR",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:47376596",
+        "size": 22333440,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/ral/hzha03pyth6156/va0u/206.5/hzha03pyth6156_hinvqq_206.5_95_39600.xsdst"
+      },
+      {
+        "checksum": "adler32:0102094c",
+        "size": 22364160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/ral/hzha03pyth6156/va0u/206.5/hzha03pyth6156_hinvqq_206.5_95_39601.xsdst"
+      },
+      {
+        "checksum": "adler32:024138f7",
+        "size": 22732800,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/ral/hzha03pyth6156/va0u/206.5/hzha03pyth6156_hinvqq_206.5_95_39602.xsdst"
+      },
+      {
+        "checksum": "adler32:f2c7eb4a",
+        "size": 1290240,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/ral/hzha03pyth6156/va0u/206.5/hzha03pyth6156_hinvqq_206.5_95_39603.xsdst"
+      },
+      {
+        "checksum": "adler32:f1c0a46a",
+        "size": 22656000,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/ral/hzha03pyth6156/va0u/206.5/hzha03pyth6156_hinvqq_206.5_95_39604.xsdst"
+      },
+      {
+        "checksum": "adler32:682a1f6c",
+        "size": 22702080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/ral/hzha03pyth6156/va0u/206.5/hzha03pyth6156_hinvqq_206.5_95_39605.xsdst"
+      },
+      {
+        "checksum": "adler32:cfe5493f",
+        "size": 22656000,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/ral/hzha03pyth6156/va0u/206.5/hzha03pyth6156_hinvqq_206.5_95_39606.xsdst"
+      },
+      {
+        "checksum": "adler32:4db00354",
+        "size": 22517760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/ral/hzha03pyth6156/va0u/206.5/hzha03pyth6156_hinvqq_206.5_95_39607.xsdst"
+      },
+      {
+        "checksum": "adler32:50cf9159",
+        "size": 23070720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/ral/hzha03pyth6156/va0u/206.5/hzha03pyth6156_hinvqq_206.5_95_39608.xsdst"
+      },
+      {
+        "checksum": "adler32:c5d4246c",
+        "size": 22594560,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/ral/hzha03pyth6156/va0u/206.5/hzha03pyth6156_hinvqq_206.5_95_39609.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 2000. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version va0u1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "89723",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hinvqq_e206.5_m95_ra0_1l_u1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03 H->ssbar, Z->qqbar  Extended Short DST simulation a0u1 done at ecms=206.5 , CERN"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "2000"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 1998,
+      "number_files": 4,
+      "size": 152509440
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.TEOH.AM2M",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:cfb0bd8c",
+        "size": 38062080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0u/206.5/hzha03pyth6156_hsqq_206.5_45.0_84541.xsdst"
+      },
+      {
+        "checksum": "adler32:68be06a2",
+        "size": 38338560,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0u/206.5/hzha03pyth6156_hsqq_206.5_45.0_84542.xsdst"
+      },
+      {
+        "checksum": "adler32:50809613",
+        "size": 37754880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0u/206.5/hzha03pyth6156_hsqq_206.5_45.0_84543.xsdst"
+      },
+      {
+        "checksum": "adler32:a657ff66",
+        "size": 38353920,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0u/206.5/hzha03pyth6156_hsqq_206.5_45.0_84544.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 2000. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version va0u1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "90303",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hsqq_e206.5_m45.0_ca0_1l_u1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03 H->ssbar, Z->qqbar  Extended Short DST simulation a0_e1 done at ecms=206.5 , RAL"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "2000"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 1499,
+      "number_files": 3,
+      "size": 123248640
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.FZVQ.C57E",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:2ec2df25",
+        "size": 41241600,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/ral/hzha03pyth6156/va0e/206.5/hzha03pyth6156_hsqq_206.5_67.5_66751.xsdst"
+      },
+      {
+        "checksum": "adler32:bcb779fc",
+        "size": 41180160,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/ral/hzha03pyth6156/va0e/206.5/hzha03pyth6156_hsqq_206.5_67.5_66753.xsdst"
+      },
+      {
+        "checksum": "adler32:80f54136",
+        "size": 40826880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/ral/hzha03pyth6156/va0e/206.5/hzha03pyth6156_hsqq_206.5_67.5_66754.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 2000. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version va0e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "90428",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hsqq_e206.5_m67.5_ra0_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03  e+e- --> HZ (H ->  any but tau Z -> tau+tau-) Extended Short DST simulation a0_e1 done at ecms=203.7 , CERN"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "2000"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 4997,
+      "number_files": 10,
+      "size": 305940480
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.RJPX.ZFWM",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:f41221bb",
+        "size": 30504960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0e/203.7/hzha03pyth6156_hztt_203.7_95_19841.xsdst"
+      },
+      {
+        "checksum": "adler32:67eaa226",
+        "size": 30382080,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0e/203.7/hzha03pyth6156_hztt_203.7_95_19842.xsdst"
+      },
+      {
+        "checksum": "adler32:6af40fa5",
+        "size": 30750720,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0e/203.7/hzha03pyth6156_hztt_203.7_95_19843.xsdst"
+      },
+      {
+        "checksum": "adler32:3101694b",
+        "size": 30888960,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0e/203.7/hzha03pyth6156_hztt_203.7_95_19844.xsdst"
+      },
+      {
+        "checksum": "adler32:a8cb0cd9",
+        "size": 30720000,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0e/203.7/hzha03pyth6156_hztt_203.7_95_19845.xsdst"
+      },
+      {
+        "checksum": "adler32:1136ef8c",
+        "size": 30197760,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0e/203.7/hzha03pyth6156_hztt_203.7_95_19846.xsdst"
+      },
+      {
+        "checksum": "adler32:759f21f7",
+        "size": 30720000,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0e/203.7/hzha03pyth6156_hztt_203.7_95_19847.xsdst"
+      },
+      {
+        "checksum": "adler32:5b08bc82",
+        "size": 30627840,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0e/203.7/hzha03pyth6156_hztt_203.7_95_19848.xsdst"
+      },
+      {
+        "checksum": "adler32:582df3f3",
+        "size": 30458880,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0e/203.7/hzha03pyth6156_hztt_203.7_95_19849.xsdst"
+      },
+      {
+        "checksum": "adler32:a4e44f3a",
+        "size": 30689280,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0e/203.7/hzha03pyth6156_hztt_203.7_95_19850.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 2000. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version va0e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "90041",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hztt_e203.7_m95_ca0_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "XShortDst HZHA03 H->gluglu, Z->e+e-  Extended Short DST simulation a0_e1 done at ecms=206.5 , Karlsruhe"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "2000"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 1997,
+      "number_files": 5,
+      "size": 123801600
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.XE0M.9KKD",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:290064df",
+        "size": 24714240,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/206.5/hzha03pyth6156_hgee_206.5_75.0_1246.xsdst"
+      },
+      {
+        "checksum": "adler32:a2f2716b",
+        "size": 24637440,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/206.5/hzha03pyth6156_hgee_206.5_75.0_1247.xsdst"
+      },
+      {
+        "checksum": "adler32:cebb7184",
+        "size": 24806400,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/206.5/hzha03pyth6156_hgee_206.5_75.0_1248.xsdst"
+      },
+      {
+        "checksum": "adler32:884f0cc7",
+        "size": 24760320,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/206.5/hzha03pyth6156_hgee_206.5_75.0_1249.xsdst"
+      },
+      {
+        "checksum": "adler32:82aae30f",
+        "size": 24883200,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/karlsruhe/hzha03pyth6156/va0e/206.5/hzha03pyth6156_hgee_206.5_75.0_1250.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 2000. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version va0e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "92092",
+    "title": "DELPHI simulation data xs_hzha03pyth6156hgee_e206.5_m75.0_ka0_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "Extended Short DST simulation a0_e1 208 , CERN"
+    },
+    "accelerator": "CERN-LEP",
+    "categories": {
+      "primary": "Higgs"
+    },
+    "collaboration": {
+      "name": "DELPHI"
+    },
+    "collections": [
+      "DELPHI"
+    ],
+    "collision_information": {
+      "energy": "181-210 GeV",
+      "type": "e+e-"
+    },
+    "date_created": [
+      "2000"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "XSHORT"
+      ],
+      "number_events": 2498,
+      "number_files": 5,
+      "size": 134031360
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.BLHY.K4V0",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:89eb6241",
+        "size": 26726400,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0e/208/hzha03pyth6156_habbtt_208_60_70_13361.xsdst"
+      },
+      {
+        "checksum": "adler32:cba220fb",
+        "size": 26864640,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0e/208/hzha03pyth6156_habbtt_208_60_70_13362.xsdst"
+      },
+      {
+        "checksum": "adler32:6b83b3f2",
+        "size": 26849280,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0e/208/hzha03pyth6156_habbtt_208_60_70_13363.xsdst"
+      },
+      {
+        "checksum": "adler32:adfa44a8",
+        "size": 26895360,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0e/208/hzha03pyth6156_habbtt_208_60_70_13364.xsdst"
+      },
+      {
+        "checksum": "adler32:d39407e1",
+        "size": 26695680,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/simulated-data/cern/hzha03pyth6156/va0e/208/hzha03pyth6156_habbtt_208_60_70_13365.xsdst"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "methodology": {
+      "description": "The data was simulated by DELSIM for the DELPHI detector configuration of the year 2000. It was then reconstruced by the detector reconstuction program DELANA and the physics DST program PXDST (Version va0e1)."
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "93019",
+    "title": "DELPHI simulation data xs_hzha03pyth6156habbtt_e208_m60_m70_ca0_1l_e1",
+    "type": {
+      "primary": "Dataset",
+      "secondary": [
+        "Simulated"
+      ]
+    },
+    "usage": {
+      "description": "The DST data in the XSHORT format is availabe for anaysis.",
+      "links": [
+        {
+          "description": "Getting started with DELPHI data",
+          "url": "/docs/delphi-getting-started"
+        },
+        {
+          "description": "DELPHI skeleton analysis framework manual",
+          "url": "/record/80502"
+        },
+        {
+          "description": "DELPHI \"extended short DST\" manual",
+          "url": "/record/80505"
+        }
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "These are the DELPHI online logbooks from 1992. There used to be three people on shift during data taking, having different roles. Available logs books are these of the shift leader, the data aquisition logs, the slow control maestro and the quality checker."
+    },
+    "accelerator": "CERN-LEP",
+    "collaboration": {
+      "name": "DELPHI collaboration",
+      "recid": "80050"
+    },
+    "collections": [
+      "DELPHI-logbooks"
+    ],
+    "date_created": [
+      "1992"
+    ],
+    "date_published": "2025",
+    "distribution": {
+      "formats": [
+        "pdf"
+      ],
+      "number_files": 4,
+      "size": 1910603
+    },
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:8201f021",
+        "size": 410218,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/logbooks/sc_maestro/sc_maestro_1992.txt.pdf"
+      },
+      {
+        "checksum": "adler32:7f7b7c3e",
+        "size": 796447,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/logbooks/shift_leader/shift_leader_1992.txt.pdf"
+      },
+      {
+        "checksum": "adler32:e3694358",
+        "size": 312496,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/logbooks/das_maestro/das_maestro_1992.txt.pdf"
+      },
+      {
+        "checksum": "adler32:67e578db",
+        "size": 391442,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/logbooks/quality_checker/quality_checker_1992.txt.pdf"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "80511",
+    "title": "DELPHI online logbooks 1992",
+    "type": {
+      "primary": "Supplementaries",
+      "secondary": [
+        "Logbook"
+      ]
+    }
+  },
+  {
+    "abstract": {
+      "description": "The DELPHI event display is called \"delgra\". This manual is a slighly updated version of the original manual, which takes into account changes related to the swap from a commercial to a freely available 3d software suite, based on OpenGL."
+    },
+    "accelerator": "CERN-LEP",
+    "collaboration": {
+      "name": "DELPHI collaboration",
+      "recid": "80050"
+    },
+    "collections": [
+      "DELPHI-documentation-manuals"
+    ],
+    "date_created": [
+      "2022"
+    ],
+    "date_published": "2024",
+    "distribution": {
+      "formats": [
+        "pdf"
+      ],
+      "number_files": 1,
+      "size": 255295
+    },
+    "doi": "10.7483/OPENDATA.DELPHI.JZA1.BT70",
+    "experiment": [
+      "DELPHI"
+    ],
+    "files": [
+      {
+        "checksum": "adler32:6eaeebd0",
+        "size": 255295,
+        "uri": "root://eospublic.cern.ch//eos/opendata/delphi/documentation/delgra/delgra2.0.pdf"
+      }
+    ],
+    "license": {
+      "attribution": "CC0-1.0"
+    },
+    "publisher": "CERN Open Data Portal",
+    "recid": "80503",
+    "title": "DELPHI event display manual",
+    "type": {
+      "primary": "Supplementaries",
+      "secondary": [
+        "Manual"
+      ]
+    }
+  }
+]
