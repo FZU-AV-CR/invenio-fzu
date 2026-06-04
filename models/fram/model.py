@@ -10,6 +10,7 @@ from invenio_i18n import lazy_gettext as _
 from invenio_records_permissions.generators import AuthenticatedUser
 from oarepo_model.api import model
 from oarepo_model.customizations import (
+    AddFacetGroup,
     AddMetadataExport,
     PrependMixin,
     SetDefaultSearchFields,
@@ -84,6 +85,12 @@ fram_model = model(
             "metadata.file_footprint",
 
 
+        ),
+        AddFacetGroup(
+            name="default",
+            facets=[
+                "metadata.title",
+            ],
         ),
     ],
     configuration={"ui_blueprint_name": "fram_ui"},

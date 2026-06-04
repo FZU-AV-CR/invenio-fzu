@@ -11,6 +11,7 @@ from invenio_rdm_records.resources.serializers.ui.schema import UIRecordSchema
 from invenio_records_permissions.generators import AuthenticatedUser
 from oarepo_model.api import model
 from oarepo_model.customizations import (
+    AddFacetGroup,
     AddMetadataExport,
     PrependMixin,
     SetDefaultSearchFields,
@@ -68,6 +69,13 @@ detectors_model = model(
             "metadata.requestor",
             "metadata.manufacturer",
             "metadata.file_types",
+        ),
+        AddFacetGroup(
+            name="default",
+            facets=[
+                "metadata.title",
+                
+            ],
         ),
     ],
     configuration={"ui_blueprint_name": "detectors_ui"},

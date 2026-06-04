@@ -11,6 +11,7 @@ from invenio_records_permissions.generators import AuthenticatedUser
 from oarepo_model.api import model
 from oarepo_model.customizations import (
     AddFacetGroup,
+    AddFacetGroup,
     AddMetadataExport,
     PrependMixin,
     SetDefaultSearchFields,
@@ -66,13 +67,14 @@ particles_model = model(
         AddFacetGroup(
             name="default",
             facets=[
-                "metadata.experiment",
-                "metadata.category",
-                "metadata.dataset_type",
-                "metadata.collision_information.type",
-                "metadata.file_types",
+                "metadata.title",
+                # "metadata.experiment",
+                # "metadata.category",
+                # "metadata.dataset_type",
+                # "metadata.collision_information.type",
+                # "metadata.file_types",
                 # TODO: somehow include "metadata.dates.created.year",
-                "metadata.number_of_events",
+                # "metadata.number_of_events",
 
             ],
         ),
