@@ -72,27 +72,27 @@ Note: Context variables available:
 
   <table class="ui definition table">
     {{ safe_row(m.label(m.experiment), m.experiment.title.en) }}
-    {{ safe_row(m.label(m.filepath), m.filepath) }}
+    {{ safe_row(m.label(m.filename), m.filename) }}
     {{ safe_row(m.label(m.site), m.site) }}
-    {{ safe_row(m.label(m.target_id), m.target_id) }}
+    {{ safe_row(m.label(m.identifier), m.identifier) }}
     {{ safe_row(m.label(m.observation_time), m.observation_time) }}
     {{ safe_row(m.label(m.observation_night), m.observation_night) }}
     {{ safe_row(m.label(m.ccd), m.ccd) }}
-    {{ safe_row(m.label(m.observation_type), m.observation_type) }}
+    {{ safe_row(m.label(m.type), m.type) }}
     {{ safe_row(m.label(m.binning), m.binning) }}
-    {{ safe_row(m.label(m.exposure_time), m.exposure_time) }}
+    {{ safe_row(m.label(m.exposure), m.exposure) }}
     {{ safe_row(m.label(m.filter), m.filter) }}
-    {{ safe_row(m.label(m.target_name), m.target_name) }}
+    {{ safe_row(m.label(m.target), m.target) }}
     {{ safe_row(m.label(m.footprint), m.footprint) }}
     {{ safe_row(m.label(m.radius), m.radius) }}
     {{ safe_row(m.label(m.camera_serial), m.camera_serial) }}
     {{ safe_row(m.label(m.file_types), m.file_types) }}
 
 
-    {% if "EmptyFieldDataSentinel" not in m.detector_size._api_data | string %}
+    {% if "EmptyFieldDataSentinel" not in m.image_size._api_data | string %}
     <tr>
-      <td>{{ m.label(m.detector_size) }}</td>
-      <td>{{ ui_value(m.detector_size.width) }} / {{ ui_value(m.detector_size.height) }}</td>
+      <td>{{ m.label(m.image_size) }}</td>
+      <td>{{ ui_value(m.image_size.width) }} / {{ ui_value(m.image_size.height) }}</td>
     </tr>
     {% endif %}
 

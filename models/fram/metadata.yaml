@@ -12,7 +12,7 @@ Metadata:
 
     # Identification
 
-    target_id:
+    identifier:
       type: int
       label:
         en: Identifier
@@ -22,7 +22,7 @@ Metadata:
       example: 241
 
 
-    target_name:
+    target:
       type: keyword
       label:
         en: Target
@@ -30,11 +30,11 @@ Metadata:
       example: "VAOD_color"
     
       
-    observation_type:
+    type:
       type: keyword
       label:
-        en: Observation type
-        cs: Typ pozorování
+        en: Type
+        cs: Typ
       example: "flat"
       
 
@@ -62,7 +62,7 @@ Metadata:
       example: "20170406"
 
        
-    exposure_time:
+    exposure:
       type: float
       label:
         en: Exposure
@@ -78,8 +78,8 @@ Metadata:
     center:
       type: object
       label:
-        en: Center coordinates
-        cs: Souřadnice středu
+        en: Center
+        cs: Střed
       properties:
         ra:
           type: float
@@ -92,7 +92,7 @@ Metadata:
             en: Dec
             cs: Dec
       description: >
-        Celestial coordinates [RA, Dec] in degrees.
+        Celestial coordinates [RA, Dec].
 
     radius:
       type: float
@@ -117,7 +117,7 @@ Metadata:
             en: Azimuth
             cs: Azimut
       description: >
-        Horizontal coordinates [Alt, Az] in degrees.
+        Horizontal coordinates [Alt, Az].
       example: {"altitude": 45.3680630043068, "azimuth": 89.3656649605622 }
        
     # Instrument configuration
@@ -132,15 +132,15 @@ Metadata:
     ccd:
       type: keyword
       label:
-        en: CCD type
-        cs: Typ CCD
+        en: CCD
+        cs: CCD
       example: "NF3"
 
                
     camera_serial:
       type: keyword
       label:
-        en: Camera serial number
+        en: Camera serial
         cs: Sériové číslo kamery
       example: "2328"
 
@@ -164,11 +164,11 @@ Metadata:
       example: "1x1"
 
                  
-    detector_size:
+    image_size:
       type: object
       label:
-        en: Size
-        cs: Rozměry
+        en: Image size
+        cs: Rozměry snímku
       properties:
         width:
           type: int
@@ -191,7 +191,7 @@ Metadata:
             en: Height (usable)
             cs: Výška (použitelná)
       description: >
-        Dimensions in unbinned pixels. Physical size refers to the full chip,
+        Physical size refers to the full chip,
         usable size to the effective imaging area.
       example: {"width": 4144, "height": 4127, "usable_width": 4096, "usable_height": 4096}
 
