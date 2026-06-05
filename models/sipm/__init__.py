@@ -8,6 +8,6 @@ and similar operations please see the model.py file.
 
 from __future__ import annotations
 
-from .sipm import sipm_model
+from .model import sipm_model
 
 __all__ = ("sipm_model",)

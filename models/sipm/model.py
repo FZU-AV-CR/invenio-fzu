@@ -1,5 +1,5 @@
 """
-Fermilab silicon photomultiplier datasets
+Dune (Fermilab) silicon photomultiplier datasets
 
 """
 
