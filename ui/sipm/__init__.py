@@ -22,28 +22,28 @@ from oarepo_ui.resources.records.resource import RecordsUIResource
 from oarepo_ui.utils import can_view_deposit_page
 
 
-class DetectorsUIResourceConfig(CCMMRecordsUIResourceConfig):
+class SipmUIResourceConfig(CCMMRecordsUIResourceConfig):
     template_folder = "templates"
-    url_prefix = "/detectors"
-    blueprint_name = "detectors_ui"
-    model_name = "detectors"
+    url_prefix = "/sipm"
+    blueprint_name = "sipm_ui"
+    model_name = "sipm"
 
     search_component = UIComponent(
-        "DetectorsResultsListItem",
-        "@js/detectors/search/ResultsListItem",
+        "SipmResultsListItem",
+        "@js/sipm/search/ResultsListItem",
         UIComponentImportMode.DEFAULT,
     )
 
-    application_id = "detectors"
+    application_id = "sipm"
 
 
-class DetectorsUIResource(CCMMRecordsUIResource):
+class SipmUIResource(CCMMRecordsUIResource):
     pass
 
 
 def ui_overrides(app):
     """Register UI overrides."""
-    ui_resource_config = DetectorsUIResourceConfig()
+    ui_resource_config = SipmUIResourceConfig()
 
     if (
         current_oarepo_ui is not None
@@ -59,10 +59,10 @@ def ui_overrides(app):
 
 def init_menu(app):
     """Initialize menu before first request."""
-    ui_resource_config = DetectorsUIResourceConfig()
+    ui_resource_config = SipmUIResourceConfig()
 
     with app.app_context():
-        current_menu.submenu("plus.create_detectors").register(
+        current_menu.submenu("plus.create_sipm").register(
             f"{ui_resource_config.blueprint_name}.deposit_create",
             _("New SiPM"),
             order=1,
@@ -78,5 +78,5 @@ def finalize_app(app):
 
 def create_blueprint(app):
     """Register blueprint for this resource."""
-    blueprint = DetectorsUIResource(DetectorsUIResourceConfig()).as_blueprint()
+    blueprint = SipmUIResource(SipmUIResourceConfig()).as_blueprint()
     return blueprint

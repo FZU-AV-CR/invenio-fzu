@@ -10,7 +10,7 @@ cd $(dirname "$0")
 REPOSITORY=physica-local
 
 # create a draft record
-uvx nrp-cmd create record --repository $REPOSITORY --model detectors ./sipm_003.json --set sipm_003_draft
+uvx nrp-cmd create record --repository $REPOSITORY --model sipm ./sipm_003.json --set sipm_003_draft
 
 
 # upload a file to the draft record
