@@ -7,12 +7,12 @@ theme = WebpackThemeBundle(
     themes={
         "semantic-ui": dict(
             entry={
-                "detectors_search": "./js/detectors/search/index.js",
-                "detectors_deposit_form": "./js/detectors/forms/index.js",
+                "sipm_search": "./js/sipm/search/index.js",
+                "sipm_deposit_form": "./js/sipm/forms/index.js",
             },
             dependencies={},
             devDependencies={},
-            aliases={"@js/detectors": "./js/detectors"},
+            aliases={"@js/sipm": "./js/sipm"},
         )
     },
 )
