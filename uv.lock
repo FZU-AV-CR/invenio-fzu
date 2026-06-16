@@ -983,14 +983,14 @@ wheels = [
 
 [[package]]
 name = "faker"
-version = "40.22.0"
+version = "40.23.0"
 source = { registry = "https://gitlab.cesnet.cz/api/v4/projects/1408/packages/pypi/simple" }
 dependencies = [
     { name = "tzdata", marker = "sys_platform == 'win32'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/84/11/81debfd0c4f8542c746c95d0267d9dd31b8e18ec21ed7ab89569de1bbfea/faker-40.22.0.tar.gz", hash = "sha256:0df62f975c97f79be3d89d626c4ee1518604cb4fea94f7629697f0529fc757d5", size = 1972732, upload-time = "2026-06-09T22:11:57.112Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f3/d6/fc071e5754815d9058e12ab549cc88e90f8f4ecf4dc33b6b750cdf4b622d/faker-40.23.0.tar.gz", hash = "sha256:f135e563f1f95f19346bb680bc2e43570bc43b7893e566023746f51f32c69dfc", size = 1972975, upload-time = "2026-06-10T20:53:21.611Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ca/99/05e89cc2849df99c782edba7b0f7cd0f87f399fc7737dfa9dfc400dcdaaa/faker-40.22.0-py3-none-any.whl", hash = "sha256:d625adfc227deb316eaed6a366b7073a71228975c1524d6a52de797c7588052d", size = 2012839, upload-time = "2026-06-09T22:11:54.533Z" },
+    { url = "https://files.pythonhosted.org/packages/64/5f/824e6fb3e9d63408151dc9173994fa65bde620a67dde3a59354f5aecd497/faker-40.23.0-py3-none-any.whl", hash = "sha256:775922453e54afa42eaf60eac478fa3a969357f224d09a8022b93e3ad88f18ae", size = 2013046, upload-time = "2026-06-10T20:53:19.226Z" },
 ]
 
 [[package]]
@@ -3979,12 +3979,14 @@ name = "physica"
 version = "1.0.0"
 source = { editable = "." }
 dependencies = [
+    { name = "jinjax" },
     { name = "oarepo" },
     { name = "oarepo-app", extra = ["ccmm", "production"] },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "jinjax", specifier = "<0.64" },
     { name = "oarepo", extras = ["s3", "rdm"], specifier = ">=14.2.1b10.dev6,<15.0.0" },
     { name = "oarepo-app", extras = ["production", "ccmm"], specifier = ">=5.0.0,<6.0.0" },
 ]
@@ -4762,7 +4764,7 @@ wheels = [
 
 [[package]]
 name = "selenium"
-version = "4.44.0"
+version = "4.45.0"
 source = { registry = "https://gitlab.cesnet.cz/api/v4/projects/1408/packages/pypi/simple" }
 dependencies = [
     { name = "certifi" },
@@ -4772,9 +4774,9 @@ dependencies = [
     { name = "urllib3", extra = ["socks"] },
     { name = "websocket-client" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/2d/4a/6d0a4f4a07e2a91511a51398203ee82bf6ce644a448aaa35c59b44aa9531/selenium-4.44.0.tar.gz", hash = "sha256:b03a831fcfcab9d912b4682f60718c48a04560d6c62f7496c16b7498c9a4427e", size = 993133, upload-time = "2026-05-12T22:48:19.246Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/86/48/486aa67320f27452e9f551b8608f1a59ce7091c8fe7ebc9f4eba274775d4/selenium-4.45.0.tar.gz", hash = "sha256:563f0c4102f112df1cda30d46ce6d177b2e4a7a3d4b0756902d5dc84d3a8a365", size = 1005503, upload-time = "2026-06-16T04:43:57.915Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1f/bc/885047e975e996cb317db31c4551caa915aafc6befea990f082c7233adc2/selenium-4.44.0-py3-none-any.whl", hash = "sha256:d01ea3e5ecad8149460a765f7cf5177194c21dcc0173093fc05427c289b1bf24", size = 9654291, upload-time = "2026-05-12T22:48:16.836Z" },
+    { url = "https://files.pythonhosted.org/packages/e4/8a/6ff6beb9c7c6cc642f628df9328a8b6637f86602eff8d28e70b5d4e8bca7/selenium-4.45.0-py3-none-any.whl", hash = "sha256:1fd9d0dc08192b2f8100e264ed720f83b05d2dd3a7feff673df04e0c7580df4b", size = 9536616, upload-time = "2026-06-16T04:43:55.968Z" },
 ]
 
 [[package]]
