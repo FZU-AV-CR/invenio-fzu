@@ -8,12 +8,12 @@
     en: FRAM
     cs: FRAM
 
-- id: ATLAS-ITk
+- id: ATLAS_ITk
   title:
     en: ATLAS-ITk
     cs: ATLAS-ITk
 
-- id: DUNE-SiPM
+- id: DUNE_SiPM
   title:
     en: DUNE-SiPM
     cs: DUNE-SiPM
