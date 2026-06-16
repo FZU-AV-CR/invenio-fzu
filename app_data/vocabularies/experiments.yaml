@@ -13,10 +13,10 @@
     en: ATLAS-ITk
     cs: ATLAS-ITk
 
-- id: FERMILAB-SiPM
+- id: DUNE-SiPM
   title:
-    en: FERMILAB-SiPM
-    cs: FERMILAB-SiPM
+    en: DUNE-SiPM
+    cs: DUNE-SiPM
 
 - id: MICROSCOPES
   title:

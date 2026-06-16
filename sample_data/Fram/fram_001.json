@@ -4,20 +4,7 @@
       "id": "c_ddb1"
     },
     "creators": [
-      {
-        "person_or_org": {
-          "type": "personal",
-          "name": "Karpov, Sergey",
-          "given_name": "Sergey",
-          "family_name": "Karpov",
-          "identifiers": [
-            {
-              "scheme": "orcid",
-              "identifier": "0000-0003-0035-651X"
-            }
-          ]
-        }
-      },
+
       {
         "person_or_org": {
           "name": "FZU CAS - Department of Astroparticle Physics",
@@ -50,12 +37,12 @@
     "experiment": {
       "id": "FRAM"
     },
-    "target_id": "1546651",
-    "target_name": "2001 / VAOD_color",
-    "observation_type": "object",
+    "identifier": "1546651",
+    "target": "2001 / VAOD_color",
+    "type": "object",
     "observation_time": "2017-04-06T22:26:22Z",
     "observation_night": "20170813",
-    "exposure_time": "30.0",
+    "exposure": "30.0",
     "center": { "ra": 267.49140094924627, "dec": -18.87911384043446 },
     "radius": 20.3,
     "site": "cta-s0",
@@ -63,7 +50,7 @@
     "camera_serial": "2328",
     "filter" : "B",
     "binning" : "1x1",
-    "detector_size" : {"width": 4096, "height": 4096},
+    "image_size" : {"width": 4096, "height": 4096},
     "footprint": "13.5, -19.0 13.5, -18.8 13.7, -18.8 13.7, -19.0",
     "file_types" : ["fits"],
     "altitude_azimuth" : {"altitude": 45.3680630043068, "azimuth": 89.3656649605622},

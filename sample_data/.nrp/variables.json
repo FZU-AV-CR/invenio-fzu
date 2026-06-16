@@ -4,7 +4,7 @@
       "https://127.0.0.1:5000/api/particles/75gqy-k2485/draft"
     ],
     "sipm_003_draft": [
-      "https://127.0.0.1:5000/api/detectors/bz0pc-byz67/draft"
+      "https://127.0.0.1:5000/api/sipm/bz0pc-byz67/draft"
     ],
     "delphi_001_draft": [
       "https://127.0.0.1:5000/api/particles/gsjqp-96w19/draft"

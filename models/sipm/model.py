@@ -1,5 +1,5 @@
 """
-Fermilab silicon photomultiplier datasets
+Dune (Fermilab) silicon photomultiplier datasets
 
 """
 
@@ -11,6 +11,7 @@ from invenio_rdm_records.resources.serializers.ui.schema import UIRecordSchema
 from invenio_records_permissions.generators import AuthenticatedUser
 from oarepo_model.api import model
 from oarepo_model.customizations import (
+    AddFacetGroup,
     AddMetadataExport,
     PrependMixin,
     SetDefaultSearchFields,
@@ -21,14 +22,14 @@ from oarepo_model.model import ModelMixin
 from .serializers import DataCiteJSONSerializer
 
 
-class DetectorsPermissionPolicyMixin(ModelMixin):
-    """Custom permission policy for detectors."""
+class SipmPermissionPolicyMixin(ModelMixin):
+    """Custom permission policy for sipm."""
 
     can_view_deposit_page = [AuthenticatedUser()]
 
 
-detectors_model = model(
-    "detectors",
+sipm_model = model(
+    "sipm",
     version="1.0.0",
     presets=[ccmm_production_preset_1_1_0],
     types=[from_yaml("metadata.yaml", __file__)],
@@ -41,7 +42,7 @@ detectors_model = model(
         # specify the keyword "Invenio repository development" inside the subject or
         # mail body of the request.
         # TODO: remove this customization if you use oarepo-communities for RDM 14
-        PrependMixin("PermissionPolicy", DetectorsPermissionPolicyMixin),
+        PrependMixin("PermissionPolicy", SipmPermissionPolicyMixin),
         # export for datacite
         AddMetadataExport(
             code="datacite",
@@ -69,6 +70,13 @@ detectors_model = model(
             "metadata.manufacturer",
             "metadata.file_types",
         ),
+        AddFacetGroup(
+            name="default",
+            facets=[
+                "metadata.title",
+                
+            ],
+        ),
     ],
-    configuration={"ui_blueprint_name": "detectors_ui"},
+    configuration={"ui_blueprint_name": "sipm_ui"},
 )

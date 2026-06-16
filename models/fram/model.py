@@ -10,6 +10,7 @@ from invenio_i18n import lazy_gettext as _
 from invenio_records_permissions.generators import AuthenticatedUser
 from oarepo_model.api import model
 from oarepo_model.customizations import (
+    AddFacetGroup,
     AddMetadataExport,
     PrependMixin,
     SetDefaultSearchFields,
@@ -59,12 +60,12 @@ fram_model = model(
             "metadata.creators.person_or_org.name",
             "metadata.contributors.person_or_org.name",
             "metadata.experiment.id",
-            "metadata.target_id",
-            "metadata.target_name",
-            "metadata.observation_type",
+            "metadata.identifier",
+            "metadata.target",
+            "metadata.type",
             "metadata.observation_time",
             "metadata.observation_night",
-            "metadata.exposure_time",
+            "metadata.exposure",
             "metadata.center.ra",
             "metadata.center.dec",
             "metadata.radius",
@@ -75,15 +76,21 @@ fram_model = model(
             "metadata.camera_serial",
             "metadata.filter",
             "metadata.binning",
-            "metadata.detector_size.height",
-            "metadata.detector_size.width",
-            "metadata.detector_size.usable_height",
-            "metadata.detector_size.usable_width",
+            "metadata.image_size.height",
+            "metadata.image_size.width",
+            "metadata.image_size.usable_height",
+            "metadata.image_size.usable_width",
             "metadata.file_types",
             "metadata.filename",
             "metadata.file_footprint",
 
 
+        ),
+        AddFacetGroup(
+            name="default",
+            facets=[
+                "metadata.title",
+            ],
         ),
     ],
     configuration={"ui_blueprint_name": "fram_ui"},

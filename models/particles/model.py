@@ -66,13 +66,14 @@ particles_model = model(
         AddFacetGroup(
             name="default",
             facets=[
+                "metadata.title",
                 "metadata.experiment",
                 "metadata.category",
                 "metadata.dataset_type",
                 "metadata.collision_information.type",
                 "metadata.file_types",
                 # TODO: somehow include "metadata.dates.created.year",
-                "metadata.number_of_events",
+                # "metadata.number_of_events",
 
             ],
         ),
