@@ -92,7 +92,7 @@ Note: Context variables available:
     {% if "EmptyFieldDataSentinel" not in m.radius._api_data | string %}
     <tr>
       <td>{{ m.label(m.radius) }}</td>
-      <td>{{ '%.2f' % (m.radius._api_data | float) }}</td>
+      <td>{{ '%.2f' % (m.radius._api_data | float) }} deg</td>
     </tr>
     {% endif %}
     {{ safe_row(m.label(m.camera_serial), m.camera_serial) }}
