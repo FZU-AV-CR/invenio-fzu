@@ -7,6 +7,7 @@ authors = []
 dependencies = [
     "oarepo[s3,rdm]>=14.2.1b10.dev6,<15.0.0",
     "oarepo-app[production,ccmm]>=5.0.0,<6.0.0",
+    "jinjax<0.64"
 ]
 requires-python = ">=3.14,<3.15"
 
