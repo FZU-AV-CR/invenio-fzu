@@ -80,11 +80,21 @@ Note: Context variables available:
     {{ safe_row(m.label(m.ccd), m.ccd) }}
     {{ safe_row(m.label(m.type), m.type) }}
     {{ safe_row(m.label(m.binning), m.binning) }}
-    {{ safe_row(m.label(m.exposure), m.exposure) }}
+    {% if "EmptyFieldDataSentinel" not in m.exposure._api_data | string %}
+    <tr>
+      <td>{{ m.label(m.exposure) }}</td>
+      <td>{{ '%.1f' % (m.exposure._api_data | float) }}</td>
+    </tr>
+    {% endif %}
     {{ safe_row(m.label(m.filter), m.filter) }}
     {{ safe_row(m.label(m.target), m.target) }}
     {{ safe_row(m.label(m.footprint), m.footprint) }}
-    {{ safe_row(m.label(m.radius), m.radius) }}
+    {% if "EmptyFieldDataSentinel" not in m.radius._api_data | string %}
+    <tr>
+      <td>{{ m.label(m.radius) }}</td>
+      <td>{{ '%.2f' % (m.radius._api_data | float) }} deg</td>
+    </tr>
+    {% endif %}
     {{ safe_row(m.label(m.camera_serial), m.camera_serial) }}
     {{ safe_row(m.label(m.file_types), m.file_types) }}
 
@@ -99,14 +109,14 @@ Note: Context variables available:
     {% if "EmptyFieldDataSentinel" not in m.altitude_azimuth._api_data | string %}
     <tr>
       <td>{{ m.label(m.altitude_azimuth) }}</td>
-      <td> alt {{ ui_value(m.altitude_azimuth.altitude) }} / az {{ ui_value(m.altitude_azimuth.azimuth) }}</td>
+      <td> alt {{ '%.4f' % (m.altitude_azimuth.altitude._api_data | float) }} / az {{ '%.4f' % (m.altitude_azimuth.azimuth._api_data | float) }}</td>
     </tr>
     {% endif %}
 
     {% if "EmptyFieldDataSentinel" not in m.center._api_data | string %}
     <tr>
       <td>{{ m.label(m.center) }}</td>
-      <td> ra {{ ui_value(m.center.ra) }} / dec {{ ui_value(m.center.dec) }}</td>
+      <td> ra {{ '%.4f' % (m.center.ra._api_data | float) }} / dec {{ '%.4f' % (m.center.dec._api_data | float) }}</td>
     </tr>
     {% endif %}
 
