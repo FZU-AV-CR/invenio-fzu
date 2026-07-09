@@ -54,7 +54,7 @@
       }
     ],
     "experiment": {
-      "id": "DUNE-SiPM"
+      "id": "DUNE_SiPM"
     },
     "manufacturer": "Hamamatsu Photonics",
     "requestor": "Spain S06",
