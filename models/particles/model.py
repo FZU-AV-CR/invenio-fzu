@@ -11,7 +11,6 @@ from invenio_records_permissions.generators import AuthenticatedUser
 from oarepo_model.api import model
 from oarepo_model.customizations import (
     AddFacetGroup,
-    AddFacetGroup,
     AddMetadataExport,
     PrependMixin,
     SetDefaultSearchFields,
