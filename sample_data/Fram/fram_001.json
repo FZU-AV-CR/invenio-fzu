@@ -37,7 +37,7 @@
     "experiment": {
       "id": "FRAM"
     },
-    "identifier": "1546651",
+    "identifier": 546651,
     "target": "2001 / VAOD_color",
     "type": "object",
     "observation_time": "2017-04-06T22:26:22Z",
@@ -50,10 +50,10 @@
     "camera_serial": "2328",
     "filter" : "B",
     "binning" : "1x1",
-    "image_size" : {"width": 4096, "height": 4096},
-    "footprint": "13.5, -19.0 13.5, -18.8 13.7, -18.8 13.7, -19.0",
+    "image_size" : {"width": 4096, "height": 4096, "usable_width": 24,  "usable_height": 36 },
+    "footprint": "5,3,2",
     "file_types" : ["fits"],
-    "altitude_azimuth" : {"altitude": 45.3680630043068, "azimuth": 89.3656649605622},
+    "altitude_azimuth" : {"altitude": 45.3680630043068, "azimuth": 89.3652},
     "filename" : "/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fit"
     }
 }
