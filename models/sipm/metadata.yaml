@@ -53,8 +53,8 @@ Metadata:
     tray_numbers:
       type: array
       label:
-        en: Tray numbers (search)
-        cs: Čísla tray (vyhledávání)
+        en: Tray numbers
+        cs: Čísla tray
       items:
         type: keyword
         pattern: '^Tray\d{6}$'

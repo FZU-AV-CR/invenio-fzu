@@ -122,7 +122,9 @@ def fill_cern_metadata(source) -> dict:
                 }
             }
         ],
-        "experiment": "DELPHI",
+        "experiment": {
+        "id": "DELPHI"
+        },
         "collision_information": {
             "type": "e+e-",
             "energy": "",
@@ -215,7 +217,7 @@ def fill_cern_metadata(source) -> dict:
     # Experiment
     exp = _first(src.get("experiment", [])) or collab
     if exp:
-        tgt["experiment"] = exp
+        tgt["experiment"] = {"id": exp}
 
     # Dataset type
     secondary = (src.get("type") or {}).get("secondary", [])
