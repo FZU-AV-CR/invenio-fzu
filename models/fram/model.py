@@ -82,16 +82,19 @@ fram_model = model(
             "metadata.image_size.usable_width",
             "metadata.file_types",
             "metadata.filename",
-            "metadata.file_footprint",
-
-
+            "metadata.footprint",       # was: metadata.file_footprint (typo fixed)
+            # ── NEW ──────────────────────────────────────────────────────
+            "metadata.healpix_idx",     # integer; enables keyword/range search
         ),
         AddFacetGroup(
             name="default",
             facets=[
                 "metadata.title",
+                # ── NEW ──────────────────────────────────────────────────
+                "metadata.healpix_idx",   # sky region facet (HEALPix NSIDE=64)
             ],
         ),
+
     ],
     configuration={"ui_blueprint_name": "fram_ui"},
 )

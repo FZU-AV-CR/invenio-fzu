@@ -213,7 +213,53 @@ Metadata:
       example: "/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits"
  
     footprint:
-      type: keyword
+      type: object
       label:
         en: Footprint
         cs: Pokrytí oblohy
+      description: >
+        Optional. GeoJSON polygon of image corners for OpenSearch geo_shape
+        indexing. Used internally for second-pass position re-checking only
+        — not displayed in the UI. Computed from WCS corner pixels.
+        RA remapped to −180..+180°. Null for calibration frames
+        (masterdark/masterflat/bias/dcurrent) or frames without valid WCS.
+
+    # ── Spherical index (sky position search) ──────────────────────────────
+    # center_geo requires geo_point OpenSearch mapping from Cesnet.
+    # healpix_idx is a plain integer — no special mapping needed.
+    # Both are null for calibration frames which have no sky position.
+
+    center_geo:
+      type: object
+      label:
+        en: Center (geo index)
+        cs: Střed (geo index)
+      description: >
+        Shadow field for OpenSearch geo_point indexing.
+        RA remapped from 0–360° to −180..+180° (lon); Dec unchanged (lat).
+        Must be a separate field from center.ra/center.dec because the
+        coordinate systems differ (0–360 vs −180..+180).
+        Null for calibration frames.
+      properties:
+        lat:
+          type: float
+          label:
+            en: Latitude (Dec)
+            cs: Zeměpisná šířka
+        lon:
+          type: float
+          label:
+            en: Longitude (RA remapped)
+            cs: Zeměpisná délka
+
+    healpix_idx:
+      type: int
+      label:
+        en: HEALPix pixel index
+        cs: HEALPix pixel index
+      description: >
+        HEALPix NSIDE=64 pixel index of image center.
+        Used for sky-region faceting and fallback cone search.
+        Null for calibration frames.
+      example: 12345
+
