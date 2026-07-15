@@ -89,9 +89,35 @@ fram_model = model(
         AddFacetGroup(
             name="default",
             facets=[
-                "metadata.title",
+                "metadata.site",
+                "metadata.type",
+                "metadata.target",
+                "metadata.observation_night",
+                "metadata.observation_time",
+                "metadata.filename",
+                "metadata.identifier",
+                "metadata.exposure",
+                "metadata.center.ra",
+                "metadata.center.dec",
+                "metadata.radius",
+                "metadata.altitude_azimuth.altitude",
+
+                #"metadata.altitude_azimuth.azimuth",
+
+                "metadata.ccd",
+                "metadata.camera_serial",
+                "metadata.filter",
+                "metadata.binning",
+                "metadata.image_size.height",
+                "metadata.image_size.width",
+                "metadata.image_size.usable_height",
+                "metadata.image_size.usable_width",
+
+                #"metadata.file_footprint",
+
                 # ── NEW ──────────────────────────────────────────────────
                 "metadata.healpix_idx",   # sky region facet (HEALPix NSIDE=64)
+                "metadata.title",
             ],
         ),
 

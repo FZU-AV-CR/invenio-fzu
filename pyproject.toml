@@ -6,7 +6,7 @@ packages = []
 authors = []
 dependencies = [
     "oarepo[s3,rdm]>=14.0.0b1,<15.0.0",
-    "oarepo-app[production,ccmm]==6.2.0",
+    "oarepo-app[production,ccmm]==6.3.0",
     "healpy>=1.16",
 ]
 

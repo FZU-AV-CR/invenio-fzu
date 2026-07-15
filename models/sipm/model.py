@@ -73,8 +73,13 @@ sipm_model = model(
         AddFacetGroup(
             name="default",
             facets=[
+                "metadata.box",
+                "metadata.requestor",
+                "metadata.manufacturer",
+                "metadata.trays",
+                "metadata.qr_list",
                 "metadata.title",
-                
+
             ],
         ),
     ],
