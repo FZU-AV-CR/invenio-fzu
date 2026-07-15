@@ -213,16 +213,22 @@ Metadata:
       example: "/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits"
  
     footprint:
-      type: object
+      type: keyword
       label:
         en: Footprint
         cs: Pokrytí oblohy
       description: >
-        Optional. GeoJSON polygon of image corners for OpenSearch geo_shape
-        indexing. Used internally for second-pass position re-checking only
-        — not displayed in the UI. Computed from WCS corner pixels.
-        RA remapped to −180..+180°. Null for calibration frames
-        (masterdark/masterflat/bias/dcurrent) or frames without valid WCS.
+        Optional. JSON-encoded (string) GeoJSON polygon of image corners,
+        for OpenSearch geo_shape indexing. Used internally for second-pass
+        position re-checking only — not displayed in the UI. Computed from
+        WCS corner pixels. RA remapped to −180..+180°. Null for calibration
+        frames (masterdark/masterflat/bias/dcurrent) or frames without valid
+        WCS. Stored as a keyword (JSON string) rather than a structured
+        object because oarepo's `object` type requires a fixed `properties`
+        schema and cannot express GeoJSON's variable-depth nested coordinate
+        arrays; Cesnet can still map this field as `geo_shape` at the
+        OpenSearch level, which supports GeoJSON supplied as a string.
+
 
     # ── Spherical index (sky position search) ──────────────────────────────
     # center_geo requires geo_point OpenSearch mapping from Cesnet.
