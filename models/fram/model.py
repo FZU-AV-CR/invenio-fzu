@@ -82,10 +82,10 @@ fram_model = model(
             "metadata.image_size.usable_width",
             "metadata.file_types",
             "metadata.filename",
-            "metadata.footprint",       # was: metadata.file_footprint (typo fixed)
-            # ── NEW ──────────────────────────────────────────────────────
-            "metadata.healpix_idx",     # integer; enables keyword/range search
+            "metadata.footprint",
+            "metadata.healpix_idx",
         ),
+
         AddFacetGroup(
             name="default",
             facets=[
@@ -115,8 +115,7 @@ fram_model = model(
 
                 #"metadata.file_footprint",
 
-                # ── NEW ──────────────────────────────────────────────────
-                "metadata.healpix_idx",   # sky region facet (HEALPix NSIDE=64)
+                "metadata.healpix_idx",
                 "metadata.title",
             ],
         ),
