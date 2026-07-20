@@ -82,10 +82,10 @@ fram_model = model(
             "metadata.image_size.usable_width",
             "metadata.file_types",
             "metadata.filename",
-            "metadata.file_footprint",
-
-
+            "metadata.footprint",
+            "metadata.healpix_idx",
         ),
+
         AddFacetGroup(
             name="default",
             facets=[
@@ -115,9 +115,11 @@ fram_model = model(
 
                 #"metadata.file_footprint",
 
-
+                "metadata.healpix_idx",
+                "metadata.title",
             ],
         ),
+
     ],
     configuration={"ui_blueprint_name": "fram_ui"},
 )
