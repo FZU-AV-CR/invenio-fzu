@@ -2,8 +2,39 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { SearchAppFacets } from "@js/oarepo_ui/search";
 import { withState } from "react-searchkit";
-import { Form, Header, Button, Segment } from "semantic-ui-react";
+import { Form, Button, Accordion, Icon } from "semantic-ui-react";
 import { i18next } from "@translations/i18next";
+
+/**
+ * Shared accordion-panel wrapper for all custom input-based filters below.
+ * Replaces the previous plain <Segment>+<Header> / 2-column CSS grid
+ * layout: each filter is now collapsed by default and expands on click,
+ * so 8 filters can be stacked in a single narrow sidebar column without
+ * overflowing into the results column (the 2-column grid version
+ * previously overflowed at narrower viewport/sidebar widths).
+ *
+ * `active`/`onToggle` are owned by the parent <Accordion exclusive={false}>
+ * (see CustomFilters at the bottom of this file) so multiple filter panels
+ * can be expanded at the same time (e.g. Altitude + Azimuth together).
+ */
+const FilterPanel = ({ label, active, onToggle, children }) => (
+  <>
+    <Accordion.Title active={active} onClick={onToggle}>
+      <Icon name="dropdown" />
+      {label}
+    </Accordion.Title>
+    <Accordion.Content active={active}>
+      <Form size="small">{children}</Form>
+    </Accordion.Content>
+  </>
+);
+
+FilterPanel.propTypes = {
+  label: PropTypes.string.isRequired,
+  active: PropTypes.bool.isRequired,
+  onToggle: PropTypes.func.isRequired,
+  children: PropTypes.node,
+};
 
 /**
  * Helper to replace/remove a single named filter within react-searchkit's
@@ -24,11 +55,13 @@ const withoutFilter = (filters, key) =>
  * On submit, stores a single "cone_search" filter as a JSON string
  * { lat, lon, radius }. RA is remapped to OpenSearch longitude range
  * (-180..180) here so downstream query-building code doesn't have to.
- *
- * NOTE: translating this filter into an actual geo_distance / healpix_idx
- * terms query happens server-side (search options) and is not yet wired up.
  */
-const ConeSearchInputsComponent = ({ currentQueryState, updateQueryState }) => {
+const ConeSearchInputsComponent = ({
+  currentQueryState,
+  updateQueryState,
+  active,
+  onToggle,
+}) => {
   const [ra, setRa] = useState("");
   const [dec, setDec] = useState("");
   const [radius, setRadius] = useState("");
@@ -66,45 +99,42 @@ const ConeSearchInputsComponent = ({ currentQueryState, updateQueryState }) => {
   };
 
   return (
-    <Segment basic className="custom-filter-block">
-      <Header as="h4" className="facets-header">
-        {i18next.t("Sky position")}
-      </Header>
-      <Form size="small">
-        <Form.Input
-          label={i18next.t("RA (°)")}
-          value={ra}
-          onChange={(e) => setRa(e.target.value)}
-          placeholder="0 - 360"
-        />
-        <Form.Input
-          label={i18next.t("Dec (°)")}
-          value={dec}
-          onChange={(e) => setDec(e.target.value)}
-          placeholder="-90 - 90"
-        />
-        <Form.Input
-          label={i18next.t("Radius (°)")}
-          value={radius}
-          onChange={(e) => setRadius(e.target.value)}
-          placeholder="e.g. 1.0"
-        />
-        <Button.Group size="small" fluid>
-          <Button primary onClick={apply} type="button">
-            {i18next.t("Search")}
-          </Button>
-          <Button basic onClick={clear} type="button">
-            {i18next.t("Clear")}
-          </Button>
-        </Button.Group>
-      </Form>
-    </Segment>
+    <FilterPanel label={i18next.t("Sky position")} active={active} onToggle={onToggle}>
+      <Form.Input
+        label={i18next.t("RA (°)")}
+        value={ra}
+        onChange={(e) => setRa(e.target.value)}
+        placeholder="0 - 360"
+      />
+      <Form.Input
+        label={i18next.t("Dec (°)")}
+        value={dec}
+        onChange={(e) => setDec(e.target.value)}
+        placeholder="-90 - 90"
+      />
+      <Form.Input
+        label={i18next.t("Radius (°)")}
+        value={radius}
+        onChange={(e) => setRadius(e.target.value)}
+        placeholder="e.g. 1.0"
+      />
+      <Button.Group size="small" fluid>
+        <Button primary onClick={apply} type="button">
+          {i18next.t("Search")}
+        </Button>
+        <Button basic onClick={clear} type="button">
+          {i18next.t("Clear")}
+        </Button>
+      </Button.Group>
+    </FilterPanel>
   );
 };
 
 ConeSearchInputsComponent.propTypes = {
   currentQueryState: PropTypes.object.isRequired,
   updateQueryState: PropTypes.func.isRequired,
+  active: PropTypes.bool.isRequired,
+  onToggle: PropTypes.func.isRequired,
 };
 
 const ConeSearchInputs = withState(ConeSearchInputsComponent);
@@ -121,7 +151,12 @@ const ConeSearchInputs = withState(ConeSearchInputsComponent);
  * custom RangeQueryFacet registered for this field (see
  * models/fram/facets.py).
  */
-const NightFilterComponent = ({ currentQueryState, updateQueryState }) => {
+const NightFilterComponent = ({
+  currentQueryState,
+  updateQueryState,
+  active,
+  onToggle,
+}) => {
   const [nightFrom, setNightFrom] = useState("");
   const [nightTo, setNightTo] = useState("");
 
@@ -139,7 +174,6 @@ const NightFilterComponent = ({ currentQueryState, updateQueryState }) => {
     });
   };
 
-
   const clear = () => {
     setNightFrom("");
     setNightTo("");
@@ -153,53 +187,59 @@ const NightFilterComponent = ({ currentQueryState, updateQueryState }) => {
   };
 
   return (
-    <Segment basic className="custom-filter-block">
-      <Header as="h4" className="facets-header">
-        {i18next.t("Observation night")}
-      </Header>
-      <Form size="small">
-        <Form.Input
-          type="date"
-          label={i18next.t("From")}
-          value={nightFrom}
-          onChange={(e) => setNightFrom(e.target.value)}
-        />
-        <Form.Input
-          type="date"
-          label={i18next.t("To")}
-          value={nightTo}
-          onChange={(e) => setNightTo(e.target.value)}
-        />
-        <Button.Group size="small" fluid>
-          <Button primary onClick={apply} type="button">
-            {i18next.t("Search")}
-          </Button>
-          <Button basic onClick={clear} type="button">
-            {i18next.t("Clear")}
-          </Button>
-        </Button.Group>
-      </Form>
-    </Segment>
+    <FilterPanel
+      label={i18next.t("Observation night")}
+      active={active}
+      onToggle={onToggle}
+    >
+      <Form.Input
+        type="date"
+        label={i18next.t("From")}
+        value={nightFrom}
+        onChange={(e) => setNightFrom(e.target.value)}
+      />
+      <Form.Input
+        type="date"
+        label={i18next.t("To")}
+        value={nightTo}
+        onChange={(e) => setNightTo(e.target.value)}
+      />
+      <Button.Group size="small" fluid>
+        <Button primary onClick={apply} type="button">
+          {i18next.t("Search")}
+        </Button>
+        <Button basic onClick={clear} type="button">
+          {i18next.t("Clear")}
+        </Button>
+      </Button.Group>
+    </FilterPanel>
   );
 };
 
 NightFilterComponent.propTypes = {
   currentQueryState: PropTypes.object.isRequired,
   updateQueryState: PropTypes.func.isRequired,
+  active: PropTypes.bool.isRequired,
+  onToggle: PropTypes.func.isRequired,
 };
 
 const NightFilter = withState(NightFilterComponent);
 
 /**
  * Generic min/max numeric range filter factory, used for continuous float
- * fields (altitude, azimuth) where a checkbox facet is unusable but a
- * range query is the natural fit. Sends a single "min..max" range string
- * (either bound may be omitted for an open-ended range), consumed by the
- * custom RangeQueryFacet registered for these fields (see
+ * fields (altitude, azimuth, exposure) where a checkbox facet is unusable
+ * but a range query is the natural fit. Sends a single "min..max" range
+ * string (either bound may be omitted for an open-ended range), consumed
+ * by the custom RangeQueryFacet registered for these fields (see
  * models/fram/facets.py).
  */
 const makeRangeFilter = (filterKey, labelText, minPlaceholder, maxPlaceholder) => {
-  const RangeFilterComponent = ({ currentQueryState, updateQueryState }) => {
+  const RangeFilterComponent = ({
+    currentQueryState,
+    updateQueryState,
+    active,
+    onToggle,
+  }) => {
     const [min, setMin] = useState("");
     const [max, setMax] = useState("");
 
@@ -223,7 +263,6 @@ const makeRangeFilter = (filterKey, labelText, minPlaceholder, maxPlaceholder) =
       });
     };
 
-
     const clear = () => {
       setMin("");
       setMax("");
@@ -234,39 +273,36 @@ const makeRangeFilter = (filterKey, labelText, minPlaceholder, maxPlaceholder) =
     };
 
     return (
-      <Segment basic className="custom-filter-block">
-        <Header as="h4" className="facets-header">
-          {labelText}
-        </Header>
-        <Form size="small">
-          <Form.Input
-            label={i18next.t("Min")}
-            value={min}
-            onChange={(e) => setMin(e.target.value)}
-            placeholder={minPlaceholder}
-          />
-          <Form.Input
-            label={i18next.t("Max")}
-            value={max}
-            onChange={(e) => setMax(e.target.value)}
-            placeholder={maxPlaceholder}
-          />
-          <Button.Group size="small" fluid>
-            <Button primary onClick={apply} type="button">
-              {i18next.t("Search")}
-            </Button>
-            <Button basic onClick={clear} type="button">
-              {i18next.t("Clear")}
-            </Button>
-          </Button.Group>
-        </Form>
-      </Segment>
+      <FilterPanel label={labelText} active={active} onToggle={onToggle}>
+        <Form.Input
+          label={i18next.t("Min")}
+          value={min}
+          onChange={(e) => setMin(e.target.value)}
+          placeholder={minPlaceholder}
+        />
+        <Form.Input
+          label={i18next.t("Max")}
+          value={max}
+          onChange={(e) => setMax(e.target.value)}
+          placeholder={maxPlaceholder}
+        />
+        <Button.Group size="small" fluid>
+          <Button primary onClick={apply} type="button">
+            {i18next.t("Search")}
+          </Button>
+          <Button basic onClick={clear} type="button">
+            {i18next.t("Clear")}
+          </Button>
+        </Button.Group>
+      </FilterPanel>
     );
   };
 
   RangeFilterComponent.propTypes = {
     currentQueryState: PropTypes.object.isRequired,
     updateQueryState: PropTypes.func.isRequired,
+    active: PropTypes.bool.isRequired,
+    onToggle: PropTypes.func.isRequired,
   };
 
   return withState(RangeFilterComponent);
@@ -293,16 +329,20 @@ const ExposureFilter = makeRangeFilter(
   "e.g. 30"
 );
 
-
-
 /**
  * Generic free-text input filter factory, used for high-cardinality /
- * unique-per-record fields (filename, title) where a checkbox facet list
- * would be unusable, but a plain aggregation facet also doesn't fit --
- * the user types a fragment and it's matched against the field.
+ * unique-per-record fields (filename, target, title) where a checkbox
+ * facet list would be unusable, but a plain aggregation facet also
+ * doesn't fit -- the user types a fragment and it's matched against the
+ * field.
  */
 const makeTextFilter = (filterKey, labelText, placeholderText) => {
-  const TextFilterComponent = ({ currentQueryState, updateQueryState }) => {
+  const TextFilterComponent = ({
+    currentQueryState,
+    updateQueryState,
+    active,
+    onToggle,
+  }) => {
     const [value, setValue] = useState("");
 
     const apply = () => {
@@ -322,32 +362,29 @@ const makeTextFilter = (filterKey, labelText, placeholderText) => {
     };
 
     return (
-      <Segment basic className="custom-filter-block">
-        <Header as="h4" className="facets-header">
-          {labelText}
-        </Header>
-        <Form size="small">
-          <Form.Input
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            placeholder={placeholderText}
-          />
-          <Button.Group size="small" fluid>
-            <Button primary onClick={apply} type="button">
-              {i18next.t("Search")}
-            </Button>
-            <Button basic onClick={clear} type="button">
-              {i18next.t("Clear")}
-            </Button>
-          </Button.Group>
-        </Form>
-      </Segment>
+      <FilterPanel label={labelText} active={active} onToggle={onToggle}>
+        <Form.Input
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          placeholder={placeholderText}
+        />
+        <Button.Group size="small" fluid>
+          <Button primary onClick={apply} type="button">
+            {i18next.t("Search")}
+          </Button>
+          <Button basic onClick={clear} type="button">
+            {i18next.t("Clear")}
+          </Button>
+        </Button.Group>
+      </FilterPanel>
     );
   };
 
   TextFilterComponent.propTypes = {
     currentQueryState: PropTypes.object.isRequired,
     updateQueryState: PropTypes.func.isRequired,
+    active: PropTypes.bool.isRequired,
+    onToggle: PropTypes.func.isRequired,
   };
 
   return withState(TextFilterComponent);
@@ -366,13 +403,13 @@ const TargetFilter = makeTextFilter(
 );
 
 /**
- * Title filter: unlike Filename/Target/Target (our own keyword fields),
- * "title" comes from the CCMM/RDM preset (`fulltext+keyword` type) and is
- * matched via an exact-match `term` query against its `.keyword`
- * sub-field (see ExactMatchFacet in models/fram/facets.py) rather than a
- * substring `wildcard` query -- simpler/more robust against upstream
- * mapping changes we don't control. The input is otherwise identical to
- * the other text filters; only the server-side query semantics differ.
+ * Title filter: unlike Filename/Target (our own keyword fields), "title"
+ * comes from the CCMM/RDM preset (`fulltext+keyword` type) and is matched
+ * via an exact-match `term` query against its `.keyword` sub-field (see
+ * ExactMatchFacet in models/fram/facets.py) rather than a substring
+ * `wildcard` query -- simpler/more robust against upstream mapping
+ * changes we don't control. The input is otherwise identical to the
+ * other text filters; only the server-side query semantics differ.
  */
 const TitleFilter = makeTextFilter(
   "metadata.title",
@@ -380,39 +417,55 @@ const TitleFilter = makeTextFilter(
   i18next.t("Exact title match")
 );
 
+/**
+ * Definition of every custom filter panel, in display order. Each entry's
+ * `key` matches a unique identifier tracked in the parent's `openPanels`
+ * state (see CustomFilters below) -- deliberately NOT the react-searchkit
+ * filter key (some panels, like cone search, don't map 1:1 to a single
+ * metadata field).
+ */
+const FILTER_PANELS = [
+  { key: "cone_search", Component: ConeSearchInputs },
+  { key: "observation_night", Component: NightFilter },
+  { key: "altitude", Component: AltitudeFilter },
+  { key: "azimuth", Component: AzimuthFilter },
+  { key: "exposure", Component: ExposureFilter },
+  { key: "target", Component: TargetFilter },
+  { key: "filename", Component: FilenameFilter },
+  { key: "title", Component: TitleFilter },
+];
 
 /**
  * Combined custom filters block. Standard checkbox facets (site, type,
  * ccd, camera_serial, filter, binning -- see AddFacetGroup in
  * models/fram/model.py) are rendered first via <SearchAppFacets>,
- * followed by the custom input-based filters (cone search, night range,
- * altitude/azimuth/exposure ranges, target/filename/title text match)
- * laid out in a responsive two-column grid below them.
+ * followed by the custom input-based filters below, each collapsed into
+ * an accordion panel (see FilterPanel above) so a single narrow sidebar
+ * column can hold all of them without overflowing into the results
+ * column. `exclusive={false}` lets multiple panels stay open at once
+ * (e.g. Altitude + Azimuth together).
  */
-const customFiltersGridStyle = {
-  display: "grid",
-  gridTemplateColumns: "repeat(2, 1fr)",
-  gap: "0.5rem 1rem",
-  alignItems: "start",
+export const CustomFilters = (props) => {
+  const [openPanels, setOpenPanels] = useState({});
+
+  const togglePanel = (key) =>
+    setOpenPanels((prev) => ({ ...prev, [key]: !prev[key] }));
+
+  return (
+    <>
+      <SearchAppFacets {...props} />
+      <Accordion exclusive={false} styled fluid className="custom-filters-accordion">
+        {FILTER_PANELS.map(({ key, Component }) => (
+          <Component
+            key={key}
+            active={!!openPanels[key]}
+            onToggle={() => togglePanel(key)}
+          />
+        ))}
+      </Accordion>
+    </>
+  );
 };
-
-export const CustomFilters = (props) => (
-  <>
-    <SearchAppFacets {...props} />
-    <div className="custom-filters-grid" style={customFiltersGridStyle}>
-      <ConeSearchInputs />
-      <NightFilter />
-      <AltitudeFilter />
-      <AzimuthFilter />
-      <ExposureFilter />
-      <TargetFilter />
-      <FilenameFilter />
-      <TitleFilter />
-    </div>
-  </>
-);
-
-
 
 CustomFilters.propTypes = SearchAppFacets.propTypes;
 

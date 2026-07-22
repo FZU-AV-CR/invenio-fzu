@@ -134,8 +134,14 @@ fram_model = model(
         # in AddFacetGroup at all for the filter itself to work.
         AddToDictionary(
             "RecordFacets",
-            {"cone_search": ConeSearchFacet(field="metadata.healpix_idx")},
+            {
+                "cone_search": ConeSearchFacet(
+                    field="metadata.healpix_idx",
+                    footprint_field="metadata.footprint",
+                )
+            },
         ),
+
 
         # ── Title exact-match filter (CCMM/RDM-owned field) ────────────────
         # "metadata.title" is not declared in our own metadata.yaml (it

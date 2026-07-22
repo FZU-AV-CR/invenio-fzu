@@ -34,10 +34,13 @@ under the literal key "cone_search" matching the filter key the UI
 
 Implementation note (2-round / "Plan B" architecture, see
 SKY_POSITION_SEARCH_TODO.md and the FRAM_spherical_index_impl spec):
-this facet implements ONLY round 1 (coarse HEALPix filter). Round 2
-(exact `footprint` geo_shape containment check, to eliminate false
-positives introduced by round 1's deliberately-widened search radius)
-is not yet implemented -- see the class docstring's "Phase 2" note.
+this facet implements BOTH rounds. Round 1 (coarse HEALPix filter) is
+always applied; round 2 (exact `footprint` geo_shape containment check
+against a `circle` shape centered on the query point with the user's
+own search radius) is applied as an additional AND'd clause when a
+record's `footprint` is populated, eliminating the false positives
+that round 1's deliberately-widened search radius allows through. See
+`ConeSearchFacet`'s class docstring for the full two-round query.
 
 Round 1 correctness requirement: `healpix_idx` stores only the pixel
 of the record's field-of-view *center*, not the set of pixels the
@@ -339,41 +342,75 @@ class ExactMatchFacet(Facet):
 class ConeSearchFacet(Facet):
 
 
-    """Sky-position (cone) search facet -- round 1 (coarse HEALPix filter).
+    """Sky-position (cone) search facet -- two-round query.
 
     Registered directly under the literal key ``"cone_search"`` in
     ``RecordFacets`` (via ``AddToDictionary`` in model.py), NOT through
     a ``facet-def`` in metadata.yaml -- there is no single field named
-    "cone_search"; it's a virtual facet whose filter logic spans two
+    "cone_search"; it's a virtual facet whose filter logic spans three
     real fields (``center.ra``/``center.dec`` at ingestion time,
-    ``healpix_idx`` at query time).
+    ``healpix_idx`` and ``footprint`` at query time).
 
     Filter value: a single JSON string ``'{"lat":.., "lon":.., "radius":..}'``
     matching what ``ConeSearchInputsComponent`` in CustomFilters.jsx sends
     (``lat`` = Dec, ``lon`` = RA remapped client-side to -180..180,
     ``radius`` = user's search radius in degrees).
 
-    Query logic: computes every HEALPix pixel (NSIDE=``HEALPIX_NSIDE``)
-    whose center lies within ``radius + MAX_FOV_RADIUS_DEG`` of the
-    queried point (see module docstring for why the radius is widened),
-    then issues a ``terms`` query against ``metadata.healpix_idx`` for
-    that pixel set. This is deliberately a coarse, over-inclusive filter
-    (may include false positives for records whose actual field of view
-    does not reach the queried point) -- see the module docstring's
-    "Phase 2" note for the planned ``footprint`` exact-containment
-    follow-up query that would eliminate those false positives. Not
-    having Phase 2 does NOT introduce false negatives; it only means
-    result lists may occasionally include a few extra non-matching
-    records near the edge of the search radius.
+    Round 1 (coarse HEALPix filter, always applied): computes every
+    HEALPix pixel (NSIDE=``HEALPIX_NSIDE``) whose center lies within
+    ``radius + MAX_FOV_RADIUS_DEG`` of the queried point (see module
+    docstring for why the radius is widened), then builds a ``terms``
+    query against ``metadata.healpix_idx`` for that pixel set. This is
+    deliberately a coarse, over-inclusive filter that never produces
+    false negatives, but may admit false positives for records whose
+    actual field of view does not reach the queried point (e.g. a
+    narrow-FOV record whose center pixel happens to fall in the
+    widened disk without its FOV actually overlapping the search area).
+
+    Round 2 (exact geo_shape containment, AND'd onto round 1): builds a
+    ``geo_shape`` query asking whether ``metadata.footprint`` (a GeoJSON
+    polygon of the record's actual field-of-view corners, computed at
+    ingestion time -- see metadata.yaml) intersects a ``circle`` shape
+    centered on the queried point with radius = the user's own search
+    radius (NOT widened by ``MAX_FOV_RADIUS_DEG`` -- that widening is a
+    round-1-only implementation detail to compensate for
+    ``healpix_idx`` only encoding the FOV *center*; round 2 checks the
+    actual FOV polygon directly, so no widening is needed or wanted
+    here). Using a ``circle`` (rather than a single ``point``) means a
+    record's footprint only needs to overlap somewhere within the
+    user's search radius, not touch the exact query coordinate --
+    consistent with the user's stated intent of "find images near this
+    sky position", not "find images containing this exact point".
+
+    Combining rounds: round 1 and round 2 are combined with logical AND
+    (``&``) -- round 1 is a fast, cheap pre-filter that also acts as the
+    sole filter for any record with a ``null``/missing ``footprint``
+    (calibration frames, or records ingested before the footprint
+    pipeline was in place all have ``center``/``healpix_idx`` = null
+    too, so round 1 already excludes them -- round 2 never needs to
+    "rescue" a record round 1 dropped). Round 2 then narrows the
+    remaining candidates down to records whose actual footprint
+    overlaps the search area, eliminating round 1's false positives.
     """
 
     #: Not a browsable facet: apply the filter directly rather than via
     #: post_filter, since there is no bucket list depending on it.
     post_filter = False
 
-    def __init__(self, field: str = "metadata.healpix_idx", label: Any = None, **kwargs: Any) -> None:
-        """Constructor. ``field`` is the healpix_idx field to query against."""
+    def __init__(
+        self,
+        field: str = "metadata.healpix_idx",
+        footprint_field: str = "metadata.footprint",
+        label: Any = None,
+        **kwargs: Any,
+    ) -> None:
+        """Constructor.
+
+        ``field`` is the healpix_idx field used for round 1;
+        ``footprint_field`` is the geo_shape field used for round 2.
+        """
         self._field = field
+        self._footprint_field = footprint_field
         self._label = label or ""
         super().__init__(label=label, **kwargs)
 
@@ -390,7 +427,7 @@ class ConeSearchFacet(Facet):
         return {"buckets": [], "label": str(getattr(self, "_label", ""))}
 
     def add_filter(self, filter_values: list) -> Any:
-        """Construct a `terms` query on healpix_idx from JSON cone-search values."""
+        """Construct the combined round-1 (healpix) + round-2 (footprint) query."""
         if not filter_values:
             return None
 
@@ -418,6 +455,15 @@ class ConeSearchFacet(Facet):
         if radius < 0:
             return None
 
+        round1 = self._build_round1_query(lat, lon, radius)
+        if round1 is None:
+            return None
+
+        round2 = self._build_round2_query(lat, lon, radius)
+        return round1 & round2
+
+    def _build_round1_query(self, lat: float, lon: float, radius: float) -> Any:
+        """Coarse HEALPix `terms` pre-filter (see class docstring, "Round 1")."""
         # Widen the query radius so round-1 filtering can never produce
         # false negatives -- see module docstring.
         query_radius_deg = radius + MAX_FOV_RADIUS_DEG
@@ -437,3 +483,33 @@ class ConeSearchFacet(Facet):
             return dsl.Q("match_none")
 
         return dsl.Q("terms", **{self._field: [int(p) for p in pix_list]})
+
+    def _build_round2_query(self, lat: float, lon: float, radius: float) -> Any:
+        """Exact `geo_shape` containment check (see class docstring, "Round 2").
+
+        A record with no ``footprint`` (null/missing -- calibration
+        frames or pre-footprint-pipeline records) is excluded by this
+        clause on its own, but such records are already excluded by
+        round 1 (they also lack ``healpix_idx``), so ANDing this in
+        never "double-penalizes" a record that round 1 would otherwise
+        have kept.
+        """
+        # OpenSearch geo_shape "circle" requires a non-zero radius string
+        # like "1.0deg"; guard against radius == 0 (a valid user input
+        # meaning "exact position") by using a tiny epsilon instead.
+        circle_radius_deg = radius if radius > 0 else 1e-6
+
+        return dsl.Q(
+            "geo_shape",
+            **{
+                self._footprint_field: {
+                    "shape": {
+                        "type": "circle",
+                        "coordinates": [lon, lat],
+                        "radius": f"{circle_radius_deg}deg",
+                    },
+                    "relation": "intersects",
+                }
+            },
+        )
+
