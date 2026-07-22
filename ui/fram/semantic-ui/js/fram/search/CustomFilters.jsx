@@ -286,6 +286,14 @@ const AzimuthFilter = makeRangeFilter(
   "360"
 );
 
+const ExposureFilter = makeRangeFilter(
+  "metadata.exposure",
+  i18next.t("Exposure (s)"),
+  "0",
+  "e.g. 30"
+);
+
+
 
 /**
  * Generic free-text input filter factory, used for high-cardinality /
@@ -351,31 +359,60 @@ const FilenameFilter = makeTextFilter(
   i18next.t("e.g. 20170814041208-419-RA.fits")
 );
 
-const TitleFilter = makeTextFilter(
-  "metadata.title",
-  i18next.t("Title"),
-  i18next.t("Search by title")
+const TargetFilter = makeTextFilter(
+  "metadata.target",
+  i18next.t("Target"),
+  i18next.t("e.g. VAOD_color")
 );
 
 /**
- * Combined custom filters block, rendered above the standard facet list
- * (site, type, target, camera_serial, filter, binning, healpix_idx, ...).
- *
- * target and camera_serial remain standard checkbox facets (small, repeated
- * value sets) -- see AddFacetGroup in models/fram/model.py. They are NOT
- * duplicated here.
+ * Title filter: unlike Filename/Target/Target (our own keyword fields),
+ * "title" comes from the CCMM/RDM preset (`fulltext+keyword` type) and is
+ * matched via an exact-match `term` query against its `.keyword`
+ * sub-field (see ExactMatchFacet in models/fram/facets.py) rather than a
+ * substring `wildcard` query -- simpler/more robust against upstream
+ * mapping changes we don't control. The input is otherwise identical to
+ * the other text filters; only the server-side query semantics differ.
  */
+const TitleFilter = makeTextFilter(
+  "metadata.title",
+  i18next.t("Title"),
+  i18next.t("Exact title match")
+);
+
+
+/**
+ * Combined custom filters block. Standard checkbox facets (site, type,
+ * ccd, camera_serial, filter, binning -- see AddFacetGroup in
+ * models/fram/model.py) are rendered first via <SearchAppFacets>,
+ * followed by the custom input-based filters (cone search, night range,
+ * altitude/azimuth/exposure ranges, target/filename/title text match)
+ * laid out in a responsive two-column grid below them.
+ */
+const customFiltersGridStyle = {
+  display: "grid",
+  gridTemplateColumns: "repeat(2, 1fr)",
+  gap: "0.5rem 1rem",
+  alignItems: "start",
+};
+
 export const CustomFilters = (props) => (
   <>
-    <ConeSearchInputs />
-    <NightFilter />
-    <AltitudeFilter />
-    <AzimuthFilter />
-    <FilenameFilter />
-    <TitleFilter />
     <SearchAppFacets {...props} />
+    <div className="custom-filters-grid" style={customFiltersGridStyle}>
+      <ConeSearchInputs />
+      <NightFilter />
+      <AltitudeFilter />
+      <AzimuthFilter />
+      <ExposureFilter />
+      <TargetFilter />
+      <FilenameFilter />
+      <TitleFilter />
+    </div>
   </>
 );
+
+
 
 CustomFilters.propTypes = SearchAppFacets.propTypes;
 

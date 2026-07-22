@@ -28,7 +28,14 @@ Metadata:
         en: Target
         cs: Objekt
       example: "VAOD_color"
-    
+      facet-def:
+        facet: models.fram.facets.TextMatchFacet
+        field: metadata.target
+        label:
+          en: Target
+          cs: Objekt
+
+
       
     type:
       type: keyword
@@ -83,6 +90,13 @@ Metadata:
       description: >
         Exposure duration in seconds.
       example: 30.0
+      facet-def:
+        facet: models.fram.facets.RangeQueryFacet
+        field: metadata.exposure
+        label:
+          en: Exposure
+          cs: Expozice
+
 
 
       
@@ -254,7 +268,14 @@ Metadata:
         en: Filename
         cs: Název souboru
       example: "/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits"
- 
+      facet-def:
+        facet: models.fram.facets.TextMatchFacet
+        field: metadata.filename
+        label:
+          en: Filename
+          cs: Název souboru
+
+
     footprint:
       type: dynamic-object
       searchable: false

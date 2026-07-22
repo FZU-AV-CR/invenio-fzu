@@ -12,6 +12,7 @@ from oarepo_model.api import model
 from oarepo_model.customizations import (
     AddFacetGroup,
     AddMetadataExport,
+    AddToDictionary,
     PatchIndexPropertyMapping,
     PrependMixin,
     SetDefaultSearchFields,
@@ -19,7 +20,10 @@ from oarepo_model.customizations import (
 from oarepo_model.datatypes.registry import from_yaml
 from oarepo_model.model import ModelMixin
 
+from .facets import ConeSearchFacet, ExactMatchFacet
+
 from .serializers import DataCiteJSONSerializer
+
 
 
 
@@ -102,23 +106,53 @@ fram_model = model(
             facets=[
                 "metadata.site",
                 "metadata.type",
-                "metadata.target",
-                "metadata.observation_night",
-                "metadata.identifier",
-                "metadata.exposure",
                 "metadata.ccd",
                 "metadata.camera_serial",
                 "metadata.filter",
                 "metadata.binning",
-                "metadata.image_size.height",
-                "metadata.image_size.width",
-                "metadata.image_size.usable_height",
-                "metadata.image_size.usable_width",
-                "metadata.healpix_idx",
             ],
         ),
 
+
+        # ── Sky-position (cone) search: virtual facet registration ────────
+        # "cone_search" is NOT a metadata.yaml field -- it's a virtual
+        # facet spanning ra/dec (at ingestion) and healpix_idx (at query
+        # time). It therefore can't be registered via a `facet-def` in
+        # metadata.yaml (which requires a real field to attach to); it
+        # must instead be injected directly into the model's generated
+        # `RecordFacets` dictionary here, under the literal key
+        # "cone_search" that CustomFilters.jsx's ConeSearchInputsComponent
+        # sends as its filter key. See models/fram/facets.py's
+        # ConeSearchFacet docstring for the full query semantics.
+        #
+        # Note: this key intentionally does NOT need to also be listed in
+        # AddFacetGroup above -- GroupedFacetsParam.apply() checks filter
+        # values against the *full* RecordFacets dict (`self.facets`),
+        # independent of which facets are exposed as browsable aggregation
+        # buckets via AddFacetGroup. Since cone_search has no bucket UI
+        # (it's a plain form, not a checkbox list), it doesn't need to be
+        # in AddFacetGroup at all for the filter itself to work.
+        AddToDictionary(
+            "RecordFacets",
+            {"cone_search": ConeSearchFacet(field="metadata.healpix_idx")},
+        ),
+
+        # ── Title exact-match filter (CCMM/RDM-owned field) ────────────────
+        # "metadata.title" is not declared in our own metadata.yaml (it
+        # comes from the RDM/CCMM preset's RDMTitle element, type
+        # `fulltext+keyword`), so it can't carry a `facet-def` the way
+        # our own fields (target, filename, exposure, ...) do. Registered
+        # directly here instead, the same way "cone_search" is -- see
+        # ExactMatchFacet's docstring for why exact `term` (not
+        # `wildcard`) is used against the `.keyword` sub-field.
+        AddToDictionary(
+            "RecordFacets",
+            {"metadata.title": ExactMatchFacet(field="metadata.title.keyword")},
+        ),
+
+
         # ── Spherical index: OpenSearch geo mapping overrides ──────────────
+
         # oarepo emits `center_geo`/`footprint` as generic `object` mappings
         # (Section 4b/4a of the spherical index spec). We own our model's
         # generated mapping file, so we patch it ourselves here rather than
