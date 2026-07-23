@@ -279,6 +279,7 @@ Metadata:
     footprint:
       type: dynamic-object
       searchable: false
+      marshmallow_field_class: marshmallow.fields.Raw
       label:
         en: Footprint
         cs: Pokrytí oblohy

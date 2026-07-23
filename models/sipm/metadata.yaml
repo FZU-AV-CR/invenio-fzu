@@ -28,6 +28,14 @@ Metadata:
       pattern: '^Prg([1-9]|[1-3][0-9])$'
       description: >
         Box identifier, format 'PrgXX', where XX is between 1 and 39.
+        Removed from the checkbox facet group and instead exposed as a
+        free-text substring filter via CustomFilters.jsx.
+      facet-def:
+        facet: models.sipm.facets.TextMatchFacet
+        field: metadata.box
+        label:
+          en: Box
+          cs: Krabice
 
     manufacturer:
       type: keyword

@@ -108,6 +108,12 @@ const makeTextFilter = (filterKey, labelText, placeholderText) => {
   return withState(TextFilterComponent);
 };
 
+const BatchFilter = makeTextFilter(
+  "metadata.batch",
+  i18next.t("Batch"),
+  i18next.t("e.g. VPA56980")
+);
+
 const ComponentsFilter = makeTextFilter(
   "metadata.components",
   i18next.t("Component"),
@@ -130,6 +136,7 @@ const FilesFilter = makeTextFilter(
  * Definition of every custom filter panel, in display order.
  */
 const FILTER_PANELS = [
+  { key: "batch", Component: BatchFilter },
   { key: "components", Component: ComponentsFilter },
   { key: "component_types", Component: ComponentTypesFilter },
   { key: "files", Component: FilesFilter },
@@ -151,15 +158,17 @@ export const CustomFilters = (props) => {
   return (
     <>
       <SearchAppFacets {...props} />
-      <Accordion exclusive={false} styled fluid className="custom-filters-accordion">
-        {FILTER_PANELS.map(({ key, Component }) => (
-          <Component
-            key={key}
-            active={!!openPanels[key]}
-            onToggle={() => togglePanel(key)}
-          />
-        ))}
-      </Accordion>
+      <div className="custom-filters-wrapper custom-filters-for-model">
+        <Accordion exclusive={false} styled fluid className="custom-filters-accordion">
+          {FILTER_PANELS.map(({ key, Component }) => (
+            <Component
+              key={key}
+              active={!!openPanels[key]}
+              onToggle={() => togglePanel(key)}
+            />
+          ))}
+        </Accordion>
+      </div>
     </>
   );
 };

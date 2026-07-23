@@ -454,15 +454,17 @@ export const CustomFilters = (props) => {
   return (
     <>
       <SearchAppFacets {...props} />
-      <Accordion exclusive={false} styled fluid className="custom-filters-accordion">
-        {FILTER_PANELS.map(({ key, Component }) => (
-          <Component
-            key={key}
-            active={!!openPanels[key]}
-            onToggle={() => togglePanel(key)}
-          />
-        ))}
-      </Accordion>
+      <div className="custom-filters-wrapper custom-filters-for-model">
+        <Accordion exclusive={false} styled fluid className="custom-filters-accordion">
+          {FILTER_PANELS.map(({ key, Component }) => (
+            <Component
+              key={key}
+              active={!!openPanels[key]}
+              onToggle={() => togglePanel(key)}
+            />
+          ))}
+        </Accordion>
+      </div>
     </>
   );
 };

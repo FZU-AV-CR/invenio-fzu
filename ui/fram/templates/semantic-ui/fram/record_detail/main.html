@@ -88,7 +88,6 @@ Note: Context variables available:
     {% endif %}
     {{ safe_row(m.label(m.filter), m.filter) }}
     {{ safe_row(m.label(m.target), m.target) }}
-    {{ safe_row(m.label(m.footprint), m.footprint) }}
     {% if "EmptyFieldDataSentinel" not in m.radius._api_data | string %}
     <tr>
       <td>{{ m.label(m.radius) }}</td>
@@ -121,6 +120,13 @@ Note: Context variables available:
     </tr>
     {% endif %}
 
+    {% if "EmptyFieldDataSentinel" not in m.footprint._api_data | string %}
+    <tr>
+      <td>{{ m.label(m.footprint) }}</td>
+      <td><pre>{{ m.footprint._api_data | tojson(indent=2) }}</pre></td>
+    </tr>
+    {% endif %}
+    {{ safe_row(m.label(m.healpix_idx), m.healpix_idx) }}
 
 
   </table>

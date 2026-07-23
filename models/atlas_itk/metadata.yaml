@@ -28,8 +28,15 @@ Metadata:
         en: Batch
         cs: Batch
       description: >
-        Batch identifier.
+        Batch identifier. Removed from the checkbox facet group and instead
+        exposed as a free-text substring filter via CustomFilters.jsx.
       example: "VPA56980"
+      facet-def:
+        facet: models.atlas_itk.facets.TextMatchFacet
+        field: metadata.batch
+        label:
+          en: Batch
+          cs: Batch
 
     wafer:
       type: array

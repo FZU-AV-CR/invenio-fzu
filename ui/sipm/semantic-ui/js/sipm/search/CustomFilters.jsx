@@ -108,6 +108,12 @@ const makeTextFilter = (filterKey, labelText, placeholderText) => {
   return withState(TextFilterComponent);
 };
 
+const BoxFilter = makeTextFilter(
+  "metadata.box",
+  i18next.t("Box"),
+  i18next.t("e.g. Prg01")
+);
+
 const TrayNumbersFilter = makeTextFilter(
   "metadata.tray_numbers",
   i18next.t("Tray numbers"),
@@ -124,6 +130,7 @@ const QrListFilter = makeTextFilter(
  * Definition of every custom filter panel, in display order.
  */
 const FILTER_PANELS = [
+  { key: "box", Component: BoxFilter },
   { key: "tray_numbers", Component: TrayNumbersFilter },
   { key: "qr_list", Component: QrListFilter },
 ];
@@ -144,15 +151,17 @@ export const CustomFilters = (props) => {
   return (
     <>
       <SearchAppFacets {...props} />
-      <Accordion exclusive={false} styled fluid className="custom-filters-accordion">
-        {FILTER_PANELS.map(({ key, Component }) => (
-          <Component
-            key={key}
-            active={!!openPanels[key]}
-            onToggle={() => togglePanel(key)}
-          />
-        ))}
-      </Accordion>
+      <div className="custom-filters-wrapper custom-filters-for-model">
+        <Accordion exclusive={false} styled fluid className="custom-filters-accordion">
+          {FILTER_PANELS.map(({ key, Component }) => (
+            <Component
+              key={key}
+              active={!!openPanels[key]}
+              onToggle={() => togglePanel(key)}
+            />
+          ))}
+        </Accordion>
+      </div>
     </>
   );
 };
