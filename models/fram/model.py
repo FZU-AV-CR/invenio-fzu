@@ -12,13 +12,19 @@ from oarepo_model.api import model
 from oarepo_model.customizations import (
     AddFacetGroup,
     AddMetadataExport,
+    AddToDictionary,
+    PatchIndexPropertyMapping,
     PrependMixin,
     SetDefaultSearchFields,
 )
 from oarepo_model.datatypes.registry import from_yaml
 from oarepo_model.model import ModelMixin
 
+from .facets import ConeSearchFacet, ExactMatchFacet
+
 from .serializers import DataCiteJSONSerializer
+
+
 
 
 class FramPermissionPolicyMixin(ModelMixin):
@@ -69,8 +75,9 @@ fram_model = model(
             "metadata.center.ra",
             "metadata.center.dec",
             "metadata.radius",
-            "metadata.altitude_azimuth.altitude",
-            "metadata.altitude_azimuth.azimuth",
+            "metadata.alt_az.altitude",
+            "metadata.alt_az.azimuth",
+
             "metadata.site",
             "metadata.ccd",
             "metadata.camera_serial",
@@ -86,40 +93,104 @@ fram_model = model(
             "metadata.healpix_idx",
         ),
 
+        # Facet group: only fields with a small, repeated set of values
+        # belong here (OpenSearch terms aggregation -> sidebar checkboxes).
+        # Continuous/high-cardinality fields (RA/Dec/radius, altitude,
+        # filename, title, observation_time) are handled instead as
+        # input-based filters in CustomFilters.jsx (see
+        # ui/fram/semantic-ui/js/fram/search/CustomFilters.jsx), which
+        # mirrors how the original FRAM archive exposed e.g. "night" as a
+        # direct date input rather than a browsable facet.
         AddFacetGroup(
             name="default",
             facets=[
                 "metadata.site",
                 "metadata.type",
-                "metadata.target",
-                "metadata.observation_night",
-                "metadata.observation_time",
-                "metadata.filename",
-                "metadata.identifier",
-                "metadata.exposure",
-                "metadata.center.ra",
-                "metadata.center.dec",
-                "metadata.radius",
-                "metadata.altitude_azimuth.altitude",
-
-                #"metadata.altitude_azimuth.azimuth",
-
                 "metadata.ccd",
                 "metadata.camera_serial",
                 "metadata.filter",
                 "metadata.binning",
-                "metadata.image_size.height",
-                "metadata.image_size.width",
-                "metadata.image_size.usable_height",
-                "metadata.image_size.usable_width",
-
-                #"metadata.file_footprint",
-
-                "metadata.healpix_idx",
-                "metadata.title",
             ],
         ),
+
+
+        # ── Sky-position (cone) search: virtual facet registration ────────
+        # "cone_search" is NOT a metadata.yaml field -- it's a virtual
+        # facet spanning ra/dec (at ingestion) and healpix_idx (at query
+        # time). It therefore can't be registered via a `facet-def` in
+        # metadata.yaml (which requires a real field to attach to); it
+        # must instead be injected directly into the model's generated
+        # `RecordFacets` dictionary here, under the literal key
+        # "cone_search" that CustomFilters.jsx's ConeSearchInputsComponent
+        # sends as its filter key. See models/fram/facets.py's
+        # ConeSearchFacet docstring for the full query semantics.
+        #
+        # Note: this key intentionally does NOT need to also be listed in
+        # AddFacetGroup above -- GroupedFacetsParam.apply() checks filter
+        # values against the *full* RecordFacets dict (`self.facets`),
+        # independent of which facets are exposed as browsable aggregation
+        # buckets via AddFacetGroup. Since cone_search has no bucket UI
+        # (it's a plain form, not a checkbox list), it doesn't need to be
+        # in AddFacetGroup at all for the filter itself to work.
+        AddToDictionary(
+            "RecordFacets",
+            {
+                "cone_search": ConeSearchFacet(
+                    field="metadata.healpix_idx",
+                    footprint_field="metadata.footprint",
+                )
+            },
+        ),
+
+
+        # ── Title exact-match filter (CCMM/RDM-owned field) ────────────────
+        # "metadata.title" is not declared in our own metadata.yaml (it
+        # comes from the RDM/CCMM preset's RDMTitle element, type
+        # `fulltext+keyword`), so it can't carry a `facet-def` the way
+        # our own fields (target, filename, exposure, ...) do. Registered
+        # directly here instead, the same way "cone_search" is -- see
+        # ExactMatchFacet's docstring for why exact `term` (not
+        # `wildcard`) is used against the `.keyword` sub-field.
+        AddToDictionary(
+            "RecordFacets",
+            {"metadata.title": ExactMatchFacet(field="metadata.title.keyword")},
+        ),
+
+
+        # ── Spherical index: OpenSearch geo mapping overrides ──────────────
+
+        # oarepo emits `center_geo`/`footprint` as generic `object` mappings
+        # (Section 4b/4a of the spherical index spec). We own our model's
+        # generated mapping file, so we patch it ourselves here rather than
+        # requesting a change from Cesnet -- this is a self-service override
+        # applied at `nrp model build` / `./run.sh reset` time, not something
+        # that needs coordination with the Cesnet-managed OpenSearch cluster.
+        #
+        # center_geo: {lat, lon} shadow field -> geo_point, enables
+        # geo_distance cone search queries.
+        PatchIndexPropertyMapping(
+            "metadata.center_geo",
+            {"type": "geo_point", "properties": None, "dynamic": None},
+        ),
+        # footprint: GeoJSON polygon (optional, second-pass position
+        # re-checking only, not exposed in the UI) -> geo_shape.
+        # `footprint` is declared as `keyword` in metadata.yaml (see the
+        # field's docstring for why), so oarepo's default mapping also
+        # carries a leftover `ignore_above: 256` (keyword-only setting)
+        # that OpenSearch rejects on a geo_shape field -- null it out here
+        # the same way `dynamic` is nulled out for center_geo above.
+        PatchIndexPropertyMapping(
+            "metadata.footprint",
+            {
+                "type": "geo_shape",
+                "properties": None,
+                "dynamic": None,
+                "ignore_above": None,
+            },
+        ),
+
 
     ],
     configuration={"ui_blueprint_name": "fram_ui"},
 )
+

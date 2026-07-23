@@ -28,8 +28,15 @@ Metadata:
         en: Batch
         cs: Batch
       description: >
-        Batch identifier.
+        Batch identifier. Removed from the checkbox facet group and instead
+        exposed as a free-text substring filter via CustomFilters.jsx.
       example: "VPA56980"
+      facet-def:
+        facet: models.atlas_itk.facets.TextMatchFacet
+        field: metadata.batch
+        label:
+          en: Batch
+          cs: Batch
 
     wafer:
       type: array
@@ -51,7 +58,18 @@ Metadata:
         type: keyword
       description: >
         List of all components contained in this batch. In QA files the field name is SerialNumber.
+        Removed from the checkbox facet group (too many distinct
+        values to browse) and instead exposed as a free-text substring
+        filter -- see models.atlas_itk.facets.TextMatchFacet and
+        CustomFilters.jsx.
       example: "20USES40002730"
+      facet-def:
+        facet: models.atlas_itk.facets.TextMatchFacet
+        field: metadata.components
+        label:
+          en: Component
+          cs: Komponenta
+
 
     test_types:
       type: array
@@ -89,7 +107,17 @@ Metadata:
         type: keyword
       description: >
         In QA the field is called ComponentType, in QC the field is called Type.
+        Removed from the checkbox facet group (too many distinct
+        values to browse) and instead exposed as a free-text substring
+        filter -- see models.atlas_itk.facets.TextMatchFacet and
+        CustomFilters.jsx.
       example: "SENSOR_TESTCHIP_MD8"
+      facet-def:
+        facet: models.atlas_itk.facets.TextMatchFacet
+        field: metadata.component_types
+        label:
+          en: Component type
+          cs: Typ komponenty
 
     files:
       type: array
@@ -100,7 +128,18 @@ Metadata:
         type: keyword
       description: >
         List of all files associated with this batch.
+        Removed from the checkbox facet group (too many distinct
+        values to browse) and instead exposed as a free-text substring
+        filter -- see models.atlas_itk.facets.TextMatchFacet and
+        CustomFilters.jsx.
       example: "PA56509-W01435_Stability_001.dat"
+      facet-def:
+        facet: models.atlas_itk.facets.TextMatchFacet
+        field: metadata.files
+        label:
+          en: Files
+          cs: Soubory
+
 
     file_types:
       type: array

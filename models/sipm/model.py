@@ -76,9 +76,9 @@ sipm_model = model(
                 "metadata.box",
                 "metadata.requestor",
                 "metadata.manufacturer",
+                "metadata.title",
                 "metadata.trays",
                 "metadata.qr_list",
-                "metadata.title",
 
             ],
         ),

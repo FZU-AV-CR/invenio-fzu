@@ -12,13 +12,20 @@ from oarepo_model.api import model
 from oarepo_model.customizations import (
     AddFacetGroup,
     AddMetadataExport,
+    AddToDictionary,
     PrependMixin,
     SetDefaultSearchFields,
 )
 from oarepo_model.datatypes.registry import from_yaml
 from oarepo_model.model import ModelMixin
 
+from .facets import (
+    DatesTypeRangeFacet,
+    EnergyRangeOverlapFacet,
+    TextMatchFacet,
+)
 from .serializers import DataCiteJSONSerializer
+
 
 
 class ParticlesPermissionPolicyMixin(ModelMixin):
@@ -66,17 +73,54 @@ particles_model = model(
         AddFacetGroup(
             name="default",
             facets=[
-                "metadata.title",
                 "metadata.experiment",
                 "metadata.category",
                 "metadata.dataset_type",
                 "metadata.collision_information.type",
                 "metadata.file_types",
+
                 # TODO: somehow include "metadata.dates.created.year",
                 # "metadata.number_of_events",
 
             ],
         ),
+
+        # ── Collision energy range filter: virtual facet registration ─────
+        # "metadata.collision_information.energy_range" is NOT a
+        # metadata.yaml field -- it's a virtual facet spanning two real
+        # fields (energy_min, energy_max), using interval-overlap
+        # semantics (see EnergyRangeOverlapFacet's docstring in
+        # models/particles/facets.py for the full rationale). Registered
+        # directly into RecordFacets here, the same pattern used for
+        # FRAM's "cone_search" virtual facet (models/fram/model.py).
+        AddToDictionary(
+            "RecordFacets",
+            {
+                "metadata.collision_information.energy_range": EnergyRangeOverlapFacet(
+                    min_field="metadata.collision_information.energy_min",
+                    max_field="metadata.collision_information.energy_max",
+                ),
+                # ── Title partial-match filter: virtual facet ──────────
+                # "title" comes from the CCMM/RDM preset, not our own
+                # metadata.yaml, so it can't use a `facet-def` entry.
+                # See TextMatchFacet's docstring in facets.py.
+                "metadata.title": TextMatchFacet(
+                    field="metadata.title.keyword",
+                ),
+                # ── Created date range filter: virtual facet ───────────
+                # "metadata.dates" (RDM/CCMM RDMDates) is an array of
+                # {date, type: {id}} objects; filters on the "Created"
+                # typed entry only. See DatesTypeRangeFacet's docstring
+                # in facets.py for the plain-bool (non-nested) rationale.
+                "metadata.dates.created_range": DatesTypeRangeFacet(
+                    date_field="metadata.dates.date",
+                    type_field="metadata.dates.type.id",
+                    type_id="Created",
+                ),
+            },
+        ),
     ],
+
     configuration={"ui_blueprint_name": "particles_ui"},
 )
+

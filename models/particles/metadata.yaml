@@ -58,6 +58,16 @@ Metadata:
       type: int
       label:
         en: Number of Events
+      description: >
+        Uses a custom RangeQueryFacet (see facets.py) instead of the
+        default TermsFacet so the UI can filter by a "min..max" range
+        rather than exact-match only.
+      facet-def:
+        facet: models.particles.facets.RangeQueryFacet
+        field: metadata.number_of_events
+        label:
+          en: Number of events
+          cs: Počet událostí
 
     dataset_type:
       type: keyword

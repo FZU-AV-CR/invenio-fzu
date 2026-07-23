@@ -28,7 +28,14 @@ Metadata:
         en: Target
         cs: Objekt
       example: "VAOD_color"
-    
+      facet-def:
+        facet: models.fram.facets.TextMatchFacet
+        field: metadata.target
+        label:
+          en: Target
+          cs: Objekt
+
+
       
     type:
       type: keyword
@@ -58,8 +65,21 @@ Metadata:
         cs: Noc pozorování
       description: >
         Local date of the observation night in YYYYMMDD format.
+        Uses a custom RangeQueryFacet (see facets.py) instead of the
+        default TermsFacet so the UI can filter by a "YYYYMMDD..YYYYMMDD"
+        range string -- YYYYMMDD sorts lexicographically the same as
+        numerically, so a plain OpenSearch range query works directly on
+        this keyword field without needing a real `date` type.
       pattern: '^[0-9]{8}$'
       example: "20170406"
+      facet-def:
+        facet: models.fram.facets.RangeQueryFacet
+        field: metadata.observation_night
+        label:
+          en: Observation night
+          cs: Noc pozorování
+
+
 
        
     exposure:
@@ -70,6 +90,13 @@ Metadata:
       description: >
         Exposure duration in seconds.
       example: 30.0
+      facet-def:
+        facet: models.fram.facets.RangeQueryFacet
+        field: metadata.exposure
+        label:
+          en: Exposure
+          cs: Expozice
+
 
 
       
@@ -100,7 +127,19 @@ Metadata:
         en: Radius
         cs: Poloměr
 
-    altitude_azimuth:
+    # NOTE: this object is deliberately named "alt_az" and NOT
+    # "altitude_azimuth". oarepo_model's ObjectDataType.get_facet() builds
+    # facet paths using a buggy `path.endswith(key)` check that is meant to
+    # detect "the child key is already the same as the parent path" (to
+    # avoid double-appending), but it actually matches whenever the PARENT
+    # path merely *ends with* the child key as a substring. Since
+    # "altitude_azimuth" ends with the substring "azimuth", the azimuth
+    # child's facet path was incorrectly built as "altitude_azimuth" (missing
+    # ".azimuth") instead of "altitude_azimuth.azimuth" -- silently breaking
+    # the azimuth range facet (filter accepted with 200 OK, but had zero
+    # effect since the registered facet key never matched the query param).
+    # Renaming the parent object to "alt_az" avoids the collision entirely.
+    alt_az:
       type: object
       label:
         en: Altitude-Azimuth
@@ -111,14 +150,32 @@ Metadata:
           label:
             en: Altitude
             cs: Altituda
+          facet-def:
+            facet: models.fram.facets.RangeQueryFacet
+            field: metadata.alt_az.altitude
+            label:
+              en: Altitude
+              cs: Altituda
         azimuth:
           type: float
           label:
             en: Azimuth
             cs: Azimut
+          facet-def:
+            facet: models.fram.facets.RangeQueryFacet
+            field: metadata.alt_az.azimuth
+            label:
+              en: Azimuth
+              cs: Azimut
+
+
       description: >
-        Horizontal coordinates [Alt, Az].
+        Horizontal coordinates [Alt, Az]. altitude/azimuth use a custom
+        RangeQueryFacet (see facets.py) instead of the default TermsFacet,
+        so the UI can filter by arbitrary "min..max" ranges rather than
+        exact-match only.
       example: {"altitude": 45.3680630043068, "azimuth": 89.3656649605622 }
+
        
     # Instrument configuration
     
@@ -211,23 +268,39 @@ Metadata:
         en: Filename
         cs: Název souboru
       example: "/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fits"
- 
+      facet-def:
+        facet: models.fram.facets.TextMatchFacet
+        field: metadata.filename
+        label:
+          en: Filename
+          cs: Název souboru
+
+
     footprint:
-      type: keyword
+      type: dynamic-object
+      searchable: false
+      marshmallow_field_class: marshmallow.fields.Raw
       label:
         en: Footprint
         cs: Pokrytí oblohy
       description: >
-        Optional. JSON-encoded (string) GeoJSON polygon of image corners,
-        for OpenSearch geo_shape indexing. Used internally for second-pass
-        position re-checking only — not displayed in the UI. Computed from
-        WCS corner pixels. RA remapped to −180..+180°. Null for calibration
-        frames (masterdark/masterflat/bias/dcurrent) or frames without valid
-        WCS. Stored as a keyword (JSON string) rather than a structured
-        object because oarepo's `object` type requires a fixed `properties`
-        schema and cannot express GeoJSON's variable-depth nested coordinate
-        arrays; Cesnet can still map this field as `geo_shape` at the
-        OpenSearch level, which supports GeoJSON supplied as a string.
+        Optional. GeoJSON polygon of image corners, for OpenSearch geo_shape
+        indexing. Used internally for second-pass position re-checking only
+        — not displayed in the UI. Computed from WCS corner pixels. RA
+        remapped to −180..+180°. Null for calibration frames
+        (masterdark/masterflat/bias/dcurrent) or frames without valid WCS.
+        Uses oarepo's built-in `dynamic-object` type (accepts any nested
+        JSON object with a permissive marshmallow schema) rather than the
+        regular `object` type, because `object` requires a fixed
+        `properties` schema and cannot express GeoJSON's variable-depth
+        nested coordinate arrays. The default OpenSearch mapping for
+        `dynamic-object` (`{"type": "object", "dynamic": "true"}`) is
+        overridden to `geo_shape` via `PatchIndexPropertyMapping` in
+        model.py. `searchable: false` because oarepo's default keyword
+        facet/search logic does not apply to geo_shape fields; use
+        dedicated geo queries instead.
+
+
 
 
     # ── Spherical index (sky position search) ──────────────────────────────

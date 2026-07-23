@@ -158,6 +158,18 @@ a.remove-default-style:hover {
   color: @mutedTextColor;
 }
 
+.custom-filters-for-model {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid @borderColor;
+}
+
+.atlas-itk-custom-filters-wrapper .ui.accordion.styled,
+.sipm-custom-filters-wrapper .ui.accordion.styled,
+.fram-custom-filters-wrapper .ui.accordion.styled {
+  box-shadow: none;
+}
+
 .preview-container {
   border: 1px solid transparent; // Prevents iframe from overflowing accordion border
 }

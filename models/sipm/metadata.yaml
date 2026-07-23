@@ -28,6 +28,14 @@ Metadata:
       pattern: '^Prg([1-9]|[1-3][0-9])$'
       description: >
         Box identifier, format 'PrgXX', where XX is between 1 and 39.
+        Removed from the checkbox facet group and instead exposed as a
+        free-text substring filter via CustomFilters.jsx.
+      facet-def:
+        facet: models.sipm.facets.TextMatchFacet
+        field: metadata.box
+        label:
+          en: Box
+          cs: Krabice
 
     manufacturer:
       type: keyword
@@ -61,6 +69,16 @@ Metadata:
       description: >
         Search-friendly tray identifiers derived from tray IDs.
         For Tray030026 this field contains ["Tray000030", "Tray000026"].
+        Removed from the checkbox facet group (too many distinct
+        values to browse) and instead exposed as a free-text substring
+        filter -- see models.sipm.facets.TextMatchFacet and
+        CustomFilters.jsx.
+      facet-def:
+        facet: models.sipm.facets.TextMatchFacet
+        field: metadata.tray_numbers
+        label:
+          en: Tray numbers
+          cs: Čísla tray
 
     # -------- QR codes --------
     qr_list:
@@ -73,6 +91,17 @@ Metadata:
         pattern: '^\d{10}$'
       description: >
         List of all QR codes contained in this box.
+        Removed from the checkbox facet group (too many distinct
+        values to browse) and instead exposed as a free-text substring
+        filter -- see models.sipm.facets.TextMatchFacet and
+        CustomFilters.jsx.
+      facet-def:
+        facet: models.sipm.facets.TextMatchFacet
+        field: metadata.qr_list
+        label:
+          en: QR (strip ID)
+          cs: QR (strip ID)
+
 
     # -------- Measurement & hardware presence --------
     measurement_types:

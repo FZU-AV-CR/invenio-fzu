@@ -76,12 +76,12 @@ atlas_itk_model = model(
 
                 "metadata.batch",
                 "metadata.wafer",
-                "metadata.components",
-                "metadata.component_types",
                 "metadata.run_numbers",
-                "metadata.files",
                 "metadata.title",
-                
+                "metadata.components",
+                "metadata.files",
+                "metadata.component_types",             
+                           
             ],
         ),
     ],
