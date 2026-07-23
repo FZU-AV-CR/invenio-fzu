@@ -493,23 +493,86 @@ class ConeSearchFacet(Facet):
         round 1 (they also lack ``healpix_idx``), so ANDing this in
         never "double-penalizes" a record that round 1 would otherwise
         have kept.
+
+        NOTE: OpenSearch's `geo_shape` query does NOT support a
+        ``"type": "circle"`` query shape (unlike the legacy/deprecated
+        `geo_shape` *mapping* type from old Elasticsearch versions --
+        the modern Lucene-backed `geo_shape` field type used here only
+        accepts point/linestring/polygon/multipolygon/envelope/etc. as
+        *query* shapes). Passing `"circle"` produces an opaque
+        ``[bool] failed to parse field [must]`` 400 error from
+        OpenSearch (the geo_shape query clause itself fails to parse,
+        which bubbles up through the enclosing bool query). Instead we
+        approximate the circle in Python as a many-sided polygon
+        (see ``_circle_to_polygon``) and query with a regular
+        ``"type": "polygon"`` shape, which OpenSearch supports natively.
         """
-        # OpenSearch geo_shape "circle" requires a non-zero radius string
-        # like "1.0deg"; guard against radius == 0 (a valid user input
-        # meaning "exact position") by using a tiny epsilon instead.
-        circle_radius_deg = radius if radius > 0 else 1e-6
+        polygon_coords = self._circle_to_polygon(lat, lon, radius)
 
         return dsl.Q(
             "geo_shape",
             **{
                 self._footprint_field: {
                     "shape": {
-                        "type": "circle",
-                        "coordinates": [lon, lat],
-                        "radius": f"{circle_radius_deg}deg",
+                        "type": "polygon",
+                        "coordinates": [polygon_coords],
                     },
                     "relation": "intersects",
                 }
             },
         )
+
+    @staticmethod
+    def _circle_to_polygon(
+        lat: float, lon: float, radius_deg: float, num_points: int = 64
+    ) -> list[list[float]]:
+        """Approximate a circle of angular radius ``radius_deg`` around
+        (lat, lon) as a closed polygon ring of ``num_points`` vertices,
+        suitable for a `geo_shape` "polygon" query.
+
+        Uses proper great-circle (spherical) offsetting rather than a
+        flat lat/lon ellipse, so the approximation stays accurate near
+        the poles and at large radii -- computed via the same
+        `healpy`/`astropy`-style spherical trig already used elsewhere
+        in this module (rotate a point at angular distance
+        ``radius_deg`` from the pole around to `num_points` bearings,
+        then rotate the whole circle so it's centered on (lat, lon)).
+
+        A tiny minimum radius is enforced (matching the old circle
+        query's epsilon behaviour) so a user-supplied radius of 0
+        ("exact position") still produces a valid, non-degenerate
+        polygon rather than a zero-area shape some geo_shape
+        implementations may reject.
+        """
+        radius_deg = radius_deg if radius_deg > 0 else 1e-6
+
+        # Work in radians throughout.
+        lat_r = np.radians(lat)
+        lon_r = np.radians(lon)
+        radius_r = np.radians(radius_deg)
+
+        bearings = np.linspace(0, 2 * np.pi, num_points, endpoint=False)
+
+        # Standard spherical destination-point formula (as used for
+        # e.g. great-circle navigation): given a start point, an
+        # angular distance, and a bearing, compute the destination
+        # point on the sphere.
+        lat2 = np.arcsin(
+            np.sin(lat_r) * np.cos(radius_r)
+            + np.cos(lat_r) * np.sin(radius_r) * np.cos(bearings)
+        )
+        lon2 = lon_r + np.arctan2(
+            np.sin(bearings) * np.sin(radius_r) * np.cos(lat_r),
+            np.cos(radius_r) - np.sin(lat_r) * np.sin(lat2),
+        )
+
+        lat2_deg = np.degrees(lat2)
+        # Normalize longitude back into [-180, 180).
+        lon2_deg = (np.degrees(lon2) + 180.0) % 360.0 - 180.0
+
+        ring = [[float(lo), float(la)] for lo, la in zip(lon2_deg, lat2_deg)]
+        # geo_shape polygons must be closed rings (first point == last).
+        ring.append(ring[0])
+        return ring
+
 

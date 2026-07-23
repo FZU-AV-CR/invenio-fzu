@@ -30,7 +30,7 @@ checkbox seznam hodnot v bočním panelu. To funguje dobře pro pole s
 malým, opakujícím se počtem hodnot (např. `site`, `ccd`, `manufacturer`).
 
 Pro pole, kde by checkbox seznam byl nepoužitelný (kontinuální čísla,
-rozsahy, vysoce kardinální/skoro unikátní řetězce), místo toho
+rozsahly, vysoce kardinální/skoro unikátní řetězce), místo toho
 používáme **vlastní `Facet` třídu**, která:
 
 - nevrací žádné agregační "bucket" hodnoty (žádný checkbox seznam),
