@@ -33,4 +33,4 @@ uvx nrp-cmd upload file @delphi_001_draft --key 01 ./delphi_001.xsdst "$file_met
 # uvx nrp-cmd upload file @delphi_001_draft --key 08 ./delphi_001.xsdst "$file_metadata" --log-request
 
 # publish the record
-uvx nrp-cmd publish record @delphi_001_draft    
+uvx nrp-cmd publish record @delphi_001_draft     
