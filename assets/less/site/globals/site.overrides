@@ -394,6 +394,16 @@ dl.details-list {
   }
 }
 
+.browse-experiment-button {
+  background-color: @lightBlueColor !important;
+  color: @white !important;
+
+  &:hover, &:focus {
+    background-color: @lightBlueColorHover !important;
+    color: @white !important;
+  }
+}
+
 .funding-logo {
     width: 30%;
 }

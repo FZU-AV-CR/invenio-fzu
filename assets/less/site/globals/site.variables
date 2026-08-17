@@ -70,6 +70,9 @@
 @navbarBackgroundColor: @navbar_background_color;
 @versionActiveColor: #d9edf7;
 
+@lightBlueColor: lighten(@secondaryColour, 25);
+@lightBlueColorHover: darken(@lightBlueColor, 10, relative);
+
 @mutedAccordionHeaderColor: #f5f5f5;
 @defaultBrandColor: #434C5E;
 

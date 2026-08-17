@@ -1,5 +1,18 @@
 {% extends "oarepo_ui/frontpage.html" %}
 
+{%- block top_banner %}
+  {{ super() }}
+  <div class="ui container rel-mt-2 rel-mb-2">
+    <h2 class="ui header text-align-center">{{ _("browse_by_experiment_title") }}</h2>
+    <div class="ui four stackable buttons rel-mt-2" role="navigation" aria-label="{{ _('browse_by_experiment_title') }}">
+      <a class="ui button browse-experiment-button" href="{{ url_for('fram_ui.search') }}">{{ _("browse_by_experiment_fram") }}</a>
+      <a class="ui button browse-experiment-button" href="{{ url_for('atlas_itk_ui.search') }}">{{ _("browse_by_experiment_atlas_itk") }}</a>
+      <a class="ui button browse-experiment-button" href="{{ url_for('particles_ui.search') }}">{{ _("browse_by_experiment_particles") }}</a>
+      <a class="ui button browse-experiment-button" href="{{ url_for('sipm_ui.search') }}">{{ _("browse_by_experiment_sipm") }}</a>
+    </div>
+  </div>
+{%- endblock top_banner %}
+
 {# Available template blocks (showing closest override point):
 
 Header (from invenio_app_rdm/frontpage.html):
