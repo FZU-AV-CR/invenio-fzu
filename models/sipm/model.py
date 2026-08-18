@@ -69,6 +69,8 @@ sipm_model = model(
             "metadata.requestor",
             "metadata.manufacturer",
             "metadata.file_types",
+            "metadata.related_resources",
+
         ),
         AddFacetGroup(
             name="default",

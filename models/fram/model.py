@@ -79,7 +79,7 @@ fram_model = model(
             "metadata.radius",
             "metadata.alt_az.altitude",
             "metadata.alt_az.azimuth",
-
+            "metadata.related_resources",
             "metadata.site",
             "metadata.ccd",
             "metadata.camera_serial",

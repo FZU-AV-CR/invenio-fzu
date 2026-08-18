@@ -128,6 +128,30 @@ Note: Context variables available:
     {% endif %}
     {{ safe_row(m.label(m.healpix_idx), m.healpix_idx) }}
 
+    {% if "EmptyFieldDataSentinel" not in m.related_resources._api_data | string %}
+    <tr>
+      <td>{{ m.label(m.related_resources) }}</td>
+      <td>
+        <ul class="related-resources-list">
+          {% for item in as_array(m.related_resources) %}
+            {% set ident_list = as_array(item.identifiers) %}
+            {% set has_title = "EmptyFieldDataSentinel" not in item.title._api_data | string %}
+            <li>
+              {% if has_title and ident_list %}
+                <a href="{{ value(ident_list[0].identifier) }}">{{ ui_value(item.title) }}</a>
+              {% elif has_title %}
+                {{ ui_value(item.title) }}
+              {% else %}
+                {% for ident in ident_list %}
+                  <a href="{{ value(ident.identifier) }}">{{ value(ident.identifier) }}</a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    {% endif %}
 
   </table>
 
