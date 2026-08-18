@@ -203,3 +203,21 @@ msgstr "For more information about management, operations, the technical platfor
 
 msgid "intro_about_link"
 msgstr "About page"
+
+
+## Browse by experiment (frontpage)
+
+msgid "browse_by_experiment_title"
+msgstr "Browse by experiment:"
+
+msgid "browse_by_experiment_fram"
+msgstr "Fram"
+
+msgid "browse_by_experiment_atlas_itk"
+msgstr "ITk"
+
+msgid "browse_by_experiment_particles"
+msgstr "Particles"
+
+msgid "browse_by_experiment_sipm"
+msgstr "SiPM"

@@ -290,7 +290,7 @@ async def create_local_client():
     config = Config()
     token = ""
 
-    # securely enter the token
+    # A. local: securely enter the token
     if token == "":
         token = getpass.getpass("Enter API token for repository: ").strip()
     try:
@@ -300,9 +300,27 @@ async def create_local_client():
             token=token,
             verify_tls=False
         ))
+
     except Exception as exc:
         raise SystemExit(f"Failed to configure repository client: {exc}")
     return await get_async_client("physica-local", config=config)
+
+    # B. test1:  securely enter the token
+    # if token == "":
+    #     token = getpass.getpass("Enter API token for repository: ").strip()
+    # try:
+    #     config.add_repository(RepositoryConfig(
+    #         alias="physica-test1",
+    #         url=URL("https://test1.physics.du.cesnet.cz/"),
+    #         token=token,
+    #         verify_tls=True
+    #     ))
+       
+    # except Exception as exc:
+    #     raise SystemExit(f"Failed to configure repository client: {exc}")
+    # return await get_async_client("physica-test1", config=config)
+
+    
 
 
 async def upload_record_async(

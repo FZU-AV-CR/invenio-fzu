@@ -206,3 +206,21 @@ msgstr "Další informace o správě, provozu, technické platformě a o tom, ja
 
 msgid "intro_about_link"
 msgstr "O repozitáři"
+
+
+## Browse by experiment (frontpage)
+
+msgid "browse_by_experiment_title"
+msgstr "Procházet podle experimentu:"
+
+msgid "browse_by_experiment_fram"
+msgstr "Fram"
+
+msgid "browse_by_experiment_atlas_itk"
+msgstr "ITk"
+
+msgid "browse_by_experiment_particles"
+msgstr "Particles"
+
+msgid "browse_by_experiment_sipm"
+msgstr "SiPM"

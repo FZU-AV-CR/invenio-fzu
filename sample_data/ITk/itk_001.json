@@ -28,7 +28,7 @@
     "title": "ATLAS-ITk_VPA56032",
     "publication_date": "2026-04-23",
     "file_types": ["dat"],
-    "publisher": "FZU Instsitute of Physics of the Czech Academy of Science",
+    "publisher": "FZU Institute of Physics of the Czech Academy of Science",
     "additional_descriptions": [
       {
         "lang": { "id": "ENG" },
@@ -82,7 +82,8 @@
     "ATLAS18_CURRENT_STABILITY_V1 "
   ],
   "component_types": ["SENSOR_TESTCHIP_MD8"],
-  "files":["VPA56032_W05408_7_A2_CCPL_C_001.dat"]
+  "files":["VPA56032_W05408_7_A2_CCPL_C_001.dat"], 
+  "communities": {"ids": ["ITk"]}
 
   }
 }

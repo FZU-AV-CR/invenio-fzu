@@ -22,6 +22,7 @@
         "description": "This dataset contains observation data in the fits format. The observation comes from robotic telescope (Phototometric Robotic Atmospheric Monitor - FRAM)."
       }
     ],
+    "dates": [{ "date": "2022-02-08", "type": { "id": "Created" } }],
     "subjects": [
       { "subject": "FRAM" },
       { "subject": "Telescope" },
