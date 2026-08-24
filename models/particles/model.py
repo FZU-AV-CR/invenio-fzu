@@ -71,6 +71,7 @@ particles_model = model(
             "metadata.number_of_events",
             "metadata.recid",
             "metadata.collision_information",
+            "metadata.related_resources",
         ),
         AddFacetGroup(
             name="default",

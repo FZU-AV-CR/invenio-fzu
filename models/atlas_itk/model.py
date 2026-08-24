@@ -69,6 +69,7 @@ atlas_itk_model = model(
             "metadata.files",
             "metadata.component_types",
             "metadata.file_types",
+            "metadata.related_resources",
 
 
         ),

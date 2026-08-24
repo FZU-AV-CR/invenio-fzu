@@ -1,5 +1,8 @@
 {
   "metadata": {
+
+    "related_resources": [{"title": "FRAM_2022_cta-n", "identifiers": [{"identifier": "https://127.0.0.1:5000/fram/records/5xgdm-9ev10", "scheme": "url"}], "relation_type": {"id": "IsPartOf"}},
+                          {"title": "FRAM", "identifiers": [{"identifier": "https://127.0.0.1:5000/fram/records/5xgdm-9ev77", "scheme": "url"}], "relation_type": {"id": "IsPartOf"}}],
     "resource_type": {
       "id": "c_ddb1"
     },
