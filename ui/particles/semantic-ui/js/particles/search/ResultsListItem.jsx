@@ -7,11 +7,26 @@ import { i18next } from "@translations/i18next";
 
 export const ResultsListItem = ({ result, ...rest }) => {
   const accessRights = _get(result, "ui.access_status", null);
-  const createdDate = _get(
-    result,
-    "ui.created_date_l10n_short",
-    "No creation date found."
-  );
+  const createdDateRaw = _get(result, "ui.created_date_l10n_short", null);
+  const formatDateToDDMMYYYY = (s) => {
+    if (!s) return null;
+    const m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{2,4})$/);
+    if (m) {
+      const month = m[1].padStart(2, "0");
+      const day = m[2].padStart(2, "0");
+      let year = m[3];
+      if (year.length === 2) year = "20" + year;
+      return `${day}.${month}.${year}`;
+    }
+    const d = new Date(s);
+    if (!Number.isNaN(d.getTime())) {
+      return `${String(d.getDate()).padStart(2, "0")}.${String(
+        d.getMonth() + 1
+      ).padStart(2, "0")}.${d.getFullYear()}`;
+    }
+    return s;
+  };
+  const createdDate = formatDateToDDMMYYYY(createdDateRaw) || "No creation date found.";
   const languages = _get(result, "metadata.languages", []);
   const version = _get(result, "metadata.version", null);
   const title = _get(result, "metadata.title", i18next.t("No title"));
