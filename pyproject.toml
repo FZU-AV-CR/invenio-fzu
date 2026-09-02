@@ -8,6 +8,8 @@ dependencies = [
     "oarepo[s3,rdm]>=14.0.0b1,<15.0.0",
     "oarepo-app[production,ccmm]==6.3.0",
     "healpy>=1.16",
+    "astropy>=6.0",
+    "pillow>=10.0",
 ]
 
 requires-python = ">=3.14,<3.15"

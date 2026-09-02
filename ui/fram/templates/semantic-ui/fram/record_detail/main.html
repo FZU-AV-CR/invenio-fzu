@@ -58,6 +58,38 @@ Note: Context variables available:
 - is_preview/is_draft: Record state
 #}
 
+{%- block record_files -%}
+  {{ super() }}
+
+  {# On-demand FITS image preview (server-side rendered, replicating
+     fram.fzu.cz's archive viewer), shown only when the record has
+     permission-visible access to exactly one completed FITS (.fits/.fit)
+     file. Any deviation (no files, several files, non-FITS files, a file
+     still uploading, ...) intentionally renders nothing here -- no
+     placeholder image, no broken-image icon -- the actual "is there
+     exactly one FITS file" check is re-verified server-side by the
+     /preview/fits-image.jpg endpoint itself (see ui/fram/views.py); this
+     template-level check just decides whether to emit the <img> tag. #}
+  {%- if record_ui["files"]["enabled"] and permissions.can_read_files -%}
+    {%- set fits_entries = [] -%}
+    {%- for entry in files["entries"] -%}
+      {%- if entry["status"] == "completed" and (entry["key"] | lower).endswith((".fits", ".fit")) -%}
+        {%- set _ = fits_entries.append(entry) -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if fits_entries | length == 1 -%}
+      <section id="record-fits-preview" class="rel-mt-2 rel-mb-3" aria-label="{{ _('FITS image preview') }}">
+        <img
+          class="ui fluid image fits-preview-image"
+          src="{{ url_for('fram_ui.fits_preview', pid_value=record_ui['id']) }}"
+          alt="{{ _('FITS image preview') }}"
+          loading="lazy"
+        />
+      </section>
+    {%- endif -%}
+  {%- endif -%}
+{%- endblock record_files -%}
+
 {%- block record_content %}
   {{super()}}
   

@@ -4129,16 +4129,20 @@ name = "physica"
 version = "1.0.0"
 source = { editable = "." }
 dependencies = [
+    { name = "astropy" },
     { name = "healpy" },
     { name = "oarepo" },
     { name = "oarepo-app", extra = ["ccmm", "production"] },
+    { name = "pillow" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "astropy", specifier = ">=6.0" },
     { name = "healpy", specifier = ">=1.16" },
     { name = "oarepo", extras = ["s3", "rdm"], specifier = ">=14.0.0b1,<15.0.0" },
     { name = "oarepo-app", extras = ["production", "ccmm"], specifier = "==6.3.0" },
+    { name = "pillow", specifier = ">=10.0" },
 ]
 
 [[package]]
