@@ -1,5 +1,19 @@
 # Technical handoff: interactive FITS viewer (Stretch/Scale/Zoom controls)
 
+> **STATUS UPDATE (fitsview 2 round): implemented.** The interactive
+> Stretch/Scale/Zoom/Grid toolbar described below has been built — see
+> `docs/FITS_VIEWER_V2_SUMMARY.md` for what shipped, what changed vs.
+> this document's original (screenshot-based) assumptions once the real
+> fram.fzu.cz source (`fram-archive` Django app) and a stakeholder email
+> exchange became available, and what remains deferred (Raw-toggle pixel
+> calibration, "Processed FITS" download, linearization tables). The
+> rest of this document is kept for historical/investigative reference
+> (e.g. the "Gotchas already hit" section is still accurate), but treat
+> `FITS_VIEWER_V2_SUMMARY.md` as authoritative for current parameter
+> semantics (they differ from what's written below in a few places,
+> notably `scale`'s asymmetric qmin/qmax semantics and `zoom` being real
+> server-side crop+pan rather than a no-op).
+
 **Audience**: a future chat/session implementing client-side interactive
 controls (Stretch/Scale/Zoom dropdowns, grid/invert toggles, etc.) for the
 FRAM FITS image preview, matching the fram.fzu.cz archive's viewer

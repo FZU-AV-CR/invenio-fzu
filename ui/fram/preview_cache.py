@@ -41,9 +41,9 @@ def _cache_root() -> Path:
     return root
 
 
-def _cache_key(checksum: str, stretch: str, scale: str, zoom: str) -> str:
+def _cache_key(checksum: str, stretch: str, scale: str, zoom: str, dx: str, dy: str, grid: str) -> str:
     """Compute a stable cache key from the file checksum and render params."""
-    payload = f"{checksum}:{stretch}:{scale}:{zoom}".encode("utf-8")
+    payload = f"{checksum}:{stretch}:{scale}:{zoom}:{dx}:{dy}:{grid}".encode("utf-8")
     return hashlib.sha256(payload).hexdigest()
 
 
@@ -61,6 +61,9 @@ def get_or_render_preview(
     scale: str,
     zoom: str,
     render_fn: Callable[[], bytes],
+    dx: str = "0",
+    dy: str = "0",
+    grid: str = "0",
 ) -> Path:
     """Return the cached preview JPEG path, rendering and caching it first if needed.
 
@@ -71,9 +74,12 @@ def get_or_render_preview(
     :param zoom: ``zoom=`` render parameter, see ``preview.py``.
     :param render_fn: zero-argument callable returning the rendered JPEG
         bytes; only invoked on a cache miss.
+    :param dx: ``dx=`` pan parameter, see ``preview.py``.
+    :param dy: ``dy=`` pan parameter, see ``preview.py``.
+    :param grid: ``grid=`` overlay parameter, see ``preview.py``.
     :return: path to the cached JPEG file on disk.
     """
-    cache_key = _cache_key(checksum, stretch, scale, zoom)
+    cache_key = _cache_key(checksum, stretch, scale, zoom, dx, dy, grid)
     cache_path = _cache_path(cache_key)
 
     if cache_path.exists():

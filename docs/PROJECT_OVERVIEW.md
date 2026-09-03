@@ -6,8 +6,12 @@ document before starting any task to understand what kind of project
 this is, how it's structured, and the platform-specific conventions that
 differ from a "vanilla" InvenioRDM instance.
 
-For FITS-preview-specific work, see `docs/FITS_IMAGE_PREVIEW.md` (what's
-built) and `docs/FITS_DYNAMIC_VIEWER_HANDOFF.md` (what's next). For the
+For FITS-preview-specific work, see `docs/FITS_IMAGE_PREVIEW.md` (static
+preview, what's built), `docs/FITS_DYNAMIC_VIEWER_HANDOFF.md` (original
+interactive-viewer handoff/investigation, screenshot-based, superseded)
+and `docs/FITS_VIEWER_V2_SUMMARY.md` (what was actually implemented for
+the interactive toolbar + dark/flat links, verified against the real
+fram.fzu.cz source and stakeholder guidance). For the
 custom-facet/filter pattern (range queries, cone search, text-match
 filters), see `docs/CUSTOM_FILTERS_HOWTO.md` and
 `docs/SKY_POSITION_SEARCH.md`. For the "browse by experiment" homepage

@@ -22,7 +22,7 @@ from oarepo_runtime import current_runtime
 from sqlalchemy.exc import NoResultFound
 from werkzeug.exceptions import Forbidden, NotFound
 
-from .preview import DEFAULT_SCALE, DEFAULT_STRETCH, DEFAULT_ZOOM, render_fits_preview
+from .preview import DEFAULT_PAN, DEFAULT_SCALE, DEFAULT_STRETCH, DEFAULT_ZOOM, render_fits_preview
 from .preview_cache import get_or_render_preview
 
 log = logging.getLogger(__name__)
@@ -51,23 +51,22 @@ def _find_sole_fits_file(files_dict: dict) -> dict | None:
     return fits_entries[0]
 
 
-def fits_preview_view(pid_value: str) -> Response:
-    """Render (or serve from cache) the FITS preview JPEG for a FRAM record.
+def _resolve_record_and_sole_fits_file(pid_value: str):
+    """Resolve a FRAM record + its file service + its sole FITS file entry.
 
-    Query parameters (all optional, forward-compatible with a future
-    interactive viewer matching fram.fzu.cz's Stretch/Scale/Zoom controls):
+    Shared by ``fits_preview_view`` and ``fits_header_view`` so the
+    "exactly one completed FITS file, permission-checked" resolution logic
+    (and its 404/403 semantics) only needs to be implemented once.
 
-    - ``stretch``: one of ``preview.STRETCH_FUNCTIONS`` keys.
-    - ``scale``: one of ``preview.SCALE_PERCENTILES`` keys.
-    - ``zoom``: reserved, currently ignored.
+    :return: ``(record, file_service, fits_file_dict)``.
+    :raises NotFound: record/draft doesn't exist, or doesn't have exactly
+        one completed FITS file visible to the current identity.
+    :raises Forbidden: identity lacks permission to list/read the record's
+        files.
     """
     model = current_runtime.models.get("fram")
     if model is None:  # pragma: no cover - defensive, should never happen
         raise NotFound()
-
-    stretch = request.args.get("stretch", DEFAULT_STRETCH)
-    scale = request.args.get("scale", DEFAULT_SCALE)
-    zoom = request.args.get("zoom", DEFAULT_ZOOM)
 
     try:
         record = model.service.read(g.identity, pid_value)
@@ -92,6 +91,45 @@ def fits_preview_view(pid_value: str) -> Response:
     if fits_file is None:
         raise NotFound()
 
+    return record, file_service, fits_file
+
+
+def _read_fits_file_bytes(file_service, record_id: str, file_key: str) -> BytesIO:
+    """Read a record's file content into an in-memory buffer, permission-checked."""
+    try:
+        file_item = file_service.get_file_content(g.identity, record_id, file_key)
+        with file_item.get_stream("rb") as stream:
+            return BytesIO(stream.read())
+    except PermissionDeniedError as e:
+        raise Forbidden(str(e)) from e
+
+
+def fits_preview_view(pid_value: str) -> Response:
+    """Render (or serve from cache) the FITS preview JPEG for a FRAM record.
+
+    Query parameters (all optional), matching the real fram.fzu.cz archive
+    viewer's toolbar semantics (see ``preview.py``'s module docstring for
+    the full rationale/comparison):
+
+    - ``stretch``: one of ``preview.STRETCH_FUNCTIONS`` keys.
+    - ``scale``: one of ``preview.SCALE_QMAX_PERCENTILES`` keys (the
+      "qmax" percentile of the clip interval).
+    - ``zoom``: one of ``preview.ZOOM_LEVELS``.
+    - ``dx``/``dy``: pan offsets (fractions of a quadrant), used together
+      with ``zoom`` > 1.
+    - ``grid``: ``"1"`` to draw a grid overlay, anything else (or absent)
+      for no overlay.
+    """
+    stretch = request.args.get("stretch", DEFAULT_STRETCH)
+    scale = request.args.get("scale", DEFAULT_SCALE)
+    zoom = request.args.get("zoom", DEFAULT_ZOOM)
+    dx = request.args.get("dx", DEFAULT_PAN)
+    dy = request.args.get("dy", DEFAULT_PAN)
+    grid = request.args.get("grid", "0")
+    show_grid = grid == "1"
+
+    record, file_service, fits_file = _resolve_record_and_sole_fits_file(pid_value)
+
     file_key = fits_file["key"]
     checksum = fits_file.get("checksum") or ""
     size = fits_file.get("size") or 0
@@ -101,15 +139,12 @@ def fits_preview_view(pid_value: str) -> Response:
         raise NotFound()
 
     def _render() -> bytes:
-        try:
-            file_item = file_service.get_file_content(g.identity, record.id, file_key)
-            with file_item.get_stream("rb") as stream:
-                buffer = BytesIO(stream.read())
-        except PermissionDeniedError as e:
-            raise Forbidden(str(e)) from e
-        return render_fits_preview(buffer, stretch=stretch, scale=scale, zoom=zoom)
+        buffer = _read_fits_file_bytes(file_service, record.id, file_key)
+        return render_fits_preview(buffer, stretch=stretch, scale=scale, zoom=zoom, dx=dx, dy=dy, grid=show_grid)
 
-    cache_path = get_or_render_preview(checksum or file_key, stretch, scale, zoom, _render)
+    cache_path = get_or_render_preview(
+        checksum or file_key, stretch, scale, zoom, _render, dx=dx, dy=dy, grid=grid
+    )
 
     return send_file(
         cache_path,

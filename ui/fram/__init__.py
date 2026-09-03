@@ -25,6 +25,7 @@ from oarepo_ui.resources.records.config import RecordsUIResourceConfig
 from oarepo_ui.resources.records.resource import RecordsUIResource
 from oarepo_ui.utils import can_view_deposit_page
 
+from .components import FramFitsMetadataComponent
 from .views import fits_preview_view
 
 
@@ -41,6 +42,13 @@ class FramUIResourceConfig(CCMMRecordsUIResourceConfig):
     )
 
     application_id = "fram"
+
+    # Adds FITS header dump + dark/flat calibration-frame links to the
+    # record detail page's extra_context (see ui/fram/components.py).
+    components = (
+        *CCMMRecordsUIResourceConfig.components,
+        FramFitsMetadataComponent,
+    )
 
 
 class FramUIResource(CCMMRecordsUIResource):

@@ -79,12 +79,16 @@ Note: Context variables available:
     {%- endfor -%}
     {%- if fits_entries | length == 1 -%}
       <section id="record-fits-preview" class="rel-mt-2 rel-mb-3" aria-label="{{ _('FITS image preview') }}">
-        <img
-          class="ui fluid image fits-preview-image"
-          src="{{ url_for('fram_ui.fits_preview', pid_value=record_ui['id']) }}"
-          alt="{{ _('FITS image preview') }}"
-          loading="lazy"
-        />
+        {# Interactive Stretch/Scale/Zoom/Grid toolbar (React), mounted by
+           ui/fram/semantic-ui/js/fram/preview/index.js against this div.
+           data-preview-url is the base preview endpoint URL (query
+           params for stretch/scale/zoom/dx/dy/grid are appended
+           client-side); see record_detail/javascript.html for the
+           webpack bundle include. #}
+        <div
+          id="fits-preview-toolbar-root"
+          data-preview-url="{{ url_for('fram_ui.fits_preview', pid_value=record_ui['id']) }}"
+        ></div>
       </section>
     {%- endif -%}
   {%- endif -%}
@@ -111,6 +115,33 @@ Note: Context variables available:
     {{ safe_row(m.label(m.observation_night), m.observation_night) }}
     {{ safe_row(m.label(m.ccd), m.ccd) }}
     {{ safe_row(m.label(m.type), m.type) }}
+
+    {# Dark/flat calibration-frame links, found at query time (no
+       metadata.yaml field/schema change -- see ui/fram/calibration.py
+       and docs/FITS_DYNAMIC_VIEWER_HANDOFF.md for the algorithm and
+       stakeholder rationale). Omitted entirely when no matching
+       calibration record is found. #}
+    {%- if extra_context.dark_frame %}
+    <tr>
+      <td>{{ _("Dark") }}</td>
+      <td>
+        <a href="{{ url_for('fram_ui.record_detail', pid_value=extra_context.dark_frame.id) }}">
+          {{ extra_context.dark_frame.metadata.filename or extra_context.dark_frame.id }}
+        </a>
+      </td>
+    </tr>
+    {%- endif %}
+    {%- if extra_context.flat_frame %}
+    <tr>
+      <td>{{ _("Flat") }}</td>
+      <td>
+        <a href="{{ url_for('fram_ui.record_detail', pid_value=extra_context.flat_frame.id) }}">
+          {{ extra_context.flat_frame.metadata.filename or extra_context.flat_frame.id }}
+        </a>
+      </td>
+    </tr>
+    {%- endif %}
+
     {{ safe_row(m.label(m.binning), m.binning) }}
     {% if "EmptyFieldDataSentinel" not in m.exposure._api_data | string %}
     <tr>
@@ -186,6 +217,19 @@ Note: Context variables available:
     {% endif %}
 
   </table>
+
+  {# Raw FITS header dump, collapsed by default (matches fram.fzu.cz's
+     "Original FITS header" section). Only rendered when the header was
+     successfully read (see ui/fram/components.py::FramFitsMetadataComponent),
+     which itself is gated on "exactly one accessible completed FITS file". #}
+  {%- if extra_context.fits_header_cards %}
+  <details class="rel-mt-2 rel-mb-4">
+    <summary>{{ _("Original FITS header") }}</summary>
+    <pre class="fits-header-dump">{%- for keyword, value, comment in extra_context.fits_header_cards -%}
+{{ "%-8s" | format(keyword) }}= {{ value }}{% if comment %} / {{ comment }}{% endif %}
+{% endfor -%}</pre>
+  </details>
+  {%- endif %}
 
 {%- endblock record_content %}
 
