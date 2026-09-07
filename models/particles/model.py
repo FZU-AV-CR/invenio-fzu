@@ -68,8 +68,8 @@ particles_model = model(
             "metadata.experiment.id",
             "metadata.category",
             "metadata.dataset_type",
-            "metadata.number_of_events",
-            "metadata.recid",
+            "metadata.number_of_events.keyword",
+            "metadata.recid.keyword",
             "metadata.collision_information",
             "metadata.related_resources",
         ),
@@ -126,4 +126,3 @@ particles_model = model(
 
     configuration={"ui_blueprint_name": "particles_ui"},
 )
-
