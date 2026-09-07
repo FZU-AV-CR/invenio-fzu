@@ -25,6 +25,9 @@ from oarepo_ui.resources.records.config import RecordsUIResourceConfig
 from oarepo_ui.resources.records.resource import RecordsUIResource
 from oarepo_ui.utils import can_view_deposit_page
 
+from .components import FramFitsMetadataComponent
+from .views import fits_preview_view
+
 
 class FramUIResourceConfig(CCMMRecordsUIResourceConfig):
     template_folder = "templates"
@@ -39,6 +42,13 @@ class FramUIResourceConfig(CCMMRecordsUIResourceConfig):
     )
 
     application_id = "fram"
+
+    # Adds FITS header dump + dark/flat calibration-frame links to the
+    # record detail page's extra_context (see ui/fram/components.py).
+    components = (
+        *CCMMRecordsUIResourceConfig.components,
+        FramFitsMetadataComponent,
+    )
 
 
 class FramUIResource(CCMMRecordsUIResource):
@@ -83,4 +93,16 @@ def finalize_app(app):
 def create_blueprint(app):
     """Register blueprint for this resource."""
     blueprint = FramUIResource(FramUIResourceConfig()).as_blueprint()
+
+    # Custom on-demand FITS image preview route. Registered directly on the
+    # Flask blueprint (bypassing oarepo_ui's generic content-negotiated
+    # record/file routing, which is built for JSON/HTML views and does not
+    # fit a raw binary image response) so it can serve `image/jpeg` bytes.
+    # See ui/fram/views.py for the implementation and design rationale.
+    blueprint.add_url_rule(
+        "/fram/records/<pid_value>/preview/fits-image.jpg",
+        view_func=fits_preview_view,
+        endpoint="fits_preview",
+    )
+
     return blueprint

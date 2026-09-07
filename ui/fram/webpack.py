@@ -9,6 +9,7 @@ theme = WebpackThemeBundle(
             entry={
                 "fram_search": "./js/fram/search/index.js",
                 "fram_deposit_form": "./js/fram/forms/index.js",
+                "fram_fits_preview": "./js/fram/preview/index.js",
             },
             dependencies={},
             devDependencies={},
