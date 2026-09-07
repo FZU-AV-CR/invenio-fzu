@@ -14,6 +14,11 @@ Metadata:
       type: int
       label:
         en: Record ID
+      mapping:
+        type: integer
+        fields:
+          keyword:
+            type: keyword
 
     file_types:
       type: array
@@ -47,7 +52,7 @@ Metadata:
             en: Collision Type
           enum:
             - e+e-
-    
+
     category:
       type: vocabulary
       vocabulary-type: particle_category
@@ -68,7 +73,11 @@ Metadata:
         label:
           en: Number of events
           cs: Počet událostí
-
+      mapping:
+        type: integer
+        fields:
+          keyword:
+            type: keyword
     dataset_type:
       type: keyword
       label:
@@ -78,3 +87,4 @@ Metadata:
         - collision
         - logbook
         - manual
+        - policy
