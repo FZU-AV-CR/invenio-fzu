@@ -101,11 +101,6 @@ Metadata:
         label:
           en: Exposure
           cs: Expozice
-      mapping:
-        type: float
-        fields:
-          keyword:
-            type: keyword
 
 
       
@@ -135,11 +130,7 @@ Metadata:
       label:
         en: Radius
         cs: Poloměr
-      mapping:
-        type: integer
-        fields:
-          keyword:
-            type: keyword
+
 
     # NOTE: this object is deliberately named "alt_az" and NOT
     # "altitude_azimuth". oarepo_model's ObjectDataType.get_facet() builds

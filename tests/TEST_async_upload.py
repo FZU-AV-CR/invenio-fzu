@@ -502,7 +502,7 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 
-# cd upload/invenio
+# cd tests
 # python3 TEST_async_upload.py --environment local
 # python3 TEST_async_upload.py --environment test1 --fits-file "/path/to/one.fits" --disable-schema
 # python3 TEST_async_upload.py --environment test1 --fits-file "/path/to/one.fits" --dry-run
