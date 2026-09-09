@@ -1,0 +1,9 @@
+{#
+  Interactive FITS preview toolbar (Stretch/Scale/Zoom/Grid), mounted
+  against the "fits-preview-toolbar-root" div emitted conditionally by
+  record_detail/main.html's record_files block override (only present
+  when the record has exactly one accessible completed FITS file).
+  See ui/fram/semantic-ui/js/fram/preview/ and
+  docs/FITS_DYNAMIC_VIEWER_HANDOFF.md.
+#}
+{{ webpack['fram_fits_preview.js'] }}
