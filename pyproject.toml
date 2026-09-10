@@ -5,8 +5,8 @@ description = "Physics Repository is an open repository of physics data spanning
 packages = []
 authors = []
 dependencies = [
-    "oarepo[s3,rdm]>=14.0.0b1,<15.0.0",
-    "oarepo-app[production,ccmm]==6.3.0",
+    "oarepo[s3,rdm]>=14.0.0,<15.0.0",
+    "oarepo-app[production,ccmm]>=7.0.3,<8.0.0",
     "healpy>=1.16",
     "astropy>=6.0",
     "pillow>=10.0",
@@ -25,9 +25,6 @@ ui_atlas_itk = "ui.atlas_itk.webpack:theme"
 [project.entry-points."invenio_i18n.translations"]
 translations = "i18n"
 
-[project.entry-points."invenio_db.alembic"]
-repository = "common:alembic"
-
 [project.entry-points."invenio_base.blueprints"]
 ui_particles = "ui.particles:create_blueprint"
 ui_sipm = "ui.sipm:create_blueprint"
@@ -41,6 +38,8 @@ ui_sipm = "ui.sipm:finalize_app"
 ui_fram = "ui.fram:finalize_app"
 ui_atlas_itk = "ui.atlas_itk:finalize_app"
 
+[project.entry-points."invenio_db.alembic"]
+physica = "common:alembic"
 [tool.uv.build-backend]
 module-root = ""
 module-name = [
