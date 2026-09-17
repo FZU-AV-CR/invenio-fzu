@@ -34,14 +34,4 @@ uvx nrp-cmd upload file @fram_001_draft --key 20260304093525-219-RA.fits ./20260
 # uvx nrp-cmd upload file @fram_002_draft --key 03 ./big.zip "$file_metadata" --log-request --repository $REPOSITORY
 
 # publish the record
-#
-# NOTE: `nrp-cmd publish record` is hardcoded to request the "publish_draft"
-# request type (see nrp_cmd/async_client/invenio/records.py's publish()),
-# which only exists for the "individual" (non-community) workflow. Records
-# created inside a community (as this one is, via --community above) use
-# the "community" workflow instead, whose only applicable request type is
-# "community-submission" (confirmed against invenio.cfg's CommunityWorkflow
-# and oarepo_config/workflows/simplified/community.py). Since the record
-# owner is also the "fram" community's owner/curator, submitting this
-# request auto-approves and publishes it in one step (AutoApprove()).
-uvx nrp-cmd requests create community-submission @fram_001_draft --submit --repository $REPOSITORY
+uvx nrp-cmd publish record @fram_001_draft --repository $REPOSITORY
