@@ -16,14 +16,14 @@ from __future__ import annotations
 import logging
 from io import BytesIO
 
-from flask import Response, g, request, send_file
+from flask import Response, g, request
 from invenio_records_resources.services.errors import PermissionDeniedError
 from oarepo_runtime import current_runtime
 from sqlalchemy.exc import NoResultFound
 from werkzeug.exceptions import Forbidden, NotFound
 
 from .preview import DEFAULT_PAN, DEFAULT_SCALE, DEFAULT_STRETCH, DEFAULT_ZOOM, render_fits_preview
-from .preview_cache import get_or_render_preview
+from .preview_cache import cache_key_for, get_or_render_preview
 
 log = logging.getLogger(__name__)
 
@@ -142,14 +142,23 @@ def fits_preview_view(pid_value: str) -> Response:
         buffer = _read_fits_file_bytes(file_service, record.id, file_key)
         return render_fits_preview(buffer, stretch=stretch, scale=scale, zoom=zoom, dx=dx, dy=dy, grid=show_grid)
 
-    cache_path = get_or_render_preview(
-        checksum or file_key, stretch, scale, zoom, _render, dx=dx, dy=dy, grid=grid
-    )
+    # ETag is derived from the same content-addressed cache key used by
+    # preview_cache.get_or_render_preview() -- stable per (file checksum,
+    # render params) combination, so conditional requests can be answered
+    # without needing a filesystem path (previews are now cached in Redis
+    # via invenio_cache, not on disk -- see preview_cache.py for why).
+    # Quoted per RFC 7232 -- browsers/proxies echo back If-None-Match with
+    # the quotes intact, so both sides must agree on the quoted form.
+    etag = f'"{cache_key_for(checksum or file_key, stretch, scale, zoom, dx, dy, grid)}"'
+    if request.headers.get("If-None-Match") == etag:
+        response = Response(status=304)
+        response.headers["ETag"] = etag
+        response.headers["Cache-Control"] = f"public, max-age={PREVIEW_MAX_AGE}"
+        return response
 
-    return send_file(
-        cache_path,
-        mimetype="image/jpeg",
-        conditional=True,
-        etag=True,
-        max_age=PREVIEW_MAX_AGE,
-    )
+    jpeg_bytes = get_or_render_preview(checksum or file_key, stretch, scale, zoom, _render, dx=dx, dy=dy, grid=grid)
+
+    response = Response(jpeg_bytes, mimetype="image/jpeg")
+    response.headers["ETag"] = etag
+    response.headers["Cache-Control"] = f"public, max-age={PREVIEW_MAX_AGE}"
+    return response

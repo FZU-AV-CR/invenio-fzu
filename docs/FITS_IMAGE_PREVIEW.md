@@ -41,7 +41,7 @@ reason — see "Explicitly out of scope" below):
 | File | Purpose |
 |---|---|
 | `ui/fram/preview.py` | Pure rendering function: FITS bytes → JPEG bytes (astropy + Pillow + numpy, no Flask/Invenio imports — easy to unit test standalone). |
-| `ui/fram/preview_cache.py` | Sharded, checksum-keyed disk cache for rendered JPEGs under `<instance_path>/fits_previews/<xx>/<yy>/<key>.jpg`, atomic writes. |
+| `ui/fram/preview_cache.py` | Checksum+params-keyed cache for rendered JPEGs, backed by `invenio_cache.current_cache` (Redis by Invenio's default config). **Was** a sharded on-disk cache under `<instance_path>/fits_previews/<xx>/<yy>/<key>.jpg` — changed to Redis because Kubernetes deployments (e.g. test1) run pods with read-only/ephemeral/non-shared filesystems, so on-disk writes failed there; see `docs/FITS_VIEWER_V2_SUMMARY.md` section 7 for the full rationale. |
 | `ui/fram/views.py` (new) | Flask view function `fits_preview_view(pid_value)` — resolves the record via the FRAM model's file service (permission-checked), re-verifies the "exactly one FITS file" invariant, renders/caches, and serves via `send_file`. |
 | `ui/fram/__init__.py` | `create_blueprint(app)` now also calls `blueprint.add_url_rule(...)` directly (bypassing oarepo_ui's route-dict mechanism) to register the preview endpoint at `/fram/records/<pid_value>/preview/fits-image.jpg` under endpoint name `fram_ui.fits_preview`. |
 | `ui/fram/templates/semantic-ui/fram/record_detail/main.html` | Overrides the `record_files` Jinja block (`{{ super() }}` first, so the normal file list/download UI is preserved) to conditionally emit an `<img>` tag pointing at the preview endpoint, but only when exactly one completed `.fits`/`.fit` file is visible to the current user. |
@@ -82,12 +82,15 @@ ui/fram/views.py: fits_preview_view(pid_value)      ← plain Flask view, NOT
   │  5. size sanity check (> 512 MiB → 404, defensive DoS guard)
   │  6. preview_cache.get_or_render_preview(checksum, stretch, scale, zoom,
   │       render_fn=<reads file bytes + calls preview.render_fits_preview>)
-  │     → cache hit: skip rendering entirely, just return cached path
+  │     → cache hit: skip rendering entirely, just return cached JPEG bytes
+  │       (from invenio_cache.current_cache, Redis-backed)
   │     → cache miss: file_service.get_file_content(...).get_stream("rb").read()
-  │       → preview.render_fits_preview() → JPEG bytes → atomically written
-  │         to disk cache
-  │  7. send_file(cache_path, mimetype="image/jpeg", conditional=True,
-  │       etag=True, max_age=86400)
+  │       → preview.render_fits_preview() → JPEG bytes → stored via
+  │         current_cache.set(key, bytes, timeout=86400)
+  │  7. Response(jpeg_bytes, mimetype="image/jpeg") with manually-set
+  │       ETag/Cache-Control headers (ETag = the same content-addressed
+  │       cache key, so If-None-Match short-circuits to a 304 without
+  │       needing a filesystem path)
   ▼
 Browser displays the JPEG.
 ```
@@ -228,12 +231,13 @@ and a Jinja global (not done here to keep this iteration's diff small).
   covers most of the same information; a "Download FITS" link already
   exists implicitly via the standard file list box rendered by
   `{{ super() }}` in the `record_files` block.
-- No preview cache eviction/TTL/size-cap policy — the disk cache in
-  `preview_cache.py` grows unbounded over time. Fine for now (JPEGs are
-  small, ~1-3MB each per unique file+params combination), but if this
-  becomes a concern, add a periodic cleanup task (e.g. Celery beat job)
-  keyed on file mtime / an LRU policy, keyed by the same sharded directory
-  layout already in place.
+- Preview cache eviction: handled automatically by the 24h TTL passed to
+  `current_cache.set(..., timeout=CACHE_TIMEOUT)` in `preview_cache.py`
+  (Redis expires the key itself; no cleanup task needed). Superseded the
+  original disk-cache design's "grows unbounded, no eviction" limitation
+  once the cache was moved off local disk (see `FITS_VIEWER_V2_SUMMARY.md`
+  section 7 for why/when this changed) — Redis memory being more
+  constrained than disk made an explicit TTL the right default this time.
 
 ## Status
 
