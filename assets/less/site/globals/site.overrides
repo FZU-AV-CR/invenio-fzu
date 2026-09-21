@@ -158,6 +158,11 @@ a.remove-default-style:hover {
   color: @mutedTextColor;
 }
 
+.search-page-intro {
+  text-align: center;
+  font-size: 1.5em;
+}
+
 .custom-filters-for-model {
   margin-top: 1.5rem;
   padding-top: 1rem;

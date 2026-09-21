@@ -224,3 +224,12 @@ msgstr "Particles"
 
 msgid "browse_by_experiment_sipm"
 msgstr "SiPM"
+
+
+## FRAM search page
+
+msgid "fram_search_intro_line1"
+msgstr "Pozorovací data FRAM, provozovaná Fyzikálním ústavem AV ČR (FZÚ) — součást komunity „fram“, licencováno CC-BY 4.0."
+
+msgid "fram_search_intro_line2"
+msgstr "FITS snímky (včetně kalibračních temných snímků a master-flatů) ze sítě robotických dalekohledů na stanovištích cta-n, cta-s0, cta-s1, auger a auger2, zachycující atmosférická a astronomická pozorování."
