@@ -36,6 +36,38 @@ reason — see "Explicitly out of scope" below):
    params through to `<img src="...?stretch=log&scale=99">` without any
    backend API break.
 
+## Colormap + orientation fix (post-launch)
+
+After initial launch, a visual comparison against real fram.fzu.cz
+screenshots surfaced two rendering mismatches, both fixed in
+`ui/fram/preview.py` without adding any new dependencies:
+
+1. **Colormap.** The real archive's `image_response()`/`image_preview()`
+   (in the `fram-archive` Django app's `archive/views_images.py`) always
+   applies a colormap, defaulting to `cmap='Blues_r'` — the preview here
+   was rendering flat grayscale instead. Fixed by hardcoding the exact
+   9-point ColorBrewer "Blues"/"Greys" control points (transcribed from
+   matplotlib's own `lib/matplotlib/_cm.py`, not guessed) into a small
+   `CMAP_STOPS` lookup table and a `_apply_colormap()` helper that
+   linearly interpolates each RGB channel — reproducing
+   `matplotlib.colormaps["Blues_r"]` output numerically without pulling
+   in matplotlib as a dependency, consistent with this module's existing
+   "avoid matplotlib" rationale for stretch/normalization. `cmap=` is now
+   a supported query parameter (default `Blues_r`), threaded through
+   `views.py` and `preview_cache.py`'s cache key, with a `Colormap`
+   dropdown added to `FitsPreviewToolbar.jsx` alongside Stretch/Scale/Zoom.
+2. **Vertical orientation.** The real archive's `image_response()` calls
+   `cv2.flip(data, 0)` before JPEG encoding, because FITS pixel data
+   conventionally has row 0 at the *bottom* of the sky image, while
+   PIL/JPEG assume row 0 is the top. This preview was missing that flip
+   entirely, rendering upside-down relative to the real archive. Fixed
+   with `np.flipud(rgb)` applied right before `Image.fromarray(...)`.
+
+See `tests/test_fits_preview.py`'s `test_default_render_is_colored_not_grayscale`,
+`test_blues_r_is_dark_at_low_values_and_light_at_high_values`, and
+`test_output_is_vertically_flipped_relative_to_raw_fits_data` for the
+regression tests covering both fixes.
+
 ## Files added/changed
 
 | File | Purpose |

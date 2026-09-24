@@ -42,9 +42,11 @@ CACHE_KEY_PREFIX = "fits_preview::"
 CACHE_TIMEOUT = 24 * 60 * 60  # 24 hours
 
 
-def _cache_key(checksum: str, stretch: str, scale: str, zoom: str, dx: str, dy: str, grid: str) -> str:
+def _cache_key(
+    checksum: str, stretch: str, scale: str, zoom: str, dx: str, dy: str, grid: str, cmap: str
+) -> str:
     """Compute a stable cache key from the file checksum and render params."""
-    payload = f"{checksum}:{stretch}:{scale}:{zoom}:{dx}:{dy}:{grid}".encode("utf-8")
+    payload = f"{checksum}:{stretch}:{scale}:{zoom}:{dx}:{dy}:{grid}:{cmap}".encode("utf-8")
     return CACHE_KEY_PREFIX + hashlib.sha256(payload).hexdigest()
 
 
@@ -57,6 +59,7 @@ def get_or_render_preview(
     dx: str = "0",
     dy: str = "0",
     grid: str = "0",
+    cmap: str = "Blues_r",
 ) -> bytes:
     """Return the cached preview JPEG bytes, rendering and caching first if needed.
 
@@ -70,9 +73,10 @@ def get_or_render_preview(
     :param dx: ``dx=`` pan parameter, see ``preview.py``.
     :param dy: ``dy=`` pan parameter, see ``preview.py``.
     :param grid: ``grid=`` overlay parameter, see ``preview.py``.
+    :param cmap: ``cmap=`` colormap parameter, see ``preview.py``.
     :return: the rendered JPEG bytes (from cache, or freshly rendered).
     """
-    cache_key = _cache_key(checksum, stretch, scale, zoom, dx, dy, grid)
+    cache_key = _cache_key(checksum, stretch, scale, zoom, dx, dy, grid, cmap)
 
     cached = current_cache.get(cache_key)
     if cached is not None:
@@ -84,6 +88,8 @@ def get_or_render_preview(
     return jpeg_bytes
 
 
-def cache_key_for(checksum: str, stretch: str, scale: str, zoom: str, dx: str, dy: str, grid: str) -> str:
+def cache_key_for(
+    checksum: str, stretch: str, scale: str, zoom: str, dx: str, dy: str, grid: str, cmap: str
+) -> str:
     """Public helper to compute the same cache key used internally, for ETags."""
-    return _cache_key(checksum, stretch, scale, zoom, dx, dy, grid)
+    return _cache_key(checksum, stretch, scale, zoom, dx, dy, grid, cmap)

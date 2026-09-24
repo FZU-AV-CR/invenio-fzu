@@ -255,3 +255,59 @@ swap. The "exactly one FITS file, permission-checked" resolution logic in
 3. On test1 (or any Kubernetes-deployed environment with a read-only
    filesystem), confirm the preview now renders successfully where it
    previously failed.
+
+## 8. Colormap + vertical-orientation fix (post-v2)
+
+A later visual comparison against real fram.fzu.cz screenshots found the
+preview here rendered flat grayscale and upside-down relative to the real
+archive. Root-caused directly against the real archive's
+`image_response()` (`fram-archive`'s `archive/views_images.py`):
+
+- The real archive always applies a colormap, `cmap = colormaps[cmap]`,
+  defaulting to **`cmap='Blues_r'`** -- not plain grayscale.
+- The real archive calls `cv2.flip(data, 0)` right before JPEG encoding,
+  since FITS row 0 is conventionally the *bottom* of the sky image while
+  PIL/JPEG assume row 0 is the top.
+
+**Fix** (in `ui/fram/preview.py`, no new dependency added):
+
+- Added `CMAP_STOPS`, a small dict of hardcoded 9-point ColorBrewer
+  "Blues"/"Greys" (+ `_r` reversed variants) RGB control points,
+  transcribed verbatim from matplotlib's own `lib/matplotlib/_cm.py`
+  (`_Blues_data`/`_Greys_data`) -- chosen specifically so results are
+  numerically identical to `matplotlib.colormaps[name]` for these names,
+  without adding matplotlib as a project dependency (same rationale as
+  the existing stretch/normalization code in this module).
+- Added `_apply_colormap(normalized, cmap_name)`, interpolating each RGB
+  channel independently via `np.interp` across the chosen colormap's
+  stops, replacing the old plain `(img * 255).astype(np.uint8)`
+  single-channel path.
+- Added `np.flipud(rgb)` right before `Image.fromarray(rgb, mode="RGB")`.
+- `render_fits_preview(..., cmap=DEFAULT_CMAP)` -- `DEFAULT_CMAP =
+  "Blues_r"`, matching the real archive's default. `cmap=` is validated
+  against `CMAP_STOPS` the same way `stretch=`/`scale=`/`zoom=` already
+  were (`_resolve_cmap_name`, unknown values log a warning and fall back
+  to the default rather than erroring).
+- `preview_cache.py`'s `_cache_key`/`get_or_render_preview`/
+  `cache_key_for` extended to include `cmap` (mechanically, same pattern
+  as the existing `grid` parameter) so different colormaps don't collide
+  in the Redis cache.
+- `views.py`'s `fits_preview_view` reads `cmap=` off `request.args`
+  (default `DEFAULT_CMAP`) and threads it through to rendering, caching,
+  and the ETag computation.
+- `FitsPreviewToolbar.jsx` got a `Colormap` `<Form.Select>` (options
+  `Blues_r`/`Blues`/`Greys_r`/`Greys`), following the exact same
+  state/`useMemo`/`searchParams.set` pattern already used for
+  Stretch/Scale/Zoom.
+
+**Not changed**: stretch/scale/zoom/pan/grid math, the cache backend
+(still Redis via `invenio_cache`), and the "exactly one FITS file"
+resolution logic are all untouched -- this was purely a colormap +
+orientation fix.
+
+**Tests**: see `tests/test_fits_preview.py`'s
+`test_default_render_is_colored_not_grayscale`,
+`test_all_cmap_options_render`, `test_unknown_cmap_falls_back_to_default`,
+`test_different_cmaps_produce_different_output`,
+`test_blues_r_is_dark_at_low_values_and_light_at_high_values`, and
+`test_output_is_vertically_flipped_relative_to_raw_fits_data`.
