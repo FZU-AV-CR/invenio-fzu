@@ -1,58 +1,53 @@
-"""Sharded, checksum-keyed disk cache for rendered FITS preview JPEGs.
+"""Redis-backed (Invenio-cache) cache for rendered FITS preview JPEGs.
 
 Rendering a FITS preview (opening a ~30MB file, computing a percentile
 interval + asinh stretch, encoding a JPEG) is relatively expensive, so
-rendered images are cached on disk under::
+rendered images are cached keyed on the source file's checksum plus the
+rendering parameters (stretch/scale/zoom/dx/dy/grid), so a re-uploaded
+file (different checksum) or a different rendering request never
+collides with a stale cache entry.
 
-    <instance_path>/fits_previews/<xx>/<yy>/<cache_key>.jpg
-
-where ``<xx>``/``<yy>`` are the first four hex characters of the cache key
-(sharding avoids very large single directories). The cache key is derived
-from the source file's checksum plus the rendering parameters
-(stretch/scale/zoom), so a re-uploaded file (different checksum) or a
-different rendering request never collides with a stale cache entry.
-
-Writes are atomic (render to a temporary file in the same shard directory,
-then ``os.replace`` into place) so concurrent requests for the same not-yet
--cached image never see a partially written file.
+This previously used a sharded on-disk cache under
+``<instance_path>/fits_previews/<xx>/<yy>/<cache_key>.jpg``. That does
+not work in a Kubernetes deployment (e.g. the test1 environment): pods
+run with read-only/ephemeral root filesystems and/or no shared/persistent
+volume for ``instance_path``, so writes either fail outright or are
+silently lost/not shared across replicas. Instead, this now uses
+``invenio_cache.current_cache`` (``flask_caching`` under the hood,
+Redis-backed by Invenio's own default configuration -- the same Redis
+instance already required by InvenioRDM for sessions/rate-limiting, so no
+new infrastructure is needed). Cached values are plain JPEG ``bytes``
+(pickled by the cache backend), with a bounded TTL so cache memory is
+reclaimed automatically rather than growing unbounded like the old disk
+cache did.
 """
 
 from __future__ import annotations
 
-import contextlib
 import hashlib
 import logging
-import os
-import tempfile
-from pathlib import Path
 from typing import Callable
 
-from flask import current_app
+from invenio_cache import current_cache
 
 log = logging.getLogger(__name__)
 
-CACHE_DIR_NAME = "fits_previews"
+#: Namespacing prefix so preview cache keys can't collide with unrelated
+#: values in the shared Invenio cache (sessions, other subsystems, ...).
+CACHE_KEY_PREFIX = "fits_preview::"
+
+#: How long a rendered preview stays cached, in seconds. Matches the
+#: `Cache-Control: max-age` sent to browsers in `views.py` -- both bound
+#: how long a rendered image is considered valid to reuse.
+CACHE_TIMEOUT = 24 * 60 * 60  # 24 hours
 
 
-def _cache_root() -> Path:
-    """Return the root directory for the preview cache, creating it if needed."""
-    root = Path(current_app.instance_path) / CACHE_DIR_NAME
-    root.mkdir(parents=True, exist_ok=True)
-    return root
-
-
-def _cache_key(checksum: str, stretch: str, scale: str, zoom: str, dx: str, dy: str, grid: str) -> str:
+def _cache_key(
+    checksum: str, stretch: str, scale: str, zoom: str, dx: str, dy: str, grid: str, cmap: str
+) -> str:
     """Compute a stable cache key from the file checksum and render params."""
-    payload = f"{checksum}:{stretch}:{scale}:{zoom}:{dx}:{dy}:{grid}".encode("utf-8")
-    return hashlib.sha256(payload).hexdigest()
-
-
-def _cache_path(cache_key: str) -> Path:
-    """Return the sharded on-disk path for a given cache key."""
-    root = _cache_root()
-    shard_dir = root / cache_key[:2] / cache_key[2:4]
-    shard_dir.mkdir(parents=True, exist_ok=True)
-    return shard_dir / f"{cache_key}.jpg"
+    payload = f"{checksum}:{stretch}:{scale}:{zoom}:{dx}:{dy}:{grid}:{cmap}".encode("utf-8")
+    return CACHE_KEY_PREFIX + hashlib.sha256(payload).hexdigest()
 
 
 def get_or_render_preview(
@@ -64,8 +59,9 @@ def get_or_render_preview(
     dx: str = "0",
     dy: str = "0",
     grid: str = "0",
-) -> Path:
-    """Return the cached preview JPEG path, rendering and caching it first if needed.
+    cmap: str = "Blues_r",
+) -> bytes:
+    """Return the cached preview JPEG bytes, rendering and caching first if needed.
 
     :param checksum: checksum of the source FITS file (from file metadata),
         used together with the render parameters to key the cache.
@@ -77,26 +73,23 @@ def get_or_render_preview(
     :param dx: ``dx=`` pan parameter, see ``preview.py``.
     :param dy: ``dy=`` pan parameter, see ``preview.py``.
     :param grid: ``grid=`` overlay parameter, see ``preview.py``.
-    :return: path to the cached JPEG file on disk.
+    :param cmap: ``cmap=`` colormap parameter, see ``preview.py``.
+    :return: the rendered JPEG bytes (from cache, or freshly rendered).
     """
-    cache_key = _cache_key(checksum, stretch, scale, zoom, dx, dy, grid)
-    cache_path = _cache_path(cache_key)
+    cache_key = _cache_key(checksum, stretch, scale, zoom, dx, dy, grid, cmap)
 
-    if cache_path.exists():
-        return cache_path
+    cached = current_cache.get(cache_key)
+    if cached is not None:
+        return cached
 
     jpeg_bytes = render_fn()
+    current_cache.set(cache_key, jpeg_bytes, timeout=CACHE_TIMEOUT)
 
-    # Atomic write: render into a temp file in the same directory, then
-    # rename into place so concurrent readers never see a partial file.
-    fd, tmp_name = tempfile.mkstemp(dir=cache_path.parent, suffix=".tmp")
-    try:
-        with os.fdopen(fd, "wb") as tmp_file:
-            tmp_file.write(jpeg_bytes)
-        os.replace(tmp_name, cache_path)
-    except BaseException:
-        with contextlib.suppress(OSError):
-            os.unlink(tmp_name)
-        raise
+    return jpeg_bytes
 
-    return cache_path
+
+def cache_key_for(
+    checksum: str, stretch: str, scale: str, zoom: str, dx: str, dy: str, grid: str, cmap: str
+) -> str:
+    """Public helper to compute the same cache key used internally, for ETags."""
+    return _cache_key(checksum, stretch, scale, zoom, dx, dy, grid, cmap)

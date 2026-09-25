@@ -46,7 +46,7 @@ reasoning and what a follow-up would need):
 | File | Change |
 |---|---|
 | `ui/fram/preview.py` | Rewrote stretch/scale semantics to match the real archive (see section 3); added real zoom+pan crop; added `histeq` stretch; added grid overlay. |
-| `ui/fram/preview_cache.py` | Cache key extended to include `dx`/`dy`/`grid`. |
+| `ui/fram/preview_cache.py` | Cache key extended to include `dx`/`dy`/`grid`. (Later in this round -- see section 7 -- rewritten to use `invenio_cache.current_cache`/Redis instead of local disk, to fix a Kubernetes/test1 deployment bug.) |
 | `ui/fram/views.py` | `fits_preview_view` reads/passes through `dx`/`dy`/`grid`; extracted `_resolve_record_and_sole_fits_file`/`_read_fits_file_bytes` helpers (shared with the new header-dump component). |
 | `ui/fram/calibration.py` (new) | `find_calibration_frame()` — runtime dark/flat lookup, see section 4. |
 | `ui/fram/components.py` (new) | `FramFitsMetadataComponent` — a `UIResourceComponent` populating `extra_context["dark_frame"]`/`["flat_frame"]`/`["fits_header_cards"]` for the detail page, registered via `FramUIResourceConfig.components` (the standard oarepo_ui extension point — no upstream files touched). |
@@ -180,3 +180,134 @@ session):
 8. `invenio shell`-based direct call to `find_calibration_frame` against
    the real record/index -> returns `None`/`None` without error (expected,
    dataset has no calibration frames yet).
+
+## 7. Follow-up fix: preview cache moved from local disk to Redis (`invenio_cache`)
+
+**Problem reported**: the FITS preview worked correctly locally, but
+failed on the `test1` Kubernetes deployment. Root cause: `preview_cache.py`
+originally cached rendered JPEGs as files under
+`<instance_path>/fits_previews/<xx>/<yy>/<key>.jpg` on local disk. On
+Kubernetes, pods commonly run with a read-only and/or ephemeral,
+non-shared root filesystem, so writes to `instance_path` either fail
+outright or silently don't persist/aren't shared across replicas -- the
+opposite of the local dev setup (a single long-lived process with a
+writable `.venv/var/instance` directory), which is why the bug wasn't
+visible locally.
+
+**Fix**: `preview_cache.py` was rewritten to use
+`invenio_cache.current_cache` (`from invenio_cache import current_cache`)
+instead of the filesystem. This is a Flask-Caching-backed cache that
+InvenioRDM already configures to use **Redis** by default
+(`CACHE_TYPE = "flask_caching.backends.redis"`,
+`CACHE_REDIS_URL`) -- the same Redis instance InvenioRDM already requires
+for sessions/rate-limiting, confirmed already wired up in this repo via
+`variables`' `INVENIO_REDIS_HOST`/`INVENIO_REDIS_PORT`/
+`INVENIO_REDIS_CACHE_DB` (a dedicated DB index, separate from the
+session/celery/communities DBs) and `docker/docker-compose.yml`'s
+`redis:7` service locally. No new infrastructure was needed for this fix,
+either locally or on test1/production, since a working Redis is already
+a hard requirement for any InvenioRDM deployment.
+
+Changes:
+
+- `_cache_key(...)` (sha256 of `checksum:stretch:scale:zoom:dx:dy:grid`)
+  is unchanged -- only the storage backend changed, not the keying
+  scheme. A `CACHE_KEY_PREFIX = "fits_preview::"` was added so cache keys
+  can't collide with unrelated values in the same shared Redis-backed
+  cache (sessions, other subsystems, etc.).
+- `get_or_render_preview(...)` now returns raw JPEG **`bytes`** (previously
+  a `Path` to a cached file on disk) -- `current_cache.get(key)` /
+  `current_cache.set(key, jpeg_bytes, timeout=CACHE_TIMEOUT)` replace all
+  `os`/`tempfile`/`Path` disk logic.
+- A new `cache_key_for(...)` helper (same key derivation, public) lets
+  `views.py` compute the ETag without needing the cache module to also
+  expose a filesystem path.
+- `views.py`'s `fits_preview_view` no longer calls `send_file(cache_path,
+  conditional=True, etag=True, ...)` (which requires a real filesystem
+  path for those convenience features) -- it now builds a plain
+  `flask.Response(jpeg_bytes, mimetype="image/jpeg")` and sets `ETag`
+  (the quoted cache key) / `Cache-Control: public, max-age=86400` headers
+  manually, and manually short-circuits to a `304` when the incoming
+  `If-None-Match` header matches, preserving the same conditional-request
+  behavior `send_file` used to provide for free.
+- **Cache eviction**: a 24h TTL (`CACHE_TIMEOUT` in `preview_cache.py`,
+  matching `PREVIEW_MAX_AGE` in `views.py`) is now passed to
+  `current_cache.set(...)`, so Redis expires stale entries automatically.
+  The old disk cache had no eviction/TTL at all (acceptable there since
+  disk is comparatively cheap/plentiful); an explicit TTL was added here
+  because Redis memory is shared with other Invenio subsystems and more
+  worth reclaiming proactively.
+
+**Not changed**: `preview.py`'s rendering logic (stretch/scale/zoom/pan/
+grid math) is completely untouched -- this was purely a caching-layer
+swap. The "exactly one FITS file, permission-checked" resolution logic in
+`views.py` is also untouched.
+
+**How to manually re-verify this fix**:
+
+1. Locally (`./run.sh run`, Redis already up via `docker/docker-compose.yml`):
+   request a FITS preview twice (`curl .../preview/fits-image.jpg` twice)
+   and confirm the second request is fast (cache hit) while **no new
+   files appear under `.venv/var/instance/fits_previews/`** (that
+   directory should no longer be created/written to at all).
+2. Confirm a repeat request with `-H 'If-None-Match: "<etag-from-first-response>"'`
+   returns `304 Not Modified` with an empty body.
+3. On test1 (or any Kubernetes-deployed environment with a read-only
+   filesystem), confirm the preview now renders successfully where it
+   previously failed.
+
+## 8. Colormap + vertical-orientation fix (post-v2)
+
+A later visual comparison against real fram.fzu.cz screenshots found the
+preview here rendered flat grayscale and upside-down relative to the real
+archive. Root-caused directly against the real archive's
+`image_response()` (`fram-archive`'s `archive/views_images.py`):
+
+- The real archive always applies a colormap, `cmap = colormaps[cmap]`,
+  defaulting to **`cmap='Blues_r'`** -- not plain grayscale.
+- The real archive calls `cv2.flip(data, 0)` right before JPEG encoding,
+  since FITS row 0 is conventionally the *bottom* of the sky image while
+  PIL/JPEG assume row 0 is the top.
+
+**Fix** (in `ui/fram/preview.py`, no new dependency added):
+
+- Added `CMAP_STOPS`, a small dict of hardcoded 9-point ColorBrewer
+  "Blues"/"Greys" (+ `_r` reversed variants) RGB control points,
+  transcribed verbatim from matplotlib's own `lib/matplotlib/_cm.py`
+  (`_Blues_data`/`_Greys_data`) -- chosen specifically so results are
+  numerically identical to `matplotlib.colormaps[name]` for these names,
+  without adding matplotlib as a project dependency (same rationale as
+  the existing stretch/normalization code in this module).
+- Added `_apply_colormap(normalized, cmap_name)`, interpolating each RGB
+  channel independently via `np.interp` across the chosen colormap's
+  stops, replacing the old plain `(img * 255).astype(np.uint8)`
+  single-channel path.
+- Added `np.flipud(rgb)` right before `Image.fromarray(rgb, mode="RGB")`.
+- `render_fits_preview(..., cmap=DEFAULT_CMAP)` -- `DEFAULT_CMAP =
+  "Blues_r"`, matching the real archive's default. `cmap=` is validated
+  against `CMAP_STOPS` the same way `stretch=`/`scale=`/`zoom=` already
+  were (`_resolve_cmap_name`, unknown values log a warning and fall back
+  to the default rather than erroring).
+- `preview_cache.py`'s `_cache_key`/`get_or_render_preview`/
+  `cache_key_for` extended to include `cmap` (mechanically, same pattern
+  as the existing `grid` parameter) so different colormaps don't collide
+  in the Redis cache.
+- `views.py`'s `fits_preview_view` reads `cmap=` off `request.args`
+  (default `DEFAULT_CMAP`) and threads it through to rendering, caching,
+  and the ETag computation.
+- `FitsPreviewToolbar.jsx` got a `Colormap` `<Form.Select>` (options
+  `Blues_r`/`Blues`/`Greys_r`/`Greys`), following the exact same
+  state/`useMemo`/`searchParams.set` pattern already used for
+  Stretch/Scale/Zoom.
+
+**Not changed**: stretch/scale/zoom/pan/grid math, the cache backend
+(still Redis via `invenio_cache`), and the "exactly one FITS file"
+resolution logic are all untouched -- this was purely a colormap +
+orientation fix.
+
+**Tests**: see `tests/test_fits_preview.py`'s
+`test_default_render_is_colored_not_grayscale`,
+`test_all_cmap_options_render`, `test_unknown_cmap_falls_back_to_default`,
+`test_different_cmaps_produce_different_output`,
+`test_blues_r_is_dark_at_low_values_and_light_at_high_values`, and
+`test_output_is_vertically_flipped_relative_to_raw_fits_data`.

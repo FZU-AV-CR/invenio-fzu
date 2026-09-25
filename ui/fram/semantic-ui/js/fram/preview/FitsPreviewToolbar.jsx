@@ -30,12 +30,15 @@ const SCALE_OPTIONS = ["90", "95", "99", "99.5", "99.9", "99.95", "99.995", "100
 
 const ZOOM_OPTIONS = ["1", "2", "4", "8", "16", "32"];
 
+const CMAP_OPTIONS = ["Blues_r", "Blues", "Greys_r", "Greys"];
+
 const toOption = (value, label) => ({ key: value, value, text: label ?? value });
 
 const FitsPreviewToolbar = ({ previewUrl }) => {
   const [stretch, setStretch] = useState("asinh");
   const [scale, setScale] = useState("99.5");
   const [zoom, setZoom] = useState("1");
+  const [cmap, setCmap] = useState("Blues_r");
   const [grid, setGrid] = useState(false);
   const [pan, setPan] = useState({ dx: 0, dy: 0 });
   const [loading, setLoading] = useState(false);
@@ -45,13 +48,14 @@ const FitsPreviewToolbar = ({ previewUrl }) => {
     url.searchParams.set("stretch", stretch);
     url.searchParams.set("scale", scale);
     url.searchParams.set("zoom", zoom);
+    url.searchParams.set("cmap", cmap);
     url.searchParams.set("grid", grid ? "1" : "0");
     if (zoom !== "1") {
       url.searchParams.set("dx", String(pan.dx));
       url.searchParams.set("dy", String(pan.dy));
     }
     return url.href;
-  }, [previewUrl, stretch, scale, zoom, grid, pan]);
+  }, [previewUrl, stretch, scale, zoom, cmap, grid, pan]);
 
   useEffect(() => {
     setLoading(true);
@@ -104,6 +108,12 @@ const FitsPreviewToolbar = ({ previewUrl }) => {
             options={ZOOM_OPTIONS.map((v) => toOption(v, `x${v}`))}
             value={zoom}
             onChange={handleZoomChange}
+          />
+          <Form.Select
+            label={i18next.t("Colormap")}
+            options={CMAP_OPTIONS.map((v) => toOption(v))}
+            value={cmap}
+            onChange={(_e, { value }) => setCmap(value)}
           />
           <Form.Field>
             <Checkbox
