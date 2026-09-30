@@ -15,7 +15,13 @@ fram.fzu.cz source and stakeholder guidance). For the
 custom-facet/filter pattern (range queries, cone search, text-match
 filters), see `docs/CUSTOM_FILTERS_HOWTO.md` and
 `docs/SKY_POSITION_SEARCH.md`. For the "browse by experiment" homepage
-feature, see `docs/HOMEPAGE_BROWSE_BY_EXPERIMENT.md`.
+feature, see `docs/HOMEPAGE_BROWSE_BY_EXPERIMENT.md`. For the short
+model description shown above the search bar on the FRAM search page,
+see `docs/FRAM_SEARCH_MODEL_DESCRIPTION.md`. For how each model's
+plain-search-box default fields (`SetDefaultSearchFields`) work, and a
+serious `number_format_exception` trap with `int`-typed fields that
+silently broke FRAM's default search entirely, see
+`docs/DEFAULT_SEARCH_FIELDS.md`.
 
 ## 1. What this project is
 

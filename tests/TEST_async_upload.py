@@ -365,6 +365,26 @@ async def upload_fits_async(
         record = await client.records.create(record_body, **create_kwargs)
         logger.info("[%s] Created draft: %s", relative_key, record.id)
 
+        if create_kwargs.get("community"):
+            # CESNET-recommended workaround for nrp-cmd 1.0.0: when create()
+            # is called with community=..., it internally PUTs a
+            # "community-submission" review request to the draft's /review
+            # endpoint AFTER it already fetched the Record object it
+            # returns -- so record.expanded["requests"] on the object
+            # returned by create() is stale (snapshotted before that PUT).
+            # A fresh read() (nrp_cmd's read() always requests expand=1)
+            # picks up the newly-created request, which publish() below
+            # needs in order to find the applicable "community-submission"
+            # request instead of falling back to the inapplicable
+            # "publish_draft" (see nrp_cmd's publish()/​_request_op()).
+            # Confirmed by CESNET (Mirek Simek) as the correct workaround
+            # while a proper library-side fix is pending.
+            record = await client.records.read(record.links.self_)
+            logger.info(
+                "[%s] Refreshed draft after community submission: %s",
+                relative_key, record.id,
+            )
+
         file_ = await client.files.upload(
             record,
             key=fits_path.name,

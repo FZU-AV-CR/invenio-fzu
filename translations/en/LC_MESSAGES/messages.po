@@ -221,3 +221,12 @@ msgstr "Particles"
 
 msgid "browse_by_experiment_sipm"
 msgstr "SiPM"
+
+
+## FRAM search page
+
+msgid "fram_search_intro_line1"
+msgstr "FRAM observation data, operated by the Institute of Physics of the Czech Academy of Sciences (FZÚ) — part of the \"fram\" community, licensed under CC-BY 4.0."
+
+msgid "fram_search_intro_line2"
+msgstr "FITS images (plus calibration darks/master-flats) from the robotic telescope network at sites cta-n, cta-s0, cta-s1, auger and auger2, capturing atmospheric and astronomical-object observations."

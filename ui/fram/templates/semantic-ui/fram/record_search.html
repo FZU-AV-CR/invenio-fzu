@@ -14,3 +14,15 @@
    To customize, create/edit these partials (they extend oarepo_ui defaults):
    - record_search/javascript.html - Custom JavaScript includes (optional)
 #}
+
+{#- Short model description shown above the search bar / facets / results,
+   so visitors landing directly on /fram/ know what the model contains
+   before they start filtering. Two short lines, translatable via
+   translations/{en,cs}/LC_MESSAGES/messages.po (fram_search_intro_line1/2). #}
+{%- block page_body %}
+<div class="ui container rel-mt-3">
+  <p class="search-page-intro standard-line-height">{{ _("fram_search_intro_line1") }}</p>
+  <p class="search-page-intro standard-line-height rel-mb-2">{{ _("fram_search_intro_line2") }}</p>
+</div>
+{{ super() }}
+{%- endblock page_body %}
