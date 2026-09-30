@@ -23,11 +23,32 @@ for the full comparison) -- not guessed from screenshots:
   image center, shifted by ``dx``/``dy`` (fractions of a quadrant),
   matching fram.fzu.cz's click-to-pan behaviour (see
   ``ui/fram/semantic-ui/js/fram/preview/FitsPreviewToolbar.jsx``).
+- ``cmap``: the fram.fzu.cz viewer's colormap, applied via a small
+  hardcoded lookup table reproducing the exact ColorBrewer control
+  points used by matplotlib's ``Blues``/``Greys`` colormaps (and their
+  ``_r`` reversed variants) -- verified against matplotlib's own
+  ``lib/matplotlib/_cm.py`` source rather than guessed, so results are
+  numerically identical to what ``matplotlib.colormaps[name]`` would
+  produce for these specific names. A full ``matplotlib`` dependency is
+  deliberately avoided (same rationale as the stretch/normalize code
+  below) since only a couple of colormaps are needed. The real
+  archive's default is ``Blues_r`` (dark navy background, near-white
+  bright pixels) -- **not** plain grayscale, which is why this is a
+  required part of visually matching the original archive, not a
+  cosmetic extra.
 - ``grid``: a simplified grid overlay drawn directly onto the rendered
   JPEG with Pillow (fram.fzu.cz's real grid switches to an entirely
   different matplotlib/STDPipe rendering pipeline with axes/colorbars --
   deliberately not replicated here to avoid a matplotlib dependency for
   a purely cosmetic overlay; see the handoff doc's "Grid" section).
+
+The rendered array is also flipped vertically (``np.flipud``) before
+encoding, matching the real archive's ``cv2.flip(data, 0)`` call in
+``image_response()``. FITS pixel data conventionally has row 0 at the
+*bottom* of the sky image (the astronomical bottom-up convention),
+whereas PIL/JPEG assume row 0 is the top -- without this flip, previews
+render upside-down relative to the real archive and to any other FITS
+viewer (e.g. DS9, Aladin) a user might compare against.
 
 Only the first HDU that actually contains image data is rendered; higher
 dimensional data (e.g. data cubes) are reduced by taking the first plane
@@ -95,6 +116,55 @@ DEFAULT_PAN = "0"
 #: ``grid=1`` is requested (cosmetic only, see module docstring).
 GRID_DIVISIONS = 10
 
+#: ColorBrewer sequential "Blues"/"Greys" 9-color control points, in [0, 1]
+#: RGB triples, transcribed verbatim from matplotlib's own
+#: ``lib/matplotlib/_cm.py`` (``_Blues_data``/``_Greys_data``) so that
+#: ``_apply_colormap`` below produces numerically identical output to
+#: ``matplotlib.colormaps["Blues"]``/``["Greys"]`` without requiring
+#: matplotlib itself as a dependency. Each colormap goes from index 0
+#: (normalized value 0.0) to index -1 (normalized value 1.0); the ``_r``
+#: ("reversed") variants below simply reverse this stop order, exactly as
+#: matplotlib's own ``_r`` suffix convention does.
+_BLUES_STOPS = np.array(
+    [
+        (0.96862745098039216, 0.98431372549019602, 1.0),
+        (0.87058823529411766, 0.92156862745098034, 0.96862745098039216),
+        (0.77647058823529413, 0.85882352941176465, 0.93725490196078431),
+        (0.61960784313725492, 0.792156862745098, 0.88235294117647056),
+        (0.41960784313725491, 0.68235294117647061, 0.83921568627450982),
+        (0.25882352941176473, 0.5725490196078431, 0.77647058823529413),
+        (0.12941176470588237, 0.44313725490196076, 0.70980392156862748),
+        (0.03137254901960784, 0.31764705882352939, 0.61176470588235299),
+        (0.03137254901960784, 0.18823529411764706, 0.41960784313725491),
+    ]
+)
+_GREYS_STOPS = np.array(
+    [
+        (1.0, 1.0, 1.0),
+        (0.94117647058823528, 0.94117647058823528, 0.94117647058823528),
+        (0.85098039215686272, 0.85098039215686272, 0.85098039215686272),
+        (0.74117647058823533, 0.74117647058823533, 0.74117647058823533),
+        (0.58823529411764708, 0.58823529411764708, 0.58823529411764708),
+        (0.45098039215686275, 0.45098039215686275, 0.45098039215686275),
+        (0.32156862745098042, 0.32156862745098042, 0.32156862745098042),
+        (0.14509803921568629, 0.14509803921568629, 0.14509803921568629),
+        (0.0, 0.0, 0.0),
+    ]
+)
+
+#: Supported ``cmap=`` query values, matching (a subset of) fram.fzu.cz's
+#: colormap choices. ``Blues_r`` is the real archive's default (dark navy
+#: background, near-white bright pixels/stars) -- plain grayscale
+#: (``Greys_r``) is offered too since that's what this preview rendered
+#: before this was implemented, and is a reasonable alternative view.
+CMAP_STOPS = {
+    "Blues": _BLUES_STOPS,
+    "Blues_r": _BLUES_STOPS[::-1],
+    "Greys": _GREYS_STOPS,
+    "Greys_r": _GREYS_STOPS[::-1],
+}
+DEFAULT_CMAP = "Blues_r"
+
 
 def _resolve_stretch_name(stretch: str) -> str:
     if stretch not in STRETCH_FUNCTIONS:
@@ -126,6 +196,13 @@ def _resolve_pan(value: str) -> float:
         return 0.0
 
 
+def _resolve_cmap_name(cmap: str) -> str:
+    if cmap not in CMAP_STOPS:
+        log.warning("Unsupported FITS preview cmap %r, falling back to %s", cmap, DEFAULT_CMAP)
+        return DEFAULT_CMAP
+    return cmap
+
+
 def _apply_stretch(stretch_name: str, normalized: np.ndarray) -> np.ndarray:
     """Apply the named stretch to a [0, 1]-normalized array, returning [0, 1] floats."""
     if stretch_name == "histeq":
@@ -138,6 +215,23 @@ def _apply_stretch(stretch_name: str, normalized: np.ndarray) -> np.ndarray:
         # PowerStretch requires a positional exponent; use a sane default.
         stretch = stretch_cls(2.0) if stretch_cls is PowerStretch else stretch_cls()
     return np.clip(stretch(normalized), 0, 1)
+
+
+def _apply_colormap(normalized: np.ndarray, cmap_name: str) -> np.ndarray:
+    """Map a [0, 1]-normalized 2D float array to an (H, W, 3) uint8 RGB array.
+
+    Linearly interpolates each channel independently across the named
+    colormap's control points (``CMAP_STOPS``), the same approach
+    matplotlib's own ``LinearSegmentedColormap``/``ListedColormap``
+    machinery uses internally for evenly-spaced stops.
+    """
+    stops = CMAP_STOPS[cmap_name]
+    x = np.linspace(0.0, 1.0, len(stops))
+    r = np.interp(normalized, x, stops[:, 0])
+    g = np.interp(normalized, x, stops[:, 1])
+    b = np.interp(normalized, x, stops[:, 2])
+    rgb = np.stack([r, g, b], axis=-1)
+    return (rgb * 255).astype(np.uint8)
 
 
 def _crop_zoom_pan(data: np.ndarray, zoom: int, dx: float, dy: float) -> np.ndarray:
@@ -204,6 +298,7 @@ def render_fits_preview(
     zoom: str = DEFAULT_ZOOM,
     dx: str = DEFAULT_PAN,
     dy: str = DEFAULT_PAN,
+    cmap: str = DEFAULT_CMAP,
     grid: bool = False,
 ) -> bytes:
     """Render the first image HDU of a FITS file as JPEG bytes.
@@ -222,6 +317,8 @@ def render_fits_preview(
         (matches fram.fzu.cz's click-to-pan semantics). Ignored when
         ``zoom`` resolves to ``1``.
     :param dy: vertical pan offset, same semantics as ``dx``.
+    :param cmap: one of ``CMAP_STOPS`` keys; unknown values fall back to
+        ``DEFAULT_CMAP`` (``Blues_r``, matching the real archive).
     :param grid: when true, draws an evenly-spaced grid overlay on top
         of the rendered image (cosmetic only, see module docstring).
     :raises ValueError: if the FITS file has no image data in any HDU.
@@ -262,10 +359,17 @@ def render_fits_preview(
         normalized = np.clip((data - vmin) / (vmax - vmin), 0, 1)
 
     stretch_name = _resolve_stretch_name(stretch)
-    img = _apply_stretch(stretch_name, normalized)
-    img = (img * 255).astype(np.uint8)
+    stretched = _apply_stretch(stretch_name, normalized)
 
-    image = Image.fromarray(img)
+    cmap_name = _resolve_cmap_name(cmap)
+    rgb = _apply_colormap(stretched, cmap_name)
+
+    # Flip vertically to match the real archive's cv2.flip(data, 0) --
+    # FITS row 0 is conventionally the bottom of the sky image, but
+    # PIL/JPEG assume row 0 is the top. See module docstring.
+    rgb = np.flipud(rgb)
+
+    image = Image.fromarray(rgb, mode="RGB")
     if grid:
         image = _draw_grid(image)
 

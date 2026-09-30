@@ -10,7 +10,16 @@ cd $(dirname "$0")
 REPOSITORY=physica-local
 
 # create a draft record
-uvx nrp-cmd create record --repository $REPOSITORY --model fram ./fram_001.json --set fram_001_draft
+# NOTE: fram_001.json has a top-level "community": "fram" key, but nrp-cmd
+# does not read community assignment from the metadata body -- it only
+# honors the --community/--workflow CLI flags (see AsyncInvenioRecordsClient.create()
+# in nrp_cmd's source). Without --community here, the record is created
+# with parent.workflow = null and *no* request types are applicable at all,
+# which is what caused the "Request type publish_draft not found in
+# applicable requests" error. Passing --community explicitly assigns the
+# "community" workflow (parent.workflow = "community") to match how the
+# fram community is actually configured (see invenio.cfg's CommunityWorkflow).
+uvx nrp-cmd create record --repository $REPOSITORY --model fram --community fram ./fram_001.json --set fram_001_draft
 
 
 # upload a file to the draft record

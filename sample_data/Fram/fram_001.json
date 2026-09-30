@@ -63,6 +63,7 @@
     "alt_az" : {"altitude": 45.3680630043068, "azimuth": 89.3652},
 
     "filename" : "/mnt/data2/cta-s0/2017/20170813/02001/WF0/20170814041208-419-RA.fit"
-    }
+    },
+    "community": "fram"
 }
 

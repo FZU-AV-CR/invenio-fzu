@@ -61,6 +61,29 @@ fram_model = model(
         ),
         PrependMixin("RecordUISchema", UIRecordSchema),    # TODO: Remove once we get fix from cesnet
         # Limit searchable fields to prevent maxClauseCount error
+        #
+        # IMPORTANT: any `int`-typed metadata.yaml field (e.g. `identifier`,
+        # which carries `mapping: {type: integer, fields: {keyword: ...}}`)
+        # MUST be referenced here via its `.keyword` sub-field, never the
+        # bare integer field. `index.query.default_field` entries are all
+        # combined into a single OpenSearch `query_string` query for any
+        # unqualified search-box term; if a bare integer field is included,
+        # a non-numeric search term (e.g. "cta-n") makes OpenSearch throw a
+        # `number_format_exception` and the ENTIRE query fails (zero
+        # results for everything, not just that field) -- this was the bug
+        # that made FRAM's default search appear completely broken.
+        # `metadata.identifier` was previously dropped from this list to
+        # work around exactly that crash; re-added below as
+        # `metadata.identifier.keyword`, matching the safe pattern already
+        # used by the Particles model for its own int fields
+        # (`metadata.recid.keyword`, `metadata.number_of_events.keyword` in
+        # models/particles/model.py).
+        #
+        # Also note: this setting is baked into the index mapping/settings
+        # JSON at index-CREATION time only -- editing this list and
+        # restarting the dev server does NOT update an already-existing
+        # OpenSearch index. Run `./run.sh reset` (or otherwise recreate the
+        # index) for changes here to take effect.
         SetDefaultSearchFields(
             "metadata.title",
             "metadata.description",
@@ -68,31 +91,17 @@ fram_model = model(
             "metadata.creators.person_or_org.name",
             "metadata.contributors.person_or_org.name",
             "metadata.experiment.id",
-            "metadata.identifier",
+            "metadata.identifier.keyword",
             "metadata.target",
             "metadata.type",
-            "metadata.observation_time",
-            "metadata.observation_night",
-            "metadata.exposure",
-            "metadata.center.ra",
-            "metadata.center.dec",
-            "metadata.radius",
-            "metadata.alt_az.altitude",
-            "metadata.alt_az.azimuth",
             "metadata.related_resources",
             "metadata.site",
             "metadata.ccd",
             "metadata.camera_serial",
             "metadata.filter",
             "metadata.binning",
-            "metadata.image_size.height",
-            "metadata.image_size.width",
-            "metadata.image_size.usable_height",
-            "metadata.image_size.usable_width",
             "metadata.file_types",
-            "metadata.filename",
-            "metadata.footprint",
-            "metadata.healpix_idx",
+            "metadata.filename"
         ),
 
         # Facet group: only fields with a small, repeated set of values

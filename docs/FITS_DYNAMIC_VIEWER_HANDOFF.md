@@ -33,7 +33,7 @@ diagnosed and fixed once — do not rediscover them.
 | Thing | Where |
 |---|---|
 | FITS→JPEG rendering | `ui/fram/preview.py` — `render_fits_preview(fileobj, stretch=, scale=, zoom=)` |
-| Disk cache | `ui/fram/preview_cache.py` — `get_or_render_preview(checksum, stretch, scale, zoom, render_fn)` |
+| Preview cache | `ui/fram/preview_cache.py` — `get_or_render_preview(checksum, stretch, scale, zoom, render_fn)`. **Note (post-v2)**: no longer a disk cache — rewritten to use `invenio_cache.current_cache` (Redis), see `docs/FITS_VIEWER_V2_SUMMARY.md` section 7. |
 | Preview HTTP endpoint | `ui/fram/views.py` — `fits_preview_view(pid_value)`, route `GET /fram/records/<pid_value>/preview/fits-image.jpg` (Flask endpoint name `fram_ui.fits_preview`) |
 | Route registration | `ui/fram/__init__.py` — `create_blueprint(app)`, direct `blueprint.add_url_rule(...)` call |
 | Template hook (current) | `ui/fram/templates/semantic-ui/fram/record_detail/main.html` — `record_files` block override |

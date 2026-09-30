@@ -20,6 +20,11 @@ Metadata:
       description: >
         Integer identifier.
       example: 241
+      mapping:
+        type: integer
+        fields:
+          keyword:
+            type: keyword
 
 
     target:
@@ -98,7 +103,6 @@ Metadata:
           cs: Expozice
 
 
-
       
     # Coordinates
 
@@ -127,6 +131,7 @@ Metadata:
         en: Radius
         cs: Poloměr
 
+
     # NOTE: this object is deliberately named "alt_az" and NOT
     # "altitude_azimuth". oarepo_model's ObjectDataType.get_facet() builds
     # facet paths using a buggy `path.endswith(key)` check that is meant to
@@ -139,6 +144,7 @@ Metadata:
     # the azimuth range facet (filter accepted with 200 OK, but had zero
     # effect since the registered facet key never matched the query param).
     # Renaming the parent object to "alt_az" avoids the collision entirely.
+
     alt_az:
       type: object
       label:
@@ -341,4 +347,10 @@ Metadata:
         Used for sky-region faceting and fallback cone search.
         Null for calibration frames.
       example: 12345
+      mapping:
+        type: integer
+        fields:
+          keyword:
+            type: keyword
+
 

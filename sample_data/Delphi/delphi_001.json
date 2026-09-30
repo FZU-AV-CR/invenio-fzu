@@ -67,5 +67,6 @@
   },
   "files": {
     "enabled": true
-  }
+  },
+  "community": "delphi"
 }
