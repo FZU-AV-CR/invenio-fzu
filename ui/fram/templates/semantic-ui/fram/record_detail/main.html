@@ -159,7 +159,10 @@ Note: Context variables available:
     {% endif %}
     {{ safe_row(m.label(m.camera_serial), m.camera_serial) }}
     {{ safe_row(m.label(m.file_types), m.file_types) }}
-
+    {{ safe_row(m.label(m.pixel_scale), m.pixel_scale) }}
+    {{ safe_row(m.label(m.ccd_temperature), m.ccd_temperature) }}
+    {{ safe_row(m.label(m.bias_level), m.bias_level) }}
+    {{ safe_row(m.label(m.fwhm_arcsec), m.fwhm_arcsec) }}
 
     {% if "EmptyFieldDataSentinel" not in m.image_size._api_data | string %}
     <tr>
@@ -241,5 +244,4 @@ Note: Context variables available:
   </h1>
 </section>
 {%- endblock record_title -%}
-
 

@@ -3,10 +3,10 @@
 ## 1. What this is
 
 On the FRAM search page (`https://127.0.0.1:5000/fram/`), right above
-the search bar / facets sidebar / results list, there are two short
+the search bar / facets sidebar / results list, there are three short
 lines of text introducing what the FRAM model contains: who operates
-the data, which community/license it belongs to, and what kind of
-files/observations it holds.
+the data, which community/license it belongs to, what kind of
+files/observations it holds, and the DOI for the FRAM dataset.
 
 This doc explains how it is implemented, and how to:
 
@@ -44,7 +44,7 @@ mount point that the React search app (`SearchApp`) attaches to:
 ```
 
 For FRAM, `ui/fram/templates/semantic-ui/fram/record_search.html`
-overrides that same `page_body` block, prepends the two description
+overrides that same `page_body` block, prepends the three description
 lines, then calls `{{ super() }}` so the original search-config `<div>`
 still renders immediately below (the `{% extends %}` + block-override +
 `{{ super() }}` convention used throughout this repo, e.g. for the
@@ -57,7 +57,8 @@ still renders immediately below (the `{% extends %}` + block-override +
 {%- block page_body %}
 <div class="ui container rel-mt-3">
   <p class="search-page-intro standard-line-height">{{ _("fram_search_intro_line1") }}</p>
-  <p class="search-page-intro standard-line-height rel-mb-2">{{ _("fram_search_intro_line2") }}</p>
+  <p class="search-page-intro standard-line-height">{{ _("fram_search_intro_line2") }}</p>
+  <p class="search-page-intro standard-line-height rel-mb-2">{{ _("fram_search_intro_line3") }}</p>
 </div>
 {{ super() }}
 {%- endblock page_body %}
@@ -86,7 +87,7 @@ requires a webpack rebuild to take effect — see section 5.
 
 ### 2.2 Text / translations
 
-The two lines are translatable strings, defined as `msgid`/`msgstr`
+The three lines are translatable strings, defined as `msgid`/`msgstr`
 pairs in:
 
 - `translations/en/LC_MESSAGES/messages.po` (English)
@@ -100,6 +101,9 @@ msgstr "FRAM observation data, operated by the Institute of Physics of the Czech
 
 msgid "fram_search_intro_line2"
 msgstr "FITS images (plus calibration darks/master-flats) from the robotic telescope network at sites cta-n, cta-s0, cta-s1, auger and auger2, capturing atmospheric and astronomical-object observations."
+
+msgid "fram_search_intro_line3"
+msgstr "All FRAM records make up the dataset identified by DOI: https://doi.org/10.83100/ddxy-p647"
 ```
 
 and the Czech equivalents:
@@ -110,6 +114,9 @@ msgstr "Pozorovací data FRAM, provozovaná Fyzikálním ústavem AV ČR (FZÚ) 
 
 msgid "fram_search_intro_line2"
 msgstr "FITS snímky (včetně kalibračních temných snímků a master-flatů) ze sítě robotických dalekohledů na stanovištích cta-n, cta-s0, cta-s1, auger a auger2, zachycující atmosférická a astronomická pozorování."
+
+msgid "fram_search_intro_line3"
+msgstr "Všechny záznamy FRAM tvoří datovou sadu s DOI: https://doi.org/10.83100/ddxy-p647"
 ```
 
 Line 1 covers ownership/governance (FZÚ, the `fram` community, CC-BY
@@ -117,14 +124,16 @@ Line 1 covers ownership/governance (FZÚ, the `fram` community, CC-BY
 not imply the `fram` community is open to everyone, so line 1
 deliberately avoids the word "public" next to "community"); line 2
 covers content (FITS images plus calibration darks/master-flats, the
-five observatory sites, atmospheric/astronomical observation purpose).
+five observatory sites, atmospheric/astronomical observation purpose),
+and line 3 states that all FRAM records make up the dataset identified
+by its DOI.
 
 ---
 
 ## 3. How to change the text
 
 1. Edit the `msgstr` value for `fram_search_intro_line1` /
-   `fram_search_intro_line2` in both `.po` files (keep them in sync —
+   `fram_search_intro_line2` / `fram_search_intro_line3` in both `.po` files (keep them in sync —
    the Czech version should be a translation of the same idea, not new
    content, unless you intend the two languages to diverge).
 2. Recompile the `.mo` catalogs (Flask-Babel reads the compiled binary
@@ -160,7 +169,7 @@ The same recipe generalizes to SiPM / ATLAS ITk / Particles:
 | You changed... | You must run... |
 |---|---|
 | `ui/<model>/templates/semantic-ui/<model>/record_search.html` (Jinja/HTML) | Nothing extra — Flask's dev reloader re-reads `.html` templates on every request. Just refresh the browser. |
-| `translations/**/messages.po` (the two lines' text) | 1. `.venv/bin/pybabel compile -d translations -D messages` to regenerate the `.mo` files. 2. **Restart the Invenio dev server** (`Ctrl+C` then `./run.sh run` again) — translation catalogs are cached in memory. |
+| `translations/**/messages.po` (the three lines' text) | 1. `.venv/bin/pybabel compile -d translations -D messages` to regenerate the `.mo` files. 2. **Restart the Invenio dev server** (`Ctrl+C` then `./run.sh run` again) — translation catalogs are cached in memory. |
 | `assets/less/site/globals/site.overrides` (`.search-page-intro` size/alignment) | `.venv/bin/invenio webpack build` to recompile the LESS/CSS bundle, then hard-refresh the browser (`Ctrl+Shift+R`) in case the compiled CSS asset was cached. |
 
 ```bash
@@ -176,11 +185,11 @@ cd /home/erutherford/invenio-fzu
 ## 6. Files touched by this feature (for reference)
 
 - `ui/fram/templates/semantic-ui/fram/record_search.html` — the
-  `page_body` block override adding the two `<p>` lines above
+  `page_body` block override adding the three `<p>` lines above
   `{{ super() }}`.
 - `translations/en/LC_MESSAGES/messages.po` /
   `translations/cs/LC_MESSAGES/messages.po` — `fram_search_intro_line1`
-  / `fram_search_intro_line2` msgid/msgstr entries (English/Czech),
+  / `fram_search_intro_line2` / `fram_search_intro_line3` msgid/msgstr entries (English/Czech),
   plus their compiled `.mo` counterparts.
 - `assets/less/site/globals/site.overrides` — the `.search-page-intro`
   class (centered, 1.5x font size).

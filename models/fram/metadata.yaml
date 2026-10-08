@@ -354,3 +354,141 @@ Metadata:
             type: keyword
 
 
+
+
+    # Image statistics
+
+    mean:
+      type: float
+      label:
+        en: Mean pixel value
+        cs: Průměrná hodnota pixelů
+      description: >
+        Mean of the usable image area (overscan cropped, bias NOT
+        subtracted), in ADU. For master calibration frames (masterdark,
+        masterflat, bias, dcurrent) the image as stored.
+      example: 771.54
+
+    median:
+      type: float
+      label:
+        en: Median pixel value
+        cs: Medián hodnot pixelů
+      description: >
+        Median of the usable image area (overscan cropped, bias NOT
+        subtracted), in ADU. For master calibration frames the image as
+        stored.
+      example: 748.0
+
+    robust_std:
+      type: float
+      label:
+        en: Standard deviation
+        cs: Směrodatná odchylka
+      description: >
+        Noise estimate of the usable image area (1.4826 x median absolute
+        deviation, computed on a subsample), in ADU. Insensitive to stars.
+      example: 24.5
+
+    # Hardware configuration
+
+    instrument:
+      type: keyword
+      label:
+        en: Instrument
+        cs: Přístroj
+      description: >
+        Instrument name as given in the FITS header (INSTRUME). Free text,
+        values differ between sites (e.g. "WF0", "BART 254/1600 mm").
+      example: "BART 254/1600 mm"
+
+    pixel_scale:
+      type: float
+      label:
+        en: Pixel scale
+        cs: Měřítko pixelu
+      description: >
+        Angular size of one image pixel in arcseconds per pixel (binning
+        included). Computed from the WCS solution, or from the nominal
+        telescope scale (CDELT1T) when no solution is available.
+      example: 1.53
+      facet-def:
+        facet: models.fram.facets.RangeQueryFacet
+        field: metadata.pixel_scale
+        label:
+          en: Pixel scale
+          cs: Měřítko pixelu
+
+    # Camera state
+
+    ccd_temperature:
+      type: float
+      label:
+        en: CCD temperature
+        cs: Teplota CCD
+      description: >
+        Detector (chip) temperature in degrees Celsius at the time of
+        exposure (CCD_TEMP).
+      example: -19.96
+      facet-def:
+        facet: models.fram.facets.RangeQueryFacet
+        field: metadata.ccd_temperature
+        label:
+          en: CCD temperature
+          cs: Teplota CCD
+
+    air_temperature:
+      type: float
+      label:
+        en: Camera air temperature
+        cs: Teplota vzduchu u kamery
+      description: >
+        Air temperature at the camera in degrees Celsius (CCD_AIR). A
+        different quantity from the chip temperature.
+      example: 24.0
+
+    bias_level:
+      type: float
+      label:
+        en: Bias level
+        cs: Bias level
+      description: >
+        Bias level in ADU measured from the overscan region. Empty for
+        cameras or firmwares without overscan data and for master
+        calibration frames.
+      example: 550.56
+      facet-def:
+        facet: models.fram.facets.RangeQueryFacet
+        field: metadata.bias_level
+        label:
+          en: Bias level
+          cs: Bias level
+
+    # Image quality (science frames only)
+
+    fwhm_arcsec:
+      type: float
+      label:
+        en: Star FWHM (arcsec)
+        cs: FWHM hvězd (obl. vteřiny)
+      description: >
+        Median full width at half maximum of clean, unsaturated stars in
+        arcseconds. Approximate (stars are only about 2 pixels wide), best
+        used as a relative image-quality indicator. Empty when fewer than
+        20 clean stars are found, and for non-science frames.
+      example: 2.3
+      facet-def:
+        facet: models.fram.facets.RangeQueryFacet
+        field: metadata.fwhm_arcsec
+        label:
+          en: Star FWHM (arcsec)
+          cs: FWHM hvězd (obl. vteřiny)
+
+    fwhm_pixels:
+      type: float
+      label:
+        en: Star FWHM (pixels)
+        cs: FWHM hvězd (pixely)
+      description: >
+        Same measurement as the FWHM in arcseconds, expressed in pixels.
+      example: 1.5
