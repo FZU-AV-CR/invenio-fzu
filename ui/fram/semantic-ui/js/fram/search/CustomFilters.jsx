@@ -9,7 +9,7 @@ import { i18next } from "@translations/i18next";
  * Shared accordion-panel wrapper for all custom input-based filters below.
  * Replaces the previous plain <Segment>+<Header> / 2-column CSS grid
  * layout: each filter is now collapsed by default and expands on click,
- * so 8 filters can be stacked in a single narrow sidebar column without
+ * so all 12 filters can be stacked in a single narrow sidebar column without
  * overflowing into the results column (the 2-column grid version
  * previously overflowed at narrower viewport/sidebar widths).
  *
@@ -227,11 +227,10 @@ const NightFilter = withState(NightFilterComponent);
 
 /**
  * Generic min/max numeric range filter factory, used for continuous float
- * fields (altitude, azimuth, exposure) where a checkbox facet is unusable
- * but a range query is the natural fit. Sends a single "min..max" range
- * string (either bound may be omitted for an open-ended range), consumed
- * by the custom RangeQueryFacet registered for these fields (see
- * models/fram/facets.py).
+ * fields where a checkbox facet is unusable but a range query is the
+ * natural fit. Sends a single "min..max" range string (either bound may
+ * be omitted for an open-ended range), consumed by the custom
+ * RangeQueryFacet registered for these fields (see models/fram/facets.py).
  */
 const makeRangeFilter = (filterKey, labelText, minPlaceholder, maxPlaceholder) => {
   const RangeFilterComponent = ({
@@ -327,6 +326,34 @@ const ExposureFilter = makeRangeFilter(
   i18next.t("Exposure (s)"),
   "0",
   "e.g. 30"
+);
+
+const PixelScaleFilter = makeRangeFilter(
+  "metadata.pixel_scale",
+  i18next.t("Pixel scale (arcsec/pixel)"),
+  "0",
+  "e.g. 1.53"
+);
+
+const CcdTemperatureFilter = makeRangeFilter(
+  "metadata.ccd_temperature",
+  i18next.t("CCD temperature (°C)"),
+  "e.g. -30",
+  "e.g. 0"
+);
+
+const BiasLevelFilter = makeRangeFilter(
+  "metadata.bias_level",
+  i18next.t("Bias level (ADU)"),
+  "0",
+  "e.g. 550"
+);
+
+const FwhmArcsecFilter = makeRangeFilter(
+  "metadata.fwhm_arcsec",
+  i18next.t("Star FWHM (arcsec)"),
+  "0",
+  "e.g. 2.3"
 );
 
 /**
@@ -430,6 +457,10 @@ const FILTER_PANELS = [
   { key: "altitude", Component: AltitudeFilter },
   { key: "azimuth", Component: AzimuthFilter },
   { key: "exposure", Component: ExposureFilter },
+  { key: "pixel_scale", Component: PixelScaleFilter },
+  { key: "ccd_temperature", Component: CcdTemperatureFilter },
+  { key: "bias_level", Component: BiasLevelFilter },
+  { key: "fwhm_arcsec", Component: FwhmArcsecFilter },
   { key: "target", Component: TargetFilter },
   { key: "filename", Component: FilenameFilter },
   { key: "title", Component: TitleFilter },

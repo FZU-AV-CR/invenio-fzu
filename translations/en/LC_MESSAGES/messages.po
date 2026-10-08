@@ -230,3 +230,6 @@ msgstr "FRAM observation data, operated by the Institute of Physics of the Czech
 
 msgid "fram_search_intro_line2"
 msgstr "FITS images (plus calibration darks/master-flats) from the robotic telescope network at sites cta-n, cta-s0, cta-s1, auger and auger2, capturing atmospheric and astronomical-object observations."
+
+msgid "fram_search_intro_line3"
+msgstr "All FRAM records make up the dataset identified by DOI: https://doi.org/10.83100/ddxy-p647"
