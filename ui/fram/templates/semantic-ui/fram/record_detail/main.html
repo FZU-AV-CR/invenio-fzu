@@ -97,11 +97,11 @@ Note: Context variables available:
 {%- block record_content %}
   {{super()}}
   
-  {% macro safe_row(label, value) %}
+  {% macro safe_row(label, value, use_api_data=false) %}
     {% if "EmptyFieldDataSentinel" not in value._api_data | string %}
     <tr>
       <td>{{ label }}</td>
-      <td>{{ ui_value(value) }}</td>
+      <td>{{ value._api_data if use_api_data else ui_value(value) }}</td>
     </tr>
     {% endif %}
   {% endmacro %}
@@ -113,7 +113,9 @@ Note: Context variables available:
     {{ safe_row(m.label(m.identifier), m.identifier) }}
     {{ safe_row(m.label(m.observation_time), m.observation_time) }}
     {{ safe_row(m.label(m.observation_night), m.observation_night) }}
-    {{ safe_row(m.label(m.ccd), m.ccd) }}
+    {# `ccd` is a prefix of `ccd_temperature`, which FieldData mistakenly
+       treats as nested UI data. Render this scalar from API data directly. #}
+    {{ safe_row(m.label(m.ccd), m.ccd, true) }}
     {{ safe_row(m.label(m.type), m.type) }}
 
     {# Dark/flat calibration-frame links, found at query time (no
@@ -244,4 +246,3 @@ Note: Context variables available:
   </h1>
 </section>
 {%- endblock record_title -%}
-
