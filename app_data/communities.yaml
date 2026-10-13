@@ -1,0 +1,10 @@
+- slug: fram
+  logo: fram.png
+  metadata:
+    title: "FRAM"
+    description: "FRAM"
+  access: &access
+    visibility: public
+    members_visibility: restricted
+    member_policy: closed
+    record_policy: closed

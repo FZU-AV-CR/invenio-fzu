@@ -4,10 +4,16 @@ A generic dataset model for fram observation data.
 """
 
 from __future__ import annotations
+from invenio_records_resources.services.files.transfer import (
+    LOCAL_TRANSFER_TYPE,
+    MULTIPART_TRANSFER_TYPE,
+    REMOTE_TRANSFER_TYPE,
+)
+from invenio_records_resources.services.files.generators import IfTransferType
 
 from invenio_i18n import lazy_gettext as _
 from invenio_rdm_records.resources.serializers.ui.schema import UIRecordSchema    # TODO: Remove once we get fix from cesnet
-from invenio_records_permissions.generators import AuthenticatedUser
+from invenio_records_permissions.generators import AuthenticatedUser, SystemProcess, SameAs
 from oarepo_model.api import model
 from oarepo_model.customizations import (
     AddFacetGroup,
@@ -31,7 +37,30 @@ from .serializers import DataCiteJSONSerializer
 class FramPermissionPolicyMixin(ModelMixin):
     """Custom permission policy for fram."""
 
-    can_view_deposit_page = [AuthenticatedUser()]
+    can_view_deposit_page = (AuthenticatedUser(), )
+    can_get_content_files = (
+           IfTransferType(LOCAL_TRANSFER_TYPE, SameAs("can_read_files")),
+           IfTransferType(REMOTE_TRANSFER_TYPE, SameAs("can_read_files")),
+           SystemProcess(),
+    )
+    # drafts: same as RDM defaults (can_review = owner/curators) + remote transfer
+    can_draft_create_files = (
+           IfTransferType(LOCAL_TRANSFER_TYPE, SameAs("can_review")),
+           IfTransferType(MULTIPART_TRANSFER_TYPE, SameAs("can_review")),
+           IfTransferType(REMOTE_TRANSFER_TYPE, SameAs("can_review")),
+           SystemProcess(),
+    )
+    can_draft_commit_files = (
+           IfTransferType(LOCAL_TRANSFER_TYPE, SameAs("can_review")),
+           IfTransferType(MULTIPART_TRANSFER_TYPE, SameAs("can_review")),
+           IfTransferType(REMOTE_TRANSFER_TYPE, SameAs("can_review")),
+           SystemProcess(),
+    )
+    can_draft_get_content_files = (
+           IfTransferType(LOCAL_TRANSFER_TYPE, SameAs("can_draft_read_files")),
+           IfTransferType(REMOTE_TRANSFER_TYPE, SameAs("can_draft_read_files")),
+           SystemProcess(),
+    )
 
 
 # TODO: Consider letting users add an image/icon for the model,

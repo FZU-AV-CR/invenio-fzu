@@ -49,6 +49,15 @@ module-name = [
     "models"
 ]
 
+[tool.uv]
+
+# temporarily override the dependencies for the runtime
+override-dependencies = [
+    "oarepo-runtime>=7.10.1,<8.0.0",
+    "oarepo-invenio-typing-stubs>=0.1.40",
+    "oarepo-communities>=12.1.5,<13.0.0",
+]
+
 [build-system]
 requires = [
     "uv_build>=0.8.7,<0.9.0",
