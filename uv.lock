@@ -3957,7 +3957,7 @@ wheels = [
 
 [[package]]
 name = "oarepo-runtime"
-version = "7.10.1"
+version = "7.11.0"
 source = { registry = "https://gitlab.cesnet.cz/api/v4/projects/1408/packages/pypi/simple" }
 dependencies = [
     { name = "invenio-app" },
@@ -3969,9 +3969,9 @@ dependencies = [
     { name = "setuptools" },
     { name = "signposting" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b3/93/482d0e71925ba1adc17464d0ca7cb39643fb1b658bd5cac5a808fb184d81/oarepo_runtime-7.10.1.tar.gz", hash = "sha256:f232748e04c1a88d98c0ca9be01c2c52575e4b1dea8b12effff07a7c212c1dfb", size = 61695, upload-time = "2026-10-07T12:02:49.766Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/6f/89/3710d214725eadaec37901dd08a3538c22620103c08e924063348815527b/oarepo_runtime-7.11.0.tar.gz", hash = "sha256:f5c97020ed0a29835b31d0a3497844b026cbc7c1b7fa4b7b43509564f2608907", size = 63562, upload-time = "2026-10-15T08:37:20.557Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b3/43/4c0f5308d21038ad59d345cc15f1f0abb0658f39a7472e504f87a7ba8f9e/oarepo_runtime-7.10.1-py3-none-any.whl", hash = "sha256:87dc58fa0b8bd4c2fe01ab3f2f6161070be1158f7cd8ab6bfd1a1c076146f326", size = 84075, upload-time = "2026-10-07T12:02:48.426Z" },
+    { url = "https://files.pythonhosted.org/packages/91/b1/6464b7b763de03ffecc7e6e46fd9787defcaa0bf2c7d463be72d07f84a24/oarepo_runtime-7.11.0-py3-none-any.whl", hash = "sha256:2af45bbf40e989b983826af4568361e4d7c829c84f228fb09972371028f3e489", size = 86374, upload-time = "2026-10-15T08:37:19.461Z" },
 ]
 
 [[package]]

@@ -32,11 +32,13 @@ def convert(in_dir, out_file):
     for base, _subdirs, files in Path(in_dir).walk():
         for f in files:
             record_data = json.loads((base / f).read_text())
+            id_ = None
             for rec_file in record_data.get("files", {}).get("entries", []):
                 rec_file["transfer"] = {
                     "type": "R",
                     "url": f"{S3_PREFIX}/{rec_file.pop("path")}"
                 }
+                id_ = rec_file["key"][:-5]
             identifiers = record_data.get("metadata", {}).get("identifiers", [])
             if identifiers:
                 for idx, identifier in reversed(list(enumerate(record_data.get("metadata", {}).get("identifiers", [])))):
@@ -44,6 +46,8 @@ def convert(in_dir, out_file):
                         del identifiers[idx]
                 if not identifiers:
                     del record_data.get("metadata", {})["identifiers"]
+            if id_:
+                record_data["id"] = id_
 
             fixture_data.append(record_data)
 
