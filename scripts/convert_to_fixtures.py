@@ -3,7 +3,7 @@ Conversion of individual json files to a fixture file suitable for import
 
 How to run:
 
-    python scripts/convert_to_fixtures.py <data-directory> app_data/fram.json
+    python scripts/convert_to_fixtures.py <data-directory> app_data/fram.jsonl
 
 Then:
     invenio rdm-records add-to-fixtures fram
@@ -27,9 +27,15 @@ def convert(in_dir, out_file):
     if not in_dir.exists():
         raise click.Abort("The input directory does not exist")
 
-    fixture_data = []
+    with out_file.open("w", encoding="utf-8") as out:
+        for record_data in _convert_records(in_dir):
+            out.write(json.dumps(record_data, ensure_ascii=False))
+            out.write("\n")
 
-    for base, _subdirs, files in Path(in_dir).walk():
+
+def _convert_records(in_dir):
+    """Yield converted records one by one from the input directory."""
+    for base, _subdirs, files in in_dir.walk():
         for f in files:
             record_data = json.loads((base / f).read_text())
             id_ = None
@@ -49,9 +55,7 @@ def convert(in_dir, out_file):
             if id_:
                 record_data["id"] = id_
 
-            fixture_data.append(record_data)
-
-    out_file.write_text(json.dumps(fixture_data, indent=2, ensure_ascii=False))
+            yield record_data
 
 if __name__ == "__main__":
     convert()
