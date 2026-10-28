@@ -382,7 +382,6 @@ vite.config.ts.timestamp-*
 *.DS_Store?
 #
 package-lock.json
-pnpm-lock.yaml
 
 celerybeat-schedule-shm
 celerybeat-schedule-wal
