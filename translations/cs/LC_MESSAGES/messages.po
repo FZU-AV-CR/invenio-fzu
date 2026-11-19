@@ -233,3 +233,6 @@ msgstr "Pozorovací data FRAM, provozovaná Fyzikálním ústavem AV ČR (FZÚ) 
 
 msgid "fram_search_intro_line2"
 msgstr "FITS snímky (včetně kalibračních temných snímků a master-flatů) ze sítě robotických dalekohledů na stanovištích cta-n, cta-s0, cta-s1, auger a auger2, zachycující atmosférická a astronomická pozorování."
+
+msgid "fram_search_intro_line3"
+msgstr "Všechny záznamy FRAM tvoří datovou sadu s DOI: https://doi.org/10.83100/ddxy-p647"

@@ -16,8 +16,10 @@ from __future__ import annotations
 import logging
 from io import BytesIO
 
+import requests
 from flask import Response, g, request
 from invenio_records_resources.services.errors import PermissionDeniedError
+from invenio_records_resources.services.files.transfer import REMOTE_TRANSFER_TYPE
 from oarepo_runtime import current_runtime
 from sqlalchemy.exc import NoResultFound
 from werkzeug.exceptions import Forbidden, NotFound
@@ -33,6 +35,9 @@ FITS_EXTENSIONS = (".fits", ".fit")
 #: Safety cap: refuse to render preview for unexpectedly huge files rather
 #: than risk excessive memory usage / a denial-of-service vector.
 MAX_PREVIEW_SOURCE_SIZE = 512 * 1024 * 1024  # 512 MiB
+
+#: (connect, read) timeout in seconds for fetching remote (R transfer) files.
+REMOTE_FETCH_TIMEOUT = (10, 120)
 
 #: Cache-Control max-age for successfully rendered/cached preview images.
 PREVIEW_MAX_AGE = 24 * 60 * 60  # seconds
@@ -98,10 +103,22 @@ def _read_fits_file_bytes(file_service, record_id: str, file_key: str) -> BytesI
     """Read a record's file content into an in-memory buffer, permission-checked."""
     try:
         file_item = file_service.get_file_content(g.identity, record_id, file_key)
-        with file_item.get_stream("rb") as stream:
-            return BytesIO(stream.read())
     except PermissionDeniedError as e:
         raise Forbidden(str(e)) from e
+
+    transfer = file_item._file.transfer
+    if transfer.get("type") == REMOTE_TRANSFER_TYPE:
+        # remote files are not accessible via pyfs, fetch them over http
+        try:
+            response = requests.get(transfer["url"], timeout=REMOTE_FETCH_TIMEOUT)
+            response.raise_for_status()
+        except requests.RequestException:
+            log.exception("Could not fetch remote FITS file %s (record %s)", file_key, record_id)
+            raise NotFound() from None
+        return BytesIO(response.content)
+
+    with file_item.get_stream("rb") as stream:
+        return BytesIO(stream.read())
 
 
 def fits_preview_view(pid_value: str) -> Response:

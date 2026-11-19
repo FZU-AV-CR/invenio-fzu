@@ -1,2 +1,4 @@
 key,recid,status,error,start_ts,duration_s,file_count,zip_used,bytes_uploaded,checksum_md5
 20260408105436-044-RA.fits,,failed,"https://127.0.0.1:5000/api/records/qgq88-k4f72/draft/files/20260408105436-044-RA.fits/commit : {""status"": 404, ""message"": ""Record 'qgq88-k4f72' has no file '20260408105436-044-RA.fits'.""}",1790279857.4033446,4.301,1,False,0,a9c103645ac234059916bd2d7ebac492
+20260408105436-044-RA.fits,,failed,"https://127.0.0.1:5000/api/fram?type=fram&expand=1 : {""status"": 403, ""message"": ""Permission denied.""}",1791497811.1216245,0.268,1,False,0,a9c103645ac234059916bd2d7ebac492
+20260408105436-044-RA.fits,7fcv7-52910,ok,,1791497900.8840714,6.36,1,False,34090560,a9c103645ac234059916bd2d7ebac492

@@ -67,7 +67,7 @@ sekce 8).
 | Typ pole | Vzor | Třída | Příklad |
 |---|---|---|---|
 | Malý set opakujících se hodnot | checkbox facet (default) | (žádná, oarepo default `TermsFacet`) | `site`, `manufacturer`, `batch` |
-| Kontinuální číslo / rozsah | min/max input | `RangeQueryFacet` | `exposure`, `altitude`, `azimuth` |
+| Kontinuální číslo / rozsah | min/max input | `RangeQueryFacet` | `exposure`, `altitude`, `azimuth`, `pixel_scale`, `ccd_temperature`, `bias_level`, `fwhm_arcsec` |
 | Datum jako řetězec `YYYYMMDD` | min/max (date input) | `RangeQueryFacet` | `observation_night` |
 | Vysoce kardinální keyword/array, substring hledání | textový input | `TextMatchFacet` | `filename`, `target`, `tray_numbers`, `qr_list`, `components` |
 | Pole mimo naše vlastnictví (CCMM/RDM preset), přesná shoda | textový input | `ExactMatchFacet` | `title` (přes `.keyword` sub-pole) |
@@ -374,8 +374,9 @@ na serveru očekává a parsuje (`value.partition("..")`).
 ## 6. Accordion layout (rolování) a Clear
 
 Aby se do jednoho úzkého bočního panelu vešlo víc filtrů najednou
-(cone search, night, altitude, azimuth, exposure, target, filename,
-title...), je každý filtr zabalený do sdíleného `FilterPanel`
+(cone search, night, altitude, azimuth, exposure, pixel scale, CCD
+temperature, bias level, FWHM, target, filename, title...), je každý
+filtr zabalený do sdíleného `FilterPanel`
 wrapperu, který používá Semantic UI `Accordion`:
 
 ```jsx
