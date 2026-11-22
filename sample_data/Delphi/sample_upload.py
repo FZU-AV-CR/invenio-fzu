@@ -79,7 +79,7 @@ def fill_cern_metadata(source) -> dict:
     metadata = {
     "metadata": {
         "resource_type": {
-            "id": "c_ddb1"
+            "id": "dataset"
         },
         "recid": None,
         "creators": [
@@ -105,7 +105,7 @@ def fill_cern_metadata(source) -> dict:
         ],
         "rights": [
             {
-                "id": "CC0-1.0"
+                "id": "cc0-1.0"
             }
         ],
         "identifiers": [
@@ -118,7 +118,7 @@ def fill_cern_metadata(source) -> dict:
             {
                 "date": "",
                 "type": {
-                    "id": "Created"
+                    "id": "created"
                 }
             }
         ],
@@ -198,7 +198,7 @@ def fill_cern_metadata(source) -> dict:
         attr = str(license_info.get("attribution", "")).lower()
         if "cc0-1.0" in attr:
 
-            tgt["rights"] = [{"id": "CC0-1.0"}]
+            tgt["rights"] = [{"id": "cc0-1.0"}]
 
     # Identifiers (append DOI/OAI if present)
     identifiers = tgt.get("identifiers", [])
@@ -226,25 +226,31 @@ def fill_cern_metadata(source) -> dict:
     elif isinstance(secondary, list) and any(str(s).lower() == "collision" for s in secondary):
         tgt["dataset_type"] = "collision"
     elif isinstance(secondary, list) and any(str(s).lower() == "logbook" for s in secondary):
-        # TODO: fix values
         tgt["dataset_type"] = "logbook"
-        tgt["resource_type"] = {"id": "H41Y-FW7B"}  # logbook
+        # CCMM 1.x used a dedicated "logbook" resource type (H41Y-FW7B); it does not
+        # exist in the 8.x vocabularies, so logbooks are stored as datasets.
+        tgt["resource_type"] = {"id": "dataset"}
         tgt.pop("collision_information", None)  # logbooks don't have collision info
         tgt.pop("number_of_events", None)  # logbooks don't have experiment field
         metadata["metadata"] = tgt
         return metadata
     elif isinstance(secondary, list) and any(str(s).lower() == "manual" for s in secondary):
         tgt["dataset_type"] = "manual"
-        tgt["resource_type"] = {"id": "c_71bd"} # manual
-        tgt.pop("collision_information", None)  # logbooks don't have collision info
-        tgt.pop("number_of_events", None)  # logbooks don't have experiment field
+        # CCMM 1.x used a dedicated "manual" resource type (c_71bd); it does not
+        # exist in the 8.x vocabularies, so manuals are stored as datasets.
+        tgt["resource_type"] = {"id": "dataset"}
+        tgt.pop("collision_information", None)  # manuals don't have collision info
+        tgt.pop("number_of_events", None)  # manuals don't have experiment field
         metadata["metadata"] = tgt
         return metadata
     elif isinstance(secondary, list) and any(str(s).lower() == "report" for s in secondary):
-        tgt["dataset_type"] = "report"
-        tgt["resource_type"] = {"id": "c_93fc"} # report
-        tgt.pop("collision_information", None)  # logbooks don't have collision info
-        tgt.pop("number_of_events", None)  # logbooks don't have experiment field
+        # CCMM 1.x used a dedicated "report" resource type (c_93fc) and a "report"
+        # dataset type; neither exists in the 8.x vocabularies/enum, so the record is
+        # stored as a dataset without a dataset type.
+        tgt.pop("dataset_type", None)
+        tgt["resource_type"] = {"id": "dataset"}
+        tgt.pop("collision_information", None)  # reports don't have collision info
+        tgt.pop("number_of_events", None)  # reports don't have experiment field
         metadata["metadata"] = tgt
         return metadata
     else:

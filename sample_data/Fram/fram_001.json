@@ -1,10 +1,10 @@
 {
   "metadata": {
 
-    "related_resources": [{"title": "FRAM_2022_cta-n", "identifiers": [{"identifier": "https://127.0.0.1:5000/fram/records/5xgdm-9ev10", "scheme": "url"}], "relation_type": {"id": "IsPartOf"}},
-                          {"title": "FRAM", "identifiers": [{"identifier": "https://127.0.0.1:5000/fram/records/5xgdm-9ev77", "scheme": "url"}], "relation_type": {"id": "IsPartOf"}}],
+    "related_resources": [{"title": "FRAM_2022_cta-n", "identifiers": [{"identifier": "https://127.0.0.1:5000/fram/records/5xgdm-9ev10", "scheme": "url"}], "relation_type": {"id": "ispartof"}},
+                          {"title": "FRAM", "identifiers": [{"identifier": "https://127.0.0.1:5000/fram/records/5xgdm-9ev77", "scheme": "url"}], "relation_type": {"id": "ispartof"}}],
     "resource_type": {
-      "id": "c_ddb1"
+      "id": "dataset"
     },
     "creators": [
 
@@ -20,12 +20,12 @@
     "publisher": "FZU Institute of Physics of the Czech Academy of Sciences",
     "additional_descriptions": [
       {
-        "lang": { "id": "ENG" },
+        "lang": { "id": "eng" },
         "type": { "id": "abstract" },
         "description": "This dataset contains observation data in the fits format. The observation comes from robotic telescope (Phototometric Robotic Atmospheric Monitor - FRAM)."
       }
     ],
-    "dates": [{ "date": "2022-02-08", "type": { "id": "Created" } }],
+    "dates": [{ "date": "2022-02-08", "type": { "id": "created" } }],
     "subjects": [
       { "subject": "FRAM" },
       { "subject": "Telescope" },
@@ -37,7 +37,7 @@
       { "subject": "Paranal" },
       { "subject": "Roque de los Muchachos" }
     ],
-    "rights": [{ "id": "4-BY" }],
+    "rights": [{ "id": "cc-by-4.0" }],
     "experiment": {
       "id": "FRAM"
     },

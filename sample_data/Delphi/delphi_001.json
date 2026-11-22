@@ -1,7 +1,7 @@
 {
   "metadata": {
     "resource_type": {
-      "id": "c_ddb1"
+      "id": "dataset"
     },
     "recid": 83236,
     "creators": [
@@ -18,7 +18,7 @@
     "publisher": "CERN Open Data Portal",
     "additional_descriptions": [
       {
-        "lang": { "id": "ENG" },
+        "lang": { "id": "eng" },
         "type": { "id": "abstract" },
         "description": "Extended Short DST simulation 99_a1 done at ecms=205.0 , Santander"
       }
@@ -33,7 +33,7 @@
     ],
     "rights": [
       {
-        "id": "CC0-1.0"
+        "id": "cc0-1.0"
       }
     ],
     "identifiers": [
@@ -46,7 +46,7 @@
       {
         "date": "1999",
         "type": {
-          "id": "Created"
+          "id": "created"
         }
       }
     ],

@@ -4,21 +4,17 @@ A generic dataset model for Atlas ITk data.
 
 from __future__ import annotations
 
-from invenio_i18n import lazy_gettext as _
 from invenio_rdm_records.resources.serializers.ui.schema import UIRecordSchema    # TODO: Remove once we get fix from cesnet
 from invenio_records_permissions.generators import AuthenticatedUser
 from oarepo_model.api import model
 from oarepo_model.customizations import (
     AddFacetGroup,
-    AddMetadataExport,
     PrependMixin,
     SetDefaultSearchFields,
 )
 from oarepo_model.datatypes.registry import from_yaml
 from oarepo_model.model import ModelMixin
 from common import model_presets
-
-from .serializers import DataCiteJSONSerializer
 
 
 class AtlasItkPermissionPolicyMixin(ModelMixin):
@@ -45,13 +41,6 @@ atlas_itk_model = model(
         # mail body of the request.
         # TODO: remove this customization if you use oarepo-communities for RDM 14
         PrependMixin("PermissionPolicy", AtlasItkPermissionPolicyMixin),
-        # export for datacite
-        AddMetadataExport(
-            code="datacite",
-            name=_("Datacite export"),
-            mimetype="application/vnd.datacite.datacite+json",
-            serializer=DataCiteJSONSerializer(),
-        ),
         PrependMixin("RecordUISchema", UIRecordSchema),    # TODO: Remove once we get fix from cesnet
         # Limit searchable fields to prevent maxClauseCount error
         SetDefaultSearchFields(

@@ -5,13 +5,11 @@ Particles detector experiments
 
 from __future__ import annotations
 
-from invenio_i18n import lazy_gettext as _
 from invenio_rdm_records.resources.serializers.ui.schema import UIRecordSchema    # TODO: Remove once we get fix from cesnet
 from invenio_records_permissions.generators import AuthenticatedUser
 from oarepo_model.api import model
 from oarepo_model.customizations import (
     AddFacetGroup,
-    AddMetadataExport,
     AddToDictionary,
     PrependMixin,
     SetDefaultSearchFields,
@@ -25,8 +23,6 @@ from .facets import (
     EnergyRangeOverlapFacet,
     TextMatchFacet,
 )
-from .serializers import DataCiteJSONSerializer
-
 
 
 class ParticlesPermissionPolicyMixin(ModelMixin):
@@ -50,13 +46,6 @@ particles_model = model(
         # mail body of the request.
         # TODO: remove this customization if you use oarepo-communities for RDM 14
         PrependMixin("PermissionPolicy", ParticlesPermissionPolicyMixin),
-        # export for datacite
-        AddMetadataExport(
-            code="datacite",
-            name=_("Datacite export"),
-            mimetype="application/vnd.datacite.datacite+json",
-            serializer=DataCiteJSONSerializer(),
-        ),
         PrependMixin("RecordUISchema", UIRecordSchema),    # TODO: Remove once we get fix from cesnet
         # Limit searchable fields to prevent maxClauseCount error
         SetDefaultSearchFields(

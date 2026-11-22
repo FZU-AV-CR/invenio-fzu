@@ -1,10 +1,10 @@
 {
   "metadata": {
 
-    "related_resources": [{"title": "SiPM_2022", "identifiers": [{"identifier": "https://127.0.0.1:5000/sipm/records/5xgdm-9ev10", "scheme": "url"}], "relation_type": {"id": "IsPartOf"}},
-                          {"title": "SiPM", "identifiers": [{"identifier": "https://127.0.0.1:5000/sipm/records/5xgdm-9ev77", "scheme": "url"}], "relation_type": {"id": "IsPartOf"}}],    
+    "related_resources": [{"title": "SiPM_2022", "identifiers": [{"identifier": "https://127.0.0.1:5000/sipm/records/5xgdm-9ev10", "scheme": "url"}], "relation_type": {"id": "ispartof"}},
+                          {"title": "SiPM", "identifiers": [{"identifier": "https://127.0.0.1:5000/sipm/records/5xgdm-9ev77", "scheme": "url"}], "relation_type": {"id": "ispartof"}}],    
     "resource_type": {
-      "id": "c_ddb1"
+      "id": "dataset"
     },
     "creators": [
       {
@@ -44,16 +44,16 @@
     ],
     "additional_descriptions": [
       {
-        "lang": { "id": "ENG" },
+        "lang": { "id": "eng" },
         "type": { "id": "abstract" },
         "description": "This dataset contains experimental data from silicon photomultiplier (SiPM) detector testing performed in the context of the Deep Underground Neutrino Experiment (DUNE). The measurements were carried out to characterize the performance of photosipm intended for use in DUNE detector systems. The dataset includes results from controlled laboratory tests and is intended to support detector development, validation, and future reuse."
       }
     ],
-    "rights": [{ "id": "4-BY" }],
+    "rights": [{ "id": "cc-by-4.0" }],
     "dates": [
       {
         "date": "2023",
-        "type": { "id": "Created" }
+        "type": { "id": "created" }
       }
     ],
     "experiment": {
