@@ -29,11 +29,14 @@ def test_sipm_box_and_atlas_batch_have_text_match_facet_defs() -> None:
     assert atlas_batch["facet-def"]["field"] == "metadata.batch"
 
 
-def test_fram_footprint_survives_schema_dump() -> None:
+def test_fram_footprint_survives_schema_dump(base_app) -> None:
     payload = json.loads((ROOT / "sample_data" / "Fram" / "fram_001.json").read_text(encoding="utf-8"))
-    schema = fram_model.MetadataSchema()
 
-    loaded = schema.load(payload["metadata"])
-    dumped = schema.dump(loaded)
+    # The schema validates related-resource identifier schemes against the app
+    # configuration, so it has to be loaded inside an application context.
+    with base_app.app_context():
+        schema = fram_model.MetadataSchema()
+        loaded = schema.load(payload["metadata"])
+        dumped = schema.dump(loaded)
 
     assert dumped["footprint"] == payload["metadata"]["footprint"]
